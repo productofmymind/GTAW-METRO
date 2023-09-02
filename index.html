@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/index.css">
+  <title>FTO Report Formatter</title>
+</head>
+<body>
+  <div class="ui container">
+    <div class="ui form" id="sections-container">
+      <!-- JavaScript to add sections for each person -->
+      <script>
+        // Array of people's names
+        const people = [
+                    "Samuel Courtland",
+                    "Marisa Groomay",
+                    "Robert Evans",
+                    "Jayson Sims",
+                    "Lucas Estrada",
+                    "Cole Sanders",
+                    "Anastasia Galiani",
+                    "Alexandra Mirste",
+                    "Johnathan Campbell",
+                    "Lauren Sherman",
+                    "Lily Monroe",
+                    "Dominic Martucci",
+                    "Marlene Renaud",
+                    "Miguel Ruano",
+                    "Marisa Zanotti",
+                    "Michael Atwood",
+                    "Emilia Conteliano",
+                    "Maquez Mexueiro",
+                    "Tobias Maldonado",
+                    "Jackson Mayhew"
+                ];
+
+        // Function to create a section for a person with Patrols and Deployments
+        function createPersonSection(person) {
+          const section = document.createElement("div");
+          section.classList.add("ui", "segment");
+
+          section.innerHTML = `
+            <h2>${person}</h2>
+            <div class="inline fields">
+              <label for="${person.toLowerCase()}-patrols" class="header">Patrols</label>
+              <div class="ui radio checkbox">
+                <input type="radio" id="${person.toLowerCase()}-patrols-not-assessable" name="${person.toLowerCase()}-patrols" checked="" value="BS" tabindex="0" class="hidden">
+                <label for="${person.toLowerCase()}-patrols-not-assessable">Not Assessable</label>
+              </div>
+              <div class="ui radio checkbox">
+                <input type="radio" id="${person.toLowerCase()}-patrols-poor" name="${person.toLowerCase()}-patrols" value="S" tabindex="0" class="hidden">
+                <label for="${person.toLowerCase()}-patrols-poor">Poor</label>
+              </div>
+              <div class="ui radio checkbox">
+                <input type="radio" id="${person.toLowerCase()}-patrols-acceptable" name="${person.toLowerCase()}-patrols" value="AS" tabindex="0" class="hidden">
+                <label for="${person.toLowerCase()}-patrols-acceptable">Acceptable</label>
+              </div>
+              <div class="ui radio checkbox">
+                <input type="radio" id="${person.toLowerCase()}-patrols-good" name="${person.toLowerCase()}-patrols" value="U" tabindex="0" class="hidden">
+                <label for="${person.toLowerCase()}-patrols-good">Good</label>
+              </div>
+              <div class="ui radio checkbox">
+                <input type="radio" id="${person.toLowerCase()}-patrols-aboveandbeyond" name="${person.toLowerCase()}-patrols" value="NO" tabindex="0" class="hidden">
+                <label for="${person.toLowerCase()}-patrols-aboveandbeyond">Above & Beyond</label>
+              </div>
+            </div>
+            <div class="inline fields">
+              <label for="${person.toLowerCase()}-deployments" class="header">Deployments</label>
+              <div class="ui radio checkbox">
+                <input type="radio" id="${person.toLowerCase()}-deployments-not-assessable" name="${person.toLowerCase()}-deployments" checked="" value="BS" tabindex="0" class="hidden">
+                <label for="${person.toLowerCase()}-deployments-not-assessable">Not Assessable</label>
+              </div>
+              <div class="ui radio checkbox">
+                <input type="radio" id="${person.toLowerCase()}-deployments-poor" name="${person.toLowerCase()}-deployments" value="S" tabindex="0" class="hidden">
+                <label for="${person.toLowerCase()}-deployments-poor">Poor</label>
+              </div>
+              <div class="ui radio checkbox">
+                <input type="radio" id="${person.toLowerCase()}-deployments-acceptable" name="${person.toLowerCase()}-deployments" value="AS" tabindex="0" class="hidden">
+                <label for="${person.toLowerCase()}-deployments-acceptable">Acceptable</label>
+              </div>
+              <div class="ui radio checkbox">
+                <input type="radio" id="${person.toLowerCase()}-deployments-good" name="${person.toLowerCase()}-deployments" value="U" tabindex="0" class="hidden">
+                <label for="${person.toLowerCase()}-deployments-good">Good</label>
+              </div>
+              <div class="ui radio checkbox">
+                <input type="radio" id="${person.toLowerCase()}-deployments-aboveandbeyond" name="${person.toLowerCase()}-deployments" value="NO" tabindex="0" class="hidden">
+                <label for="${person.toLowerCase()}-deployments-aboveandbeyond">Above & Beyond</label>
+              </div>
+            </div>
+            <div class="inline fields">
+              <label for="${person.toLowerCase()}-trainings" class="header">Trainings</label>
+              <div class="ui radio checkbox">
+                <input type="radio" id="${person.toLowerCase()}-trainings-not-assessable" name="${person.toLowerCase()}-trainings" checked="" value="BS" tabindex="0" class="hidden">
+                <label for="${person.toLowerCase()}-trainings-not-assessable">Not Assessable</label>
+              </div>
+              <div class="ui radio checkbox">
+                <input type="radio" id="${person.toLowerCase()}-trainings-poor" name="${person.toLowerCase()}-trainings" value="S" tabindex="0" class="hidden">
+                <label for="${person.toLowerCase()}-trainings-poor">Poor</label>
+              </div>
+              <div class="ui radio checkbox">
+                <input type="radio" id="${person.toLowerCase()}-trainings-acceptable" name="${person.toLowerCase()}-trainings" value="AS" tabindex="0" class="hidden">
+                <label for="${person.toLowerCase()}-trainings-acceptable">Acceptable</label>
+              </div>
+              <div class="ui radio checkbox">
+                <input type="radio" id="${person.toLowerCase()}-trainings-good" name="${person.toLowerCase()}-trainings" value="U" tabindex="0" class="hidden">
+                <label for="${person.toLowerCase()}-trainings-good">Good</label>
+              </div>
+              <div class="ui radio checkbox">
+                <input type="radio" id="${person.toLowerCase()}-trainings-aboveandbeyond" name="${person.toLowerCase()}-trainings" value="NO" tabindex="0" class="hidden">
+                <label for="${person.toLowerCase()}-trainings-aboveandbeyond">Above & Beyond</label>
+              </div>
+            </div>
+            <div class="field">
+              <label for="${person.toLowerCase()}-comment" class="header">Comment</label>
+              <textarea id="${person.toLowerCase()}-comment" name="${person.toLowerCase()}-comment"></textarea>
+            </div>
+          `;
+
+          return section;
+        }
+
+        // Loop to create sections for each person and append them to the container
+        const sectionsContainer = document.getElementById("sections-container");
+        for (const person of people) {
+          const personSection = createPersonSection(person);
+          sectionsContainer.appendChild(personSection);
+        }
+      </script>
+
+      <script>
+  // ...
+
+  // Function to create a section for a person with Patrols and Deployments
+  function createPersonSection(person) {
+    const section = document.createElement("div");
+    section.classList.add("ui", "segment");
+
+    section.innerHTML = `
+      <!-- ... (previous HTML) -->
+      <div class="field">
+        <label for="${person.toLowerCase()}-comment" class="header">Comment</label>
+        <textarea id="${person.toLowerCase()}-comment" name="${person.toLowerCase()}-comment"></textarea>
+      </div>
+    `;
+
+    // Add an event listener to save the comment when it changes
+    const commentTextarea = section.querySelector(`#${person.toLowerCase()}-comment`);
+    commentTextarea.addEventListener("input", function () {
+      localStorage.setItem(`${person.toLowerCase()}-comment`, this.value);
+    });
+
+    // Load saved comment, if available
+    const savedComment = localStorage.getItem(`${person.toLowerCase()}-comment`);
+    if (savedComment) {
+      commentTextarea.value = savedComment;
+    }
+
+    return section;
+  }
+
+  // ...
+</script>
+
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js" integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmt"></script>
+</body>
+</html>

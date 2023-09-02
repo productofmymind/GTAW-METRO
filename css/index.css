@@ -1,0 +1,14 @@
+.ui.container {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.inline.fields .header {
+  width: 400px !important;
+}
+
+  .inline.fields {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
