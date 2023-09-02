@@ -63,137 +63,154 @@ Keep up the astounding work, stay vigilant and keep up the hard work! Everything
 [hr][/hr]
 [divbox2=transparent][b]Samuel Courtland — CANINE HANDLER[/b][color=transparent]person1[/color]
 [hr][/hr]
-[list][*][b]PATROLS:[/b] ${$('[name=PatrolsCourtland]:checked').val()}
-[*][b]DEPLOYMENTS:[/b] ${$('[name=DeploymentsCourtland]:checked').val()}
-[*][b]TRAININGS:[/b] ${$('[name=TrainingsCourtland]:checked').val()}
-[*][b]PERFORMANCE:[/b][br][/br] 
-[/list][/divbox2]
-[br][/br]
+[list][b]PATROLS:[/b] ${$('[name=PatrolsCourtland]:checked').val()}
+[b]DEPLOYMENTS:[/b] ${$('[name=DeploymentsCourtland]:checked').val()}
+[b]TRAININGS:[/b] ${$('[name=TrainingsCourtland]:checked').val()}
+[b]PERFORMANCE:[/b][br][/br]
+[/list][/divbox2][br][/br]
+
 [divbox2=transparent][b]Marisa Groomay — CANINE HANDLER[/b][color=transparent]person2[/color]
 [hr][/hr]
-[list][*][b]PATROLS:[/b] ${$('[name=PatrolsCourtland]:checked').val()}
-[*][b]DEPLOYMENTS:[/b] ${$('[name=DeploymentsCourtland]:checked').val()}
-[*][b]TRAININGS:[/b] ${$('[name=TrainingsCourtland]:checked').val()}
-[*][b]PERFORMANCE:[/b][br][/br]
+[list][b]PATROLS:[/b] ${$('[name=PatrolsGroomay]:checked').val()}
+[b]DEPLOYMENTS:[/b] ${$('[name=DeploymentsGroomay]:checked').val()}
+[b]TRAININGS:[/b] ${$('[name=TrainingsGroomay]:checked').val()}
+[b]PERFORMANCE:[/b][br][/br]
 [/list][/divbox2][br][/br]
+
 [divbox2=transparent][b]Robert Evans — CANINE HANDLER[/b][color=transparent]person3[/color]
 [hr][/hr]
-[list][*][b]PATROLS:[/b] 
-[*][b]DEPLOYMENTS:[/b] 
-[*][b]TRAININGS:[/b] 
-[*][b]PERFORMANCE:[/b][br][/br]
+[list][b]PATROLS:[/b] ${$('[name=PatrolsEvans]:checked').val()}
+[b]DEPLOYMENTS:[/b] ${$('[name=DeploymentsEvans]:checked').val()}
+[b]TRAININGS:[/b] ${$('[name=TrainingsEvans]:checked').val()}
+[b]PERFORMANCE:[/b][br][/br]
 [/list][/divbox2][br][/br]
+
 [divbox2=transparent][b]Jayson Sims — CANINE HANDLER[/b][color=transparent]person4[/color]
 [hr][/hr]
-[list][*][b]PATROLS:[/b] 
-[*][b]DEPLOYMENTS:[/b] 
-[*][b]TRAININGS:[/b] 
-[*][b]PERFORMANCE:[/b][br][/br] 
+[list][b]PATROLS:[/b] ${$('[name=PatrolsSims]:checked').val()}
+[b]DEPLOYMENTS:[/b] ${$('[name=DeploymentsSims]:checked').val()}
+[b]TRAININGS:[/b] ${$('[name=TrainingsSims]:checked').val()}
+[b]PERFORMANCE:[/b][br][/br]
 [/list][/divbox2][br][/br]
+
 [divbox2=transparent][b]Lucas Estrada — CANINE HANDLER[/b][color=transparent]person5[/color]
 [hr][/hr]
-[list][*][b]PATROLS:[/b] 
-[*][b]DEPLOYMENTS:[/b] 
-[*][b]TRAININGS:[/b] 
-[*][b]PERFORMANCE:[/b][br][/br]
+[list][b]PATROLS:[/b] ${$('[name=PatrolsEstrada]:checked').val()}
+[b]DEPLOYMENTS:[/b] ${$('[name=DeploymentsEstrada]:checked').val()}
+[b]TRAININGS:[/b] ${$('[name=TrainingsEstrada]:checked').val()}
+[b]PERFORMANCE:[/b][br][/br]
 [/list][/divbox2][br][/br]
+
 [divbox2=transparent][b]Cole Sanders — CANINE HANDLER[/b][color=transparent]person6[/color]
 [hr][/hr]
-[list][*][b]PATROLS:[/b] 
-[*][b]DEPLOYMENTS:[/b] 
-[*][b]TRAININGS:[/b] 
-[*][b]PERFORMANCE:[/b][br][/br]
+[list][b]PATROLS:[/b] ${$('[name=PatrolsSanders]:checked').val()}
+[b]DEPLOYMENTS:[/b] ${$('[name=DeploymentsSanders]:checked').val()}
+[b]TRAININGS:[/b] ${$('[name=TrainingsSanders]:checked').val()}
+[b]PERFORMANCE:[/b][br][/br]
 [/list][/divbox2][br][/br]
+
 [divbox2=transparent][b]Anastasia Galiani — CANINE HANDLER[/b][color=transparent]person7[/color]
 [hr][/hr]
-[list][*][b]PATROLS:[/b] 
-[*][b]DEPLOYMENTS:[/b] 
-[*][b]TRAININGS:[/b] 
-[*][b]PERFORMANCE:[/b][br][/br]
+[list][b]PATROLS:[/b] ${$('[name=PatrolsGaliani]:checked').val()}
+[b]DEPLOYMENTS:[/b] ${$('[name=DeploymentsGaliani]:checked').val()}
+[b]TRAININGS:[/b] ${$('[name=TrainingsGaliani]:checked').val()}
+[b]PERFORMANCE:[/b][br][/br]
 [/list][/divbox2][br][/br]
+
 [divbox2=transparent][b]Alexandra Mirste — CANINE HANDLER[/b][color=transparent]person8[/color]
 [hr][/hr]
-[list][*][b]PATROLS:[/b] 
-[*][b]DEPLOYMENTS:[/b] 
-[*][b]TRAININGS:[/b] 
-[*][b]PERFORMANCE:[/b][br][/br]
+[list][b]PATROLS:[/b] ${$('[name=PatrolsMirste]:checked').val()}
+[b]DEPLOYMENTS:[/b] ${$('[name=DeploymentsMirste]:checked').val()}
+[b]TRAININGS:[/b] ${$('[name=TrainingsMirste]:checked').val()}
+[b]PERFORMANCE:[/b][br][/br]
 [/list][/divbox2][br][/br]
-[divbox2=transparent][b]Johnathan Campbell— CANINE HANDLER[/b][color=transparent]person8[/color]
+
+[divbox2=transparent][b]Johnathan Campbell — CANINE HANDLER[/b][color=transparent]person8[/color]
 [hr][/hr]
-[list][*][b]PATROLS:[/b] 
-[*][b]DEPLOYMENTS:[/b] 
-[*][b]TRAININGS:[/b] 
-[*][b]PERFORMANCE:[/b][br][/br]
+[list][b]PATROLS:[/b] ${$('[name=PatrolsCampbell]:checked').val()}
+[b]DEPLOYMENTS:[/b] ${$('[name=DeploymentsCampbell]:checked').val()}
+[b]TRAININGS:[/b] ${$('[name=TrainingsCampbell]:checked').val()}
+[b]PERFORMANCE:[/b][br][/br]
 [/list][/divbox2][br][/br]
+
 [divbox2=transparent][b]Lauren Sherman — CANINE HANDLER[/b][color=transparent]person8[/color]
 [hr][/hr]
-[list][*][b]PATROLS:[/b] 
-[*][b]DEPLOYMENTS:[/b] 
-[*][b]TRAININGS:[/b] 
-[*][b]PERFORMANCE:[/b][br][/br]
+[list][b]PATROLS:[/b] ${$('[name=PatrolsSherman]:checked').val()}
+[b]DEPLOYMENTS:[/b] ${$('[name=DeploymentsSherman]:checked').val()}
+[b]TRAININGS:[/b] ${$('[name=TrainingsSherman]:checked').val()}
+[b]PERFORMANCE:[/b][br][/br]
 [/list][/divbox2][br][/br]
+
 [divbox2=transparent][b]Dominic Martucci — CANINE HANDLER[/b][color=transparent]person8[/color]
 [hr][/hr]
-[list][*][b]PATROLS:[/b] 
-[*][b]DEPLOYMENTS:[/b] 
-[*][b]TRAININGS:[/b] 
-[*][b]PERFORMANCE:[/b][br][/br]Good effort this month, if there's anything that can be done to assist you going forward please get in touch. - CS Parker
+[list][b]PATROLS:[/b] ${$('[name=PatrolsMartucci]:checked').val()}
+[b]DEPLOYMENTS:[/b] ${$('[name=DeploymentsMartucci]:checked').val()}
+[b]TRAININGS:[/b] ${$('[name=TrainingsMartucci]:checked').val()}
+[b]PERFORMANCE:[/b][br][/br]
 [/list][/divbox2][br][/br]
+
 [divbox2=transparent][b]Marlene Renaud — CANINE HANDLER[/b][color=transparent]person8[/color]
 [hr][/hr]
-[list][*][b]PATROLS:[/b] 
-[*][b]DEPLOYMENTS:[/b] 
-[*][b]TRAININGS:[/b] 
-[*][b]PERFORMANCE:[/b][br][/br]
+[list][b]PATROLS:[/b] ${$('[name=PatrolsRenaud]:checked').val()}
+[b]DEPLOYMENTS:[/b] ${$('[name=DeploymentsRenaud]:checked').val()}
+[b]TRAININGS:[/b] ${$('[name=TrainingsRenaud]:checked').val()}
+[b]PERFORMANCE:[/b][br][/br]
 [/list][/divbox2][br][/br]
+
 [divbox2=transparent][b]Miguel Ruano — CANINE HANDLER[/b][color=transparent]person8[/color]
 [hr][/hr]
-[list][*][b]PATROLS:[/b] 
-[*][b]DEPLOYMENTS:[/b] 
-[*][b]TRAININGS:[/b] 
-[*][b]PERFORMANCE:[/b][br][/br]
+[list][b]PATROLS:[/b] ${$('[name=PatrolsRuano]:checked').val()}
+[b]DEPLOYMENTS:[/b] ${$('[name=DeploymentsRuano]:checked').val()}
+[b]TRAININGS:[/b] ${$('[name=TrainingsRuano]:checked').val()}
+[b]PERFORMANCE:[/b][br][/br]
 [/list][/divbox2][br][/br]
+
 [divbox2=transparent][b]Marisa Zanotti — CANINE HANDLER[/b][color=transparent]person8[/color]
 [hr][/hr]
-[list][*][b]PATROLS:[/b] 
-[*][b]DEPLOYMENTS:[/b] 
-[*][b]TRAININGS:[/b] 
-[*][b]PERFORMANCE:[/b][br][/br] 
+[list][b]PATROLS:[/b] ${$('[name=PatrolsZanotti]:checked').val()}
+[b]DEPLOYMENTS:[/b] ${$('[name=DeploymentsZanotti]:checked').val()}
+[b]TRAININGS:[/b] ${$('[name=TrainingsZanotti]:checked').val()}
+[b]PERFORMANCE:[/b][br][/br]
 [/list][/divbox2][br][/br]
+
 [divbox2=transparent][b]Michael Atwood — CANINE HANDLER[/b][color=transparent]person8[/color]
 [hr][/hr]
-[list][*][b]PATROLS:[/b] 
-[*][b]DEPLOYMENTS:[/b] 
-[*][b]TRAININGS:[/b] 
-[*][b]PERFORMANCE:[/b][br][/br] 
+[list][b]PATROLS:[/b] ${$('[name=PatrolsAtwood]:checked').val()}
+[b]DEPLOYMENTS:[/b] ${$('[name=DeploymentsAtwood]:checked').val()}
+[b]TRAININGS:[/b] ${$('[name=TrainingsAtwood]:checked').val()}
+[b]PERFORMANCE:[/b][br][/br]
 [/list][/divbox2][br][/br]
+
 [divbox2=transparent][b]Emilia Conteliano — CANINE HANDLER[/b][color=transparent]person8[/color]
 [hr][/hr]
-[list][*][b]PATROLS:[/b] 
-[*][b]DEPLOYMENTS:[/b] 
-[*][b]TRAININGS:[/b] 
-[*][b]PERFORMANCE:[/b][br][/br] 
+[list][b]PATROLS:[/b] ${$('[name=PatrolsConteliano]:checked').val()}
+[b]DEPLOYMENTS:[/b] ${$('[name=DeploymentsConteliano]:checked').val()}
+[b]TRAININGS:[/b] ${$('[name=TrainingsConteliano]:checked').val()}
+[b]PERFORMANCE:[/b][br][/br]
 [/list][/divbox2][br][/br]
+
 [divbox2=transparent][b]Maquez Mexueiro — CANINE HANDLER[/b][color=transparent]person8[/color]
 [hr][/hr]
-[list][*][b]PATROLS:[/b] 
-[*][b]DEPLOYMENTS:[/b] 
-[*][b]TRAININGS:[/b] 
-[*][b]PERFORMANCE:[/b][br][/br] 
+[list][b]PATROLS:[/b] ${$('[name=PatrolsMexueiro]:checked').val()}
+[b]DEPLOYMENTS:[/b] ${$('[name=DeploymentsMexueiro]:checked').val()}
+[b]TRAININGS:[/b] ${$('[name=TrainingsMexueiro]:checked').val()}
+[b]PERFORMANCE:[/b][br][/br]
 [/list][/divbox2][br][/br]
+
 [divbox2=transparent][b]Tobias Maldonado — CANINE HANDLER[/b][color=transparent]person8[/color]
 [hr][/hr]
-[list][*][b]PATROLS:[/b] 
-[*][b]DEPLOYMENTS:[/b] 
-[*][b]TRAININGS:[/b] 
-[*][b]PERFORMANCE:[/b][br][/br]
+[list][b]PATROLS:[/b] ${$('[name=PatrolsMaldonado]:checked').val()}
+[b]DEPLOYMENTS:[/b] ${$('[name=DeploymentsMaldonado]:checked').val()}
+[b]TRAININGS:[/b] ${$('[name=TrainingsMaldonado]:checked').val()}
+[b]PERFORMANCE:[/b][br][/br]
 [/list][/divbox2][br][/br]
+
 [divbox2=transparent][b]Jackson Mayhew — CANINE HANDLER[/b][color=transparent]person8[/color]
 [hr][/hr]
-[list][*][b]PATROLS:[/b] 
-[*][b]DEPLOYMENTS:[/b] 
-[*][b]TRAININGS:[/b] 
-[*][b]PERFORMANCE:[/b][br][/br]
+[list][b]PATROLS:[/b] ${$('[name=PatrolsMayhew]:checked').val()}
+[b]DEPLOYMENTS:[/b] ${$('[name=DeploymentsMayhew]:checked').val()}
+[b]TRAININGS:[/b] ${$('[name=TrainingsMayhew]:checked').val()}
+[b]PERFORMANCE:[/b][br][/br]
 [/list][/divbox2][br][/br]
 [/divbox2]`
 
