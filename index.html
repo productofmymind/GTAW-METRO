@@ -112,6 +112,8 @@
                             <label>Above & Beyond</label>
                         </div>
                     </div>
+                    <button id="saveButton" class="ui primary button">Save Choices</button>
+
                 </div>
             </div>
             <div class="ui segment">
@@ -1962,6 +1964,70 @@
         </div>
         </div>
     </div>
+    <script>
+        // Function to save choices to local storage
+        function saveChoices(personName) {
+            const patrols = document.querySelector(`input[name="Patrols${personName}"]:checked`).value;
+            const deployments = document.querySelector(`input[name="Deployments${personName}"]:checked`).value;
+            const trainings = document.querySelector(`input[name="Trainings${personName}"]:checked`).value;
+
+            const choices = {
+                Patrols: patrols,
+                Deployments: deployments,
+                Trainings: trainings,
+            };
+
+            // Store the choices in local storage
+            localStorage.setItem(`choices-${personName}`, JSON.stringify(choices));
+        }
+
+        // Function to load choices from local storage
+        function loadChoices(personName) {
+            const savedChoices = localStorage.getItem(`choices-${personName}`);
+            if (savedChoices) {
+                const choices = JSON.parse(savedChoices);
+                document.querySelector(`input[name="Patrols${personName}"][value="${choices.Patrols}"]`).checked = true;
+                document.querySelector(`input[name="Deployments${personName}"][value="${choices.Deployments}"]`).checked = true;
+                document.querySelector(`input[name="Trainings${personName}"][value="${choices.Trainings}"]`).checked = true;
+            }
+        }
+
+        // Define the list of people
+        const people = [
+            "Courtland",
+            "Groomay",
+            "Evans",
+            "Sims",
+            "Estrada",
+            "Sanders",
+            "Galiani",
+            "Mirste",
+            "Campbell",
+            "Sherman",
+            "Martucci",
+            "Renaud",
+            "Ruano",
+            "Zanotti",
+            "Atwood",
+            "Conteliano",
+            "Mexueiro",
+            "Maldonado",
+            "Mayhew"
+        ];
+
+        // Load choices for each person when the page loads
+        for (const person of people) {
+            loadChoices(person);
+        }
+
+        // Add a click event listener to the Save button for each person
+        document.getElementById('saveButton').addEventListener('click', function () {
+            for (const person of people) {
+                saveChoices(person);
+            }
+        });
+    </script>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js" integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="js/app.js"></script>
