@@ -1,172 +1,1973 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="css/index.css">
-  <title>FTO Report Formatter</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/index.css">
+    <title>FTO Report Formatter</title>
 </head>
 <body>
-  <div class="ui container">
-    <div class="ui form" id="sections-container">
-      <!-- JavaScript to add sections for each person -->
-      <script>
-        // Array of people's names
-        const people = [
-                    "Samuel Courtland",
-                    "Marisa Groomay",
-                    "Robert Evans",
-                    "Jayson Sims",
-                    "Lucas Estrada",
-                    "Cole Sanders",
-                    "Anastasia Galiani",
-                    "Alexandra Mirste",
-                    "Johnathan Campbell",
-                    "Lauren Sherman",
-                    "Lily Monroe",
-                    "Dominic Martucci",
-                    "Marlene Renaud",
-                    "Miguel Ruano",
-                    "Marisa Zanotti",
-                    "Michael Atwood",
-                    "Emilia Conteliano",
-                    "Maquez Mexueiro",
-                    "Tobias Maldonado",
-                    "Jackson Mayhew"
-                ];
-
-        // Function to create a section for a person with Patrols and Deployments
-        function createPersonSection(person) {
-          const section = document.createElement("div");
-          section.classList.add("ui", "segment");
-
-          section.innerHTML = `
-            <h2>${person}</h2>
-            <div class="inline fields">
-              <label for="${person.toLowerCase()}-patrols" class="header">Patrols</label>
-              <div class="ui radio checkbox">
-                <input type="radio" id="${person.toLowerCase()}-patrols-not-assessable" name="${person.toLowerCase()}-patrols" checked="" value="BS" tabindex="0" class="hidden">
-                <label for="${person.toLowerCase()}-patrols-not-assessable">Not Assessable</label>
-              </div>
-              <div class="ui radio checkbox">
-                <input type="radio" id="${person.toLowerCase()}-patrols-poor" name="${person.toLowerCase()}-patrols" value="S" tabindex="0" class="hidden">
-                <label for="${person.toLowerCase()}-patrols-poor">Poor</label>
-              </div>
-              <div class="ui radio checkbox">
-                <input type="radio" id="${person.toLowerCase()}-patrols-acceptable" name="${person.toLowerCase()}-patrols" value="AS" tabindex="0" class="hidden">
-                <label for="${person.toLowerCase()}-patrols-acceptable">Acceptable</label>
-              </div>
-              <div class="ui radio checkbox">
-                <input type="radio" id="${person.toLowerCase()}-patrols-good" name="${person.toLowerCase()}-patrols" value="U" tabindex="0" class="hidden">
-                <label for="${person.toLowerCase()}-patrols-good">Good</label>
-              </div>
-              <div class="ui radio checkbox">
-                <input type="radio" id="${person.toLowerCase()}-patrols-aboveandbeyond" name="${person.toLowerCase()}-patrols" value="NO" tabindex="0" class="hidden">
-                <label for="${person.toLowerCase()}-patrols-aboveandbeyond">Above & Beyond</label>
-              </div>
+    <div class="ui container">
+        <div class="ui form">
+            <div class="ui segment">
+                <h2>hello chat</h2>
+                
             </div>
-            <div class="inline fields">
-              <label for="${person.toLowerCase()}-deployments" class="header">Deployments</label>
-              <div class="ui radio checkbox">
-                <input type="radio" id="${person.toLowerCase()}-deployments-not-assessable" name="${person.toLowerCase()}-deployments" checked="" value="BS" tabindex="0" class="hidden">
-                <label for="${person.toLowerCase()}-deployments-not-assessable">Not Assessable</label>
-              </div>
-              <div class="ui radio checkbox">
-                <input type="radio" id="${person.toLowerCase()}-deployments-poor" name="${person.toLowerCase()}-deployments" value="S" tabindex="0" class="hidden">
-                <label for="${person.toLowerCase()}-deployments-poor">Poor</label>
-              </div>
-              <div class="ui radio checkbox">
-                <input type="radio" id="${person.toLowerCase()}-deployments-acceptable" name="${person.toLowerCase()}-deployments" value="AS" tabindex="0" class="hidden">
-                <label for="${person.toLowerCase()}-deployments-acceptable">Acceptable</label>
-              </div>
-              <div class="ui radio checkbox">
-                <input type="radio" id="${person.toLowerCase()}-deployments-good" name="${person.toLowerCase()}-deployments" value="U" tabindex="0" class="hidden">
-                <label for="${person.toLowerCase()}-deployments-good">Good</label>
-              </div>
-              <div class="ui radio checkbox">
-                <input type="radio" id="${person.toLowerCase()}-deployments-aboveandbeyond" name="${person.toLowerCase()}-deployments" value="NO" tabindex="0" class="hidden">
-                <label for="${person.toLowerCase()}-deployments-aboveandbeyond">Above & Beyond</label>
-              </div>
+            <div class="ui segment">
+                <h2>Samuel Courtland</h2>
+                <div class="inline fields">
+                    <label for="field1" class="header">Patrols:</label>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsCourtland" checked="" value="[b]NOT ASSESSABLE[/b]" tabindex="0" class="hidden">
+                            <label>Not Assessable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsCourtland"  value="[b][color=#FF0000]POOR[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Poor</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsCourtland"  value="[b][color=#FFBF40]ACCEPTABLE[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Acceptable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsCourtland"  value="[b][color=#00BF00]GOOD[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Good</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsCourtland"  value="[b][color=#0000FF]ABOVE & BEYOND[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Above & Beyond</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="inline fields">
+                    <label for="field2" class="header">Deployments:</label>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsCourtland" checked="" value="[b]NOT ASSESSABLE[/b]" tabindex="0" class="hidden">
+                            <label>Not Assessable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsCourtland"  value="[b][color=#FF0000]POOR[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Poor</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsCourtland"  value="[b][color=#FFBF40]ACCEPTABLE[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Acceptable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsCourtland"  value="[b][color=#00BF00]GOOD[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Good</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsCourtland"  value="[b][color=#0000FF]ABOVE & BEYOND[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Above & Beyond</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="inline fields">
+                    <label for="field3" class="header">Trainings:</label>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsCourtland" checked="" value="[b]NOT ASSESSABLE[/b]" tabindex="0" class="hidden">
+                            <label>Not Assessable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsCourtland"  value="[b][color=#FF0000]POOR[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Poor</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsCourtland"  value="[b][color=#FFBF40]ACCEPTABLE[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Acceptable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsCourtland"  value="[b][color=#00BF00]GOOD[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Good</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsCourtland"  value="[b][color=#0000FF]ABOVE & BEYOND[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Above & Beyond</label>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="inline fields">
-              <label for="${person.toLowerCase()}-trainings" class="header">Trainings</label>
-              <div class="ui radio checkbox">
-                <input type="radio" id="${person.toLowerCase()}-trainings-not-assessable" name="${person.toLowerCase()}-trainings" checked="" value="BS" tabindex="0" class="hidden">
-                <label for="${person.toLowerCase()}-trainings-not-assessable">Not Assessable</label>
-              </div>
-              <div class="ui radio checkbox">
-                <input type="radio" id="${person.toLowerCase()}-trainings-poor" name="${person.toLowerCase()}-trainings" value="S" tabindex="0" class="hidden">
-                <label for="${person.toLowerCase()}-trainings-poor">Poor</label>
-              </div>
-              <div class="ui radio checkbox">
-                <input type="radio" id="${person.toLowerCase()}-trainings-acceptable" name="${person.toLowerCase()}-trainings" value="AS" tabindex="0" class="hidden">
-                <label for="${person.toLowerCase()}-trainings-acceptable">Acceptable</label>
-              </div>
-              <div class="ui radio checkbox">
-                <input type="radio" id="${person.toLowerCase()}-trainings-good" name="${person.toLowerCase()}-trainings" value="U" tabindex="0" class="hidden">
-                <label for="${person.toLowerCase()}-trainings-good">Good</label>
-              </div>
-              <div class="ui radio checkbox">
-                <input type="radio" id="${person.toLowerCase()}-trainings-aboveandbeyond" name="${person.toLowerCase()}-trainings" value="NO" tabindex="0" class="hidden">
-                <label for="${person.toLowerCase()}-trainings-aboveandbeyond">Above & Beyond</label>
-              </div>
+            <div class="ui segment">
+                <h2>Marisa Groomay</h2>
+                <div class="inline fields">
+                    <label for="field1" class="header">Patrols:</label>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsGroomay" checked="" value="[b]NOT ASSESSABLE[/b]" tabindex="0" class="hidden">
+                            <label>Not Assessable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsGroomay"  value="[b][color=#FF0000]POOR[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Poor</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsGroomay"  value="[b][color=#FFBF40]ACCEPTABLE[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Acceptable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsGroomay"  value="[b][color=#00BF00]GOOD[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Good</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsGroomay"  value="[b][color=#0000FF]ABOVE & BEYOND[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Above & Beyond</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="inline fields">
+                    <label for="field2" class="header">Deployments:</label>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsGroomay" checked="" value="[b]NOT ASSESSABLE[/b]" tabindex="0" class="hidden">
+                            <label>Not Assessable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsGroomay"  value="[b][color=#FF0000]POOR[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Poor</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsGroomay"  value="[b][color=#FFBF40]ACCEPTABLE[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Acceptable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsGroomay"  value="[b][color=#00BF00]GOOD[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Good</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsGroomay"  value="[b][color=#0000FF]ABOVE & BEYOND[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Above & Beyond</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="inline fields">
+                    <label for="field3" class="header">Trainings:</label>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsGroomay" checked="" value="[b]NOT ASSESSABLE[/b]" tabindex="0" class="hidden">
+                            <label>Not Assessable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsGroomay"  value="[b][color=#FF0000]POOR[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Poor</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsGroomay"  value="[b][color=#FFBF40]ACCEPTABLE[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Acceptable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsGroomay"  value="[b][color=#00BF00]GOOD[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Good</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsGroomay"  value="[b][color=#0000FF]ABOVE & BEYOND[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Above & Beyond</label>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <div class="ui segment">
+                <h2>Robert Evans</h2>
+                <div class="inline fields">
+                    <label for="field1" class="header">Patrols:</label>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsEvans" checked="" value="[b]NOT ASSESSABLE[/b]" tabindex="0" class="hidden">
+                            <label>Not Assessable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsEvans"  value="[b][color=#FF0000]POOR[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Poor</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsEvans"  value="[b][color=#FFBF40]ACCEPTABLE[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Acceptable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsEvans"  value="[b][color=#00BF00]GOOD[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Good</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsEvans"  value="[b][color=#0000FF]ABOVE & BEYOND[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Above & Beyond</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="inline fields">
+                    <label for="field2" class="header">Deployments:</label>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsEvans" checked="" value="[b]NOT ASSESSABLE[/b]" tabindex="0" class="hidden">
+                            <label>Not Assessable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsEvans"  value="[b][color=#FF0000]POOR[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Poor</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsEvans"  value="[b][color=#FFBF40]ACCEPTABLE[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Acceptable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsEvans"  value="[b][color=#00BF00]GOOD[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Good</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsEvans"  value="[b][color=#0000FF]ABOVE & BEYOND[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Above & Beyond</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="inline fields">
+                    <label for="field3" class="header">Trainings:</label>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsEvans" checked="" value="[b]NOT ASSESSABLE[/b]" tabindex="0" class="hidden">
+                            <label>Not Assessable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsEvans"  value="[b][color=#FF0000]POOR[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Poor</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsEvans"  value="[b][color=#FFBF40]ACCEPTABLE[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Acceptable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsEvans"  value="[b][color=#00BF00]GOOD[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Good</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsEvans"  value="[b][color=#0000FF]ABOVE & BEYOND[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Above & Beyond</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui segment">
+                <h2>Jayson Sims</h2>
+                <div class="inline fields">
+                    <label for="field1" class="header">Patrols:</label>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsSims" checked="" value="[b]NOT ASSESSABLE[/b]" tabindex="0" class="hidden">
+                            <label>Not Assessable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsSims"  value="[b][color=#FF0000]POOR[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Poor</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsSims"  value="[b][color=#FFBF40]ACCEPTABLE[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Acceptable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsSims"  value="[b][color=#00BF00]GOOD[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Good</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsSims"  value="[b][color=#0000FF]ABOVE & BEYOND[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Above & Beyond</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="inline fields">
+                    <label for="field2" class="header">Deployments:</label>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsSims" checked="" value="[b]NOT ASSESSABLE[/b]" tabindex="0" class="hidden">
+                            <label>Not Assessable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsSims"  value="[b][color=#FF0000]POOR[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Poor</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsSims"  value="[b][color=#FFBF40]ACCEPTABLE[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Acceptable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsSims"  value="[b][color=#00BF00]GOOD[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Good</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsSims"  value="[b][color=#0000FF]ABOVE & BEYOND[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Above & Beyond</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="inline fields">
+                    <label for="field3" class="header">Trainings:</label>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsSims" checked="" value="[b]NOT ASSESSABLE[/b]" tabindex="0" class="hidden">
+                            <label>Not Assessable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsSims"  value="[b][color=#FF0000]POOR[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Poor</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsSims"  value="[b][color=#FFBF40]ACCEPTABLE[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Acceptable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsSims"  value="[b][color=#00BF00]GOOD[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Good</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsSims"  value="[b][color=#0000FF]ABOVE & BEYOND[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Above & Beyond</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui segment">
+                <h2>Lucas Estrada</h2>
+                <div class="inline fields">
+                    <label for="field1" class="header">Patrols:</label>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsEstrada" checked="" value="[b]NOT ASSESSABLE[/b]" tabindex="0" class="hidden">
+                            <label>Not Assessable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsEstrada"  value="[b][color=#FF0000]POOR[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Poor</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsEstrada"  value="[b][color=#FFBF40]ACCEPTABLE[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Acceptable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsEstrada"  value="[b][color=#00BF00]GOOD[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Good</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsEstrada"  value="[b][color=#0000FF]ABOVE & BEYOND[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Above & Beyond</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="inline fields">
+                    <label for="field2" class="header">Deployments:</label>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsEstrada" checked="" value="[b]NOT ASSESSABLE[/b]" tabindex="0" class="hidden">
+                            <label>Not Assessable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsEstrada"  value="[b][color=#FF0000]POOR[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Poor</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsEstrada"  value="[b][color=#FFBF40]ACCEPTABLE[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Acceptable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsEstrada"  value="[b][color=#00BF00]GOOD[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Good</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsEstrada"  value="[b][color=#0000FF]ABOVE & BEYOND[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Above & Beyond</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="inline fields">
+                    <label for="field3" class="header">Trainings:</label>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsEstrada" checked="" value="[b]NOT ASSESSABLE[/b]" tabindex="0" class="hidden">
+                            <label>Not Assessable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsEstrada"  value="[b][color=#FF0000]POOR[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Poor</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsEstrada"  value="[b][color=#FFBF40]ACCEPTABLE[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Acceptable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsEstrada"  value="[b][color=#00BF00]GOOD[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Good</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsEstrada"  value="[b][color=#0000FF]ABOVE & BEYOND[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Above & Beyond</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui segment">
+                <h2>Cole Sanders</h2>
+                <div class="inline fields">
+                    <label for="field1" class="header">Patrols:</label>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsSanders" checked="" value="[b]NOT ASSESSABLE[/b]" tabindex="0" class="hidden">
+                            <label>Not Assessable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsSanders"  value="[b][color=#FF0000]POOR[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Poor</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsSanders"  value="[b][color=#FFBF40]ACCEPTABLE[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Acceptable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsSanders"  value="[b][color=#00BF00]GOOD[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Good</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsSanders"  value="[b][color=#0000FF]ABOVE & BEYOND[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Above & Beyond</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="inline fields">
+                    <label for="field2" class="header">Deployments:</label>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsSanders" checked="" value="[b]NOT ASSESSABLE[/b]" tabindex="0" class="hidden">
+                            <label>Not Assessable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsSanders"  value="[b][color=#FF0000]POOR[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Poor</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsSanders"  value="[b][color=#FFBF40]ACCEPTABLE[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Acceptable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsSanders"  value="[b][color=#00BF00]GOOD[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Good</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsSanders"  value="[b][color=#0000FF]ABOVE & BEYOND[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Above & Beyond</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="inline fields">
+                    <label for="field3" class="header">Trainings:</label>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsSanders" checked="" value="[b]NOT ASSESSABLE[/b]" tabindex="0" class="hidden">
+                            <label>Not Assessable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsSanders"  value="[b][color=#FF0000]POOR[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Poor</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsSanders"  value="[b][color=#FFBF40]ACCEPTABLE[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Acceptable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsSanders"  value="[b][color=#00BF00]GOOD[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Good</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsSanders"  value="[b][color=#0000FF]ABOVE & BEYOND[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Above & Beyond</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui segment">
+                <h2>Anastasia Galiani</h2>
+                <div class="inline fields">
+                    <label for="field1" class="header">Patrols:</label>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsGailani" checked="" value="[b]NOT ASSESSABLE[/b]" tabindex="0" class="hidden">
+                            <label>Not Assessable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsGailani"  value="[b][color=#FF0000]POOR[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Poor</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsGailani"  value="[b][color=#FFBF40]ACCEPTABLE[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Acceptable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsGailani"  value="[b][color=#00BF00]GOOD[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Good</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsGailani"  value="[b][color=#0000FF]ABOVE & BEYOND[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Above & Beyond</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="inline fields">
+                    <label for="field2" class="header">Deployments:</label>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsGailani" checked="" value="[b]NOT ASSESSABLE[/b]" tabindex="0" class="hidden">
+                            <label>Not Assessable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsGailani"  value="[b][color=#FF0000]POOR[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Poor</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsGailani"  value="[b][color=#FFBF40]ACCEPTABLE[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Acceptable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsGailani"  value="[b][color=#00BF00]GOOD[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Good</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsGailani"  value="[b][color=#0000FF]ABOVE & BEYOND[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Above & Beyond</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="inline fields">
+                    <label for="field3" class="header">Trainings:</label>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsGailani" checked="" value="[b]NOT ASSESSABLE[/b]" tabindex="0" class="hidden">
+                            <label>Not Assessable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsGailani"  value="[b][color=#FF0000]POOR[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Poor</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsGailani"  value="[b][color=#FFBF40]ACCEPTABLE[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Acceptable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsGailani"  value="[b][color=#00BF00]GOOD[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Good</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsGailani"  value="[b][color=#0000FF]ABOVE & BEYOND[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Above & Beyond</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui segment">
+                <h2>Alexandra Mirste</h2>
+                <div class="inline fields">
+                    <label for="field1" class="header">Patrols:</label>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsMirste" checked="" value="[b]NOT ASSESSABLE[/b]" tabindex="0" class="hidden">
+                            <label>Not Assessable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsMirste"  value="[b][color=#FF0000]POOR[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Poor</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsMirste"  value="[b][color=#FFBF40]ACCEPTABLE[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Acceptable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsMirste"  value="[b][color=#00BF00]GOOD[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Good</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsMirste"  value="[b][color=#0000FF]ABOVE & BEYOND[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Above & Beyond</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="inline fields">
+                    <label for="field2" class="header">Deployments:</label>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsMirste" checked="" value="[b]NOT ASSESSABLE[/b]" tabindex="0" class="hidden">
+                            <label>Not Assessable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsMirste"  value="[b][color=#FF0000]POOR[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Poor</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsMirste"  value="[b][color=#FFBF40]ACCEPTABLE[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Acceptable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsMirste"  value="[b][color=#00BF00]GOOD[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Good</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsMirste"  value="[b][color=#0000FF]ABOVE & BEYOND[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Above & Beyond</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="inline fields">
+                    <label for="field3" class="header">Trainings:</label>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsMirste" checked="" value="[b]NOT ASSESSABLE[/b]" tabindex="0" class="hidden">
+                            <label>Not Assessable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsMirste"  value="[b][color=#FF0000]POOR[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Poor</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsMirste"  value="[b][color=#FFBF40]ACCEPTABLE[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Acceptable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsMirste"  value="[b][color=#00BF00]GOOD[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Good</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsMirste"  value="[b][color=#0000FF]ABOVE & BEYOND[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Above & Beyond</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui segment">
+                <h2>Johnathan Campbell</h2>
+                <div class="inline fields">
+                    <label for="field1" class="header">Patrols:</label>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsCampbell" checked="" value="[b]NOT ASSESSABLE[/b]" tabindex="0" class="hidden">
+                            <label>Not Assessable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsCampbell"  value="[b][color=#FF0000]POOR[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Poor</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsCampbell"  value="[b][color=#FFBF40]ACCEPTABLE[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Acceptable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsCampbell"  value="[b][color=#00BF00]GOOD[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Good</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsCampbell"  value="[b][color=#0000FF]ABOVE & BEYOND[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Above & Beyond</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="inline fields">
+                    <label for="field2" class="header">Deployments:</label>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsCampbell" checked="" value="[b]NOT ASSESSABLE[/b]" tabindex="0" class="hidden">
+                            <label>Not Assessable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsCampbell"  value="[b][color=#FF0000]POOR[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Poor</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsCampbell"  value="[b][color=#FFBF40]ACCEPTABLE[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Acceptable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsCampbell"  value="[b][color=#00BF00]GOOD[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Good</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsCampbell"  value="[b][color=#0000FF]ABOVE & BEYOND[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Above & Beyond</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="inline fields">
+                    <label for="field3" class="header">Trainings:</label>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsCampbell" checked="" value="[b]NOT ASSESSABLE[/b]" tabindex="0" class="hidden">
+                            <label>Not Assessable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsCampbell"  value="[b][color=#FF0000]POOR[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Poor</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsCampbell"  value="[b][color=#FFBF40]ACCEPTABLE[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Acceptable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsCampbell"  value="[b][color=#00BF00]GOOD[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Good</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsCampbell"  value="[b][color=#0000FF]ABOVE & BEYOND[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Above & Beyond</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui segment">
+                <h2>Lauren Sherman</h2>
+                <div class="inline fields">
+                    <label for="field1" class="header">Patrols:</label>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsSherman" checked="" value="[b]NOT ASSESSABLE[/b]" tabindex="0" class="hidden">
+                            <label>Not Assessable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsSherman"  value="[b][color=#FF0000]POOR[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Poor</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsSherman"  value="[b][color=#FFBF40]ACCEPTABLE[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Acceptable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsSherman"  value="[b][color=#00BF00]GOOD[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Good</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsSherman"  value="[b][color=#0000FF]ABOVE & BEYOND[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Above & Beyond</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="inline fields">
+                    <label for="field2" class="header">Deployments:</label>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsSherman" checked="" value="[b]NOT ASSESSABLE[/b]" tabindex="0" class="hidden">
+                            <label>Not Assessable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsSherman"  value="[b][color=#FF0000]POOR[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Poor</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsSherman"  value="[b][color=#FFBF40]ACCEPTABLE[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Acceptable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsSherman"  value="[b][color=#00BF00]GOOD[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Good</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsSherman"  value="[b][color=#0000FF]ABOVE & BEYOND[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Above & Beyond</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="inline fields">
+                    <label for="field3" class="header">Trainings:</label>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsSherman" checked="" value="[b]NOT ASSESSABLE[/b]" tabindex="0" class="hidden">
+                            <label>Not Assessable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsSherman"  value="[b][color=#FF0000]POOR[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Poor</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsSherman"  value="[b][color=#FFBF40]ACCEPTABLE[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Acceptable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsSherman"  value="[b][color=#00BF00]GOOD[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Good</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsSherman"  value="[b][color=#0000FF]ABOVE & BEYOND[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Above & Beyond</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui segment">
+                <h2>Dominic Martucci</h2>
+                <div class="inline fields">
+                    <label for="field1" class="header">Patrols:</label>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsMartucci" checked="" value="[b]NOT ASSESSABLE[/b]" tabindex="0" class="hidden">
+                            <label>Not Assessable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsMartucci"  value="[b][color=#FF0000]POOR[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Poor</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsMartucci"  value="[b][color=#FFBF40]ACCEPTABLE[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Acceptable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsMartucci"  value="[b][color=#00BF00]GOOD[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Good</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsMartucci"  value="[b][color=#0000FF]ABOVE & BEYOND[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Above & Beyond</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="inline fields">
+                    <label for="field2" class="header">Deployments:</label>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsMartucci" checked="" value="[b]NOT ASSESSABLE[/b]" tabindex="0" class="hidden">
+                            <label>Not Assessable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsMartucci"  value="[b][color=#FF0000]POOR[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Poor</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsMartucci"  value="[b][color=#FFBF40]ACCEPTABLE[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Acceptable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsMartucci"  value="[b][color=#00BF00]GOOD[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Good</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsMartucci"  value="[b][color=#0000FF]ABOVE & BEYOND[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Above & Beyond</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="inline fields">
+                    <label for="field3" class="header">Trainings:</label>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsMartucci" checked="" value="[b]NOT ASSESSABLE[/b]" tabindex="0" class="hidden">
+                            <label>Not Assessable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsMartucci"  value="[b][color=#FF0000]POOR[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Poor</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsMartucci"  value="[b][color=#FFBF40]ACCEPTABLE[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Acceptable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsMartucci"  value="[b][color=#00BF00]GOOD[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Good</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsMartucci"  value="[b][color=#0000FF]ABOVE & BEYOND[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Above & Beyond</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui segment">
+                <h2>Marlene Renaud</h2>
+                <div class="inline fields">
+                    <label for="field1" class="header">Patrols:</label>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsRenaud" checked="" value="[b]NOT ASSESSABLE[/b]" tabindex="0" class="hidden">
+                            <label>Not Assessable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsRenaud"  value="[b][color=#FF0000]POOR[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Poor</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsRenaud"  value="[b][color=#FFBF40]ACCEPTABLE[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Acceptable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsRenaud"  value="[b][color=#00BF00]GOOD[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Good</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsRenaud"  value="[b][color=#0000FF]ABOVE & BEYOND[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Above & Beyond</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="inline fields">
+                    <label for="field2" class="header">Deployments:</label>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsRenaud" checked="" value="[b]NOT ASSESSABLE[/b]" tabindex="0" class="hidden">
+                            <label>Not Assessable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsRenaud"  value="[b][color=#FF0000]POOR[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Poor</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsRenaud"  value="[b][color=#FFBF40]ACCEPTABLE[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Acceptable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsRenaud"  value="[b][color=#00BF00]GOOD[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Good</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsRenaud"  value="[b][color=#0000FF]ABOVE & BEYOND[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Above & Beyond</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="inline fields">
+                    <label for="field3" class="header">Trainings:</label>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsRenaud" checked="" value="[b]NOT ASSESSABLE[/b]" tabindex="0" class="hidden">
+                            <label>Not Assessable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsRenaud"  value="[b][color=#FF0000]POOR[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Poor</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsRenaud"  value="[b][color=#FFBF40]ACCEPTABLE[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Acceptable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsRenaud"  value="[b][color=#00BF00]GOOD[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Good</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsRenaud"  value="[b][color=#0000FF]ABOVE & BEYOND[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Above & Beyond</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui segment">
+                <h2>Miguel Ruano</h2>
+                <div class="inline fields">
+                    <label for="field1" class="header">Patrols:</label>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsRuano" checked="" value="[b]NOT ASSESSABLE[/b]" tabindex="0" class="hidden">
+                            <label>Not Assessable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsRuano"  value="[b][color=#FF0000]POOR[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Poor</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsRuano"  value="[b][color=#FFBF40]ACCEPTABLE[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Acceptable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsRuano"  value="[b][color=#00BF00]GOOD[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Good</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsRuano"  value="[b][color=#0000FF]ABOVE & BEYOND[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Above & Beyond</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="inline fields">
+                    <label for="field2" class="header">Deployments:</label>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsRuano" checked="" value="[b]NOT ASSESSABLE[/b]" tabindex="0" class="hidden">
+                            <label>Not Assessable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsRuano"  value="[b][color=#FF0000]POOR[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Poor</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsRuano"  value="[b][color=#FFBF40]ACCEPTABLE[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Acceptable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsRuano"  value="[b][color=#00BF00]GOOD[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Good</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsRuano"  value="[b][color=#0000FF]ABOVE & BEYOND[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Above & Beyond</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="inline fields">
+                    <label for="field3" class="header">Trainings:</label>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsRuano" checked="" value="[b]NOT ASSESSABLE[/b]" tabindex="0" class="hidden">
+                            <label>Not Assessable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsRuano"  value="[b][color=#FF0000]POOR[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Poor</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsRuano"  value="[b][color=#FFBF40]ACCEPTABLE[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Acceptable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsRuano"  value="[b][color=#00BF00]GOOD[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Good</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsRuano"  value="[b][color=#0000FF]ABOVE & BEYOND[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Above & Beyond</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui segment">
+                <h2>Marisa Zanotti</h2>
+                <div class="inline fields">
+                    <label for="field1" class="header">Patrols:</label>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsZanotii" checked="" value="[b]NOT ASSESSABLE[/b]" tabindex="0" class="hidden">
+                            <label>Not Assessable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsZanotii"  value="[b][color=#FF0000]POOR[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Poor</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsZanotii"  value="[b][color=#FFBF40]ACCEPTABLE[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Acceptable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsZanotii"  value="[b][color=#00BF00]GOOD[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Good</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsZanotii"  value="[b][color=#0000FF]ABOVE & BEYOND[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Above & Beyond</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="inline fields">
+                    <label for="field2" class="header">Deployments:</label>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsZanotti" checked="" value="[b]NOT ASSESSABLE[/b]" tabindex="0" class="hidden">
+                            <label>Not Assessable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsZanotti"  value="[b][color=#FF0000]POOR[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Poor</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsZanotti"  value="[b][color=#FFBF40]ACCEPTABLE[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Acceptable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsZanotti"  value="[b][color=#00BF00]GOOD[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Good</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsZanotti"  value="[b][color=#0000FF]ABOVE & BEYOND[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Above & Beyond</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="inline fields">
+                    <label for="field3" class="header">Trainings:</label>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsZanotti" checked="" value="[b]NOT ASSESSABLE[/b]" tabindex="0" class="hidden">
+                            <label>Not Assessable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsZanotti"  value="[b][color=#FF0000]POOR[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Poor</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsZanotti"  value="[b][color=#FFBF40]ACCEPTABLE[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Acceptable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsZanotti"  value="[b][color=#00BF00]GOOD[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Good</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsZanotti"  value="[b][color=#0000FF]ABOVE & BEYOND[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Above & Beyond</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui segment">
+                <h2>Michael Atwood</h2>
+                <div class="inline fields">
+                    <label for="field1" class="header">Patrols:</label>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsAtwood" checked="" value="[b]NOT ASSESSABLE[/b]" tabindex="0" class="hidden">
+                            <label>Not Assessable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsAtwood"  value="[b][color=#FF0000]POOR[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Poor</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsAtwood"  value="[b][color=#FFBF40]ACCEPTABLE[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Acceptable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsAtwood"  value="[b][color=#00BF00]GOOD[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Good</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsAtwood"  value="[b][color=#0000FF]ABOVE & BEYOND[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Above & Beyond</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="inline fields">
+                    <label for="field2" class="header">Deployments:</label>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsAtwood" checked="" value="[b]NOT ASSESSABLE[/b]" tabindex="0" class="hidden">
+                            <label>Not Assessable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsAtwood"  value="[b][color=#FF0000]POOR[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Poor</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsAtwood"  value="[b][color=#FFBF40]ACCEPTABLE[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Acceptable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsAtwood"  value="[b][color=#00BF00]GOOD[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Good</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsAtwood"  value="[b][color=#0000FF]ABOVE & BEYOND[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Above & Beyond</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="inline fields">
+                    <label for="field3" class="header">Trainings:</label>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsAtwood" checked="" value="[b]NOT ASSESSABLE[/b]" tabindex="0" class="hidden">
+                            <label>Not Assessable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsAtwood"  value="[b][color=#FF0000]POOR[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Poor</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsAtwood"  value="[b][color=#FFBF40]ACCEPTABLE[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Acceptable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsAtwood"  value="[b][color=#00BF00]GOOD[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Good</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsAtwood"  value="[b][color=#0000FF]ABOVE & BEYOND[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Above & Beyond</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui segment">
+                <h2>Maquez Mexueiro</h2>
+                <div class="inline fields">
+                    <label for="field1" class="header">Patrols:</label>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsMexueiro" checked="" value="[b]NOT ASSESSABLE[/b]" tabindex="0" class="hidden">
+                            <label>Not Assessable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsMexueiro"  value="[b][color=#FF0000]POOR[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Poor</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsMexueiro"  value="[b][color=#FFBF40]ACCEPTABLE[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Acceptable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsMexueiro"  value="[b][color=#00BF00]GOOD[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Good</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsMexueiro"  value="[b][color=#0000FF]ABOVE & BEYOND[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Above & Beyond</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="inline fields">
+                    <label for="field2" class="header">Deployments:</label>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsMexueiro" checked="" value="[b]NOT ASSESSABLE[/b]" tabindex="0" class="hidden">
+                            <label>Not Assessable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsMexueiro"  value="[b][color=#FF0000]POOR[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Poor</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsMexueiro"  value="[b][color=#FFBF40]ACCEPTABLE[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Acceptable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsMexueiro"  value="[b][color=#00BF00]GOOD[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Good</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsMexueiro"  value="[b][color=#0000FF]ABOVE & BEYOND[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Above & Beyond</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="inline fields">
+                    <label for="field3" class="header">Trainings:</label>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsMexueiro" checked="" value="[b]NOT ASSESSABLE[/b]" tabindex="0" class="hidden">
+                            <label>Not Assessable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsMexueiro"  value="[b][color=#FF0000]POOR[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Poor</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsMexueiro"  value="[b][color=#FFBF40]ACCEPTABLE[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Acceptable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsMexueiro"  value="[b][color=#00BF00]GOOD[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Good</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsMexueiro"  value="[b][color=#0000FF]ABOVE & BEYOND[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Above & Beyond</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui segment">
+                <h2>Emilia Conteliano</h2>
+                <div class="inline fields">
+                    <label for="field1" class="header">Patrols:</label>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsConteliano" checked="" value="[b]NOT ASSESSABLE[/b]" tabindex="0" class="hidden">
+                            <label>Not Assessable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsConteliano"  value="[b][color=#FF0000]POOR[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Poor</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsConteliano"  value="[b][color=#FFBF40]ACCEPTABLE[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Acceptable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsConteliano"  value="[b][color=#00BF00]GOOD[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Good</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsConteliano"  value="[b][color=#0000FF]ABOVE & BEYOND[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Above & Beyond</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="inline fields">
+                    <label for="field2" class="header">Deployments:</label>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsConteliano" checked="" value="[b]NOT ASSESSABLE[/b]" tabindex="0" class="hidden">
+                            <label>Not Assessable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsConteliano"  value="[b][color=#FF0000]POOR[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Poor</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsConteliano"  value="[b][color=#FFBF40]ACCEPTABLE[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Acceptable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsConteliano"  value="[b][color=#00BF00]GOOD[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Good</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsConteliano"  value="[b][color=#0000FF]ABOVE & BEYOND[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Above & Beyond</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="inline fields">
+                    <label for="field3" class="header">Trainings:</label>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsConteliano" checked="" value="[b]NOT ASSESSABLE[/b]" tabindex="0" class="hidden">
+                            <label>Not Assessable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsConteliano"  value="[b][color=#FF0000]POOR[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Poor</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsConteliano"  value="[b][color=#FFBF40]ACCEPTABLE[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Acceptable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsConteliano"  value="[b][color=#00BF00]GOOD[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Good</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsConteliano"  value="[b][color=#0000FF]ABOVE & BEYOND[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Above & Beyond</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui segment">
+                <h2>Tobias Maldonado</h2>
+                <div class="inline fields">
+                    <label for="field1" class="header">Patrols:</label>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsMaldonado" checked="" value="[b]NOT ASSESSABLE[/b]" tabindex="0" class="hidden">
+                            <label>Not Assessable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsMaldonado"  value="[b][color=#FF0000]POOR[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Poor</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsMaldonado"  value="[b][color=#FFBF40]ACCEPTABLE[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Acceptable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsMaldonado"  value="[b][color=#00BF00]GOOD[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Good</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsMaldonado"  value="[b][color=#0000FF]ABOVE & BEYOND[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Above & Beyond</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="inline fields">
+                    <label for="field2" class="header">Deployments:</label>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsMaldonado" checked="" value="[b]NOT ASSESSABLE[/b]" tabindex="0" class="hidden">
+                            <label>Not Assessable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsMaldonado"  value="[b][color=#FF0000]POOR[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Poor</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsMaldonado"  value="[b][color=#FFBF40]ACCEPTABLE[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Acceptable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsMaldonado"  value="[b][color=#00BF00]GOOD[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Good</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsMaldonado"  value="[b][color=#0000FF]ABOVE & BEYOND[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Above & Beyond</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="inline fields">
+                    <label for="field3" class="header">Trainings:</label>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsMaldonado" checked="" value="[b]NOT ASSESSABLE[/b]" tabindex="0" class="hidden">
+                            <label>Not Assessable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsMaldonado"  value="[b][color=#FF0000]POOR[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Poor</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsMaldonado"  value="[b][color=#FFBF40]ACCEPTABLE[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Acceptable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsMaldonado"  value="[b][color=#00BF00]GOOD[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Good</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsMaldonado"  value="[b][color=#0000FF]ABOVE & BEYOND[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Above & Beyond</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui segment">
+                <h2>Jackson Mayhew </h2>
+                <div class="inline fields">
+                    <label for="field1" class="header">Patrols:</label>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsMayhew" checked="" value="[b]NOT ASSESSABLE[/b]" tabindex="0" class="hidden">
+                            <label>Not Assessable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsMayhew"  value="[b][color=#FF0000]POOR[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Poor</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsMayhew"  value="[b][color=#FFBF40]ACCEPTABLE[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Acceptable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsMayhew"  value="[b][color=#00BF00]GOOD[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Good</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="PatrolsMayhew"  value="[b][color=#0000FF]ABOVE & BEYOND[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Above & Beyond</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="inline fields">
+                    <label for="field2" class="header">Deployments:</label>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsMayhew" checked="" value="[b]NOT ASSESSABLE[/b]" tabindex="0" class="hidden">
+                            <label>Not Assessable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsMayhew"  value="[b][color=#FF0000]POOR[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Poor</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsMayhew"  value="[b][color=#FFBF40]ACCEPTABLE[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Acceptable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsMayhew"  value="[b][color=#00BF00]GOOD[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Good</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DeploymentsMayhew"  value="[b][color=#0000FF]ABOVE & BEYOND[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Above & Beyond</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="inline fields">
+                    <label for="field3" class="header">Trainings:</label>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsMayhew" checked="" value="[b]NOT ASSESSABLE[/b]" tabindex="0" class="hidden">
+                            <label>Not Assessable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsMayhew"  value="[b][color=#FF0000]POOR[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Poor</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsMayhew"  value="[b][color=#FFBF40]ACCEPTABLE[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Acceptable</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsMayhew"  value="[b][color=#00BF00]GOOD[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Good</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="TrainingsMayhew"  value="[b][color=#0000FF]ABOVE & BEYOND[/color][/b]"  tabindex="0" class="hidden">
+                            <label>Above & Beyond</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="ui segment">
+                <h2>Generator</h2>
             <div class="field">
-              <label for="${person.toLowerCase()}-comment" class="header">Comment</label>
-              <textarea id="${person.toLowerCase()}-comment" name="${person.toLowerCase()}-comment"></textarea>
+                <label>Output</label>
+                <textarea id="output" readonly></textarea>
             </div>
-          `;
-
-          return section;
-        }
-
-        // Loop to create sections for each person and append them to the container
-        const sectionsContainer = document.getElementById("sections-container");
-        for (const person of people) {
-          const personSection = createPersonSection(person);
-          sectionsContainer.appendChild(personSection);
-        }
-      </script>
-
-      <script>
-  // ...
-
-  // Function to create a section for a person with Patrols and Deployments
-  function createPersonSection(person) {
-    const section = document.createElement("div");
-    section.classList.add("ui", "segment");
-
-    section.innerHTML = `
-      <!-- ... (previous HTML) -->
-      <div class="field">
-        <label for="${person.toLowerCase()}-comment" class="header">Comment</label>
-        <textarea id="${person.toLowerCase()}-comment" name="${person.toLowerCase()}-comment"></textarea>
-      </div>
-    `;
-
-    // Add an event listener to save the comment when it changes
-    const commentTextarea = section.querySelector(`#${person.toLowerCase()}-comment`);
-    commentTextarea.addEventListener("input", function () {
-      localStorage.setItem(`${person.toLowerCase()}-comment`, this.value);
-    });
-
-    // Load saved comment, if available
-    const savedComment = localStorage.getItem(`${person.toLowerCase()}-comment`);
-    if (savedComment) {
-      commentTextarea.value = savedComment;
-    }
-
-    return section;
-  }
-
-  // ...
-</script>
-
+            <div class="ui secondary button" id="submit">Submit</div>
+            <div class="ui primary button" id="copy">Copy to Clipboard</div>
+        </div>
+        </div>
     </div>
-  </div>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js" integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmt"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js" integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/js/app.js"></script>
 </body>
 </html>

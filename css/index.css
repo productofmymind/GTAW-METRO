@@ -6,9 +6,3 @@
 .inline.fields .header {
   width: 400px !important;
 }
-
-  .inline.fields {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
