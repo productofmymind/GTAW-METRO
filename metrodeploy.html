@@ -6,10 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
-    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="css/metrodeploy.css">
     <title>Metro Deployment Report</title>
 </head>
 <body>    
+    <!-- Add this button at the bottom of your form -->
+    <button id="clearLocalStorageButton">Clear Format</button>
+    <button id="undoLocalStorageButton">Undo Clear</button>
+
     <div class="ui container">
         <div class="ui form">
             <div class="ui segment">
@@ -75,7 +79,26 @@
                                 <div class="menu">
                                     <div class="item" data-value="deploymentType1">Search Warrant Execution</div>
                                     <div class="item" data-value="deploymentType2">Arrest Warrant Execution</div>
-                                    <!-- Add more deployment types as needed -->
+                                    <div class="item" data-value="deploymentType3">Property Search</div>
+                                    <div class="item" data-value="deploymentType4">Vehicle Search</div>
+                                    <div class="item" data-value="deploymentType5">Area Search</div>
+                                    <div class="item" data-value="deploymentType6">Property Alarm</div>
+                                    <div class="item" data-value="deploymentType7">Civil Disturbance Deployment</div>
+                                    <div class="item" data-value="deploymentType8">Riot Control Deployment</div>
+                                    <div class="item" data-value="deploymentType9">Protest Demonstration</div>
+                                    <div class="item" data-value="deploymentType10">Event Deployment</div>
+                                    <div class="item" data-value="deploymentType11">Active Drive-by Deployment</div>
+                                    <div class="item" data-value="deploymentType12">Active Shooter Deployment</div>
+                                    <div class="item" data-value="deploymentType13">Barricaded Suspect</div>
+                                    <div class="item" data-value="deploymentType14">Protection Detail</div>
+                                    <div class="item" data-value="deploymentType15">Manhunt</div>
+                                    <div class="item" data-value="deploymentType16">Panic Alarm</div>
+                                    <div class="item" data-value="deploymentType17">Officer Needs Help Response</div>
+                                    <div class="item" data-value="deploymentType18">TAC-ALERT</div>
+                                    <div class="item" data-value="deploymentType19">Scene Security</div>
+                                    <div class="item" data-value="deploymentType20">Mobile Kidnapping</div>
+                                    <div class="item" data-value="deploymentType21">Hostage Situation</div>
+                                    <div class="item" data-value="deploymentType22">Covert Operation</div>
                                 </div>
                             </div>
                         </div>
@@ -196,7 +219,7 @@
             });
         });
 
-        // Add event handlers for adding input fields
+        // Add event listeners for adding input fields
         $(document).ready(function () {
             $("#addInput").click(addInputField("#InvolvedMembers", "Platoon + Full Name"));
             $("#addInput2").click(addInputField("#DeploymentEventsContainer", "Event nr. "));
@@ -237,24 +260,111 @@
             });
         });
 
-        // Retrieve data from localStorage when the page loads
-        document.addEventListener('DOMContentLoaded', function () {
-            const dataInput = document.getElementById('data');
-            const output = document.getElementById('output');
+        function saveDataToLocalStorage() {
+            // Get the values of input fields by their IDs
+            const data = {
+                DPLT: $('#DPLT').is(':checked'),
+                K9PLT: $('#K9PLT').is(':checked'),
+                HPLT: $('#HPLT').is(':checked'),
+                ICname: $('#ICname').val(),
+                CNname: $('#CNname').val(),
+                TCname: $('#TCname').val(),
+                MMMname: $('#MMMname').val(),
+                deploymentType: $('.ui.selection.search.dropdown input[name="deploymentType"]').val(),
+                datetimePicker: $('#datetimePicker').val(),
+                loc: $('#loc').val(),
+                startTime: $('#startTime').val(),
+                endTime: $('#endTime').val(),
+                event1: $('#event1').val(),
+                member1: $('#member1').val(),
+                suspect1: $('#suspect1').val(),
+                civilain1: $('#civilain1').val(),
+                signature: $('#signature').val()
+            };
 
-            // Load saved data from localStorage
-            const savedData = localStorage.getItem('savedData');
-            if (savedData) {
-                dataInput.value = savedData;
+            // Store the data in local storage
+            localStorage.setItem('metroDeploymentData', JSON.stringify(data));
+        }
+
+        // Function to load data from local storage
+        function loadDataFromLocalStorage() {
+            // Retrieve data from local storage
+            const data = localStorage.getItem('metroDeploymentData');
+            if (data) {
+                const parsedData = JSON.parse(data);
+
+                // Set the values of input fields from the retrieved data
+                $('#DPLT').prop('checked', parsedData.DPLT);
+                $('#K9PLT').prop('checked', parsedData.K9PLT);
+                $('#HPLT').prop('checked', parsedData.HPLT);
+                $('#ICname').val(parsedData.ICname);
+                $('#CNname').val(parsedData.CNname);
+                $('#TCname').val(parsedData.TCname);
+                $('#MMMname').val(parsedData.MMMname);
+                $('.ui.selection.search.dropdown input[name="deploymentType"]').val(parsedData.deploymentType);
+                $('#datetimePicker').val(parsedData.datetimePicker);
+                $('#loc').val(parsedData.loc);
+                $('#startTime').val(parsedData.startTime);
+                $('#endTime').val(parsedData.endTime);
+                $('#event1').val(parsedData.event1);
+                $('#member1').val(parsedData.member1);
+                $('#suspect1').val(parsedData.suspect1);
+                $('#civilain1').val(parsedData.civilain1);
+                $('#signature').val(parsedData.signature);
             }
+        }
 
-            // Automatically save data to localStorage when the input field changes
-            dataInput.addEventListener('input', function () {
-                const data = dataInput.value;
-                localStorage.setItem('savedData', data);
-                output.textContent = `Saved: ${data}`;
-            });
+        // Add event listeners to the input fields for automatic saving
+        const inputFields = document.querySelectorAll('input, textarea, select');
+        inputFields.forEach(function (inputField) {
+            inputField.addEventListener('change', saveDataToLocalStorage);
         });
+
+        // Load data from local storage when the page loads
+        loadDataFromLocalStorage();
+
+        // Function to clear all data from local storage with confirmation
+        function clearLocalStorage() {
+            const confirmation = confirm(
+                "Are you sure you want to clear all local data?\n\n" +
+                "This action will delete all stored data in your browser's local storage, including any unsaved work or settings. " +
+                "If you're not sure, it's recommended to cancel this action."
+            );
+
+            if (confirmation) {
+                // Backup the data
+                const dataToBackup = localStorage.getItem('metroDeploymentData');
+                localStorage.setItem('metroDeploymentDataBackup', dataToBackup);
+
+                // Clear the original data
+                localStorage.removeItem('metroDeploymentData');
+                alert("Local storage has been cleared.");
+            }
+        }
+
+        // Function to undo the clear action
+        function undoClearLocalStorage() {
+            const savedData = localStorage.getItem('metroDeploymentDataBackup');
+            if (savedData) {
+                localStorage.setItem('metroDeploymentData', savedData);
+                alert("Clear action has been undone. Your data is restored.");
+                // Reload the page to reflect the restored data
+                location.reload();
+            } else {
+                alert("There is no data to restore.");
+            }
+        }
+
+        // Add event listeners to the buttons
+        const clearButton = document.getElementById('clearLocalStorageButton');
+        if (clearButton) {
+            clearButton.addEventListener('click', clearLocalStorage);
+        }
+
+        const undoButton = document.getElementById('undoLocalStorageButton');
+        if (undoButton) {
+            undoButton.addEventListener('click', undoClearLocalStorage);
+        }
     </script>
 </body>
 </html>
