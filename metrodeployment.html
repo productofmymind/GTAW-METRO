@@ -202,16 +202,8 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
     <script src="js/metrodeploy.js"></script>
     <script>
-        // Initialize Clipboard.js
-        new ClipboardJS('#copy', {
-            text: function () {
-                return $('#output').val();
-            }
-        });
-
         // Initialize Semantic UI Dropdown
         $(document).ready(function () {
             $('.ui.search.dropdown').dropdown({
@@ -253,7 +245,7 @@
                 const minutes = currentDate.getUTCMinutes().toString().padStart(2, '0');
 
                 // Format the date and time in ISO format (YYYY-MM-DDTHH:MM)
-                const formattedDate = `${year}-${month}-${day}T${hours}:${minutes}`;
+                const formattedDate = `${year}-${month}-${day}${hours}:${minutes}`;
 
                 // Set the value of the datetimePicker input field to the current UTC date and time
                 datetimePicker.value = formattedDate;

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags and CSS links -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <link rel="stylesheet" href="css/patrolreport.css">
+    <title>Metro Deployment Report</title>
+</head>
+<body>    
+    <!-- Add this button at the bottom of your form -->
+    <button id="clearLocalStorageButton">Clear Format</button>
+    <button id="undoLocalStorageButton">Undo Clear</button>
+
+    <div class="ui container">
+        <div class="ui form">
+            <div class="ui segment">
+                <h2>Basic Information</h2>
+                <h4 class="ui dividing header">GENERAL INFORMATION</h4>
+                <!-- INVOLVED METROPOLITAN MEMBERS -->
+                <div class="field">
+                    <label>METROPOLITAN OFFICERS</label>
+                    <div id="MetroOfficers">
+                        <div class="field">
+                            <input type="text" placeholder="Platoon + Full Name" class="officer">
+                        </div>
+                    </div>
+                    <button type="button" id="addInput">+</button>
+                    <button type="button" id="removeInput">-</button>
+                </div>
+                <!-- DEPLOYMENT TYPE -->
+                <div class="field">
+                    <label>TYPE OF PATROL</label>
+                    <div class="three fields" id="PatrolType">
+                        <div class="field">
+                            <div class="ui selection search dropdown">
+                                <input type="hidden" name="deploymentType">
+                                <i class="dropdown icon"></i>
+                                <div class="default text">Select Deployment Type</div>
+                                <div class="menu">
+                                    <div class="item" data-value="PatrolType1">CRIME SUPPRESSION PATROL</div>
+                                    <div class="item" data-value="PatrolType2">GANG CRIME SUPPRESSION PATROL</div>
+                                    <div class="item" data-value="PatrolType3">COUNTER ASSAULT TEAM</div>
+                                    <div class="item" data-value="PatrolType4">CANINE PATROL</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                        <label>DATE</label>
+                        <div class="four fields">
+                            <div class="field">
+                                <input type="date" id="datePicker"> <!-- Change input type to "date" -->
+                            </div>
+                            <div class="field">
+                                <button id="todayButton">Today</button>
+                            </div>
+                            <div class="field">
+                                <button id="oneDayAgoButton">1 Day Ago</button>
+                            </div>
+                        </div>
+                    </div>
+                <div class="field">
+                    <label>LENGTH OF PATROL</label>
+                    <div class="three fields">
+                        <div class="field">
+                            <input type="text" placeholder="HH:MM" id="lop">
+                        </div>
+                    </div>
+                </div>
+                <h4 class="ui dividing header">PATROL SUMMARY</h4>
+                <div class="field">
+                    <div class="field">
+                        <label>BACK-UP REQUESTS ATTENDED</label>
+                        <div class="three fields">
+                            <div class="field">
+                                <input type="text" placeholder="Back-up Requests Attended" id="backupRequestsAttended">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label>SUBJECTS ARRESTED</label>
+                        <div class="three fields">
+                            <div class="field">
+                                <input type="text" placeholder="Subjects Arrested" id="subjectsArrested">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label>OTHER</label>
+                    <div class="three fields">
+                        <div class="field">
+                            <input type="text" placeholder="Other" id="other">
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                <!-- INVOLVED METROPOLITAN MEMBERS -->
+                <div class="field">
+                    <label>Linked Deployments</label>
+                    <div id="LinkedDeployments">
+                        <div class="field">
+                            <input type="text" placeholder="Linked Deployments" class="officer">
+                        </div>
+                    </div>
+                    <button type="button" id="addInput2">+</button>
+                    <button type="button" id="removeInput2">-</button>
+                </div>
+                <div class="ui segment">
+                    <h2>Generator</h2>
+                    <div class="field">
+                        <label>Output</label>
+                        <textarea id="output" readonly></textarea>
+                    </div>
+                    <div class="ui secondary button" id="submit">Submit</div>
+                    <div class="ui primary button" id="copy">Copy to Clipboard</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Your additional segments here -->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+    <script src="js/patrolreport.js"></script>
+    <script>
+// Initialize Semantic UI Dropdown
+$(document).ready(function () {
+    $('.ui.search.dropdown').dropdown({
+        fullTextSearch: true // Enable full-text search
+    });
+
+    // Add event listeners for adding and removing input fields
+    $("#addInput").click(addInputField("#MetroOfficers", "Platoon + Full Name"));
+    $("#addInput2").click(addInputField("#LinkedDeployments", "Linked Deployments"));
+    $("#removeInput").click(removeInputField("#MetroOfficers", "Platoon + Full Name"));
+    $("#removeInput2").click(removeInputField("#LinkedDeployments", "Linked Deployments"));
+
+    function addInputField(containerId, placeholderText) {
+        return function () {
+            const inputFieldsContainer = $(containerId);
+            const newEventNumber = inputFieldsContainer.children().length + 1; // Calculate the new event number
+            const newInputField = $("<div>").addClass("field").html('<input type="text" placeholder="' + placeholderText + newEventNumber + '">');
+            inputFieldsContainer.append(newInputField);
+        };
+    }
+
+    function removeInputField(containerId) {
+        return function () {
+            const inputFieldsContainer = $(containerId);
+            inputFieldsContainer.children().last().remove(); // Remove the last input field
+        }
+    }
+});
+
+
+// Initialize Date and Time Picker
+const datePicker = document.getElementById('datePicker');
+const todayButton = document.getElementById('todayButton');
+const oneDayAgoButton = document.getElementById('oneDayAgoButton');
+
+todayButton.addEventListener('click', function () {
+    const currentDate = new Date();
+    const year = currentDate.getFullYear();
+    const month = String(currentDate.getMonth() + 1).padStart(2, '0');
+    const day = String(currentDate.getDate()).padStart(2, '0');
+    datePicker.value = `${year}-${month}-${day}`;
+});
+
+oneDayAgoButton.addEventListener('click', function () {
+    const currentDate = new Date();
+    currentDate.setDate(currentDate.getDate() - 1);
+    const year = currentDate.getFullYear();
+    const month = String(currentDate.getMonth() + 1).padStart(2, '0');
+    const day = String(currentDate.getDate()).padStart(2, '0');
+    datePicker.value = `${year}-${month}-${day}`;
+});
+
+// Function to save data to localStorage
+function saveDataToLocalStorage() {
+    const data = {
+        // Add more fields as needed
+        DPLT: $('#DPLT').is(':checked'),
+        K9PLT: $('#K9PLT').is(':checked'),
+        // ...
+    };
+
+    localStorage.setItem('metroDeploymentData', JSON.stringify(data));
+}
+
+// Function to load data from local storage
+function loadDataFromLocalStorage() {
+    const data = localStorage.getItem('metroDeploymentData');
+    if (data) {
+        const parsedData = JSON.parse(data);
+
+        // Set the values of input fields from the retrieved data
+        $('#DPLT').prop('checked', parsedData.DPLT);
+        $('#K9PLT').prop('checked', parsedData.K9PLT);
+        // ...
+    }
+}
+
+// Add event listeners to the input fields for automatic saving
+$('input, textarea, select').on('change', saveDataToLocalStorage);
+
+// Load data from local storage when the page loads
+loadDataFromLocalStorage();
+
+// Function to clear all data from local storage with confirmation
+function clearLocalStorage() {
+    const confirmation = confirm(
+        "Are you sure you want to clear all local data?\n\n" +
+        "This action will delete all stored data in your browser's local storage, including any unsaved work or settings. " +
+        "If you're not sure, it's recommended to cancel this action."
+    );
+
+    if (confirmation) {
+        // Backup the data
+        const dataToBackup = localStorage.getItem('metroDeploymentData');
+        localStorage.setItem('metroDeploymentDataBackup', dataToBackup);
+
+        // Clear the original data
+        localStorage.removeItem('metroDeploymentData');
+        alert("Local storage has been cleared.");
+    }
+}
+
+// Function to undo the clear action
+function undoClearLocalStorage() {
+    const savedData = localStorage.getItem('metroDeploymentDataBackup');
+    if (savedData) {
+        localStorage.setItem('metroDeploymentData', savedData);
+        alert("Clear action has been undone. Your data is restored.");
+        // Reload the page to reflect the restored data
+        location.reload();
+    } else {
+        alert("There is no data to restore.");
+    }
+}
+
+// Add event listeners to the buttons
+const clearButton = document.getElementById('clearLocalStorageButton');
+if (clearButton) {
+    clearButton.addEventListener('click', clearLocalStorage);
+}
+
+const undoButton = document.getElementById('undoLocalStorageButton');
+if (undoButton) {
+    undoButton.addEventListener('click', undoClearLocalStorage);
+}
+    </script>
+</body>
+</html>

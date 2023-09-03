@@ -1,0 +1,184 @@
+body {
+  background: #fff;
+  font: 100% system-ui;
+}
+
+#todayButton {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  float: left; /* Float the button to the left */
+}
+
+#todayButton:hover {
+  background-color: #0056b3;
+}
+
+#oneDayAgoButton {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-left: -190px; /* Adjust the margin to separate the buttons */
+  transition: background-color 0.3s ease;
+  float: left; /* Float the button to the left */
+}
+
+#oneDayAgoButton:hover {
+  background-color: #0056b3;
+}
+
+.bigger-input {
+  width: 200px;
+  height: 40px;
+  font-size: 16px;
+  padding: 8px;
+}
+
+.bigger-button {
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  padding: 4px 10px;
+}
+
+.ui.container {
+  margin-top: 20px;
+}
+
+.ui.segment {
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+h4.ui.dividing.header {
+  font-size: 18px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.field {
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.ui.selection.search.dropdown {
+  width: 100%;
+}
+
+button {
+  background-color: #2185d0;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #1678c2;
+}
+
+button#addInput {
+  background-color: #0074cc;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+button#addInput:hover {
+  background-color: #0074cc;
+}
+
+button:removeInput {
+  background-color: #FF0000;
+}
+
+button#removeInput {
+  background-color: #FF0000;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+button#removeInput2:hover {
+  background-color: #FF0000;
+}
+
+button#addInput2 {
+  background-color: #0074cc;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+button#addInput2:hover {
+  background-color: #0074cc;
+}
+
+button:removeInput2 {
+  background-color: #FF0000;
+}
+
+button#removeInput2 {
+  background-color: #FF0000;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+button#removeInput2:hover {
+  background-color: #FF0000;
+}
+
+textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  resize: none;
+}
+
+.ui.button#submit {
+  background-color: #21ba45;
+}
+
+.ui.button#submit:hover {
+  background-color: #16ab3b;
+}
+
+.ui.button#copy {
+  background-color: #db2828;
+}
+
+.ui.button#copy:hover {
+  background-color: #cf1f1f;
+}
