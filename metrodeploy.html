@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags and CSS links -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <title>FTO Report Formatter</title>
+</head>
+<body>    
+    <div class="ui container">
+        <div class="ui form">
+            <div class="ui segment">
+                <h2>Basic Information</h2>
+                <h4 class="ui dividing header">GENERAL INFORMATION</h4>
+
+                <!-- INVOLVED PLATOONS -->
+                <div class="field">
+                    <label>INVOLVED PLATOONS</label>
+                    <form>
+                        <label><input type="checkbox" id="DPLT" name="D Platoon" value="D Platoon"> D Platoon</label><br>
+                        <label><input type="checkbox" id="K9PLT" name="K9 Platoon" value="K9 Platoon"> K9 Platoon</label><br>
+                        <label><input type="checkbox" id="HPLT" name="H Platoon" value="H Platoon"> H Platoon</label>
+                    </form>
+                </div>
+
+                <!-- Incident Command -->
+                <h4 class="ui dividing header">INCIDENT COMMAND</h4>
+                <div class="field">
+                    <label>INCIDENT COMMANDER (if applicable)</label>
+                    <div class="three fields">
+                        <div class="field">
+                            <input type="text" placeholder="LSPD Rank Firstname Lastname" id="ICname">
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label>CRISIS NEGOTIATOR (if applicable)</label>
+                    <div class="three fields">
+                        <div class="field">
+                            <input type="text" placeholder="LSPD Rank Firstname Lastname" id="CNname">
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label>TACTICAL COMMANDER</label>
+                    <div class="three fields">
+                        <div class="field">
+                            <input type="text" placeholder="Platoon Rank Firstname Lastname (i.e. K9 Team Leader John Doe)" id="TCname">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- INVOLVED METROPOLITAN MEMBERS -->
+                <div class="field">
+                    <label>INVOLVED METROPOLITAN MEMBERS</label>
+                    <div id="InvolvedMembers">
+                        <div class="field">
+                            <input type="text" placeholder="Platoon + Full Name" id="MMMname">
+                        </div>
+                    </div>
+                    <button type="button" id="addInput">+</button>
+                </div>
+                <!-- DEPLOYMENT TYPE -->
+                <div class="field">
+                    <label>DEPLOYMENT TYPE</label>
+                    <div class="three fields" id="DeploymentType">
+                        <div class="field">
+                            <div class="ui selection search dropdown">
+                                <input type="hidden" name="deploymentType">
+                                <i class="dropdown icon"></i>
+                                <div class="default text">Select Deployment Type</div>
+                                <div class="menu">
+                                    <div class="item" data-value="deploymentType1">Search Warrant Execution</div>
+                                    <div class="item" data-value="deploymentType2">Arrest Warrant Execution</div>
+                                    <!-- Add more deployment types as needed -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h4 class="ui dividing header">DEPLOYMENT TIMELINE</h4>
+                <div class="field">
+                    <label>DATE AND TIME</label>
+                    <div class="four fields">
+                        <div class="field">
+                            <input type="datetime-local" id="datetimePicker">
+                        </div>
+                        <div class="field">
+                            <button id="todayButton">Set to Today</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label>LOCATION</label>
+                    <div class="three fields">
+                        <div class="field">
+                            <input type="text" placeholder="Streetname, nr, area" id="loc">
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label>START OF DEPLOYMENT</label>
+                    <div class="three fields">
+                        <div class="field">
+                            <input type="time" id="startTime" placeholder="HH:MM">
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label>END OF DEPLOYMENT</label>
+                    <div class="three fields">
+                        <div class="field">
+                            <input type="time" id="endTime" placeholder="HH:MM">
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label>DEPLOYMENT EVENTS</label>
+                    <div id="DeploymentEventsContainer">
+                        <div class="field">
+                            <input type="text" placeholder="Event nr. 1" id="event1">
+                        </div>
+                    </div>
+                    <button type="button" id="addInput2">+</button>
+                </div>
+                <h4 class="ui dividing header">CASUALTY & INJURY INFORMATION</h4>
+                <div class="field">
+                    <label>INJURED TEAM MEMBERS</label>
+                    <div id="InjuredMembers">
+                        <div class="field">
+                            <input type="text" placeholder="Injured member. 1" id="member1">
+                        </div>
+                    </div>
+                    <button type="button" id="addInput3">+</button>
+                </div>
+                <div class="field">
+                    <label>SUSPECT CASUALTIES</label>
+                    <div id="InjuredSuspects">
+                        <div class="field">
+                            <input type="text" placeholder="Injured suspect. 1" id="suspect1">
+                        </div>
+                    </div>
+                    <button type="button" id="addInput4">+</button>
+                </div>
+                <div class="field">
+                    <label>CIVILIAN CASUALTIES</label>
+                    <div id="InjuredCivilians">
+                        <div class="field">
+                            <input type="text" placeholder="Injured civilian. 1" id="civilain1">
+                        </div>
+                    </div>
+                    <button type="button" id="addInput5">+</button>
+                </div>
+                <div class="field">
+                    <label>FILING OFFICER SIGNATURE</label>
+                    <div class="three fields">
+                        <div class="field">
+                            <input type="text" placeholder="Name" id="signature">
+                        </div>
+                    </div>
+                </div>
+                <div class="ui segment">
+                    <h2>Generator</h2>
+                    <div class="field">
+                        <label>Output</label>
+                        <textarea id="output" readonly></textarea>
+                    </div>
+                    <div class="ui secondary button" id="submit">Submit</div>
+                    <div class="ui primary button" id="copy">Copy to Clipboard</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Your additional segments here -->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
+    <script src="js/metrodeploy.js"></script>
+    <script>
+        // Initialize Clipboard.js
+        new ClipboardJS('#copy', {
+            text: function () {
+                return $('#output').val();
+            }
+        });
+
+        // Initialize Semantic UI Dropdown
+        $(document).ready(function () {
+            $('.ui.search.dropdown').dropdown({
+                fullTextSearch: true // Enable full-text search
+            });
+        });
+
+        // Add event handlers for adding input fields
+        $(document).ready(function () {
+            $("#addInput").click(addInputField("#InvolvedMembers", "Platoon + Full Name"));
+            $("#addInput2").click(addInputField("#DeploymentEventsContainer", "Event nr. "));
+            $("#addInput3").click(addInputField("#InjuredMembers", "Injured Member. "));
+            $("#addInput4").click(addInputField("#InjuredSuspects", "Injured Suspect. "));
+            $("#addInput5").click(addInputField("#InjuredCivilians", "Injured Civilian. "));
+
+            function addInputField(containerId, placeholderText) {
+                return function () {
+                    const inputFieldsContainer = $(containerId);
+                    const newEventNumber = inputFieldsContainer.children().length + 1; // Calculate the new event number
+                    const newInputField = $("<div>").addClass("field").html('<input type="text" placeholder="' + placeholderText + newEventNumber + '">');
+                    inputFieldsContainer.append(newInputField);
+                };
+            }
+        });
+
+        // Initialize Date and Time Picker
+        document.addEventListener('DOMContentLoaded', function () {
+            const datetimePicker = document.getElementById('datetimePicker');
+            const todayButton = document.getElementById('todayButton');
+
+            todayButton.addEventListener('click', function () {
+                const currentDate = new Date();
+
+                // Get UTC date and time components
+                const year = currentDate.getUTCFullYear();
+                const month = (currentDate.getUTCMonth() + 1).toString().padStart(2, '0');
+                const day = currentDate.getUTCDate().toString().padStart(2, '0');
+                const hours = currentDate.getUTCHours().toString().padStart(2, '0');
+                const minutes = currentDate.getUTCMinutes().toString().padStart(2, '0');
+
+                // Format the date and time in ISO format (YYYY-MM-DDTHH:MM)
+                const formattedDate = `${year}-${month}-${day}T${hours}:${minutes}`;
+
+                // Set the value of the datetimePicker input field to the current UTC date and time
+                datetimePicker.value = formattedDate;
+            });
+        });
+
+        // Retrieve data from localStorage when the page loads
+        document.addEventListener('DOMContentLoaded', function () {
+            const dataInput = document.getElementById('data');
+            const output = document.getElementById('output');
+
+            // Load saved data from localStorage
+            const savedData = localStorage.getItem('savedData');
+            if (savedData) {
+                dataInput.value = savedData;
+            }
+
+            // Automatically save data to localStorage when the input field changes
+            dataInput.addEventListener('input', function () {
+                const data = dataInput.value;
+                localStorage.setItem('savedData', data);
+                output.textContent = `Saved: ${data}`;
+            });
+        });
+    </script>
+</body>
+</html>
