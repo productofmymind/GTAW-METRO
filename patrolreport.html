@@ -99,12 +99,13 @@
                     </div>
                 </div>
                 <div class="field">
-                <!-- INVOLVED METROPOLITAN MEMBERS -->
-                <div class="field">
                     <label>Linked Deployments</label>
-                    <div id="LinkedDeployments">
+                    <div class="two fields">
                         <div class="field">
-                            <input type="text" placeholder="Linked Deployments" class="officer">
+                            <input type="text" id="linkDeployment" placeholder="Link to Deployment">
+                        </div>
+                        <div class="field">
+                            <input type="text" id="typeDeployment" placeholder="Type of Deployment">
                         </div>
                     </div>
                     <button type="button" id="addInput2">+</button>
@@ -137,9 +138,9 @@ $(document).ready(function () {
 
     // Add event listeners for adding and removing input fields
     $("#addInput").click(addInputField("#MetroOfficers", "Platoon + Full Name"));
-    $("#addInput2").click(addInputField("#LinkedDeployments", "Linked Deployments"));
+    $("#addInput2").click(addInputField("#linkDeployment", "linkDeployment"));
     $("#removeInput").click(removeInputField("#MetroOfficers", "Platoon + Full Name"));
-    $("#removeInput2").click(removeInputField("#LinkedDeployments", "Linked Deployments"));
+    $("#removeInput2").click(removeInputField("#linkDeployment", "linkDeployment"));
 
     function addInputField(containerId, placeholderText) {
         return function () {

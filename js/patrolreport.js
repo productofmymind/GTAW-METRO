@@ -18,7 +18,8 @@ $(document).ready(function () {
     const backupRequestsAttended = $('#backupRequestsAttended').val() || '';
     const subjectsArrested = $('#subjectsArrested').val() || '';
     const other = $('#other').val() || '';
-    const linkedDeployments = $('#linkedDeployments').val() || '';
+    const linkDeployment = $('#linkDeployment').val() || '';
+    const typeDeployment = $('#typeDeployment').val() || '';
 
     // Create the report template with the user input values
     let output = `[divbox2=transparent]
@@ -46,7 +47,7 @@ $(document).ready(function () {
   [u]2.2[/u] [b]SUBJECTS ARRESTED:[/b] ${subjectsArrested}
   [u]2.3[/u] [b]OTHER:[/b] 
   [list=none]${other}[/list]
-  [u]2.4[/u] [b]TIED DEPLOYMENT(S):[/b] [list][*][url=inserturl]${linkedDeployments}[/url][/indent]
+  [u]2.4[/u] [b]TIED DEPLOYMENT(S):[/b] [list][*][url=${linkDeployment}]${typeDeployment}[/url][/indent]
   [/divbox2]`;
 
     $('#output').val(output);
