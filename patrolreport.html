@@ -6,8 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <link rel="icon" type="image/x-icon" href="css/img/metro.png">
     <link rel="stylesheet" href="css/patrolreport.css">
-    <title>Patrol Report</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Cardo:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <title>Metro - Patrol Report</title>
 </head>
 <body>    
     <!-- Add this button at the bottom of your form -->
@@ -20,7 +24,7 @@
                 <h4 class="ui dividing header">GENERAL INFORMATION</h4>
                 <!-- INVOLVED METROPOLITAN MEMBERS -->
                 <div class="field">
-                    <label>METROPOLITAN OFFICERS</label>
+                    <p>METROPOLITAN OFFICERS</p>
                     <div id="MetroOfficers">
                         <div class="field">
                             <input type="text" placeholder="Platoon + Full Name" class="officer">
@@ -31,7 +35,7 @@
                 </div>
                 <!-- DEPLOYMENT TYPE -->
                 <div class="field">
-                    <label>TYPE OF PATROL</label>
+                    <p>TYPE OF PATROL</p>
                     <div class="three fields" id="PatrolType">
                         <div class="field">
                             <div class="ui selection search dropdown">
@@ -49,7 +53,7 @@
                     </div>
                 </div>
                 <div class="field">
-                    <label>DATE</label>
+                    <p>DATE</p>
                     <div class="four fields">
                         <div class="field">
                             <!-- Change input type to "date" -->
@@ -64,7 +68,7 @@
                     </div>
                 </div>
                 <div class="field">
-                    <label>LENGTH OF PATROL</label>
+                    <p>LENGTH OF PATROL</p>
                     <div class="three fields">
                         <div class="field">
                             <input type="text" placeholder="HH:MM" id="lop">
@@ -74,7 +78,7 @@
                 <h4 class="ui dividing header">PATROL SUMMARY</h4>
                 <div class="field">
                     <div class="field">
-                        <label>BACK-UP REQUESTS ATTENDED</label>
+                        <p>BACK-UP REQUESTS ATTENDED</p>
                         <div class="three fields">
                             <div class="field">
                                 <input type="text" placeholder="Back-up Requests Attended" id="backupRequestsAttended">
@@ -82,7 +86,7 @@
                         </div>
                     </div>
                     <div class="field">
-                        <label>SUBJECTS ARRESTED</label>
+                        <p>SUBJECTS ARRESTED</p>
                         <div class="three fields">
                             <div class="field">
                                 <input type="text" placeholder="Subjects Arrested" id="subjectsArrested">
@@ -91,7 +95,7 @@
                     </div>
                 </div>
                 <div class="field">
-                    <label>OTHER</label>
+                    <p>OTHER</p>
                     <div class="three fields">
                         <div class="field">
                             <input type="text" placeholder="Other" id="other">
@@ -99,7 +103,7 @@
                     </div>
                 </div>
                 <div class="field">
-                    <label>Linked Deployments</label>
+                    <p>Linked Deployments</p>
                     <div class="one field" id="linkDeploymentContainer">
                         <div class="field">
                             <input type="text" id="linkDeployment" placeholder="Link to Deployment">
@@ -112,7 +116,7 @@
                 <div class="ui segment">
                     <h2>Generator</h2>
                     <div class="field">
-                        <label>Output</label>
+                        <p>Output</p>
                         <textarea id="output" readonly></textarea>
                     </div>
                     <div class="ui secondary button" id="submit">Submit</div>
