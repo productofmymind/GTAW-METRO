@@ -66,6 +66,7 @@
                         </div>
                     </div>
                     <button type="button" id="addInput">+</button>
+                    <button type="button" id="removeInput">-</button>
                 </div>
                 <!-- DEPLOYMENT TYPE -->
                 <div class="field">
@@ -106,7 +107,7 @@
                 </div>
                 <h4 class="ui dividing header">DEPLOYMENT TIMELINE</h4>
                 <div class="field">
-                    <label>DATE AND TIME</label>
+                    <label for="datetimePicker">DATE AND TIME</label>
                     <div class="four fields">
                         <div class="field">
                             <input type="datetime-local" id="datetimePicker">
@@ -115,7 +116,7 @@
                             <button id="todayButton">Set to Today</button>
                         </div>
                     </div>
-                </div>
+                </div>                
                 <div class="field">
                     <label>LOCATION</label>
                     <div class="three fields">
@@ -148,6 +149,7 @@
                         </div>
                     </div>
                     <button type="button" id="addInput2">+</button>
+                    <button type="button" id="removeInput2">-</button>
                 </div>
                 <h4 class="ui dividing header">CASUALTY & INJURY INFORMATION</h4>
                 <div class="field">
@@ -158,6 +160,7 @@
                         </div>
                     </div>
                     <button type="button" id="addInput3">+</button>
+                    <button type="button" id="removeInput3">-</button>
                 </div>
                 <div class="field">
                     <label>SUSPECT CASUALTIES</label>
@@ -167,6 +170,7 @@
                         </div>
                     </div>
                     <button type="button" id="addInput4">+</button>
+                    <button type="button" id="removeInput4">-</button>
                 </div>
                 <div class="field">
                     <label>CIVILIAN CASUALTIES</label>
@@ -176,6 +180,7 @@
                         </div>
                     </div>
                     <button type="button" id="addInput5">+</button>
+                    <button type="button" id="removeInput5">-</button>
                 </div>
                 <div class="field">
                     <label>FILING OFFICER SIGNATURE</label>
@@ -218,6 +223,11 @@
             $("#addInput3").click(addInputField("#InjuredMembers", "Injured Member. "));
             $("#addInput4").click(addInputField("#InjuredSuspects", "Injured Suspect. "));
             $("#addInput5").click(addInputField("#InjuredCivilians", "Injured Civilian. "));
+            $("#removeInput").click(removeInputField("#InvolvedMembers", "Platoon + Full Name"));
+            $("#removeInput2").click(removeInputField("#DeploymentEventsContainer", "linkDeployment"));
+            $("#removeInput3").click(removeInputField("#InjuredMembers", "Platoon + Full Name"));
+            $("#removeInput4").click(removeInputField("#InjuredSuspects", "linkDeployment"));
+            $("#removeInput5").click(removeInputField("#InjuredCivilians", "linkDeployment"));
 
             function addInputField(containerId, placeholderText) {
                 return function () {
@@ -227,30 +237,61 @@
                     inputFieldsContainer.append(newInputField);
                 };
             }
+
+            function removeInputField(containerId) {
+            return function () {
+            const inputFieldsContainer = $(containerId);
+            inputFieldsContainer.children().last().remove(); // Remove the last input field
+        }
+    }
         });
 
         // Initialize Date and Time Picker
         document.addEventListener('DOMContentLoaded', function () {
-            const datetimePicker = document.getElementById('datetimePicker');
-            const todayButton = document.getElementById('todayButton');
+    const datetimePicker = document.getElementById('datetimePicker');
+    const todayButton = document.getElementById('todayButton');
 
-            todayButton.addEventListener('click', function () {
-                const currentDate = new Date();
+    todayButton.addEventListener('click', function () {
+        const currentDate = new Date();
 
-                // Get UTC date and time components
-                const year = currentDate.getUTCFullYear();
-                const month = (currentDate.getUTCMonth() + 1).toString().padStart(2, '0');
-                const day = currentDate.getUTCDate().toString().padStart(2, '0');
-                const hours = currentDate.getUTCHours().toString().padStart(2, '0');
-                const minutes = currentDate.getUTCMinutes().toString().padStart(2, '0');
+        // Get UTC date and time components
+        const year = currentDate.getUTCFullYear();
+        const month = String(currentDate.getUTCMonth() + 1).padStart(2, '0');
+        const day = String(currentDate.getUTCDate()).padStart(2, '0');
+        const hours = String(currentDate.getUTCHours()).padStart(2, '0');
+        const minutes = String(currentDate.getUTCMinutes()).padStart(2, '0');
 
-                // Format the date and time in ISO format (YYYY-MM-DDTHH:MM)
-                const formattedDate = `${year}-${month}-${day}${hours}:${minutes}`;
+        // Format the date and time as "YYYY-MM-DD HH:MM"
+        const formattedDate = `${year}-${month}-${day} ${hours}:${minutes}`;
 
-                // Set the value of the datetimePicker input field to the current UTC date and time
-                datetimePicker.value = formattedDate;
-            });
-        });
+        // Set the value of the datetimePicker input field to the current UTC date and time
+        datetimePicker.value = formattedDate;
+    });
+
+    datetimePicker.addEventListener('change', function () {
+        // Parse the datetimePicker value into a JavaScript Date object
+        const inputDate = new Date(datetimePicker.value);
+
+        // Get the individual date and time components
+        const year = inputDate.getUTCFullYear();
+        const month = String(inputDate.getUTCMonth() + 1).padStart(2, '0');
+        const day = String(inputDate.getUTCDate()).padStart(2, '0');
+        const hours = String(inputDate.getUTCHours()).padStart(2, '0');
+        const minutes = String(inputDate.getUTCMinutes()).padStart(2, '0');
+
+        // Format the date and time without the "T" character
+        const formattedDate = `${year}-${month}-${day} ${hours}:${minutes}`;
+
+        // Set the value of the datetimePicker input field to the formatted date and time
+        datetimePicker.value = formattedDate;
+
+        console.log('Year:', year);
+        console.log('Month:', month);
+        console.log('Day:', day);
+        console.log('Hours:', hours);
+        console.log('Minutes:', minutes);
+    });
+});
 
         function saveDataToLocalStorage() {
             // Get the values of input fields by their IDs

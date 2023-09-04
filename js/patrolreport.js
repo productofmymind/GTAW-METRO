@@ -53,18 +53,25 @@ $(document).ready(function () {
     $('#output').val(output);
   });
 
-  // Handle the "Copy to Clipboard" button click
-  $('#copy').click(function () {
-    const copyText = document.getElementById('output');
-
-    /* Select the text field */
-    copyText.select();
-    copyText.setSelectionRange(0, 99999); /* For mobile devices */
-
-    /* Copy the text inside the text field */
-    navigator.clipboard.writeText(copyText.value);
-
-    // Provide feedback to the user
-    alert('Report text has been copied to the clipboard.');
+  $('#datetimePicker').on('change', function () {
+    const selectedDateTime = $('#datetimePicker').val();
+    if (selectedDateTime) {
+      // Use selectedDateTime in your JavaScript logic
+      console.log('Selected Date and Time:', selectedDateTime);
+    }
   });
+
+// Handle the "Copy to Clipboard" button click
+$('#copy').click(function () {
+  const copyText = document.getElementById('output');
+
+  /* Select the text field */
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+  /* Copy the text inside the text field */
+  navigator.clipboard.writeText(copyText.value);
 });
+});
+
+

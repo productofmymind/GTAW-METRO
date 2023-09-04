@@ -99,74 +99,18 @@ button:hover {
   background-color: #1678c2;
 }
 
-button#addInput {
-  background-color: #0074cc;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  margin-top: 15px;
-}
-
-button#addInput:hover {
-  background-color: #0056a7;
-}
-
-button#addInput2 {
-  background-color: #0074cc;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  margin-top: 15px;
-}
-
-button#addInput2:hover {
-  background-color: #0056a7;
-}
-
-button#addInput3 {
-  background-color: #0074cc;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 15px;
-}
-
-button#addInput3:hover {
-  background-color: #0056a7;
-}
-
-button#addInput4 {
-  background-color: #0074cc;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 15px;
-}
-
-button#addInput4:hover {
-  background-color: #0056a7;
-}
-
+button#addInput,
+button#addInput2,
+button#addInput3,
+button#addInput4,
 button#addInput5 {
   background-color: #0074cc;
   color: #fff;
   padding: 10px 20px;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
   margin-top: 15px;
-}
-
-button#addInput5:hover {
-  background-color: #0056a7;
 }
 
 textarea {
@@ -192,3 +136,21 @@ textarea {
 .ui.button#copy:hover {
   background-color: #cf1f1f;
 }
+button:removeInput {
+  background-color: #FF0000;
+}
+
+button#removeInput,
+button#removeInput2,
+button#removeInput3,
+button#removeInput4,
+button#removeInput5 {
+  background-color: #FF0000;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
