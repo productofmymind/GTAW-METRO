@@ -46,7 +46,7 @@ $('#submit').click(function () {
 [hr][/hr]
 [metrologo=25] [b]MESSAGE FROM THE OFFICER IN CHARGE[/b]
 [hr][/hr]
-[i]Message Here[/i]
+[i]${$('#MessageOiC').val()}[/i]
 
 [hr][/hr]
 [metrologo=25] [b]MONTHLY STATISTICS[/b]
