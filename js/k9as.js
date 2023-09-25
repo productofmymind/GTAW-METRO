@@ -1,6 +1,5 @@
 $('.ui.radio.checkbox')
   .checkbox()
-;
 
 $('#submit').click(function () {
   const Red = $('#Red').val() || '';

@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags and CSS links -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="css/img/metro.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <link rel="stylesheet" href="css/caninedeploy.css">
+    <title>Canine Deployment Format</title>
+</head>
+<body>
+    <div class="ui container">
+        <h2>General Information</h2>
+        <div class="ui form">
+            <div class="ui segment">
+                <div class="field">
+                    <label for="HandlerName">Handler Name</label>
+                    <div class="three fields">
+                        <div class="field">
+                            <input type="text" placeholder="Full Name" id="HandlerName">
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="K9Name">K-9 Name</label>
+                    <div class="three fields">
+                        <div class="field">
+                            <input type="text" placeholder="K9 Name" id="K9Name">
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="K9Specialization">K9 Specialization</label>
+                    <div class="three fields">
+                        <div class="field">
+                            <div class="ui selection search dropdown" id="K9Specialization">
+                                <input type="hidden" name="K9Specialization" id="K9SpecializationInput">
+                                <i class="dropdown icon"></i>
+                                <div class="default text">Select Canine Specialization</div>
+                                <div class="menu">
+                                    <div class="item" data-value="Firearms">Firearms</div>
+                                    <div class="item" data-value="Narcotics">Narcotics</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="DivisionalRank">Divisional Rank</label>
+                    <div class="three fields">
+                        <div class="field">
+                            <input type="text" placeholder="Probationary Canine Handler, Canine Handler, etc." id="DivisionalRank">
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="SerialNumber">Serial Number</label>
+                    <div class="three fields">
+                        <div class="field">
+                            <input type="text" placeholder="Badge Number" id="SerialNumber">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ui container">
+        <h2>Incident Summary</h2>
+        <div class="ui form">
+            <div class="ui segment">
+                <div class="field">
+                    <label for="datetimePicker">Date and Time</label>
+                    <div class="four fields">
+                        <div class="field">
+                            <input type="datetime-local" id="datetimePicker">
+                        </div>
+                        <div class="field">
+                            <button id="todayButton">Set to Today</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label>District Name</label>
+                    <div class="three fields" id="DistrictName">
+                        <div class="field">
+                            <div class="ui selection search dropdown">
+                                <input type="hidden" name="DistrictName" id="DistrictNameInput">
+                                <i class="dropdown icon"></i>
+                                <div class="default text">District Name</div>
+                                <div class="menu">
+                                    <div class="item" data-value="Alamo Sea">Alamo Sea</div>
+                                    <div class="item" data-value="Alta">Alta</div>
+                                    <div class="item" data-value="Banham Canyon">Banham Canyon</div>
+                                    <div class="item" data-value="Banning">Banning</div>
+                                    <div class="item" data-value="Bolingbroke Penitentiary">Bolingbroke Penitentiary</div>
+                                    <div class="item" data-value="Braddock Pass">Braddock Pass</div>
+                                    <div class="item" data-value="Burton">Burton</div>
+                                    <div class="item" data-value="Calafia Bridge">Calafia Bridge</div>
+                                    <div class="item" data-value="Cassidy Creek">Cassidy Creek</div>
+                                    <div class="item" data-value="Chamberlain Hills">Chamberlain Hills</div>
+                                    <div class="item" data-value="Chiliad Mountain State Wilderness">Chiliad Mountain State Wilderness</div>
+                                    <div class="item" data-value="Chumash">Chumash</div>
+                                    <div class="item" data-value="Cypress Flats">Cypress Flats</div>
+                                    <div class="item" data-value="Davis">Davis</div>
+                                    <div class="item" data-value="Davis Quarry">Davis Quarry</div>
+                                    <div class="item" data-value="Del Perro">Del Perro</div>
+                                    <div class="item" data-value="Del Perro Beach">Del Perro Beach</div>
+                                    <div class="item" data-value="Downtown">Downtown</div>
+                                    <div class="item" data-value="Downtown Vinewood">Downtown Vinewood</div>
+                                    <div class="item" data-value="East Vinewood">East Vinewood</div>
+                                    <div class="item" data-value="El Burro Heights">El Burro Heights</div>
+                                    <div class="item" data-value="El Gondo Lighthouse">El Gondo Lighthouse</div>
+                                    <div class="item" data-value="Elysian Island">Elysian Island</div>
+                                    <div class="item" data-value="Fort Zancudo">Fort Zancudo</div>
+                                    <div class="item" data-value="GWC and Golfing Society">GWC and Golfing Society</div>
+                                    <div class="item" data-value="Galilee">Galilee</div>
+                                    <div class="item" data-value="Grand Senora Desert">Grand Senora Desert</div>
+                                    <div class="item" data-value="Grapeseed">Grapeseed</div>
+                                    <div class="item" data-value="Great Chaparral">Great Chaparral</div>
+                                    <div class="item" data-value="Harmony">Harmony</div>
+                                    <div class="item" data-value="Hawick">Hawick</div>
+                                    <div class="item" data-value="Humane Labs and Research">Humane Labs and Research</div>
+                                    <div class="item" data-value="La Mesa">La Mesa</div>
+                                    <div class="item" data-value="La Puerta">La Puerta</div>
+                                    <div class="item" data-value="Lago Zancudo">Lago Zancudo</div>
+                                    <div class="item" data-value="Land Act Dam">Land Act Dam</div>
+                                    <div class="item" data-value="Land Act Reservoir">Land Act Reservoir</div>
+                                    <div class="item" data-value="Legion Square">Legion Square</div>
+                                    <div class="item" data-value="Little Seoul">Little Seoul</div>
+                                    <div class="item" data-value="Los Santos International Airport (LSIA)">Los Santos International Airport (LSIA)</div>
+                                    <div class="item" data-value="Maze Bank Arena">Maze Bank Arena</div>
+                                    <div class="item" data-value="Mirror Park">Mirror Park</div>
+                                    <div class="item" data-value="Mission Row">Mission Row</div>
+                                    <div class="item" data-value="Morningwood">Morningwood</div>
+                                    <div class="item" data-value="Mount Chiliad">Mount Chiliad</div>
+                                    <div class="item" data-value="Mount Gordo">Mount Gordo</div>
+                                    <div class="item" data-value="Mount Josiah">Mount Josiah</div>
+                                    <div class="item" data-value="Murrieta Heights">Murrieta Heights</div>
+                                    <div class="item" data-value="N.O.O.S.E">N.O.O.S.E</div>
+                                    <div class="item" data-value="North Chumash">North Chumash</div>
+                                    <div class="item" data-value="Pacific Bluffs">Pacific Bluffs</div>
+                                    <div class="item" data-value="Palomino Highlands">Palomino Highlands</div>
+                                    <div class="item" data-value="Paleto Bay">Paleto Bay</div>
+                                    <div class="item" data-value="Paleto Cove">Paleto Cove</div>
+                                    <div class="item" data-value="Paleto Forest">Paleto Forest</div>
+                                    <div class="item" data-value="Palmer-Taylor Power Station">Palmer-Taylor Power Station</div>
+                                    <div class="item" data-value="Pillbox Hill">Pillbox Hill</div>
+                                    <div class="item" data-value="Port of South Los Santos">Port of South Los Santos</div>
+                                    <div class="item" data-value="Procopio Beach">Procopio Beach</div>
+                                    <div class="item" data-value="Rancho">Rancho</div>
+                                    <div class="item" data-value="Raton Canyon">Raton Canyon</div>
+                                    <div class="item" data-value="Redwood Lights Track">Redwood Lights Track</div>
+                                    <div class="item" data-value="Richards Majestic">Richards Majestic</div>
+                                    <div class="item" data-value="Richman">Richman</div>
+                                    <div class="item" data-value="Richman Glen">Richman Glen</div>
+                                    <div class="item" data-value="Rockford Hills">Rockford Hills</div>
+                                    <div class="item" data-value="Ron Alternatives Wind Farm">Ron Alternatives Wind Farm</div>
+                                    <div class="item" data-value="San Chanski Mountain Range">San Chanski Mountain Range</div>
+                                    <div class="item" data-value="Sandy Shores">Sandy Shores</div>
+                                    <div class="item" data-value="Stab City">Stab City</div>
+                                    <div class="item" data-value="Strawberry">Strawberry</div>
+                                    <div class="item" data-value="Tataviam Mountains">Tataviam Mountains</div>
+                                    <div class="item" data-value="Terminal">Terminal</div>
+                                    <div class="item" data-value="Textile City">Textile City</div>
+                                    <div class="item" data-value="Tongva Hills">Tongva Hills</div>
+                                    <div class="item" data-value="Vespucci">Vespucci</div>
+                                    <div class="item" data-value="Vespucci Beach">Vespucci Beach</div>
+                                    <div class="item" data-value="Vespucci Canals">Vespucci Canals</div>
+                                    <div class="item" data-value="Vinewood">Vinewood</div>
+                                    <div class="item" data-value="Vinewood Hills">Vinewood Hills</div>
+                                    <div class="item" data-value="Vinewood Racetrack">Vinewood Racetrack</div>
+                                    <div class="item" data-value="West Vinewood">West Vinewood</div>
+                                    <div class="item" data-value="Zancudo River">Zancudo River</div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+                <div class="field">
+                    <label>Street Name</label>
+                    <div class="three fields" id="StreetName">
+                        <div class="field">
+                            <div class="ui selection search dropdown">
+                                <input type="hidden" name="StreetName" id="StreetNameInput">
+                                <i class="dropdown icon"></i>
+                                <div class="default text">Street Name</div>
+                                <div class="menu">
+                                    <div class="item" data-value="Abe Milton Parkway">Abe Milton Parkway</div>
+                                    <div class="item" data-value="Ace Jones Drive">Ace Jones Drive</div>
+                                    <div class="item" data-value="Adam's Apple Boulevard">Adam's Apple Boulevard</div>
+                                    <div class="item" data-value="Aguja Street">Aguja Street</div>
+                                    <div class="item" data-value="Algonquin Boulevard">Algonquin Boulevard</div>
+                                    <div class="item" data-value="Alhambra Drive">Alhambra Drive</div>
+                                    <div class="item" data-value="Alta Place">Alta Place</div>
+                                    <div class="item" data-value="Alta Street">Alta Street</div>
+                                    <div class="item" data-value="Amarillo Vista">Amarillo Vista</div>
+                                    <div class="item" data-value="Amarillo Way">Amarillo Way</div>
+                                    <div class="item" data-value="Americano Way">Americano Way</div>
+                                    <div class="item" data-value="Armadillo Avenue">Armadillo Avenue</div>
+                                    <div class="item" data-value="Atlee Street">Atlee Street</div>
+                                    <div class="item" data-value="Autopia Parkway">Autopia Parkway</div>
+                                    <div class="item" data-value="Banham Canyon Drive">Banham Canyon Drive</div>
+                                    <div class="item" data-value="Barbareno Road">Barbareno Road</div>
+                                    <div class="item" data-value="Bay City Avenue">Bay City Avenue</div>
+                                    <div class="item" data-value="Bay City Incline">Bay City Incline</div>
+                                    <div class="item" data-value="Baytree Canyon Road">Baytree Canyon Road</div>
+                                    <div class="item" data-value="Boulevard Del Perro">Boulevard Del Perro</div>
+                                    <div class="item" data-value="Bridge Street">Bridge Street</div>
+                                    <div class="item" data-value="Brouge Avenue">Brouge Avenue</div>
+                                    <div class="item" data-value="Buccaneer Way">Buccaneer Way</div>
+                                    <div class="item" data-value="Buen Vino Road">Buen Vino Road</div>
+                                    <div class="item" data-value="Caesars Place">Caesars Place</div>
+                                    <div class="item" data-value="Calafia Road">Calafia Road</div>
+                                    <div class="item" data-value="Calais Avenue">Calais Avenue</div>
+                                    <div class="item" data-value="Capital Boulevard">Capital Boulevard</div>
+                                    <div class="item" data-value="Carcer Way">Carcer Way</div>
+                                    <div class="item" data-value="Carson Avenue">Carson Avenue</div>
+                                    <div class="item" data-value="Cascabel Avenue">Cascabel Avenue</div>
+                                    <div class="item" data-value="Cassidy Trail">Cassidy Trail</div>
+                                    <div class="item" data-value="Cat-Claw Avenue">Cat-Claw Avenue</div>
+                                    <div class="item" data-value="Catfish View">Catfish View</div>
+                                    <div class="item" data-value="Chianski Passage">Chianski Passage</div>
+                                    <div class="item" data-value="Cholla Road">Cholla Road</div>
+                                    <div class="item" data-value="Cholla Springs Avenue">Cholla Springs Avenue</div>
+                                    <div class="item" data-value="Chum Street">Chum Street</div>
+                                    <div class="item" data-value="Chupacabra Street">Chupacabra Street</div>
+                                    <div class="item" data-value="Clinton Avenue">Clinton Avenue</div>
+                                    <div class="item" data-value="Cockingend Drive">Cockingend Drive</div>
+                                    <div class="item" data-value="Conquistador Street">Conquistador Street</div>
+                                    <div class="item" data-value="Cortes Street">Cortes Street</div>
+                                    <div class="item" data-value="Cougar Avenue">Cougar Avenue</div>
+                                    <div class="item" data-value="Covenant Avenue">Covenant Avenue</div>
+                                    <div class="item" data-value="Cox Way">Cox Way</div>
+                                    <div class="item" data-value="Crusade Road">Crusade Road</div>
+                                    <div class="item" data-value="Davis Avenue">Davis Avenue</div>
+                                    <div class="item" data-value="Decker Street">Decker Street</div>
+                                    <div class="item" data-value="Del Perro Freeway">Del Perro Freeway</div>
+                                    <div class="item" data-value="Didion Drive">Didion Drive</div>
+                                    <div class="item" data-value="Dorset Drive">Dorset Drive</div>
+                                    <div class="item" data-value="Dorset Place">Dorset Place</div>
+                                    <div class="item" data-value="Dry Dock Street">Dry Dock Street</div>
+                                    <div class="item" data-value="Duluoz Avenue">Duluoz Avenue</div>
+                                    <div class="item" data-value="Dunstable Drive">Dunstable Drive</div>
+                                    <div class="item" data-value="Dunstable Lane">Dunstable Lane</div>
+                                    <div class="item" data-value="Dutch London Street">Dutch London Street</div>
+                                    <div class="item" data-value="East Galileo Avenue">East Galileo Avenue</div>
+                                    <div class="item" data-value="East Joshua Road">East Joshua Road</div>
+                                    <div class="item" data-value="East Mirror Drive">East Mirror Drive</div>
+                                    <div class="item" data-value="Eastbourne Way">Eastbourne Way</div>
+                                    <div class="item" data-value="Eclipse Boulevard">Eclipse Boulevard</div>
+                                    <div class="item" data-value="Edwood Way">Edwood Way</div>
+                                    <div class="item" data-value="El Burro Boulevard">El Burro Boulevard</div>
+                                    <div class="item" data-value="El Rancho Boulevard">El Rancho Boulevard</div>
+                                    <div class="item" data-value="Elgin Avenue">Elgin Avenue</div>
+                                    <div class="item" data-value="Elysian Fields Freeway">Elysian Fields Freeway</div>
+                                    <div class="item" data-value="Equality Way">Equality Way</div>
+                                    <div class="item" data-value="Exceptionalists Way">Exceptionalists Way</div>
+                                    <div class="item" data-value="Fantastic Place">Fantastic Place</div>
+                                    <div class="item" data-value="Fenwell Place">Fenwell Place</div>
+                                    <div class="item" data-value="Fort Zancudo Approach Road">Fort Zancudo Approach Road</div>
+                                    <div class="item" data-value="Forum Drive">Forum Drive</div>
+                                    <div class="item" data-value="Fudge Lane">Fudge Lane</div>
+                                    <div class="item" data-value="Galileo Road">Galileo Road</div>
+                                    <div class="item" data-value="Galileo Road">Galileo Road</div>
+                                    <div class="item" data-value="Gentry Lane">Gentry Lane</div>
+                                    <div class="item" data-value="Ginger Street">Ginger Street</div>
+                                    <div class="item" data-value="Glory Way">Glory Way</div>
+                                    <div class="item" data-value="Goma Street">Goma Street</div>
+                                    <div class="item" data-value="Grapeseed Avenue">Grapeseed Avenue</div>
+                                    <div class="item" data-value="Grapeseed Main Street">Grapeseed Main Street</div>
+                                    <div class="item" data-value="Great Ocean Highway">Great Ocean Highway</div>
+                                    <div class="item" data-value="Greenwich Parkway">Greenwich Parkway</div>
+                                    <div class="item" data-value="Greenwich Place">Greenwich Place</div>
+                                    <div class="item" data-value="Greenwich Way">Greenwich Way</div>
+                                    <div class="item" data-value="Grove Street">Grove Street</div>
+                                    <div class="item" data-value="Hanger Way">Hanger Way</div>
+                                    <div class="item" data-value="Hangman Avenue">Hangman Avenue</div>
+                                    <div class="item" data-value="Hardy Way">Hardy Way</div>
+                                    <div class="item" data-value="Hawick Avenue">Hawick Avenue</div>
+                                    <div class="item" data-value="Heritage Way">Heritage Way</div>
+                                    <div class="item" data-value="Hillcrest Avenue">Hillcrest Avenue</div>
+                                    <div class="item" data-value="Hillcrest Ridge Access Road">Hillcrest Ridge Access Road</div>
+                                    <div class="item" data-value="Imagination Court">Imagination Court</div>
+                                    <div class="item" data-value="Industry Passage">Industry Passage</div>
+                                    <div class="item" data-value="Ineseno Road">Ineseno Road</div>
+                                    <div class="item" data-value="Innocence Boulevard">Innocence Boulevard</div>
+                                    <div class="item" data-value="Integrity Way">Integrity Way</div>
+                                    <div class="item" data-value="Invention Court">Invention Court</div>
+                                    <div class="item" data-value="Jamestown Street">Jamestown Street</div>
+                                    <div class="item" data-value="Joad Lane">Joad Lane</div>
+                                    <div class="item" data-value="Joshua Road">Joshua Road</div>
+                                    <div class="item" data-value="Kimble Hill Drive">Kimble Hill Drive</div>
+                                    <div class="item" data-value="Kortz Drive">Kortz Drive</div>
+                                    <div class="item" data-value="La Puerta Freeway">La Puerta Freeway</div>
+                                    <div class="item" data-value="Labor Place">Labor Place</div>
+                                    <div class="item" data-value="Laguna Place">Laguna Place</div>
+                                    <div class="item" data-value="Lake Vinewood Drive">Lake Vinewood Drive</div>
+                                    <div class="item" data-value="Lake Vinewood Estate">Lake Vinewood Estate</div>
+                                    <div class="item" data-value="Las Lagunas Boulevard">Las Lagunas Boulevard</div>
+                                    <div class="item" data-value="Lesbos Lane">Lesbos Lane</div>
+                                    <div class="item" data-value="Liberty Street">Liberty Street</div>
+                                    <div class="item" data-value="Lindsay Circus">Lindsay Circus</div>
+                                    <div class="item" data-value="Little Bighorn Avenue">Little Bighorn Avenue</div>
+                                    <div class="item" data-value="Lolita Avenue">Lolita Avenue</div>
+                                    <div class="item" data-value="Los Santos Freeway">Los Santos Freeway</div>
+                                    <div class="item" data-value="Low Power Street">Low Power Street</div>
+                                    <div class="item" data-value="Macdonald Street">Macdonald Street</div>
+                                    <div class="item" data-value="Mad Wayne Thunder Drive">Mad Wayne Thunder Drive</div>
+                                    <div class="item" data-value="Magellan Avenue">Magellan Avenue</div>
+                                    <div class="item" data-value="Marathon Avenue">Marathon Avenue</div>
+                                    <div class="item" data-value="Marina Drive">Marina Drive</div>
+                                    <div class="item" data-value="Marlowe Drive">Marlowe Drive</div>
+                                    <div class="item" data-value="Melanoma Street">Melanoma Street</div>
+                                    <div class="item" data-value="Meringue Lane">Meringue Lane</div>
+                                    <div class="item" data-value="Meteor Street">Meteor Street</div>
+                                    <div class="item" data-value="Milton Road">Milton Road</div>
+                                    <div class="item" data-value="Mirror Park Boulevard">Mirror Park Boulevard</div>
+                                    <div class="item" data-value="Mirror Place">Mirror Place</div>
+                                    <div class="item" data-value="Morningwood Boulevard">Morningwood Boulevard</div>
+                                    <div class="item" data-value="Mount Haan Drive">Mount Haan Drive</div>
+                                    <div class="item" data-value="Mount Haan Road">Mount Haan Road</div>
+                                    <div class="item" data-value="Mount Vinewood Drive">Mount Vinewood Drive</div>
+                                    <div class="item" data-value="Mountain View Drive">Mountain View Drive</div>
+                                    <div class="item" data-value="Movie Star Way">Movie Star Way</div>
+                                    <div class="item" data-value="Mutiny Road">Mutiny Road</div>
+                                    <div class="item" data-value="New Empire Way">New Empire Way</div>
+                                    <div class="item" data-value="Nikola Avenue">Nikola Avenue</div>
+                                    <div class="item" data-value="Nikola Place">Nikola Place</div>
+                                    <div class="item" data-value="Niland Avenue">Niland Avenue</div>
+                                    <div class="item" data-value="Normandy Drive">Normandy Drive</div>
+                                    <div class="item" data-value="North Archer Avenue">North Archer Avenue</div>
+                                    <div class="item" data-value="North Calafia Way">North Calafia Way</div>
+                                    <div class="item" data-value="North Conker Avenue">North Conker Avenue</div>
+                                    <div class="item" data-value="North Rockford Drive">North Rockford Drive</div>
+                                    <div class="item" data-value="North Sheldon Avenue">North Sheldon Avenue</div>
+                                    <div class="item" data-value="Nowhere Road">Nowhere Road</div>
+                                    <div class="item" data-value="O'Neil Way">O'Neil Way</div>
+                                    <div class="item" data-value="Occupation Avenue">Occupation Avenue</div>
+                                    <div class="item" data-value="Olympic Freeway">Olympic Freeway</div>
+                                    <div class="item" data-value="Orchardville Avenue">Orchardville Avenue</div>
+                                    <div class="item" data-value="Paleto Boulevard">Paleto Boulevard</div>
+                                    <div class="item" data-value="Palomino Avenue">Palomino Avenue</div>
+                                    <div class="item" data-value="Palomino Freeway">Palomino Freeway</div>
+                                    <div class="item" data-value="Panorama Drive">Panorama Drive</div>
+                                    <div class="item" data-value="Peaceful Street">Peaceful Street</div>
+                                    <div class="item" data-value="Perth Street">Perth Street</div>
+                                    <div class="item" data-value="Picture Perfect Drive">Picture Perfect Drive</div>
+                                    <div class="item" data-value="Plaice Place">Plaice Place</div>
+                                    <div class="item" data-value="Playa Vista">Playa Vista</div>
+                                    <div class="item" data-value="Popular Street">Popular Street</div>
+                                    <div class="item" data-value="Portola Drive">Portola Drive</div>
+                                    <div class="item" data-value="Power Street">Power Street</div>
+                                    <div class="item" data-value="Procopio Drive">Procopio Drive</div>
+                                    <div class="item" data-value="Procopio Promenade">Procopio Promenade</div>
+                                    <div class="item" data-value="Prosperity Street">Prosperity Street</div>
+                                    <div class="item" data-value="Prosperity Street Promenade">Prosperity Street Promenade</div>
+                                    <div class="item" data-value="Pyrite Avenue">Pyrite Avenue</div>
+                                    <div class="item" data-value="Raton Pass">Raton Pass</div>
+                                    <div class="item" data-value="Red Desert Avenue">Red Desert Avenue</div>
+                                    <div class="item" data-value="Richman Street">Richman Street</div>
+                                    <div class="item" data-value="Rockford Drive">Rockford Drive</div>
+                                    <div class="item" data-value="Route 68">Route 68</div>
+                                    <div class="item" data-value="Route 68 Approach">Route 68 Approach</div>
+                                    <div class="item" data-value="Roy Lowenstein Boulevard">Roy Lowenstein Boulevard</div>
+                                    <div class="item" data-value="Rub Street">Rub Street</div>
+                                    <div class="item" data-value="Sam Austin Drive">Sam Austin Drive</div>
+                                    <div class="item" data-value="San Andreas Avenue">San Andreas Avenue</div>
+                                    <div class="item" data-value="San Vitus Boulevard">San Vitus Boulevard</div>
+                                    <div class="item" data-value="Sandcastle Way">Sandcastle Way</div>
+                                    <div class="item" data-value="Seaview Road">Seaview Road</div>
+                                    <div class="item" data-value="Senora Freeway">Senora Freeway</div>
+                                    <div class="item" data-value="Senora Road">Senora Road</div>
+                                    <div class="item" data-value="Senora Way">Senora Way</div>
+                                    <div class="item" data-value="Shank Street">Shank Street</div>
+                                    <div class="item" data-value="Signal Street">Signal Street</div>
+                                    <div class="item" data-value="Sinner Street">Sinner Street</div>
+                                    <div class="item" data-value="Sinners Passage">Sinners Passage</div>
+                                    <div class="item" data-value="Smoke Tree Road">Smoke Tree Road</div>
+                                    <div class="item" data-value="South Arsenal Street">South Arsenal Street</div>
+                                    <div class="item" data-value="South Boulevard Del Perro">South Boulevard Del Perro</div>
+                                    <div class="item" data-value="South Mo Milton Drive">South Mo Milton Drive</div>
+                                    <div class="item" data-value="South Rockford Drive">South Rockford Drive</div>
+                                    <div class="item" data-value="South Shambles Street">South Shambles Street</div>
+                                    <div class="item" data-value="Spanish Avenue">Spanish Avenue</div>
+                                    <div class="item" data-value="Steele Way">Steele Way</div>
+                                    <div class="item" data-value="Strangeways Drive">Strangeways Drive</div>
+                                    <div class="item" data-value="Strawberry Avenue">Strawberry Avenue</div>
+                                    <div class="item" data-value="Supply Street">Supply Street</div>
+                                    <div class="item" data-value="Sustancia Road">Sustancia Road</div>
+                                    <div class="item" data-value="Swiss Street">Swiss Street</div>
+                                    <div class="item" data-value="Tackle Street">Tackle Street</div>
+                                    <div class="item" data-value="Tangerine Street">Tangerine Street</div>
+                                    <div class="item" data-value="Tongva Drive">Tongva Drive</div>
+                                    <div class="item" data-value="Tower Way">Tower Way</div>
+                                    <div class="item" data-value="Tug Street">Tug Street</div>
+                                    <div class="item" data-value="Union Road">Union Road</div>
+                                    <div class="item" data-value="Utopia Gardens">Utopia Gardens</div>
+                                    <div class="item" data-value="Vespucci Boulevard">Vespucci Boulevard</div>
+                                    <div class="item" data-value="Vinewood Boulevard">Vinewood Boulevard</div>
+                                    <div class="item" data-value="Vinewood Park Drive">Vinewood Park Drive</div>
+                                    <div class="item" data-value="Vitus Street">Vitus Street</div>
+                                    <div class="item" data-value="Voodoo Place">Voodoo Place</div>
+                                    <div class="item" data-value="West Eclipse Boulevard">West Eclipse Boulevard</div>
+                                    <div class="item" data-value="West Galileo Avenue">West Galileo Avenue</div>
+                                    <div class="item" data-value="West Mirror Drive">West Mirror Drive</div>
+                                    <div class="item" data-value="Whispymound Drive">Whispymound Drive</div>
+                                    <div class="item" data-value="Wild Oats Drive">Wild Oats Drive</div>
+                                    <div class="item" data-value="York Street">York Street</div>
+                                    <div class="item" data-value="Zancudo Avenue">Zancudo Avenue</div>
+                                    <div class="item" data-value="Zancudo Barranca">Zancudo Barranca</div>
+                                    <div class="item" data-value="Zancudo Road">Zancudo Road</div>
+                                    <div class="item" data-value="Zancudo Trail">Zancudo Trail</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label>Deployment Type</label>
+                    <div class="three fields" id="DeploymentType">
+                        <div class="field">
+                            <div class="ui selection search dropdown">
+                                <input type="hidden" name="DeploymentType" id="DeploymentTypeInput">
+                                <i class="dropdown icon"></i>
+                                <div class="default text">Select Deployment Type</div>
+                                <div class="menu">
+                                    <div class="item" data-value="Vehicle">Vehicle</div>
+                                    <div class="item" data-value="Building">Building</div>
+                                    <div class="item" data-value="Open Area">Open Area</div>
+                                    <div class="item" data-value="Vehicle Search">Vehicle Search</div>
+                                    <div class="item" data-value="Other">Other</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="PositiveAlert">Positive Alert</label>
+                    <div class="three fields" id="PositiveAlert">
+                        <div class="field">
+                            <div class="ui selection search dropdown">
+                                <input type="hidden" name="PositiveAlert" id="PositiveAlertInput">
+                                <i class="dropdown icon"></i>
+                                <div class="default text">Positive Alert</div>
+                                <div class="menu">
+                                    <div class="item" data-value="Yes">Yes</div>
+                                    <div class="item" data-value="No">No</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="ItemsLocated">Items Located</label>
+                    <div class="three fields">
+                        <div class="field">
+                            <input type="text" id="ItemsLocated" placeholder="Insert Here">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h2>Incident Narrative</h2>
+            <div class="ui form">
+                <div class="ui segment">
+                    <div class="field">
+                        <label for="Narrative">Narrative</label>
+                        <div class="three fields">
+                            <div class="field">
+                                <input type="text" placeholder="Full Name" id="Narrative" style="width: 300px;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="Signature">Signature</label>
+                        <div class="three fields">
+                            <div class="field">
+                                <input type="text" placeholder="Officer Signature" id="Signature">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    <div class="ui container">
+        <h2>Generator</h2>
+        <div class="ui form">
+            <div class="ui segment">
+                <div class="field">
+                    <label for="output">Output</label>
+                    <textarea id="output" readonly></textarea>
+                </div>
+                <div class="ui secondary button" id="submit">Submit</div>
+                <div class="ui primary button" id="copy">Copy to Clipboard</div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+    <script src="js/caninedeploy.js"></script>
+    <script>
+        // Initialize Semantic UI Dropdown
+        $(document).ready(function () {
+            $('.ui.search.dropdown').dropdown({
+                fullTextSearch: true // Enable full-text search
+            });
+        });
+    
+        // Initialize Date and Time Picker
+        document.addEventListener('DOMContentLoaded', function () {
+            const datetimePicker = document.getElementById('datetimePicker');
+            const todayButton = document.getElementById('todayButton');
+    
+            todayButton.addEventListener('click', function () {
+                const currentDate = new Date();
+    
+                // Get UTC date and time components
+                const year = currentDate.getUTCFullYear();
+                const month = String(currentDate.getUTCMonth() + 1).padStart(2, '0');
+                const day = String(currentDate.getUTCDate()).padStart(2, '0');
+                const hours = String(currentDate.getUTCHours()).padStart(2, '0');
+                const minutes = String(currentDate.getUTCMinutes()).padStart(2, '0');
+    
+                // Format the date and time as "YYYY-MM-DD HH:MM"
+                const formattedDate = `${year}-${month}-${day}T${hours}:${minutes}`;
+    
+                // Set the value of the datetimePicker input field to the current UTC date and time
+                datetimePicker.value = formattedDate;
+            });
+    
+            datetimePicker.addEventListener('change', function () {
+                // Parse the datetimePicker value into a JavaScript Date object
+                const inputDate = new Date(datetimePicker.value);
+    
+                // Get the individual date and time components
+                const year = inputDate.getUTCFullYear();
+                const month = String(inputDate.getUTCMonth() + 1).padStart(2, '0');
+                const day = String(inputDate.getUTCDate()).padStart(2, '0');
+                const hours = String(inputDate.getUTCHours()).padStart(2, '0');
+                const minutes = String(inputDate.getUTCMinutes()).padStart(2, '0');
+    
+                // Format the date and time without the "T" character
+                const formattedDate = `${year}-${month}-${day} ${hours}:${minutes}`;
+    
+                // Set the value of the datetimePicker input field to the formatted date and time
+                datetimePicker.value = formattedDate;
+    
+                console.log('Year:', year);
+                console.log('Month:', month);
+                console.log('Day:', day);
+                console.log('Hours:', hours);
+                console.log('Minutes:', minutes);
+            });
+        });
+    
+        function saveDataToLocalStorage() {
+            // Get the values of input fields by their IDs
+            const data = {
+                HandlerName: $('#HandlerName').val(),
+                K9Name: $('#K9Name').val(),
+                K9Specialization: $('.ui.selection.search.dropdown input[name="K9Specialization"]').val(),
+                DivisionalRank: $('#DivisionalRank').val(),
+                SerialNumber: $('#SerialNumber').val(),
+                datetimePicker: $('#datetimePicker').val(),
+                DistrictName: $('.ui.selection.search.dropdown input[name="DistrictName"]').val(),
+                StreetName: $('.ui.selection.search.dropdown input[name="StreetName"]').val(),
+                DeploymentType: $('.ui.selection.search.dropdown input[name="DeploymentType"]').val(),
+                PositiveAlert: $('.ui.selection.search.dropdown input[name="PositiveAlert"]').val(),
+                ItemsLocated: $('#ItemsLocated').val(),
+                Narrative: $('#Narrative').val(),
+                Signature: $('#Signature').val(),
+            };
+    
+            // Store the data in local storage
+            localStorage.setItem('canineDeploymentData', JSON.stringify(data));
+        }
+    
+        // Function to load data from local storage
+        function loadDataFromLocalStorage() {
+            // Retrieve data from local storage
+            const data = localStorage.getItem('canineDeploymentData');
+            if (data) {
+                const parsedData = JSON.parse(data);
+    
+                // Set the values of input fields from the retrieved data
+                $('#HandlerName').val(parsedData.HandlerName);
+                $('#K9Name').val(parsedData.K9Name);
+                $('.ui.selection.search.dropdown input[name="K9Specialization"]').val(parsedData.K9Specialization);
+                $('.ui.selection.search.dropdown input[name="PositiveAlert"]').val(parsedData.PositiveAlert);
+                $('#DivisionalRank').val(parsedData.DivisionalRank);
+                $('#SerialNumber').val(parsedData.SerialNumber);
+                $('#datetimePicker').val(parsedData.datetimePicker);
+                $('#StreetName').val(parsedData.StreetName);
+                $('#DistrictName').val(parsedData.DistrictName);
+                $('.ui.selection.search.dropdown input[name="StreetName"]').val(parsedData.StreetName);
+                $('.ui.selection.search.dropdown input[name="DistrictName"]').val(parsedData.DistrictName);
+                $('.ui.selection.search.dropdown input[name="DeploymentType"]').val(parsedData.DeploymentType);
+                $('#ItemsLocated').val(parsedData.ItemsLocated);
+                $('#Narrative').val(parsedData.Narrative);
+                $('#Signature').val(parsedData.Signature);
+            }
+        }
+    
+        // Add event listeners to the input fields for automatic saving
+        const inputFields = document.querySelectorAll('input, textarea, select');
+        inputFields.forEach(function (inputField) {
+            inputField.addEventListener('change', saveDataToLocalStorage);
+        });
+    
+        // Load data from local storage when the page loads
+        loadDataFromLocalStorage();
+    </script>
+</body>
+</html>
