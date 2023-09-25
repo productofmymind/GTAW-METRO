@@ -147,13 +147,6 @@ textarea {
   background-color: #16ab3b;
 }
 
-.ui.button#copy {
-  background-color: #db2828;
-}
-
-.ui.button#copy:hover {
-  background-color: #cf1f1f;
-}
 
 /* Removed invalid CSS: button:removeInput */
 button#removeInput,
