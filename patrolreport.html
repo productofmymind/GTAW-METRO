@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Meta tags and CSS links -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +9,7 @@
     <link rel="stylesheet" href="css/patrolreport.css">
     <title>Metro - Patrol Format</title>
 </head>
-<body>    
+<body>
     <button id="clearLocalStorageButton">Clear Format</button>
     <button id="undoLocalStorageButton">Undo Clear</button>
     <div class="ui container">
@@ -18,7 +17,7 @@
             <div class="ui segment">
                 <h2>General Information</h2>
                 <div class="field">
-                    <p>METROPOLITAN OFFICERS</p>
+                    <p>Metropolitan Officers</p>
                     <div id="MetroOfficers">
                         <div class="field">
                             <input type="text" placeholder="Platoon + Full Name" class="officer">
@@ -28,7 +27,7 @@
                     <button type="button" id="removeInput">-</button>
                 </div>
                 <div class="field">
-                    <p>TYPE OF PATROL</p>
+                    <p>Type of Patrol</p>
                     <div class="three fields" id="PatrolType">
                         <div class="field">
                             <div class="ui selection search dropdown">
@@ -46,7 +45,7 @@
                     </div>
                 </div>
                 <div class="field">
-                    <p>DATE</p>
+                    <p>Date</p>
                     <div class="four fields">
                         <div class="field">
                             <input type="date" id="datePicker">
@@ -67,22 +66,26 @@
                         </div>
                     </div>
                 </div>
-                <h4 class="ui dividing header">Patrol Summary</h4>
+            </div>
+        </div>
+    </div>
+    <div class="ui container">
+        <div class="ui form">
+            <div class="ui segment">
+                <h2>Patrol Summary</h2>
                 <div class="field">
-                    <div class="field">
-                        <p>Back-up Requests Attended</p>
-                        <div class="three fields">
-                            <div class="field">
-                                <input type="text" placeholder="Back-up Requests Attended" id="backupRequestsAttended">
-                            </div>
+                    <p>Back-up Requests Attended</p>
+                    <div class="three fields">
+                        <div class="field">
+                            <input type="text" placeholder="Back-up Requests Attended" id="backupRequestsAttended">
                         </div>
                     </div>
-                    <div class="field">
-                        <p>Subjects Arrested</p>
-                        <div class="three fields">
-                            <div class="field">
-                                <input type="text" placeholder="Subjects Arrested" id="subjectsArrested">
-                            </div>
+                </div>
+                <div class="field">
+                    <p>Subjects Arrested</p>
+                    <div class="three fields">
+                        <div class="field">
+                            <input type="text" placeholder="Subjects Arrested" id="subjectsArrested">
                         </div>
                     </div>
                 </div>
@@ -105,18 +108,22 @@
                         </div>
                     </div>
                 </div>
-                <div class="ui segment">
-                    <h2>Generator</h2>
-                    <div class="field">
-                        <p>Output</p>
-                        <textarea id="output" readonly></textarea>
-                    </div>
-                    <div class="ui secondary button" id="submit">Submit</div>
-                    <div class="ui primary button" id="copy">Copy to Clipboard</div>
-                </div>
             </div>
         </div>
-    </div>    
+    </div>
+    <div class="ui container">
+        <div class="ui form">
+            <div class="ui segment">
+                <h2>Generator</h2>
+                <div class="field">
+                    <p>Output</p>
+                    <textarea id="output" readonly></textarea>
+                </div>
+                <div class="ui secondary button" id="submit">Submit</div>
+                <div class="ui primary button" id="copy">Copy to Clipboard</div>
+            </div>
+        </div>
+    </div>  
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
     <script src="js/patrolreport.js"></script>
