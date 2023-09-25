@@ -51,7 +51,19 @@
                     <label for="DivisionalRank">Divisional Rank</label>
                     <div class="three fields">
                         <div class="field">
-                            <input type="text" placeholder="Probationary Canine Handler, Canine Handler, etc." id="DivisionalRank">
+                            <div class="ui selection search dropdown" id="DivisionalRank">
+                                <input type="hidden" name="DivisionalRank" id="DivisionalRankInput">
+                                <i class="dropdown icon"></i>
+                                <div class="default text">Select Divisional Rank</div>
+                                <div class="menu">
+                                    <div class="item" data-value="Officer in Charge">Officer in Charge</div>
+                                    <div class="item" data-value="Assistant Officer in Charge">Assistant Officer in Charge</div>
+                                    <div class="item" data-value="Chief Supervisor">Chief Supervisor</div>
+                                    <div class="item" data-value="Canine Supervisor">Canine Supervisor</div>
+                                    <div class="item" data-value="Canine Handler">Canine Handler</div>
+                                    <div class="item" data-value="Probationary Canine Handler">Probationary Canine Handler</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -559,7 +571,7 @@
                 HandlerName: $('#HandlerName').val(),
                 K9Name: $('#K9Name').val(),
                 K9Specialization: $('.ui.selection.search.dropdown input[name="K9Specialization"]').val(),
-                DivisionalRank: $('#DivisionalRank').val(),
+                DivisionalRank: $('.ui.selection.search.dropdown input[name="DivisionalRank"]').val(),
                 SerialNumber: $('#SerialNumber').val(),
                 datetimePicker: $('#datetimePicker').val(),
                 DistrictName: $('.ui.selection.search.dropdown input[name="DistrictName"]').val(),
@@ -587,7 +599,7 @@
                 $('#K9Name').val(parsedData.K9Name);
                 $('.ui.selection.search.dropdown input[name="K9Specialization"]').val(parsedData.K9Specialization);
                 $('.ui.selection.search.dropdown input[name="PositiveAlert"]').val(parsedData.PositiveAlert);
-                $('#DivisionalRank').val(parsedData.DivisionalRank);
+                $('.ui.selection.search.dropdown input[name="DivisionalRank"]').val(parsedData.DivisionalRank);
                 $('#SerialNumber').val(parsedData.SerialNumber);
                 $('#datetimePicker').val(parsedData.datetimePicker);
                 $('#StreetName').val(parsedData.StreetName);

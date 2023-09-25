@@ -4,7 +4,7 @@
     const HandlerName = $('#HandlerName').val() || '';
     const K9Name = $('#K9Name').val() || '';
     const K9Specialization = $('#K9SpecializationInput').val() || '';
-    const DivisionalRank = $('#DivisionalRank').val() || '';
+    const DivisionalRank = $('#DivisionalRankInput').val() || '';
     const SerialNumber = $('#SerialNumber').val() || '';
     const StreetName = $('#StreetNameInput').val() || '';
     const DistrictName = $('#DistrictNameInput').val() || '';
