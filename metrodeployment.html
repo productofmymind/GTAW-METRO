@@ -5,35 +5,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="css/img/metro.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
     <link rel="stylesheet" href="css/metrodeploy.css">
     <title>Metro Deployment Report</title>
 </head>
 <body>    
-    <!-- Add this button at the bottom of your form -->
     <button id="clearLocalStorageButton">Clear Format</button>
     <button id="undoLocalStorageButton">Undo Clear</button>
-
     <div class="ui container">
         <div class="ui form">
             <div class="ui segment">
-                <h2>Basic Information</h2>
-                <h4 class="ui dividing header">GENERAL INFORMATION</h4>
-
-                <!-- INVOLVED PLATOONS -->
+                <h2>General Information</h2>
                 <div class="field">
-                    <label>INVOLVED PLATOONS</label>
+                    <label>Involved Platoons</label>
                     <form>
                         <label><input type="checkbox" id="DPLT" name="D Platoon" value="D Platoon"> D Platoon</label><br>
                         <label><input type="checkbox" id="K9PLT" name="K9 Platoon" value="K9 Platoon"> K9 Platoon</label><br>
                         <label><input type="checkbox" id="HPLT" name="H Platoon" value="H Platoon"> H Platoon</label>
                     </form>
-                </div>
-
-                <!-- Incident Command -->
-                <h4 class="ui dividing header">INCIDENT COMMAND</h4>
+                <h4 class="ui dividing header">Incident Command</h4>
                 <div class="field">
-                    <label>INCIDENT COMMANDER (if applicable)</label>
+                    <label>Incident Commander (if applicable)</label>
                     <div class="three fields">
                         <div class="field">
                             <input type="text" placeholder="LSPD Rank Firstname Lastname" id="ICname">
@@ -41,7 +34,7 @@
                     </div>
                 </div>
                 <div class="field">
-                    <label>CRISIS NEGOTIATOR (if applicable)</label>
+                    <label>Crisis Negotiator (if applicable)</label>
                     <div class="three fields">
                         <div class="field">
                             <input type="text" placeholder="LSPD Rank Firstname Lastname" id="CNname">
@@ -49,7 +42,7 @@
                     </div>
                 </div>
                 <div class="field">
-                    <label>TACTICAL COMMANDER</label>
+                    <label>Tactical Commander</label>
                     <div class="three fields">
                         <div class="field">
                             <input type="text" placeholder="Platoon Rank Firstname Lastname (i.e. K9 Team Leader John Doe)" id="TCname">
@@ -59,7 +52,7 @@
 
                 <!-- INVOLVED METROPOLITAN MEMBERS -->
                 <div class="field">
-                    <label>INVOLVED METROPOLITAN MEMBERS</label>
+                    <label>Involved Metropolitan Members</label>
                     <div id="InvolvedMembers">
                         <div class="field">
                             <input type="text" placeholder="Platoon + Full Name" id="MMMname">
@@ -70,7 +63,7 @@
                 </div>
                 <!-- DEPLOYMENT TYPE -->
                 <div class="field">
-                    <label>DEPLOYMENT TYPE</label>
+                    <label>Deployment Type</label>
                     <div class="three fields" id="DeploymentType">
                         <div class="field">
                             <div class="ui selection search dropdown">
@@ -105,9 +98,9 @@
                         </div>
                     </div>
                 </div>
-                <h4 class="ui dividing header">DEPLOYMENT TIMELINE</h4>
+                <h4 class="ui dividing header">Deployment Timeline</h4>
                 <div class="field">
-                    <label for="datetimePicker">DATE AND TIME</label>
+                    <label for="datetimePicker">Date and Time</label>
                     <div class="four fields">
                         <div class="field">
                             <input type="datetime-local" id="datetimePicker">
@@ -118,7 +111,7 @@
                     </div>
                 </div>                
                 <div class="field">
-                    <label>LOCATION</label>
+                    <label>Location</label>
                     <div class="three fields">
                         <div class="field">
                             <input type="text" placeholder="Streetname, nr, area" id="loc">
@@ -126,7 +119,7 @@
                     </div>
                 </div>
                 <div class="field">
-                    <label>START OF DEPLOYMENT</label>
+                    <label>Start of Deployment</label>
                     <div class="three fields">
                         <div class="field">
                             <input type="time" id="startTime" placeholder="HH:MM">
@@ -134,7 +127,7 @@
                     </div>
                 </div>
                 <div class="field">
-                    <label>END OF DEPLOYMENT</label>
+                    <label>End of Deployment</label>
                     <div class="three fields">
                         <div class="field">
                             <input type="time" id="endTime" placeholder="HH:MM">
@@ -142,7 +135,7 @@
                     </div>
                 </div>
                 <div class="field">
-                    <label>DEPLOYMENT EVENTS</label>
+                    <label>Deployment Events</label>
                     <div id="DeploymentEventsContainer">
                         <div class="field">
                             <input type="text" placeholder="Event nr. 1" id="event1">
@@ -151,9 +144,9 @@
                     <button type="button" id="addInput2">+</button>
                     <button type="button" id="removeInput2">-</button>
                 </div>
-                <h4 class="ui dividing header">CASUALTY & INJURY INFORMATION</h4>
+                <h4 class="ui dividing header">Casualty & Injury Information</h4>
                 <div class="field">
-                    <label>INJURED TEAM MEMBERS</label>
+                    <label>Injured Team Members</label>
                     <div id="InjuredMembers">
                         <div class="field">
                             <input type="text" placeholder="Injured member. 1" id="member1">
@@ -163,7 +156,7 @@
                     <button type="button" id="removeInput3">-</button>
                 </div>
                 <div class="field">
-                    <label>SUSPECT CASUALTIES</label>
+                    <label>Suspect Casualties</label>
                     <div id="InjuredSuspects">
                         <div class="field">
                             <input type="text" placeholder="Injured suspect. 1" id="suspect1">
@@ -173,7 +166,7 @@
                     <button type="button" id="removeInput4">-</button>
                 </div>
                 <div class="field">
-                    <label>CIVILIAN CASUALTIES</label>
+                    <label>Civilian Casualties</label>
                     <div id="InjuredCivilians">
                         <div class="field">
                             <input type="text" placeholder="Injured civilian. 1" id="civilain1">
@@ -183,7 +176,7 @@
                     <button type="button" id="removeInput5">-</button>
                 </div>
                 <div class="field">
-                    <label>FILING OFFICER SIGNATURE</label>
+                    <label>Filing Officer Signature</label>
                     <div class="three fields">
                         <div class="field">
                             <input type="text" placeholder="Name" id="signature">
@@ -202,8 +195,6 @@
             </div>
         </div>
     </div>
-
-    <!-- Your additional segments here -->
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
@@ -239,12 +230,20 @@
             }
 
             function removeInputField(containerId) {
-            return function () {
+        return function () {
             const inputFieldsContainer = $(containerId);
-            inputFieldsContainer.children().last().remove(); // Remove the last input field
+            const inputFields = inputFieldsContainer.children();
+            
+            // Check if there are more than one input fields before removing
+            if (inputFields.length > 1) {
+                inputFields.last().remove(); // Remove the last input field
+            } else {
+                // If there's only one input field, prevent removal
+                alert("Cannot remove the last input field.");
+            }
         }
     }
-        });
+});
 
         // Initialize Date and Time Picker
         document.addEventListener('DOMContentLoaded', function () {

@@ -1,8 +1,74 @@
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #2F384E;
+}
+
+h2, h4 {
+  font-family: "Inter", sans-serif;
+  color: white;
+}
+
 .ui.container {
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.ui.segment {
+  color: white;
+  background-color: #2F384E;
+}
+
+.ui.form {
+  color: white;
+  background-color: #2F384E;
+}
+
+.ui.form .field>label {
+  color: white !important;
+}
+
+.ui.form .inline.field>label, .ui.form .inline.field>p, .ui.form .inline.fields .field>label, .ui.form .inline.fields .field>p, .ui.form .inline.fields>label {
+  display: inline-block;
+  width: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  vertical-align: baseline;
+  font-size: .92857143em;
+  font-weight: 700;
+  color: white;
+  text-transform: none;
+}
+
+.ui.checkbox input.hidden+label {
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: white;
+}
+
+.ui.form .two.fields>.field,
+.ui.form .two.fields>.fields {
+  padding-top: 10px !important;
+  width: 50%; /* Adjust the width as needed */
+}
+
+/* To remove the margin-right for the last box, you can use the :last-child pseudo-class */
+.ui.form .two.fields>.field:last-child,
+.ui.form .two.fields>.fields:last-child {
+  margin-right: 10; /* Remove margin-right for the last box */
 }
 
 .inline.fields .header {
   width: 250px !important;
+}
+
+.ui.button#submit {
+  background-color: #21ba45;
+}
+
+.ui.button#submit:hover {
+  background-color: #16ab3b;
 }

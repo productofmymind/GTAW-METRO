@@ -1,33 +1,40 @@
 body {
+  font-family: "Inter", sans-serif;
   color: white;
-  background-color: #000;
+  background-color: #2F384E;
 }
+
+h2, h4 {
+  font-family: "Inter", sans-serif;
+  color: white;
+}
+
 
 label {
   color: white;
 }
 
 #todayButton {
-  background-color: #007bff;
+  background-color: #274cac;
   color: #fff;
   border: none;
   padding: 10px 20px;
   cursor: pointer;
   border-radius: 5px;
   transition: background-color 0.3s ease;
-  float: left; /* Float the button to the left */
+  float: left;
 }
 
 #oneDayAgoButton {
-  background-color: #007bff;
+  background-color: #274cac;
   color: #fff;
   border: none;
   padding: 10px 20px;
   cursor: pointer;
   border-radius: 5px;
-  margin-left: -190px; 
+  margin-left: -190px;
   transition: background-color 0.3s ease;
-  float: left; 
+  float: left;
 }
 
 .bigger-input {
@@ -49,12 +56,12 @@ label {
 }
 
 .ui.segment {
-  background-color: rgb(0, 0, 0);
+  background-color: #2F384E;
   padding: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-div.field{
+div.field {
   color: white;
 }
 
@@ -74,7 +81,6 @@ h4.ui.dividing.header {
 .field {
   margin-bottom: 20px;
 }
-
 
 .ui.selection.search.dropdown {
   width: 100%;
@@ -116,7 +122,7 @@ textarea {
   width: 100%;
   min-height: 100px;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #182238;
   resize: none;
 }
 
@@ -124,6 +130,3 @@ textarea {
   background-color: #21ba45;
 }
 
-.ui.button#copy {
-  background-color: #db2828;
-}

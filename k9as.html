@@ -5,18 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="css/img/k9.png" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
-      integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
     <link rel="stylesheet" href="css/k9as.css" />
     <title>K9 - Activity Assessment</title>
   </head>
   <body>
-
     <div class="ui container">
       <div class="ui form">
           <div class="ui segment message-box">
@@ -31,20 +24,20 @@
           </div>
       </div>
   </div>
-
     <div class="ui container">
         <div class="ui form">
             <div class="ui segment">
                 <h2>Monthly Statistics</h2>
                 <div class="field">
                     <label>Total Patrols</label>
-                    <div class="two fields">
+                    <div class="one field">
                         <div class="field">
                             <input checked="" type="text" name="TotalPatrols" placeholder="Total Patrols">
+                            </div>
+                            <div>
                             <input tabindex="0" class="hidden" checked="" type="text" name="TotalPatrols2" placeholder="Total Patrols % = +5%, -5%, etc">
                         </div>
                         <div class="field">
-                            <!-- Dropdown for Green/Red -->
                             <select id="PatrolStatus">
                                 <option id="Green" value ="Green">Green</option>
                                 <option id="Red" value="Red">Red</option>
@@ -54,13 +47,14 @@
                 </div>
                 <div class="field">
                     <label>Total Deployments</label>
-                    <div class="two fields">
+                    <div class="one field">
                         <div class="field">
                             <input checked="" type="text" name="TotalDeployments" placeholder="Total Deployments">
+                        </div>
+                        <div>
                             <input checked="" type="text" name="TotalDeployments2" placeholder="Total Deployments % = +5%, -5%, etc">
                         </div>
                         <div class="field">
-                            <!-- Dropdown for Green/Red -->
                             <select id="DeploymentStatus">
                               <option id="Green" value ="Green">Green</option>
                               <option id="Red" value="Red">Red</option>

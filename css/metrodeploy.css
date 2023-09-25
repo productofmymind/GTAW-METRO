@@ -1,22 +1,16 @@
 body {
-  background: #fff;
-  font: 100% system-ui;
+  font-family: "Inter", sans-serif;
+  background: #2F384E;
+  color: #2F384E; /* Added text color for better contrast */
 }
 
-h1, p {
-  color: #222;
+h2{
+  font-family: "Inter", sans-serif;
 }
 
-body.dark-theme {
-  background: #121212;
-}
-
-body.dark-theme h1, body.dark-theme p {
-  color: #eee;
-}
-
-body.dark-theme a {
-  color: #809fff;
+h4.ui.dividing.header {
+  font-family: "Inter", sans-serif;
+  color: white;
 }
 
 #todayButton {
@@ -27,6 +21,16 @@ body.dark-theme a {
   cursor: pointer;
   border-radius: 5px;
   transition: background-color 0.3s ease;
+}
+
+button {
+  background-color: #0074cc;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-right: 5px;
 }
 
 #todayButton:hover {
@@ -47,20 +51,34 @@ body.dark-theme a {
   padding: 4px 10px;
 }
 
-body {
-  background-color: #f4f4f4;
-  font-family: Arial, sans-serif;
-}
-
 .ui.container {
   margin-top: 20px;
 }
 
 .ui.segment {
-  background-color: white;
-  padding: 20px;
-  border: 1px solid #ccc;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: white;
+  background-color: #2F384E;
+}
+
+.ui.form {
+  color: white;
+  background-color: #2F384E;
+}
+
+.ui.form .field>label {
+  color: white !important;
+}
+
+.ui.form .inline.field>label, .ui.form .inline.field>p, .ui.form .inline.fields .field>label, .ui.form .inline.fields .field>p, .ui.form .inline.fields>label {
+  display: inline-block;
+  width: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  vertical-align: baseline;
+  font-size: .92857143em;
+  font-weight: 700;
+  color: white;
+  text-transform: none;
 }
 
 h2 {
@@ -136,10 +154,8 @@ textarea {
 .ui.button#copy:hover {
   background-color: #cf1f1f;
 }
-button:removeInput {
-  background-color: #FF0000;
-}
 
+/* Removed invalid CSS: button:removeInput */
 button#removeInput,
 button#removeInput2,
 button#removeInput3,
@@ -153,3 +169,4 @@ button#removeInput5 {
   cursor: pointer;
   margin-top: 15px;
 }
+
