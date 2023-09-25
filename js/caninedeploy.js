@@ -12,7 +12,7 @@
     const PositiveAlert = $('#PositiveAlertInput').val() || '';
     const ItemsLocated = $('#ItemsLocated').val() || '';
     const Narrative = $('#Narrative').val() || '';
-    const Signature = $('#Narrative').val() || '';
+    const Signature = $('#Signature').val() || '';
 
     let output = `[divbox2=transparent]
     [aligntable=right,250,0,0,0,0,0][center][metrologo=150][k9platlogo=150][/center][/aligntable]
@@ -40,7 +40,7 @@
     
     [divbox=black][b][size=150][color=#FFFFFF]3. INCIDENT NARRATIVE[/color][/size][/b]
     [/divbox]
-    [indent=10][b]3.1 | NARRATIVE:[/b] ${$('#Narrative').val()}
+    [indent=10][b]3.1 | NARRATIVE:[/b] ${Narrative}
     
     [b]3.2 | SIGNATURE:[/b] ${Signature}
     [/indent]
