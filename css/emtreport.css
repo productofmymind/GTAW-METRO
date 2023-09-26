@@ -1,0 +1,177 @@
+body {
+  font-family: "Inter", sans-serif;
+  background: #2F384E;
+  color: #2F384E; /* Added text color for better contrast */
+}
+
+h2{
+  font-family: "Inter", sans-serif;
+}
+
+h4.ui.dividing.header {
+  font-family: "Inter", sans-serif;
+  color: white;
+}
+
+#todayButton {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+#oneDayAgoButton {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-left: -190px;
+  transition: background-color 0.3s ease;
+  float: left;
+}
+
+button {
+  background-color: #0074cc;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+#todayButton:hover {
+  background-color: #0056b3;
+}
+
+.bigger-input {
+  width: 200px;
+  height: 40px;
+  font-size: 16px;
+  padding: 8px;
+}
+
+.bigger-button {
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  padding: 4px 10px;
+}
+
+.ui.container {
+  margin-top: 20px;
+}
+
+.ui.segment {
+  color: white;
+  background-color: #2F384E;
+}
+
+.ui.form {
+  color: white;
+  background-color: #2F384E;
+}
+
+.ui.form .field>label {
+  color: white !important;
+}
+
+.ui.form .inline.field>label, .ui.form .inline.field>p, .ui.form .inline.fields .field>label, .ui.form .inline.fields .field>p, .ui.form .inline.fields>label {
+  display: inline-block;
+  width: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  vertical-align: baseline;
+  font-size: .92857143em;
+  font-weight: 700;
+  color: white;
+  text-transform: none;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+h4.ui.dividing.header {
+  font-size: 18px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.field {
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.ui.selection.search.dropdown {
+  width: 100%;
+}
+
+button {
+  background-color: #2185d0;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #1678c2;
+}
+
+button#addInput,
+button#addInput2,
+button#addInput3,
+button#addInput4,
+button#addInput5 {
+  background-color: #0074cc;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  resize: none;
+}
+
+.ui.button#submit {
+  background-color: #21ba45;
+}
+
+.ui.button#submit:hover {
+  background-color: #16ab3b;
+}
+
+
+/* Removed invalid CSS: button:removeInput */
+button#removeInput,
+button#removeInput2,
+button#removeInput3,
+button#removeInput4,
+button#removeInput5 {
+  background-color: #FF0000;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+

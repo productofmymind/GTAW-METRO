@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="css/img/k9.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <link rel="stylesheet" href="css/metrodeploy.css">
+    <title>Bite Report</title>
+</head>
+<body>    
+    <button id="clearLocalStorageButton">Clear Format</button>
+    <button id="undoLocalStorageButton">Undo Clear</button>
+    <div class="ui container">
+        <div class="ui form">
+            <div class="ui segment">
+                <h2>General Information</h2>
+                <div class="field">
+                    <label>Name & Assigned K9</label>
+                    <div class="three fields">
+                        <div class="field">
+                            <input type="text" placeholder="LSPD Rank Firstname Lastname" id="ICname">
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="DivisionalRank">Divisional Rank</label>
+                    <div class="three fields">
+                        <div class="field">
+                            <div class="ui selection search dropdown" id="DivisionalRankDropdown">
+                                <input type="hidden" name="DivisionalRank" id="DivisionalRankInput">
+                                <i class="dropdown icon"></i>
+                                <div class="default text">Select Divisional Rank</div>
+                                <div class="menu">
+                                    <div class="item" data-value="Officer in Charge">Officer in Charge</div>
+                                    <div class="item" data-value="Assistant Officer in Charge">Assistant Officer in Charge</div>
+                                    <div class="item" data-value="Chief Supervisor">Chief Supervisor</div>
+                                    <div class="item" data-value="Canine Supervisor">Canine Supervisor</div>
+                                    <div class="item" data-value="Canine Handler">Canine Handler</div>
+                                    <div class="item" data-value="Probationary Canine Handler">Probationary Canine Handler</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label>Serial Number</label>
+                    <div class="three fields">
+                        <div class="field">
+                            <input type="text" placeholder="Badge Number" id="SerialNumber">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ui container">
+        <div class="ui form">
+            <div class="ui segment">
+                <h2>Incident Summary</h2>
+                <div class="field">
+                    <label for="datetimePicker">Date and Time</label>
+                    <div class="four fields">
+                        <div class="field">
+                            <input type="datetime-local" id="datetimePicker">
+                        </div>
+                        <div class="field">
+                            <button id="todayButton">Set to Today</button>
+                        </div>
+                    </div>
+                </div>    
+                <div class="field">
+                    <label>Name of Bitten</label>
+                    <div class="three fields">
+                        <div class="field">
+                            <input type="text" placeholder="Name of Bitten" id="BittenName">
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label>Extent of Injuries</label>
+                    <div class="three fields">
+                        <div class="field">
+                            <input type="text" placeholder="Extent of Injuries" id="InjuryExtent">
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="FDAttendance">FD Attendance</label>
+                    <div class="three fields" id="FDAttendanceDropdown">
+                        <div class="field">
+                            <div class="ui selection search dropdown">
+                                <input type="hidden" name="FDAttendance" id="FDAttendanceInput">
+                                <i class="dropdown icon"></i>
+                                <div class="default text">FD Attendance</div>
+                                <div class="menu">
+                                    <div class="item" data-value="Yes">Yes</div>
+                                    <div class="item" data-value="No">No</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ui container">
+        <div class="ui form">
+            <div class="ui segment">
+                <h2>Incident Narrative</h2>
+                <div class="field">
+                    <label>Other Officers on Scene</label>
+                    <div id="InvolvedMembersContainer">
+                        <div class="field">
+                            <input type="text" placeholder="Firstname Lastname" id="OtherOfficersName">
+                        </div>
+                    </div>
+                    <button type="button" id="addInput">+</button>
+                    <button type="button" id="removeInput">-</button>
+                </div>
+                <div class="field">
+                    <label for="Narrative">Narrative</label>
+                    <textarea id="Narrative"></textarea>
+                </div>              
+                <label for="Signature">Signature</label>
+                <input type="text" placeholder="Officer Signature" id="Signature">
+            </div>
+        </div>
+    </div>
+    <div class="ui container">
+        <div class="ui form">
+            <div class="ui segment">
+                <h2>Generator</h2>
+                <div class="field">
+                    <label>Output</label>
+                    <textarea id="output" readonly></textarea>
+                </div>
+                <div class="ui secondary button" id="submit">Submit</div>
+                <div class="ui primary button" id="copy">Copy to Clipboard</div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+    <script src="js/bitereport.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.ui.search.dropdown').dropdown({
+                fullTextSearch: true
+            });
+        });
+
+        $(document).ready(function () {
+            $("#addInput").click(addInputField("#InvolvedMembersContainer", "Firstname Lastname"));
+            $("#removeInput").click(removeInputField("#InvolvedMembersContainer"));
+        });
+
+        function addInputField(containerId, placeholderText) {
+            return function () {
+                const inputFieldsContainer = $(containerId);
+                const newInputField = $("<div>").addClass("field").html('<input type="text" placeholder="' + placeholderText + '" id="newInputField">');
+                inputFieldsContainer.append(newInputField);
+            };
+        }
+
+        function removeInputField(containerId) {
+            return function () {
+                const inputFieldsContainer = $(containerId);
+                const inputFields = inputFieldsContainer.children();
+                if (inputFields.length > 1) {
+                    inputFields.last().remove();
+                } else {
+                    alert("Cannot remove the last input field.");
+                }
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const datetimePicker = document.getElementById('datetimePicker');
+            const todayButton = document.getElementById('todayButton');
+
+            todayButton.addEventListener('click', function () {
+                const currentDate = new Date();
+                const year = currentDate.getUTCFullYear();
+                const month = String(currentDate.getUTCMonth() + 1).padStart(2, '0');
+                const day = String(currentDate.getUTCDate()).padStart(2, '0');
+                const hours = String(currentDate.getUTCHours()).padStart(2, '0');
+                const minutes = String(currentDate.getUTCMinutes()).padStart(2, '0');
+                const formattedDate = `${year}-${month}-${day}T${hours}:${minutes}`;
+                datetimePicker.value = formattedDate;
+            });
+
+            datetimePicker.addEventListener('change', function () {
+                const inputDate = new Date(datetimePicker.value);
+                const year = inputDate.getUTCFullYear();
+                const month = String(inputDate.getUTCMonth() + 1).padStart(2, '0');
+                const day = String(inputDate.getUTCDate()).padStart(2, '0');
+                const hours = String(inputDate.getUTCHours()).padStart(2, '0');
+                const minutes = String(inputDate.getUTCMinutes()).padStart(2, '0');
+                const formattedDate = `${year}-${month}-${day} ${hours}:${minutes}`;
+                datetimePicker.value = formattedDate;
+            });
+        });
+
+        function saveDataToLocalStorage() {
+    const data = {
+        ICname: $('#ICname').val(),
+        DivisionalRankInput: $('#DivisionalRankInput').val(),
+        SerialNumber: $('#SerialNumber').val(),
+        datetimePicker: $('#datetimePicker').val(),
+        BittenName: $('#BittenName').val(),
+        InjuryExtent: $('#InjuryExtent').val(),
+        FDAttendanceInput: $('#FDAttendanceInput').val(),
+        OtherOfficersName: $('#OtherOfficersName').val(),
+        Narrative: $('#Narrative').val(),
+        Signature: $('#Signature').val()
+    };
+
+    localStorage.setItem('metroDeploymentData', JSON.stringify(data));
+}
+
+function loadDataFromLocalStorage() {
+    const data = localStorage.getItem('metroDeploymentData');
+    if (data) {
+        const parsedData = JSON.parse(data);
+
+        $('#ICname').val(parsedData.ICname);
+        $('#DivisionalRankInput').val(parsedData.DivisionalRankInput);
+        $('#SerialNumber').val(parsedData.SerialNumber);
+        $('#datetimePicker').val(parsedData.datetimePicker);
+        $('#BittenName').val(parsedData.BittenName);
+        $('#InjuryExtent').val(parsedData.InjuryExtent);
+        $('#FDAttendanceInput').val(parsedData.FDAttendanceInput);
+        $('#OtherOfficersName').val(parsedData.OtherOfficersName);
+        $('#Narrative').val(parsedData.Narrative);
+        $('#Signature').val(parsedData.Signature);
+    }
+}
+
+
+        const inputFields = document.querySelectorAll('input, textarea, select');
+        inputFields.forEach(function (inputField) {
+            inputField.addEventListener('change', saveDataToLocalStorage);
+        });
+
+        loadDataFromLocalStorage();
+
+        function clearLocalStorage() {
+            const confirmation = confirm(
+                "Are you sure you want to clear all local data?\n\n" +
+                "This action will delete all stored data in your browser's local storage, including any unsaved work or settings. " +
+                "If you're not sure, it's recommended to cancel this action."
+            );
+
+            if (confirmation) {
+                const dataToBackup = localStorage.getItem('metroDeploymentData');
+                localStorage.setItem('metroDeploymentDataBackup', dataToBackup);
+                localStorage.removeItem('metroDeploymentData');
+                alert("Local storage has been cleared.");
+            }
+        }
+
+        function undoClearLocalStorage() {
+            const savedData = localStorage.getItem('metroDeploymentDataBackup');
+            if (savedData) {
+                localStorage.setItem('metroDeploymentData', savedData);
+                alert("Clear action has been undone. Your data is restored.");
+                location.reload();
+            } else {
+                alert("There is no data to restore.");
+            }
+        }
+
+        const clearButton = document.getElementById('clearLocalStorageButton');
+        if (clearButton) {
+            clearButton.addEventListener('click', clearLocalStorage);
+        }
+
+        const undoButton = document.getElementById('undoLocalStorageButton');
+        if (undoButton) {
+            undoButton.addEventListener('click', undoClearLocalStorage);
+        }
+    </script>
+</body>
+</html>
