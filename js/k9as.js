@@ -95,26 +95,11 @@ $('#submit').click(function () {
 [*][b]TRAININGS:[/b] ${$('[name=TrainingsSanders]:checked').val()}
 [/list][/divbox2][br][/br]
 
-[divbox2=transparent][b]Anastasia Galiani — CANINE HANDLER[/b][color=transparent]person7[/color]
-[hr][/hr]
-[list][b]PATROLS:[/b] ${$('[name=PatrolsGaliani]:checked').val()}
-[*][b]DEPLOYMENTS:[/b] ${$('[name=DeploymentsGaliani]:checked').val()}
-[*][b]TRAININGS:[/b] ${$('[name=TrainingsGaliani]:checked').val()}
-[/list][/divbox2][br][/br]
-
 [divbox2=transparent][b]Alexandra Mirste — CANINE HANDLER[/b][color=transparent]person8[/color]
 [hr][/hr]
 [list][b]PATROLS:[/b] ${$('[name=PatrolsMirste]:checked').val()}
 [*][b]DEPLOYMENTS:[/b] ${$('[name=DeploymentsMirste]:checked').val()}
 [*][b]TRAININGS:[/b] ${$('[name=TrainingsMirste]:checked').val()}
-[/list][/divbox2][br][/br]
-
-[divbox2=transparent][b]Johnathan Campbell — CANINE HANDLER[/b][color=transparent]person8[/color]
-[hr][/hr]
-[list][b]PATROLS:[/b] ${$('[name=PatrolsCampbell]:checked').val()}
-[*][b]DEPLOYMENTS:[/b] ${$('[name=DeploymentsCampbell]:checked').val()}
-[*][b]TRAININGS:[/b] ${$('[name=TrainingsCampbell]:checked').val()}
-
 [/list][/divbox2][br][/br]
 
 [divbox2=transparent][b]Lauren Sherman — CANINE HANDLER[/b][color=transparent]person8[/color]
