@@ -60,7 +60,6 @@ function generateAssessment() {
   // Array of personnel handlers
   const handlers = [
     { name: "Samuel Courtland — CANINE HANDLER", patrol: $('input[name="PatrolsCourtland"]:checked').val(), deployment: $('input[name="DeploymentsCourtland"]:checked').val(), training: $('input[name="TrainingsCourtland"]:checked').val() },
-    { name: "Robert Evans — CANINE HANDLER", patrol: $('input[name="PatrolsEvans"]:checked').val(), deployment: $('input[name="DeploymentsEvans"]:checked').val(), training: $('input[name="TrainingsEvans"]:checked').val() },
     { name: "Jayson Sims — CANINE HANDLER", patrol: $('input[name="PatrolsSims"]:checked').val(), deployment: $('input[name="DeploymentsSims"]:checked').val(), training: $('input[name="TrainingsSims"]:checked').val() },
     { name: "Lucas Estrada — CANINE HANDLER", patrol: $('input[name="PatrolsEstrada"]:checked').val(), deployment: $('input[name="DeploymentsEstrada"]:checked').val(), training: $('input[name="TrainingsEstrada"]:checked').val() },
     { name: "Cole Sanders — CANINE HANDLER", patrol: $('input[name="PatrolsSanders"]:checked').val(), deployment: $('input[name="DeploymentsSanders"]:checked').val(), training: $('input[name="TrainingsSanders"]:checked').val() },
