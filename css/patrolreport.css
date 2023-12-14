@@ -1,14 +1,14 @@
 body {
   font-family: "Inter", sans-serif;
   color: white;
-  background-color: #2F384E;
+  background-color: #2f384e;
 }
 
-h2, h4 {
+h2,
+h4 {
   font-family: "Inter", sans-serif;
   color: white;
 }
-
 
 label {
   color: white;
@@ -56,7 +56,7 @@ label {
 }
 
 .ui.segment {
-  background-color: #2F384E;
+  background-color: #2f384e;
   padding: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -109,7 +109,27 @@ button#addInput2 {
 
 button#removeInput,
 button#RemoveInput2 {
-  background-color: #FF0000;
+  background-color: #ff0000;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+button#addGunInput,
+button#addGunInput {
+  background-color: #0074cc;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+button#removeGunInput,
+button#removeDrugInput {
+  background-color: #ff0000;
   color: #fff;
   padding: 10px 20px;
   border: none;
@@ -129,4 +149,3 @@ textarea {
 .ui.button#submit {
   background-color: #21ba45;
 }
-

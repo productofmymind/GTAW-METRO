@@ -1,0 +1,173 @@
+
+<html lang="en">
+	  <head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="Automated system to create business cards for the fictional LSPD Faction on GTA.WORLD">
+		<meta name="author" content="St3fan[NL]">
+		<title>LSPD Business Cards Creator</title>
+		<style rel="stylesheet">
+		body{
+			background: #20354c !important;
+			
+		}
+		dt {
+			font-weight: 500 !important;
+		}
+		</style>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<link href="bootstrap.min.css" rel="stylesheet">
+		<link href="../assets/fontawesome-free-5.12.1-web/css/all.css" rel="stylesheet">
+		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+	  </head>
+	<body>
+		<div class="container" style="margin-top:50px; margin-bottom: 50px;">
+			<div class="row">
+				<div class="col">
+					<div class="card">
+						<div class="card-body" style="margin-bottom: -30px;">
+							<h5 class="card-title">Create your own LSPD Business Card</h5>
+							<br/>
+							<form method="post">
+							  <div class="form-group row">
+								<label for="inputName" class="col-sm-2 col-form-label">Name</label>
+								<div class="col">
+								  <input type="text" class="form-control" name="inputFName" id="inputFName" placeholder="Firstname">
+								</div>
+								<div class="col">
+								  <input type="text" class="form-control" name="inputMName" id="inputMName" placeholder="Middlename">
+								</div>
+								<div class="col">
+								  <input type="text" class="form-control" name="inputLName" id="inputLName" placeholder="Lastname">
+								</div>
+							  </div>
+							  
+							  <div class="form-group row">
+								<label for="inputRank" class="col-sm-2 col-form-label">Rank</label>
+								<div class="col-sm-10">
+								  <select name="inputRank" id="inputRank" class="form-control">
+									<optgroup label="Police Staff">
+									  <option value="PO">Police Officer I - III+1</option>
+									  <option value="DT">Detective</option>
+									  <option value="SGT">Sergeant</option>
+									  <option value="LT">Lieutenant</option>
+									  <option value="CPT">Captain</option>
+									  <option value="CMDR">Commander</option>
+									  <option value="DPTY">Deputy Chief</option>
+									  <option value="ASSCHIEF">Assistant Chief</option>
+									  <option value="COP">Chief of Police</option>	
+									</optgroup>
+									<optgroup label="Civilian Staff">
+									  <option value="Blank">Civilian Staff</option>
+									  <option value="Blank2">Civilian Staff (With Logo)</option>
+									</optgroup>
+									</select>
+								</div>
+							  </div>
+							  <div class="form-group row">
+								<label for="inputSub" class="col-sm-2 col-form-label">Sub title</label>
+								<div class="col-sm-10">
+								  <input type="text" class="form-control" name="inputSub" id="inputSub" placeholder="Title below your name such as 'Traffic Division', keep it short">
+								</div>
+							  </div>
+							  
+							  <div class="form-group row">
+								<label for="inputNumber" class="col-sm-2 col-form-label">Phone Number</label>
+								<div class="col-sm-10">
+								  <input type="number" class="form-control" name="inputNumber" id="inputNumber" placeholder="Work Phone Number">
+								</div>
+							  </div>
+							  
+							  <div class="form-group row">
+								<label for="inputNumber" class="col-sm-2 col-form-label">Employee’s Unique Serial Number</label>
+								<div class="col-sm-10">
+								  <input type="number" class="form-control" name="inputSerial" id="inputSerial" placeholder="Serial Number">
+								</div>
+							  </div>
+							  
+							  <fieldset class="form-group">
+								<div class="row">
+								  <legend class="col-form-label col-sm-2 pt-0">Address</legend>
+								  <div class="col-sm-10">
+									<div class="form-check">
+									  <input class="form-check-input" type="radio" name="addressSelect" id="addressSelect0" value="MissionRow" checked>
+									  <label class="form-check-label" for="addressSelect0">
+										Mission Row Police Station
+									  </label>
+									</div>
+									<div class="form-check">
+									  <input class="form-check-input" type="radio" name="addressSelect" id="addressSelect1" value="Vespucci">
+									  <label class="form-check-label" for="addressSelect1">
+										Vespucci Headquarters
+									  </label>
+									</div>
+									<div class="form-check">
+									  <input class="form-check-input" type="radio" name="addressSelect" id="addressSelect2" value="Metro">
+									  <label class="form-check-label" for="addressSelect2">
+										Metropolitan Headquarters
+									  </label>
+									</div>
+								  </div>
+								</div>
+							  </fieldset>
+							  
+							  <div class="form-group row">
+								<div class="col">
+								  <center><button type="button" name="submit" class="btn btn-success" onclick="submitCard();"><i class="far fa-address-card"></i> Create my card</button>
+								  <br/>(Total created: <b>2349</b>)</center>
+								</div>
+							  </div>
+							</form>
+						</div>
+						<center><b>Result:</b></center>
+						<div class="trim" style="margin: 0 auto; overflow: hidden; height: 270;"><img id="cardoutput" src="card.php" style="width: 600px; height: auto; margin-top: -300px;"/></div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<div class="card" style="margin-top:20px;">
+						<div class="card-body">
+							<h5 class="card-title">How to use?</h5>
+							<br/>
+							<ol>
+							  <li>Right click the result image and save it to your computer.</li>
+							  <li>Go to <a href="https://imgur.com/upload?beta">Imgur</a> and upload the downloaded image.</li>
+							  <li>Go to any 24/7 and buy notes.</li>
+							  <li>Use <b>/note</b> <u>[id of the blank note item in your inventory]</u> <u>amount</u> <u>name</u> <u>LSPD Card F. Lastname</u></li>
+							  <li>Use <b>/note</b> <u>[id of the new note item in your inventory]</u> <u>amount</u> <u>content</u> <u>URL from Imgur ending with .png</u></li>
+							  <dt>[!] If you keep the name and content the same of every note they can be stacked.</dt>
+							  <li>Use <b>/giveitem</b> to give out your cards to other people.</li>
+							</ol>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script>
+	function submitCard() {
+		
+		var inputName = document.getElementById("inputFName").value;
+		var inputMName = document.getElementById("inputMName").value;
+		var inputLName = document.getElementById("inputLName").value;
+		var inputRank = document.getElementById("inputRank").value;
+		var inputSub = document.getElementById("inputSub").value;
+		var inputNumber = document.getElementById("inputNumber").value;
+		var inputSerial = document.getElementById("inputSerial").value;
+		var AddressRadio = document.getElementsByName("addressSelect");
+		var addressSelect = null;
+		if(AddressRadio[0].checked) { addressSelect = document.getElementById("addressSelect0").value; }
+		if(AddressRadio[1].checked) { addressSelect = document.getElementById("addressSelect1").value; }
+		if(AddressRadio[2].checked) { addressSelect = document.getElementById("addressSelect2").value; }
+		document.getElementById("cardoutput").src = "card.php?fname="+inputName+"&mname="+inputMName+"&lname="+inputLName+"&rank="+inputRank+"&subline="+inputSub+"&number="+inputNumber+"&serial="+inputSerial+"&address="+addressSelect;
+		
+		var button = document.getElementsByName("submit")[0];
+		button.disabled = true;
+		setTimeout(function(){ button.disabled = false; }, 5000);
+		return false;
+		
+	}
+	</script>
+
+	</html>
