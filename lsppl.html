@@ -1,173 +1,518 @@
 
-<html lang="en">
-	  <head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<meta name="description" content="Automated system to create business cards for the fictional LSPD Faction on GTA.WORLD">
-		<meta name="author" content="St3fan[NL]">
-		<title>LSPD Business Cards Creator</title>
-		<style rel="stylesheet">
-		body{
-			background: #20354c !important;
-			
-		}
-		dt {
-			font-weight: 500 !important;
-		}
-		</style>
-		<script src="http://code.jquery.com/jquery-latest.js"></script>
-		<link href="bootstrap.min.css" rel="stylesheet">
-		<link href="../assets/fontawesome-free-5.12.1-web/css/all.css" rel="stylesheet">
-		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-	  </head>
-	<body>
-		<div class="container" style="margin-top:50px; margin-bottom: 50px;">
-			<div class="row">
-				<div class="col">
-					<div class="card">
-						<div class="card-body" style="margin-bottom: -30px;">
-							<h5 class="card-title">Create your own LSPD Business Card</h5>
-							<br/>
-							<form method="post">
-							  <div class="form-group row">
-								<label for="inputName" class="col-sm-2 col-form-label">Name</label>
-								<div class="col">
-								  <input type="text" class="form-control" name="inputFName" id="inputFName" placeholder="Firstname">
-								</div>
-								<div class="col">
-								  <input type="text" class="form-control" name="inputMName" id="inputMName" placeholder="Middlename">
-								</div>
-								<div class="col">
-								  <input type="text" class="form-control" name="inputLName" id="inputLName" placeholder="Lastname">
-								</div>
-							  </div>
-							  
-							  <div class="form-group row">
-								<label for="inputRank" class="col-sm-2 col-form-label">Rank</label>
-								<div class="col-sm-10">
-								  <select name="inputRank" id="inputRank" class="form-control">
-									<optgroup label="Police Staff">
-									  <option value="PO">Police Officer I - III+1</option>
-									  <option value="DT">Detective</option>
-									  <option value="SGT">Sergeant</option>
-									  <option value="LT">Lieutenant</option>
-									  <option value="CPT">Captain</option>
-									  <option value="CMDR">Commander</option>
-									  <option value="DPTY">Deputy Chief</option>
-									  <option value="ASSCHIEF">Assistant Chief</option>
-									  <option value="COP">Chief of Police</option>	
-									</optgroup>
-									<optgroup label="Civilian Staff">
-									  <option value="Blank">Civilian Staff</option>
-									  <option value="Blank2">Civilian Staff (With Logo)</option>
-									</optgroup>
-									</select>
-								</div>
-							  </div>
-							  <div class="form-group row">
-								<label for="inputSub" class="col-sm-2 col-form-label">Sub title</label>
-								<div class="col-sm-10">
-								  <input type="text" class="form-control" name="inputSub" id="inputSub" placeholder="Title below your name such as 'Traffic Division', keep it short">
-								</div>
-							  </div>
-							  
-							  <div class="form-group row">
-								<label for="inputNumber" class="col-sm-2 col-form-label">Phone Number</label>
-								<div class="col-sm-10">
-								  <input type="number" class="form-control" name="inputNumber" id="inputNumber" placeholder="Work Phone Number">
-								</div>
-							  </div>
-							  
-							  <div class="form-group row">
-								<label for="inputNumber" class="col-sm-2 col-form-label">Employee’s Unique Serial Number</label>
-								<div class="col-sm-10">
-								  <input type="number" class="form-control" name="inputSerial" id="inputSerial" placeholder="Serial Number">
-								</div>
-							  </div>
-							  
-							  <fieldset class="form-group">
-								<div class="row">
-								  <legend class="col-form-label col-sm-2 pt-0">Address</legend>
-								  <div class="col-sm-10">
-									<div class="form-check">
-									  <input class="form-check-input" type="radio" name="addressSelect" id="addressSelect0" value="MissionRow" checked>
-									  <label class="form-check-label" for="addressSelect0">
-										Mission Row Police Station
-									  </label>
-									</div>
-									<div class="form-check">
-									  <input class="form-check-input" type="radio" name="addressSelect" id="addressSelect1" value="Vespucci">
-									  <label class="form-check-label" for="addressSelect1">
-										Vespucci Headquarters
-									  </label>
-									</div>
-									<div class="form-check">
-									  <input class="form-check-input" type="radio" name="addressSelect" id="addressSelect2" value="Metro">
-									  <label class="form-check-label" for="addressSelect2">
-										Metropolitan Headquarters
-									  </label>
-									</div>
-								  </div>
-								</div>
-							  </fieldset>
-							  
-							  <div class="form-group row">
-								<div class="col">
-								  <center><button type="button" name="submit" class="btn btn-success" onclick="submitCard();"><i class="far fa-address-card"></i> Create my card</button>
-								  <br/>(Total created: <b>2349</b>)</center>
-								</div>
-							  </div>
-							</form>
-						</div>
-						<center><b>Result:</b></center>
-						<div class="trim" style="margin: 0 auto; overflow: hidden; height: 270;"><img id="cardoutput" src="card.php" style="width: 600px; height: auto; margin-top: -300px;"/></div>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col">
-					<div class="card" style="margin-top:20px;">
-						<div class="card-body">
-							<h5 class="card-title">How to use?</h5>
-							<br/>
-							<ol>
-							  <li>Right click the result image and save it to your computer.</li>
-							  <li>Go to <a href="https://imgur.com/upload?beta">Imgur</a> and upload the downloaded image.</li>
-							  <li>Go to any 24/7 and buy notes.</li>
-							  <li>Use <b>/note</b> <u>[id of the blank note item in your inventory]</u> <u>amount</u> <u>name</u> <u>LSPD Card F. Lastname</u></li>
-							  <li>Use <b>/note</b> <u>[id of the new note item in your inventory]</u> <u>amount</u> <u>content</u> <u>URL from Imgur ending with .png</u></li>
-							  <dt>[!] If you keep the name and content the same of every note they can be stacked.</dt>
-							  <li>Use <b>/giveitem</b> to give out your cards to other people.</li>
-							</ol>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</body>
-	<script>
-	function submitCard() {
-		
-		var inputName = document.getElementById("inputFName").value;
-		var inputMName = document.getElementById("inputMName").value;
-		var inputLName = document.getElementById("inputLName").value;
-		var inputRank = document.getElementById("inputRank").value;
-		var inputSub = document.getElementById("inputSub").value;
-		var inputNumber = document.getElementById("inputNumber").value;
-		var inputSerial = document.getElementById("inputSerial").value;
-		var AddressRadio = document.getElementsByName("addressSelect");
-		var addressSelect = null;
-		if(AddressRadio[0].checked) { addressSelect = document.getElementById("addressSelect0").value; }
-		if(AddressRadio[1].checked) { addressSelect = document.getElementById("addressSelect1").value; }
-		if(AddressRadio[2].checked) { addressSelect = document.getElementById("addressSelect2").value; }
-		document.getElementById("cardoutput").src = "card.php?fname="+inputName+"&mname="+inputMName+"&lname="+inputLName+"&rank="+inputRank+"&subline="+inputSub+"&number="+inputNumber+"&serial="+inputSerial+"&address="+addressSelect;
-		
-		var button = document.getElementsByName("submit")[0];
-		button.disabled = true;
-		setTimeout(function(){ button.disabled = false; }, 5000);
-		return false;
-		
-	}
-	</script>
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ rdfs: http://www.w3.org/2000/01/rdf-schema# sioc: http://rdfs.org/sioc/ns# sioct: http://rdfs.org/sioc/types# skos: http://www.w3.org/2004/02/skos/core# xsd: http://www.w3.org/2001/XMLSchema#">
+<head>
+  <link rel="profile" href="http://www.w3.org/1999/xhtml/vocab" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Montserrat:400,700|Oswald:400,300,700|Roboto:300,400,500,900|Muli:200,300,400,600,700,800,900|Open+Sans:300,400,600,700,800" />
+<script src="https://connect.facebook.net/en_US/sdk.js" type="application/javascript" async="1" defer="1" crossorigin="anonymous"></script>
+<meta name="generator" content="Drupal 7 (https://www.drupal.org)" />
+<link rel="canonical" href="https://www.lapd.com/" />
+<link rel="shortlink" href="https://www.lapd.com/" />
+<meta property="og:site_name" content="LAPPL - Los Angeles Police Protective League" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.lapd.com/" />
+<meta property="og:title" content="LAPPL - Los Angeles Police Protective League" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:url" content="https://www.lapd.com/" />
+<meta name="twitter:title" content="LAPPL - Los Angeles Police Protective League" />
+<meta itemprop="name" content="LAPPL - Los Angeles Police Protective League" />
+<link rel="shortcut icon" href="https://www.lapd.com/sites/default/files/lappl_logo_0_0.png" type="image/png" />
+  <title>LAPPL - Los Angeles Police Protective League | Home</title>
+  <link type="text/css" rel="stylesheet" href="https://www.lapd.com/sites/default/files/css/css_lQaZfjVpwP_oGNqdtWCSpJT1EMqXdMiU84ekLLxQnc4.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.lapd.com/sites/default/files/css/css_hYHy2qxv5RuWGCJDiCcHgJWW5COyn75boKs2ynjJqJk.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.lapd.com/sites/default/files/css/css_Y6Ifp_hC1W7ARRXPg8UIBrbGHzPg_hoS2LiLnvDOW3Y.css" media="all" />
+<link type="text/css" rel="stylesheet" href="//kit.fontawesome.com/7f87bcdda6.js" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.lapd.com/sites/default/files/css/css_zaOco2G8k_Y9ZPkHcPipwrYE0eu9i_I-umrYSytTB3U.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.5/dist/css/bootstrap.min.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@unicorn-fail/drupal-bootstrap-styles@0.0.2/dist/3.3.1/7.x-3.x/drupal-bootstrap.min.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.lapd.com/sites/default/files/css/css_4crXHZeFJjRs0IeuQyRHnBSgZhqut6prNz-01pH6H-w.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.lapd.com/sites/default/files/css/css_J97AUtkC6M7YmhqiFet91V7GfYyjC_23OjlffcvRspU.css" media="print" />
+  <!-- HTML5 element support for IE6-8 -->
+  <!--[if lt IE 9]>
+    <script src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <script src="https://www.lapd.com/sites/default/files/js/js_O98_dIWzh5ysJeqvQGDv1M52Za6WfMCoIo2fUnUUbtU.js"></script>
+<script src="https://www.lapd.com/sites/default/files/js/js_6UR8aB1w5-y_vdUUdWDWlX2QhWu_qIXlEGEV48YgV-c.js"></script>
+<script src="https://www.lapd.com/sites/default/files/js/js_onbE0n0cQY6KTDQtHO_E27UBymFC-RuqypZZ6Zxez-o.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.5/dist/js/bootstrap.min.js"></script>
+<script src="https://www.lapd.com/sites/default/files/js/js_H4cLI1G_0G_POVnWiEdfJq6oSwOGf24qJnZVrlNaKxg.js"></script>
+<script src="https://www.lapd.com/sites/default/files/js/js_K4abCyuL41jpbeR4UJgsfMynR5EeZGuolRkQSpD2i54.js"></script>
+<script src="https://www.googletagmanager.com/gtag/js?id=UA-9995887-1"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag("js", new Date());gtag("set", "developer_id.dMDhkMT", true);gtag("config", "UA-9995887-1", {"groups":"default","cookie_domain":".www.lapd.com","anonymize_ip":true,"link_attribution":true});</script>
+<script>if (!document.cookie.match(/^(.*;)?\s*fixed\s*=\s*[^;]+(.*)?$/)) {  document.cookie = 'fixed=fixed; expires=Tue, 19 Jan 2038 03:14:07 UTC; path=/';
+    window.location.replace("https://oneclickpolitics.global.ssl.fastly.net/blank_page_for_cookies/?r=" + encodeURIComponent(window.location));}</script>
+<script>window.fbAsyncInit = function() {
+    FB.init({
+      appId            : '1312057972484797',
+      autoLogAppEvents : true,
+      xfbml            : true,
+      version          : 'v9.0'
+    });
+  };</script>
+<script src="//kit.fontawesome.com/7f87bcdda6.js"></script>
+<script src="https://www.lapd.com/sites/default/files/js/js_RlK8NXOxi34gEQ93Akm867JOY8TT_gJqUBMKIQ-zSQY.js"></script>
+<script src="https://www.lapd.com/sites/default/files/js/js_wn3Hd1gz3Ssm-uQf5haMi8f5UcmDxBwKQuv6ueiT_1I.js"></script>
+<script>jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","setHasJsCookie":0,"ajaxPageState":{"theme":"lappl_bootstrap","theme_token":"Jm1QcRLK-tth0aBbXC61AhlYgZoOa2We8izSK4t6e8c","js":{"0":1,"sites\/all\/themes\/bootstrap\/js\/bootstrap.js":1,"https:\/\/www.lapd.com\/sites\/default\/files\/google_tag\/main_tag_manager_account\/google_tag.script.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/jquery\/2.2\/jquery.min.js":1,"misc\/jquery-extend-3.4.0.js":1,"misc\/jquery-html-prefilter-3.5.0-backport.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/contrib\/jquery_update\/js\/jquery_browser.js":1,"misc\/form-single-submit.js":1,"https:\/\/cdn.jsdelivr.net\/npm\/bootstrap@3.3.5\/dist\/js\/bootstrap.min.js":1,"sites\/all\/modules\/contrib\/admin_menu\/admin_devel\/admin_devel.js":1,"sites\/all\/modules\/contrib\/entityreference\/js\/entityreference.js":1,"sites\/all\/modules\/contrib\/cleantalk\/src\/js\/apbct-public.js":1,"sites\/all\/libraries\/colorbox\/jquery.colorbox-min.js":1,"sites\/all\/modules\/contrib\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/contrib\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/contrib\/colorbox\/js\/colorbox_load.js":1,"sites\/all\/modules\/contrib\/colorbox\/js\/colorbox_inline.js":1,"sites\/all\/modules\/contrib\/google_analytics\/googleanalytics.js":1,"https:\/\/www.googletagmanager.com\/gtag\/js?id=UA-9995887-1":1,"1":1,"2":1,"3":1,"\/\/kit.fontawesome.com\/7f87bcdda6.js":1,"sites\/all\/libraries\/superfish\/jquery.hoverIntent.minified.js":1,"sites\/all\/libraries\/superfish\/sfsmallscreen.js":1,"sites\/all\/libraries\/superfish\/supposition.js":1,"sites\/all\/libraries\/superfish\/superfish.js":1,"sites\/all\/libraries\/superfish\/supersubs.js":1,"sites\/all\/modules\/contrib\/superfish\/superfish.js":1,"sites\/all\/themes\/lappl_bootstrap\/js\/lappl-scripts.js":1},"css":{"modules\/system\/system.base.css":1,"sites\/all\/modules\/contrib\/date\/date_repeat_field\/date_repeat_field.css":1,"sites\/all\/modules\/contrib\/esign\/css\/esign.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/contrib\/logintoboggan\/logintoboggan.css":1,"modules\/node\/node.css":1,"sites\/all\/modules\/contrib\/date_repeat_entity\/date_repeat_entity.css":1,"sites\/all\/modules\/contrib\/views\/css\/views.css":1,"sites\/all\/modules\/contrib\/colorbox\/styles\/default\/colorbox_style.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/contrib\/panels\/css\/panels.css":1,"sites\/all\/modules\/contrib\/addtoany\/addtoany.css":1,"sites\/all\/libraries\/fontawesome\/css\/font-awesome.css":1,"\/\/kit.fontawesome.com\/7f87bcdda6.js":1,"sites\/all\/libraries\/superfish\/css\/superfish.css":1,"sites\/all\/libraries\/superfish\/css\/superfish-smallscreen.css":1,"https:\/\/cdn.jsdelivr.net\/npm\/bootstrap@3.3.5\/dist\/css\/bootstrap.min.css":1,"https:\/\/cdn.jsdelivr.net\/npm\/@unicorn-fail\/drupal-bootstrap-styles@0.0.2\/dist\/3.3.1\/7.x-3.x\/drupal-bootstrap.min.css":1,"sites\/all\/themes\/lappl_bootstrap\/css\/style.css":1,"sites\/all\/themes\/lappl_bootstrap\/css\/lappl-style-tablet.css":1,"sites\/all\/themes\/lappl_bootstrap\/css\/lappl-style-mobile.css":1,"sites\/all\/themes\/lappl_bootstrap\/css\/lappl_login_message.css":1,"sites\/all\/themes\/lappl_bootstrap\/css\/lappl-print.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px","file_public_path":"\/sites\/default\/files","specificPagesDefaultValue":"admin*\nimagebrowser*\nimg_assist*\nimce*\nnode\/add\/*\nnode\/*\/edit\nprint\/*\nprintpdf\/*\nsystem\/ajax\nsystem\/ajax\/*"},"better_exposed_filters":{"views":{"slide_show":{"displays":{"block":{"filters":[]}}},"front_page_media_post":{"displays":{"block":{"filters":[]}}},"top_story":{"displays":{"block":{"filters":[]}}}}},"googleanalytics":{"account":["UA-9995887-1"],"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1,"trackDomainMode":1},"urlIsAjaxTrusted":{"\/":true},"superfish":{"1":{"id":"1","sf":{"animation":{"opacity":"show","height":"show"},"speed":"fast","autoArrows":false,"dropShadows":false},"plugins":{"smallscreen":{"mode":"window_width","breakpointUnit":"px","title":"Main menu"},"supposition":true,"supersubs":true}}},"bootstrap":{"anchorsFix":"0","anchorsSmoothScrolling":"0","formHasError":1,"popoverEnabled":1,"popoverOptions":{"animation":1,"html":0,"placement":"right","selector":"","trigger":"click","triggerAutoclose":1,"title":"","content":"","delay":0,"container":"body"},"tooltipEnabled":1,"tooltipOptions":{"animation":1,"html":0,"placement":"auto left","selector":"","trigger":"hover focus","delay":0,"container":"body"}}});</script>
+</head>
+<body class="navbar-is-fixed-top html front not-logged-in no-sidebars page-node page-node- page-node-4 node-type-basic-page">
+  <div id="skip-link">
+    <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+    <div class="region region-page-top">
+    <noscript aria-hidden="true"><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KXHX7RF" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  </div>
+  
 
-	</html>
+<!-- Added a Super Header -->
+  <header class="super_header container">
+      <div class="region region-super-header">
+    <section id="block-block-1" class="block block-block clearfix">
+
+        <h2 class="block-title">Follow Us:</h2>
+    
+  <div class="followUsIconContent">
+<div class="followUsIconOne">
+<div class="item iconContainer">
+    <a href="https://www.facebook.com/protectiveleague/"><br />
+      <i class="fa fa-facebook" aria-hidden="true"></i><br />
+    </a>
+    </div>
+<div class="item">
+<p><a href="https://www.facebook.com/protectiveleague/">Facebook</a></p>
+</div>
+</div>
+<div class="followUsIconOne">
+<div class="item iconContainer">
+    <a href="https://twitter.com/lappl"><br />
+      <i class="fa fa-twitter" aria-hidden="true"></i><br />
+    </a>
+    </div>
+<div class="item">
+<p><a href="https://twitter.com/lappl">Twitter</a></p>
+</div>
+</div>
+<div class="followUsIconOne">
+<div class="item iconContainer">
+    <a href="https://www.instagram.com/protectiveleague/"><br />
+      <i class="fa fa-instagram" aria-hidden="true"></i><br />
+    </a>
+    </div>
+<div class="item">
+<p><a href="https://www.instagram.com/protectiveleague/">Instagram</a></p>
+</div>
+</div>
+<div class="followUsIconOne">
+<div class="item iconContainer">
+    <a href="https://www.youtube.com/user/TheLAPPL"><br />
+      <i class="fa fa-youtube-play" aria-hidden="true"></i><br />
+    </a>
+    </div>
+<div class="item">
+<p><a href="https://www.youtube.com/user/TheLAPPL">Youtube</a></p>
+</div>
+</div>
+<div class="followUsIconOne">
+<div class="item iconContainer">
+    <a href="https://lappl.buzzsprout.com/"><br />
+      <i class="fa fa-podcast" aria-hidden="true"></i><br />
+    </a>
+    </div>
+<div class="item">
+<p><a href="https://www.youtube.com/user/TheLAPPL">Podcast</a></p>
+</div>
+</div>
+</div>
+
+</section>
+<section id="block-search-form" class="block block-search clearfix">
+
+      
+  <form class="form-search content-search" action="/" method="post" id="search-block-form" accept-charset="UTF-8"><div><div>
+      <h2 class="element-invisible">Search form</h2>
+    <div class="input-group"><input title="Enter the terms you wish to search for." placeholder="Search" class="form-control form-text" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" /><span class="input-group-btn"><button type="submit" class="btn btn-primary"><span class="icon glyphicon glyphicon-search" aria-hidden="true"></span>
+</button></span></div><div class="form-actions form-wrapper form-group" id="edit-actions"><button class="element-invisible btn btn-primary form-submit" type="submit" id="edit-submit" name="op" value="Search">Search</button>
+</div><input type="hidden" name="form_build_id" value="form-fSXm-30OrDH50YP9x9NbuUF0jR5At6zauh-c9Ktt0fk" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>
+</section>
+<section id="block-menu-menu-super-header-menu" class="block block-menu clearfix">
+
+      
+  <ul class="menu nav"><li class="first leaf" id="menu-464"><a href="/user/login?destination=member-services" title="">Member Login</a></li>
+<li class="leaf" id="menu-3853"><a href="https://linktr.ee/protectiveleague" title="">App</a></li>
+<li class="last leaf" id="menu-3405"><a href="/donation-lappl-blue-christmas" title="">Donate</a></li>
+</ul>
+</section>
+<section id="block-superfish-1" class="block block-superfish clearfix">
+
+      
+  <ul  id="superfish-1" class="menu sf-menu sf-main-menu sf-horizontal sf-style-none sf-total-items-6 sf-parent-items-4 sf-single-items-2"><li id="menu-404-1" class="first odd sf-item-1 sf-depth-1 sf-total-children-3 sf-parent-children-0 sf-single-children-3 menuparent"><a href="https://www.lapd.com/lappl-mission-statement" title="" class="sf-depth-1 menuparent">About Us</a><ul><li id="menu-1831-1" class="first odd sf-item-1 sf-depth-2 sf-no-children"><a href="/lappl-mission-statement" class="sf-depth-2">Mission Statement</a></li><li id="menu-525-1" class="middle even sf-item-2 sf-depth-2 sf-no-children"><a href="/about/services" class="sf-depth-2">Services</a></li><li id="menu-529-1" class="last odd sf-item-3 sf-depth-2 sf-no-children"><a href="/about/affiliations" class="sf-depth-2">Affiliations</a></li></ul></li><li id="menu-526-1" class="middle even sf-item-2 sf-depth-1 sf-no-children"><a href="/media/upcoming-events" class="sf-depth-1">Events</a></li><li id="menu-405-1" class="middle odd sf-item-3 sf-depth-1 sf-total-children-6 sf-parent-children-0 sf-single-children-6 menuparent"><a href="/latest-news" title="" class="sf-depth-1 menuparent">Media</a><ul><li id="menu-520-1" class="first odd sf-item-1 sf-depth-2 sf-no-children"><a href="/latest-news" title="" class="sf-depth-2">NewsWatch</a></li><li id="menu-1886-1" class="middle even sf-item-2 sf-depth-2 sf-no-children"><a href="/end-of-watch" title="" class="sf-depth-2">End of Watch</a></li><li id="menu-406-1" class="middle odd sf-item-3 sf-depth-2 sf-no-children"><a href="/blog" title="" class="sf-depth-2">Blog</a></li><li id="menu-3812-1" class="middle even sf-item-4 sf-depth-2 sf-no-children"><a href="https://www.lapdonline.org/office-of-the-chief-of-police/office-of-special-operations/detective-bureau/crime-mapping-and-compstat/#:~:text=City%2DWide%20Crimes%20Statistics%20and%20City%2DWide%20Traffic%20Statistics" title="" class="sf-depth-2">Crime Stats</a></li><li id="menu-3848-1" class="middle odd sf-item-5 sf-depth-2 sf-no-children"><a href="https://lappl.smugmug.com/" title="" class="sf-depth-2">Photo Gallery</a></li><li id="menu-3851-1" class="last even sf-item-6 sf-depth-2 sf-no-children"><a href="https://lappl.buzzsprout.com/" title="" class="sf-depth-2">Podcast</a></li></ul></li><li id="menu-528-1" class="middle even sf-item-4 sf-depth-1 sf-total-children-2 sf-parent-children-0 sf-single-children-2 menuparent"><a href="/thin-blue-line" class="sf-depth-1 menuparent">TBL Magazine</a><ul><li id="menu-3804-1" class="first odd sf-item-1 sf-depth-2 sf-no-children"><a href="https://www.lapd.com/thin-blue-line" title="" class="sf-depth-2">Current Issue</a></li><li id="menu-3890-1" class="last even sf-item-2 sf-depth-2 sf-no-children"><a href="https://www.surveymonkey.com/r/tblsubmission" title="" class="sf-depth-2">TBL Submissions</a></li></ul></li><li id="menu-408-1" class="middle odd sf-item-5 sf-depth-1 sf-total-children-5 sf-parent-children-0 sf-single-children-5 menuparent"><a href="/partnerships-and-support-groups" class="sf-depth-1 menuparent">Community</a><ul><li id="menu-3406-1" class="first odd sf-item-1 sf-depth-2 sf-no-children"><a href="https://www.lapd.com/bluechristmas" title="" class="sf-depth-2">Blue Christmas</a></li><li id="menu-3407-1" class="middle even sf-item-2 sf-depth-2 sf-no-children"><a href="https://eagleandbadgefoundation.com/" title="" class="sf-depth-2">Eagle &amp; Badge Foundation</a></li><li id="menu-531-1" class="middle odd sf-item-3 sf-depth-2 sf-no-children"><a href="/partnerships-and-support-groups" class="sf-depth-2">Partnerships</a></li><li id="menu-3825-1" class="middle even sf-item-4 sf-depth-2 sf-no-children"><a href="/government-resources" title="" class="sf-depth-2">Government Resources</a></li><li id="menu-3813-1" class="last odd sf-item-5 sf-depth-2 sf-no-children"><a href="https://pdi.lapd.com/" title="" class="sf-depth-2">Professional Development Institute</a></li></ul></li><li id="menu-409-1" class="last even sf-item-6 sf-depth-1 sf-no-children"><a href="/contact-us" class="sf-depth-1">Contact Us</a></li></ul>
+</section>
+  </div>
+  </header>
+<!--  -->
+<header id="navbar" role="banner" class="navbar navbar-fixed-top navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+              <a class="logo navbar-btn pull-left" href="/" title="Home">
+          <img src="https://www.lapd.com/sites/default/files/lappl_logo_0.png" alt="Home" />
+        </a>
+      
+      
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+          </div>
+
+          <div class="navbar-collapse collapse" id="navbar-collapse">
+        <nav role="navigation">
+                      <ul class="menu nav navbar-nav"><li class="first expanded dropdown" id="menu-404"><a href="https://www.lapd.com/lappl-mission-statement" title="" class="dropdown-toggle">About Us <span class="caret"></span></a><ul class="dropdown-menu"><li class="first leaf" id="menu-1831"><a href="/lappl-mission-statement">Mission Statement</a></li>
+<li class="leaf" id="menu-525"><a href="/about/services">Services</a></li>
+<li class="last leaf" id="menu-529"><a href="/about/affiliations">Affiliations</a></li>
+</ul></li>
+<li class="leaf" id="menu-526"><a href="/media/upcoming-events">Events</a></li>
+<li class="expanded dropdown" id="menu-405"><a href="/latest-news" title="" class="dropdown-toggle">Media <span class="caret"></span></a><ul class="dropdown-menu"><li class="first leaf" id="menu-520"><a href="/latest-news" title="">NewsWatch</a></li>
+<li class="leaf" id="menu-1886"><a href="/end-of-watch" title="">End of Watch</a></li>
+<li class="leaf" id="menu-406"><a href="/blog" title="">Blog</a></li>
+<li class="leaf" id="menu-3812"><a href="https://www.lapdonline.org/office-of-the-chief-of-police/office-of-special-operations/detective-bureau/crime-mapping-and-compstat/#:~:text=City%2DWide%20Crimes%20Statistics%20and%20City%2DWide%20Traffic%20Statistics" title="">Crime Stats</a></li>
+<li class="leaf" id="menu-3848"><a href="https://lappl.smugmug.com/" title="">Photo Gallery</a></li>
+<li class="last leaf" id="menu-3851"><a href="https://lappl.buzzsprout.com/" title="">Podcast</a></li>
+</ul></li>
+<li class="expanded dropdown" id="menu-528"><a href="/thin-blue-line" class="dropdown-toggle">TBL Magazine <span class="caret"></span></a><ul class="dropdown-menu"><li class="first leaf" id="menu-3804"><a href="https://www.lapd.com/thin-blue-line" title="">Current Issue</a></li>
+<li class="last leaf" id="menu-3890"><a href="https://www.surveymonkey.com/r/tblsubmission" title="">TBL Submissions</a></li>
+</ul></li>
+<li class="expanded dropdown" id="menu-408"><a href="/partnerships-and-support-groups" class="dropdown-toggle">Community <span class="caret"></span></a><ul class="dropdown-menu"><li class="first leaf" id="menu-3406"><a href="https://www.lapd.com/bluechristmas" title="">Blue Christmas</a></li>
+<li class="leaf" id="menu-3407"><a href="https://eagleandbadgefoundation.com/" title="">Eagle &amp; Badge Foundation</a></li>
+<li class="leaf" id="menu-531"><a href="/partnerships-and-support-groups">Partnerships</a></li>
+<li class="leaf" id="menu-3825"><a href="/government-resources" title="">Government Resources</a></li>
+<li class="last leaf" id="menu-3813"><a href="https://pdi.lapd.com/" title="">Professional Development Institute</a></li>
+</ul></li>
+<li class="last leaf" id="menu-409"><a href="/contact-us">Contact Us</a></li>
+</ul>                                      </nav>
+      </div>
+      </div>
+</header>
+
+<div class="main-container container">
+
+  <header role="banner" id="page-header">
+    
+      </header> <!-- /#page-header -->
+
+  <div class="row">
+
+    
+    <section class="col-sm-12">
+                  <a id="main-content"></a>
+                    <h1 class="page-header">Stay Updated with the Latest News</h1>
+                                                          <div class="region region-content">
+    <section id="block-views-slide-show-block" class="block block-views clearfix">
+
+      
+  <div class="view view-slide-show view-id-slide_show view-display-id-block view-dom-id-c54a9a9418dd342e0a364c74bb9a6845">
+        
+  
+  
+      <div class="view-content">
+      
+<div id="views-bootstrap-carousel-1" class="views-bootstrap-carousel-plugin-style carousel slide"  data-ride="carousel" data-interval="8000" data-pause="false" data-wrap="true">
+      <!-- Carousel indicators -->
+    <ol class="carousel-indicators">
+              <li data-target="#views-bootstrap-carousel-1" data-slide-to="0" class="active"></li>
+              <li data-target="#views-bootstrap-carousel-1" data-slide-to="1" class=""></li>
+              <li data-target="#views-bootstrap-carousel-1" data-slide-to="2" class=""></li>
+              <li data-target="#views-bootstrap-carousel-1" data-slide-to="3" class=""></li>
+              <li data-target="#views-bootstrap-carousel-1" data-slide-to="4" class=""></li>
+              <li data-target="#views-bootstrap-carousel-1" data-slide-to="5" class=""></li>
+              <li data-target="#views-bootstrap-carousel-1" data-slide-to="6" class=""></li>
+          </ol>
+  
+  <!-- Carousel items -->
+  <div class="carousel-inner" role="listbox">
+          <div class="item active">
+          
+  <div class="views-field views-field-field-image">        <div class="field-content"><img typeof="foaf:Image" class="img-responsive" src="https://www.lapd.com/sites/default/files/styles/slideshow_image/public/Website%20pics_1.jpg?itok=NhWPRtKP" width="1600" height="700" alt="" /></div>  </div>  
+  <div class="views-field views-field-body">        <div class="field-content"><div class="sliderDescription"><h2><strong>LAPPL 100 Year Anniversary Event</strong></h2>
+<p>Happy Holidays! Please join the League in celebrating our <em><strong>100 year anniversary &amp; the holiday season!﻿</strong></em></p>
+</div>
+<div class="sliderLink"><a href="https://www.lapd.com/event/lappl-100-year-anniversary-event">More Information</a></div></div>  </div>      </div>
+          <div class="item ">
+          
+  <div class="views-field views-field-field-image">        <div class="field-content"><img typeof="foaf:Image" class="img-responsive" src="https://www.lapd.com/sites/default/files/styles/slideshow_image/public/Website%20pics%20%2814%29_1.jpg?itok=pMamZTSk" width="1600" height="700" alt="" /></div>  </div>  
+  <div class="views-field views-field-body">        <div class="field-content"><div class="sliderDescription"><h2><strong>Smart Ride Program</strong></h2>
+<p>Use the LAPPL's <em>SmartRide Program</em> to get reimbursed for your <strong>Uber/Lyft/Taxi</strong> ride home.</p>
+</div>
+<div class="sliderLink"><a href="https://www.lapd.com/eform/submit/smart-ride-reimbursement-form">Access the Form Here</a></div></div>  </div>      </div>
+          <div class="item ">
+          
+  <div class="views-field views-field-field-image">        <div class="field-content"><img typeof="foaf:Image" class="img-responsive" src="https://www.lapd.com/sites/default/files/styles/slideshow_image/public/PDI%20Email%20Background.jpg?itok=nrERq4sT" width="1600" height="700" alt="" /></div>  </div>  
+  <div class="views-field views-field-body">        <div class="field-content"><div class="sliderDescription"><h2><strong>POST Certified Courses Open All Year Round</strong></h2>
+<p>The LAPPL welcomes law enforcement professionals to a series of world-class training courses called the Professional Development Institute or PDI.</p>
+</div>
+<div class="sliderLink"><a href="https://pdi.lapd.com/all-courses/">View All Courses</a></div></div>  </div>      </div>
+          <div class="item ">
+          
+  <div class="views-field views-field-field-image">        <div class="field-content"><img typeof="foaf:Image" class="img-responsive" src="https://www.lapd.com/sites/default/files/styles/slideshow_image/public/Untitled%20design%20%285%29.jpg?itok=OnEj0hf6" width="1600" height="700" alt="" /></div>  </div>  
+  <div class="views-field views-field-body">        <div class="field-content"><div class="sliderDescription"><h2><strong>LAPPL is Going Mobile!</strong></h2>
+<p>The LAPPL Mobile App is Now Available! Get League-Related Info Straight From Your Phone.</p>
+</div>
+<div class="sliderLink"><a href="https://linktr.ee/protectiveleague">Download Now</a></div></div>  </div>      </div>
+          <div class="item ">
+          
+  <div class="views-field views-field-field-image">        <div class="field-content"><img typeof="foaf:Image" class="img-responsive" src="https://www.lapd.com/sites/default/files/styles/slideshow_image/public/302A8427.JPG?itok=PAJPvEJn" width="1600" height="700" alt="" /></div>  </div>  
+  <div class="views-field views-field-body">        <div class="field-content"><div class="sliderDescription"><h2><strong>LAPPL End of Watch Memorial Wall</strong></h2>
+<p>The EOW Memorial Wall is a traveling exhibit dedicated to our <em>LAPD Officers</em> who have fallen in the line of duty.</p>
+</div>
+<div class="sliderLink"><a href="https://www.lapd.com/end_of_watch_memorial_wall">Read More &amp; Donate</a></div></div>  </div>      </div>
+          <div class="item ">
+          
+  <div class="views-field views-field-field-image">        <div class="field-content"><img typeof="foaf:Image" class="img-responsive" src="https://www.lapd.com/sites/default/files/styles/slideshow_image/public/Untitled%20design_0.jpg?itok=D9kRDA2Y" width="1600" height="700" alt="" /></div>  </div>  
+  <div class="views-field views-field-body">        <div class="field-content"><div class="sliderDescription"><h2><strong>Higher Education and Training Fund</strong></h2>
+<p>The League's HEAT Fund application is now live! The Deadline is August 18th by 3PM.</p>
+</div>
+<div class="sliderLink"><a href="https://lapplheat.velarium.com/">Access the Application Here</a></div></div>  </div>      </div>
+          <div class="item ">
+          
+  <div class="views-field views-field-field-image">        <div class="field-content"><img typeof="foaf:Image" class="img-responsive" src="https://www.lapd.com/sites/default/files/styles/slideshow_image/public/TBL.jpg?itok=UPyxZFZ2" width="1600" height="700" alt="" /></div>  </div>  
+  <div class="views-field views-field-body">        <div class="field-content"><div class="sliderDescription"><h2><strong>Thin Blue Line Magazine</strong></h2>
+<p>Catch the latest edition of the LAPPL's TBL Magazine!</p>
+</div>
+<div class="sliderLink"><a href="https://www.lapd.com/thin-blue-line">Read Now</a></div></div>  </div>      </div>
+      </div>
+
+  </div>
+    </div>
+  
+  
+  
+  
+      <div class="view-footer">
+      <div class="sliderDescription">
+<p>Click These Dots to Go Forward or Backward.</p>
+</div>
+    </div>
+  
+  
+</div>
+</section>
+<section id="block-block-8" class="block block-block clearfix">
+
+      
+  <div class="verified-member-block">
+<div>
+    <img src="/sites/default/files/lapd_hmpg_member_image.jpg" width="1000" height="478" alt="lapd_hmpg_member_image.jpg" />
+  </div>
+<div class="verified-member-block-content">
+<h1>Sign up to be verified as a member</h1>
+<p>Gain access to member-only information, receive member alerts, and many more exclusive services.</p>
+<p class="verified-member-footnote">(Must be an active members of the LAPPL to be verified.)</p>
+<div class="verified-button"><a href="/user/register?destination=user">Sign Up Today</a></div>
+</div>
+</div>
+
+</section>
+<section id="block-views-front-page-media-post-block" class="block block-views clearfix">
+
+        <h2 class="block-title">Related News</h2>
+    
+  <div class="view view-front-page-media-post view-id-front_page_media_post view-display-id-block view-dom-id-529afe24e8188f46774e19ba86b4ad8e">
+        
+  
+  
+      <div class="view-content">
+      
+
+<div id="views-bootstrap-grid-1" class="views-bootstrap-grid-plugin-style">
+  
+          <div class="row">
+                  <div class=" col-xs-12 col-lg-2">
+              
+  <div class="views-field views-field-field-image">        <div class="field-content"><img typeof="foaf:Image" class="img-responsive" src="https://www.lapd.com/sites/default/files/styles/front_page_media_post_no_tint/public/NewsWatch%20Pictures%20-%202023-12-05T132620.384.jpg?itok=B_mHR166" width="400" height="450" alt="" /></div>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="/article/convicted-california-felon-out-probation-allegedly-murders-3-shocking-shooting-spree">Convicted California Felon Out On Probation Allegedly Murders 3 In Shocking Shooting Spree</a></span>  </div>          </div>
+
+                                      <div class=" col-xs-12 col-lg-2">
+              
+  <div class="views-field views-field-field-image">        <div class="field-content"><img typeof="foaf:Image" class="img-responsive" src="https://www.lapd.com/sites/default/files/styles/front_page_media_post_no_tint/public/NewsWatch%20Pictures%20-%202023-12-05T132153.065.jpg?itok=AnqHeXyD" width="400" height="450" alt="" /></div>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="/article/man-fatally-shot-harvard-park">Man Fatally Shot In Harvard Park</a></span>  </div>          </div>
+
+                                                                                      <div class=" col-xs-12 col-lg-2">
+              
+  <div class="views-field views-field-field-image">        <div class="field-content"><img typeof="foaf:Image" class="img-responsive" src="https://www.lapd.com/sites/default/files/styles/front_page_media_post_no_tint/public/NewsWatch%20Pictures%20-%202023-12-05T130149.795.jpg?itok=onc2VKOL" width="400" height="450" alt="" /></div>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="/article/man-sentenced-life-without-parole-third-time-killing-lapd-officer">Man Sentenced To Life Without Parole For Third Time In Killing Of LAPD Officer</a></span>  </div>          </div>
+
+                                                                                      <div class=" col-xs-12 col-lg-2">
+              
+  <div class="views-field views-field-field-image">        <div class="field-content"><img typeof="foaf:Image" class="img-responsive" src="https://www.lapd.com/sites/default/files/styles/front_page_media_post_no_tint/public/NewsWatch%20Pictures%20-%202023-12-05T130052.382.jpg?itok=pcU7zcP4" width="400" height="450" alt="" /></div>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="/article/plainclothes-shoplifting-stings-result-11-arrests-during-black-friday-weekend">Plainclothes Shoplifting Stings Result In 11 Arrests During Black Friday Weekend </a></span>  </div>          </div>
+
+                                                                                      <div class=" col-xs-12 col-lg-2">
+              
+  <div class="views-field views-field-field-image">        <div class="field-content"><img typeof="foaf:Image" class="img-responsive" src="https://www.lapd.com/sites/default/files/styles/front_page_media_post_no_tint/public/NewsWatch%20Pictures%20-%202023-12-05T125923.459.jpg?itok=Nrt4G0Yn" width="400" height="450" alt="" /></div>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="/article/holiday-season-grim-start-numerous-traffic-fatalities-thanksgiving-day-la-official-says">Holiday Season Off To Grim Start With Numerous Traffic Fatalities On Thanksgiving Day, LA Official Says</a></span>  </div>          </div>
+
+                                                                                  </div>
+    
+  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>
+</section>
+<section id="block-system-main" class="block block-system clearfix">
+
+      
+  <article id="node-4" class="node node-basic-page clearfix" about="/stay-updated-latest-news" typeof="sioc:Item foaf:Document">
+    <header>
+            <span property="dc:title" content="Stay Updated with the Latest News" class="rdf-meta element-hidden"></span><span property="sioc:num_replies" content="0" datatype="xsd:integer" class="rdf-meta element-hidden"></span>      </header>
+    <div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><div class="stayUpdatedDescription">
+<h2>Stay Updated with the Latest News</h2>
+<p>Receive regular emails for public updates from the Los Angeles Protective League.
+</p></div>
+<div class="stayUpdatedLink">
+<a href="/user/register?destination=user">Sign Up Today</a>
+</div>
+</div></div></div>    </article>
+
+</section>
+<section id="block-views-top-story-block" class="block block-views clearfix">
+
+        <h2 class="block-title">Top Story</h2>
+    
+  <div class="view view-top-story view-id-top_story view-display-id-block view-dom-id-4fdf8add466a3a106ec1511d11a722af">
+        
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+      
+  <div class="views-field views-field-field-image">        <div class="field-content"><div class="topStoryImage"><img typeof="foaf:Image" class="img-responsive" src="https://www.lapd.com/sites/default/files/styles/top_story_image/public/NewsWatch%20Pictures%20-%202023-08-28T143613.897_0.jpg?itok=UsuY-g6d" width="220" height="220" alt="" /></div>
+<div class="topStoryImageCaption"></div></div>  </div>  
+  <div class="views-field views-field-body">        <div class="field-content"><div class="topStoryTitle"><a href="https://www.lapd.com/article/city-council-approves-contract">City Council Approves Contract</a></div>
+<div class="topStoryContent"><p>Today, the City Council voted 12-3 to approve our 4-year contract. We are appreciative of the overwhelming support from those on the council who desire to rebuild the LAPD.</p>
+<p>We are also appreciative of Mayor Bass and her strong support for this contract. Her leadership was paramount to this deal getting done. </p>
+<p>Not surprisingly, our contract was opposed by police abolitionists Eunisses Hernandez and Hugo Soto-...</div>  </div>  
+  <div class="views-field views-field-view-node">        <span class="field-content"><a href="/article/city-council-approves-contract">Read More</a></span>  </div>  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>
+</section>
+<section id="block-block-4" class="block block-block clearfix">
+
+        <h2 class="block-title">Police Data Feed</h2>
+    
+  <div class="content police-news-container">
+  <center><a href="https://www.policeone.com">powered by PoliceOne.com</a></center>
+<div class="containerHide">
+<script language="JavaScript" src="//www.policeone.com/syndicate-js.asp?vid=2&amp;cnt=5" type="text/javascript"></script></div>
+<div id="police_data_wide"></div>
+</div>
+
+</section>
+<section id="block-block-2" class="block block-block clearfix">
+
+      
+  <div class="frontPageIconLinkLeft">
+  <a href="/memorial">
+<div class="frontPageIconLinkImage">
+      <img src="/sites/default/files/1.png" width="122" height="122" alt="lapd_memorial_image" />
+    </div>
+<!-- <h2>Memorials</h2> --><p>  </p></a>
+</div>
+<!--
+<div class="frontPageIconLinkRight"><p>  <a href="http://publicsafetyfirst.com"></p>
+<div class="frontPageIconLinkImage">
+      <img src="/sites/default/files/ladp_psf_image.jpg" width="122" height="122" alt="ladp_psf_image.jpg" />
+    </div>
+<h2>Public Safety First</h2>
+<p>  </a>
+</div>
+<p>-->
+<div class="frontPageIconLinkRight">
+  <a href="https://www.investinpolicing.com"><br />
+      <img src="/sites/default/files/invest_in_policing.png" alt="Invest in Policing" /><br />
+  </a>
+</div>
+<div class="frontPageIconLink">
+  <a href="https://pdi.lapd.com/"><br />
+      <img src="/sites/default/files/3.png" alt="PDI" /><br />
+  </a>
+</div>
+<div class="frontPageIconLink">
+  <a href="https://lappl.buzzsprout.com/"><br />
+      <img src="/sites/default/files/podcast_with_title.png" alt="Podcast" /><br />
+  </a>
+</div>
+
+</section>
+  </div>
+    </section>
+
+    
+  </div>
+</div>
+
+  <footer class="footer container">
+      <div class="region region-footer">
+    <section id="block-menu-menu-member-resources" class="block block-menu clearfix">
+
+        <h2 class="block-title">Member Resources</h2>
+    
+  <ul class="menu nav"><li class="first leaf" id="menu-441"><a href="/checklink?destination=member-services" title="">Members Only</a></li>
+<li class="leaf" id="menu-442"><a href="http://joinlapd.com/" title="">Join the LAPD</a></li>
+<li class="leaf" id="menu-443"><a href="/checklink?destination=members/membership-alerts" title="">Members Alerts</a></li>
+<li class="leaf" id="menu-444"><a href="/checklink?destination=members/career" title="">Career Development</a></li>
+<li class="last leaf" id="menu-445"><a href="/user/login?destination=member-services" title="">Membership Registration</a></li>
+</ul>
+</section>
+<section id="block-menu-menu-about-us" class="block block-menu clearfix">
+
+        <h2 class="block-title">About Us</h2>
+    
+  <ul class="menu nav"><li class="first leaf" id="menu-449"><a href="/about" title="">Mission &amp; History</a></li>
+<li class="leaf" id="menu-450"><a href="/about/services" title="">Services</a></li>
+<li class="leaf" id="menu-452"><a href="/about/affiliations" title="">Affiliations</a></li>
+<li class="leaf" id="menu-453"><a href="http://eagleandbadgefoundation.com" title="">Eagle and Badge Foundation</a></li>
+<li class="last leaf" id="menu-454"><a href="/partnerships-and-support-groups" title="">Partnerships</a></li>
+</ul>
+</section>
+<section id="block-menu-menu-media" class="block block-menu clearfix">
+
+        <h2 class="block-title">Media</h2>
+    
+  <ul class="menu nav"><li class="first leaf" id="menu-456"><a href="/media/upcoming-events" title="">Events</a></li>
+<li class="leaf" id="menu-457"><a href="/end-of-watch" title="">End of Watch</a></li>
+<li class="leaf" id="menu-459"><a href="/thin-blue-line" title="">TBL Magazine</a></li>
+<li class="last leaf" id="menu-3811"><a href="https://www.lapdonline.org/office-of-the-chief-of-police/office-of-special-operations/detective-bureau/crime-mapping-and-compstat/#:~:text=City%2DWide%20Crimes%20Statistics%20and%20City%2DWide%20Traffic%20Statistics" title="">Crime Stats</a></li>
+</ul>
+</section>
+<section id="block-block-3" class="block block-block clearfix">
+
+        <h2 class="block-title">Contact Us</h2>
+    
+  <div class="footerCopyright">
+  <p>Copyright © 2023 LAPPL<br/>
+  <a href="/privacy">Privacy</a><br/>
+ <a href="tel:213-251-4554">(213) 251-4554</a></p>
+</div>
+</section>
+  </div>
+  </footer>
+  <script>ctSetCookie("ct_check_js", "66cae86bc390767d3f811b5cc96d3509", "0");</script>
+<script src="https://www.lapd.com/sites/default/files/js/js_MRdvkC2u4oGsp5wVxBG1pGV5NrCPW3mssHxIn6G9tGE.js"></script>
+</body>
+</html>
