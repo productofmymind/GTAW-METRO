@@ -60,16 +60,21 @@ function generateAssessment() {
   // Array of personnel handlers
   const handlers = [
     { name: "Samuel Courtland — CANINE HANDLER", patrol: $('input[name="PatrolsCourtland"]:checked').val(), deployment: $('input[name="DeploymentsCourtland"]:checked').val(), training: $('input[name="TrainingsCourtland"]:checked').val() },
-    { name: "Jayson Sims — CANINE HANDLER", patrol: $('input[name="PatrolsSims"]:checked').val(), deployment: $('input[name="DeploymentsSims"]:checked').val(), training: $('input[name="TrainingsSims"]:checked').val() },
+   // { name: "Jayson Sims — CANINE HANDLER", patrol: $('input[name="PatrolsSims"]:checked').val(), deployment: $('input[name="DeploymentsSims"]:checked').val(), training: $('input[name="TrainingsSims"]:checked').val() },
     { name: "Lucas Estrada — CANINE HANDLER", patrol: $('input[name="PatrolsEstrada"]:checked').val(), deployment: $('input[name="DeploymentsEstrada"]:checked').val(), training: $('input[name="TrainingsEstrada"]:checked').val() },
     { name: "Cole Sanders — CANINE HANDLER", patrol: $('input[name="PatrolsSanders"]:checked').val(), deployment: $('input[name="DeploymentsSanders"]:checked').val(), training: $('input[name="TrainingsSanders"]:checked').val() },
     { name: "Alexandra Mirste — CANINE HANDLER", patrol: $('input[name="PatrolsMirste"]:checked').val(), deployment: $('input[name="DeploymentsMirste"]:checked').val(), training: $('input[name="TrainingsMirste"]:checked').val() },
-    { name: "Lauren Sherman — CANINE HANDLER", patrol: $('input[name="PatrolsSherman"]:checked').val(), deployment: $('input[name="DeploymentsSherman"]:checked').val(), training: $('input[name="TrainingsSherman"]:checked').val() },
     { name: "Marlene Renaud — CANINE HANDLER", patrol: $('input[name="PatrolsRenaud"]:checked').val(), deployment: $('input[name="DeploymentsRenaud"]:checked').val(), training: $('input[name="TrainingsRenaud"]:checked').val() },
-    { name: "Tobias Maldonado — CANINE HANDLER", patrol: $('input[name="PatrolsRuano"]:checked').val(), deployment: $('input[name="DeploymentsRuano"]:checked').val(), training: $('input[name="TrainingsRuano"]:checked').val() },
+    { name: "Valeria Cho — CANINE HANDLER", patrol: $('input[name="PatrolsCho"]:checked').val(), deployment: $('input[name="DeploymentsCho"]:checked').val(), training: $('input[name="TrainingsCho"]:checked').val() },
     { name: "Marisa Zanotti — CANINE HANDLER", patrol: $('input[name="PatrolsZanotti"]:checked').val(), deployment: $('input[name="DeploymentsZanotti"]:checked').val(), training: $('input[name="TrainingsZanotti"]:checked').val() },
     { name: "Samuel Collins — CANINE HANDLER", patrol: $('input[name="PatrolsCollins"]:checked').val(), deployment: $('input[name="DeploymentsCollins"]:checked').val(), training: $('input[name="TrainingsCollins"]:checked').val() },
-    { name: "Jackson Mayhew — CANINE HANDLER", patrol: $('input[name="PatrolsMayhew"]:checked').val(), deployment: $('input[name="DeploymentsMayhew"]:checked').val(), training: $('input[name="TrainingsMayhew"]:checked').val() }
+    { name: "Austin Ortega — CANINE HANDLER", patrol: $('input[name="PatrolsOrtega"]:checked').val(), deployment: $('input[name="DeploymentsOrtega"]:checked').val(), training: $('input[name="TrainingsOrtega"]:checked').val() },
+    { name: "Dylan Caffrey — CANINE HANDLER", patrol: $('input[name="PatrolsCaffrey"]:checked').val(), deployment: $('input[name="DeploymentsCaffrey"]:checked').val(), training: $('input[name="TrainingsCaffrey"]:checked').val() },
+    { name: "Ayden Garrick — CANINE HANDLER", patrol: $('input[name="PatrolsGarrick"]:checked').val(), deployment: $('input[name="DeploymentsGarrick"]:checked').val(), training: $('input[name="TrainingsGarrick"]:checked').val() },
+    { name: "Demarcus Santana — CANINE HANDLER", patrol: $('input[name="PatrolsSantana"]:checked').val(), deployment: $('input[name="DeploymentsSantana"]:checked').val(), training: $('input[name="TrainingsSantana"]:checked').val() },
+    { name: "Camryn Cordova — CANINE HANDLER", patrol: $('input[name="PatrolsCordova"]:checked').val(), deployment: $('input[name="DeploymentsCordova"]:checked').val(), training: $('input[name="TrainingsCordova"]:checked').val() }
+
+
   ];
 
   // Iterate through handlers and add their information to the assessment
