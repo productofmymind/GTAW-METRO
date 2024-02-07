@@ -16,7 +16,7 @@ $(document).ready(function () {
     const Drugs = $("#Drugs").val();
 
     const output = `[divbox2=transparent][center][metrologo=150][/metrologo] [k9platlogo=150][/k9platlogo]
-[size=150][b]MONTHLY SEIZURE LOG (JANUARY, 2024)[/b][/size]
+[size=150][b]MONTHLY SEIZURE LOG (FEBRUARY, 2024)[/b][/size]
 [hr][/hr]
 
 [b][size=120]SEIZURE/ARREST BOARD[/size][/b]
