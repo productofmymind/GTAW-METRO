@@ -177,31 +177,31 @@
         }
 
         document.addEventListener('DOMContentLoaded', function () {
-            const datetimePicker = document.getElementById('datetimePicker');
-            const todayButton = document.getElementById('todayButton');
+    const datetimePicker = document.getElementById('datetimePicker');
+    const todayButton = document.getElementById('todayButton');
 
-            todayButton.addEventListener('click', function () {
-                const currentDate = new Date();
-                const year = currentDate.getUTCFullYear();
-                const month = String(currentDate.getUTCMonth() + 1).padStart(2, '0');
-                const day = String(currentDate.getUTCDate()).padStart(2, '0');
-                const hours = String(currentDate.getUTCHours()).padStart(2, '0');
-                const minutes = String(currentDate.getUTCMinutes()).padStart(2, '0');
-                const formattedDate = `${year}-${month}-${day}T${hours}:${minutes}`;
-                datetimePicker.value = formattedDate;
-            });
+    todayButton.addEventListener('click', function () {
+        const currentDate = new Date();
+        const year = currentDate.getFullYear();
+        const month = String(currentDate.getMonth() + 1).padStart(2, '0');
+        const day = String(currentDate.getDate()).padStart(2, '0');
+        const hours = String(currentDate.getHours()).padStart(2, '0');
+        const minutes = String(currentDate.getMinutes()).padStart(2, '0');
+        const formattedDate = `${year}-${month}-${day}T${hours}:${minutes}`;
+        datetimePicker.value = formattedDate;
+    });
 
-            datetimePicker.addEventListener('change', function () {
-                const inputDate = new Date(datetimePicker.value);
-                const year = inputDate.getUTCFullYear();
-                const month = String(inputDate.getUTCMonth() + 1).padStart(2, '0');
-                const day = String(inputDate.getUTCDate()).padStart(2, '0');
-                const hours = String(inputDate.getUTCHours()).padStart(2, '0');
-                const minutes = String(inputDate.getUTCMinutes()).padStart(2, '0');
-                const formattedDate = `${year}-${month}-${day} ${hours}:${minutes}`;
-                datetimePicker.value = formattedDate;
-            });
-        });
+    datetimePicker.addEventListener('change', function () {
+        const inputDate = new Date(datetimePicker.value);
+        const year = inputDate.getFullYear();
+        const month = String(inputDate.getMonth() + 1).padStart(2, '0');
+        const day = String(inputDate.getDate()).padStart(2, '0');
+        const hours = String(inputDate.getHours()).padStart(2, '0');
+        const minutes = String(inputDate.getMinutes()).padStart(2, '0');
+        const formattedDate = `${year}-${month}-${day}T${hours}:${minutes}`;
+        datetimePicker.value = formattedDate;
+    });
+});
 
         function saveDataToLocalStorage() {
     const data = {
