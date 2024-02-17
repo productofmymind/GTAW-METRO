@@ -47,7 +47,7 @@ $(document).ready(function () {
   [u]2.2[/u] [b]SUBJECTS ARRESTED:[/b] ${subjectsArrested}
   [u]2.3[/u] [b]OTHER:[/b] 
   [list=none]${other}[/list]
-  [u]2.4[/u] [b]TIED DEPLOYMENT(S):[/b] [list][*][url=${linkDeployment}]${typeDeployment}[/url][/indent]
+  [u]2.4[/u] [b]TIED DEPLOYMENT(S):[/b] [list][*][url=${linkDeployment}]ACCESS[/url][/indent]
   [/divbox2]`;
 
     $('#output').val(output);

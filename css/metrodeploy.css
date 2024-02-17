@@ -23,17 +23,65 @@ h4.ui.dividing.header {
   transition: background-color 0.3s ease;
 }
 
-button {
-  background-color: #0074cc;
+#oneDayAgoButton {
+  background-color: #007bff;
   color: #fff;
-  padding: 10px 20px;
   border: none;
-  border-radius: 10px;
+  padding: 10px 20px;
   cursor: pointer;
-  margin-right: 5px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+#nowButton {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+#oneHourAgo {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+#twoHoursAgo {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
 #todayButton:hover {
+  background-color: #0056b3;
+}
+
+#oneDayAgoButton:hover {
+  background-color: #0056b3;
+}
+
+#nowButton.hover {
   background-color: #0056b3;
 }
 

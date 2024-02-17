@@ -16,7 +16,7 @@ $('#submit').click(function () {
     .get()
     .join('\n');
   const deploymentType = $('#DeploymentType .text').text() || '';
-  const date = $('#datetimePicker').val() || '';
+  const date = $('#datePicker').val() || '';
   const location = $('#loc').val() || '';
   const startTime = $('#startTime').val() || '';
   const endTime = $('#endTime').val() || '';
