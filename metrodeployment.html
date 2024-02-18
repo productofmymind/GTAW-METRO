@@ -289,7 +289,10 @@
                     oneHourAgo.addEventListener('click', function () {
                         const startTime = document.getElementById('startTime');
                         const currentUTCDate = new Date();
-                        const hour = (currentUTCDate.getUTCHours() - 1).toString().padStart(2, "0");
+                        var hour = (currentUTCDate.getUTCHours() - 1);
+                        if (hour < 0) {
+                            hour = (24 + hour).toString().padStart(2, "0");
+                        }
                         const minutes = currentUTCDate.getUTCMinutes().toString().padStart(2, "0");
                         startTime.value = `${hour}:${minutes}`;
                     });
@@ -297,7 +300,10 @@
                     twoHoursAgo.addEventListener('click', function () {
                         const startTime = document.getElementById('startTime');
                         const currentUTCDate = new Date();
-                        const hour = (currentUTCDate.getUTCHours() - 2).toString().padStart(2, "0");
+                        var hour = (currentUTCDate.getUTCHours() - 2);
+                        if (hour < 0) {
+                            hour = (24 + hour).toString().padStart(2, "0");
+                        }
                         const minutes = currentUTCDate.getUTCMinutes().toString().padStart(2, "0");
                         startTime.value = `${hour}:${minutes}`;
                     });
