@@ -74,14 +74,6 @@
             <div class="ui segment">
                 <h2>Patrol Summary</h2>
                 <div class="field">
-                    <p>Back-up Requests Attended</p>
-                    <div class="three fields">
-                        <div class="field">
-                            <input type="text" placeholder="Back-up Requests Attended" id="backupRequestsAttended">
-                        </div>
-                    </div>
-                </div>
-                <div class="field">
                     <p>Subjects Arrested</p>
                     <div class="three fields">
                         <div class="field">
@@ -190,7 +182,6 @@
                 PatrolType: $('#PatrolType .ui.selection.dropdown').dropdown('get value'),
                 linkDeployment: $('#linkDeployment').val(),
                 subjectsArrested: $('#subjectsArrested').val(),
-                backupRequestsAttended: $('#backupRequestsAttended').val(),
                 other: $('#other').val(),
                 lop: $('#lop').val(),
                 typeDeployment: $('#typeDeployment').val()
@@ -211,7 +202,6 @@
                 $('#PatrolType .ui.selection.dropdown').dropdown('set selected', parsedData.PatrolType);
                 $('#linkDeployment').val(parsedData.linkDeployment);
                 $('#subjectsArrested').val(parsedData.subjectsArrested);
-                $('#backupRequestsAttended').val(parsedData.backupRequestsAttended);
                 $('#other').val(parsedData.other);
                 $('#lop').val(parsedData.lop);
                 $('#typeDeployment').val(parsedData.typeDeployment);
