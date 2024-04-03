@@ -40,13 +40,11 @@ $(document).ready(function () {
   [/list]
   [u]1.2[/u] [b]TYPE OF PATROL:[/b] ${patrolType}
   [u]1.3[/u] [b]DATE:[/b] ${date}
-  [u]1.4[/u] [b]LENGTH OF PATROL:[/b] ${lengthOfPatrol}[/indent]
   [divbox=black][b][size=150][color=#FFFFFF]2. PATROL SUMMARY[/color][/size][/b]
   [/divbox]
-  [u]2.1[/u] [b]SUBJECTS ARRESTED:[/b] ${subjectsArrested}
-  [u]2.2[/u] [b]OTHER:[/b] 
+  [u]2.1[/u] [b]OTHER:[/b] 
   [list=none]${other}[/list]
-  [u]2.3[/u] [b]TIED DEPLOYMENT(S):[/b] [list][*][url=${linkDeployment}]ACCESS[/url][/indent]
+  [u]2.2[/u] [b]TIED DEPLOYMENT(S):[/b] [list][*][url=${linkDeployment}]ACCESS[/url][/indent]
   [/divbox2]`;
 
     $('#output').val(output);
