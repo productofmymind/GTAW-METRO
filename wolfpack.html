@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta tags and CSS links -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="css/img/metro.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <link rel="stylesheet" href="css/wolfpack.css">
+    <title>Metro Deployment Report</title>
+</head>
+
+<body>
+    <button id="clearLocalStorageButton">Clear Format</button>
+    <button id="undoLocalStorageButton">Undo Clear</button>
+    <div class="ui container">
+        <div class="ui form">
+            <div class="ui segment">
+                <h2>General Information</h2>
+                <div class="field">
+                    <label>Involved Platoons</label>
+                    <form>
+                        <label><input type="checkbox" id="K9PLT" name="K9 Platoon" value="K9 Platoon"> K9 Platoon</label>
+                            <br>
+                        <label><input type="checkbox" id="GED" name="Gang Enforcement Detail" value="Gang Enforcement Detail">Gang Enforcement Detail</label>
+                    </form>
+                    <h4 class="ui dividing header">Supervisor</h4>
+                    <div class="field">
+                        <label>Operational Supervisor</label>
+                        <div class="three fields">
+                            <div class="field">
+                                <input type="text" placeholder="LSPD Rank Firstname Lastname" id="OS">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label>Additional Supervisor</label>
+                        <div class="three fields">
+                            <div class="field">
+                                <input type="text" placeholder="LSPD Rank Firstname Lastname" id="AS">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- INVOLVED METROPOLITAN MEMBERS -->
+                    <div class="field">
+                        <label>Personnel Present</label>
+                        <div id="InvolvedMembers">
+                            <div class="field">
+                                <input type="text" placeholder="Platoon + Platoon Rank + Full Name nr. 1" id="MMMname">
+                            </div>
+                        </div>
+
+                        <button type="button" id="addInput">+</button>
+                        <button type="button" id="removeInput">-</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ui container">
+                <div class="ui form">
+                    <div class="ui segment">
+                        <h2>Deployment Timeline</h2>
+                        <div class="field">
+                            <p>Date</p>
+                            <div class="four fields">
+                                <div class="field">
+                                    <input title="Date" type="text" id="datePicker" placeholder="DD/MMM/YYYY">
+                                </div>
+                                <div class="field">
+                                    <button id="todayButton">Today</button>
+                                    <button id="oneDayAgoButton">One Day Ago</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label>Location</label>
+                            <div class="three fields">
+                                <div class="field">
+                                    <input type="text" placeholder="Streetname, nr, area" id="loc">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label>Start of Deployment</label>
+                            <div class="three fields">
+                                <div class="field">
+                                    <input type="text" id="startTime" placeholder="HH:MM">
+                                </div>
+                                <div class="field">
+                                    <button id="oneHourAgo">One Hour Ago</button>
+                                    <button id="twoHoursAgo">Two Hours Ago</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label>End of Deployment</label>
+                            <div class="three fields">
+                                <div class="field">
+                                    <input type="text" id="endTime" placeholder="HH:MM">
+                                </div>
+                                <div class="field">
+                                    <button id="nowButton">Now</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label>Deployment Events</label>
+                            <div id="DeploymentEventsContainer">
+                                <div class="field">
+                                    <input type="text" placeholder="Number of contacts (traffic stops, pedestrian contacts, total people contacted essentially)" id="event1">
+                                    <input type="text" placeholder="Number of citations" id="event2">
+                                    <input type="text" placeholder="Number of warnings" id="event3">
+                                    <input type="text" placeholder="Number of pursuits" id="event4">
+                                    <input type="text" placeholder="Number of arrests" id="event5">
+                                    <input type="text" placeholder="Number of guns recovered" id="event6">
+                                    <input type="text" placeholder="Number of drugs seized" id="event7">
+                                    <input type="text" placeholder="Add more if required" id="event8">                                    
+                                </div>
+                            </div>
+                            <button type="button" id="addInput2">+</button>
+                            <button type="button" id="removeInput2">-</button>
+                        </div>
+                        <h4 class="ui dividing header">Filing Officer Signature</h4>
+                        <div class="field">
+                            <label>Filing Officer Signature</label>
+                            <div class="three fields">
+                                <div class="field">
+                                    <input type="text" placeholder="Firstname Lastname" id="FOS">
+    
+                                </div>
+                                
+                    </div>
+                </div>
+
+                </div>
+                    <div class="ui container">
+                        <div class="ui form">
+                            <div class="ui segment">
+                                <h2>Generator</h2>
+                                <div class="field">
+                                    <label>Output</label>
+                                    <textarea id="output" readonly title="Output"></textarea>
+                                </div>
+                                <div class="ui secondary button" id="submit">Submit</div>
+                                <div class="ui primary button" id="copy">Copy to Clipboard</div>
+                                <a href="https://lspd.gta.world/viewforum.php?f=2146">
+                                    <div class="ui third button" id="fieldrecords">Field Records Link</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+                <script src="js/wolfpack.js"></script>
+                <script>
+                    // Initialize Semantic UI Dropdown
+                    $(document).ready(function () {
+                        $('.ui.search.dropdown').dropdown({
+                            fullTextSearch: true // Enable full-text search
+                        });
+                    });
+
+                    // Add event listeners for adding input fields
+                    $(document).ready(function () {
+                        $("#addInput").click(addInputField("#InvolvedMembers", "Platoon + Platoon Rank + Full Name nr. "));
+                        $("#addInput2").click(addInputField("#DeploymentEventsContainer", "Event nr. "));
+                        $("#addInput3").click(addInputField("#InjuredMembers", "Injured Member. "));
+                        $("#addInput4").click(addInputField("#InjuredSuspects", "Injured Suspect. "));
+                        $("#addInput5").click(addInputField("#InjuredCivilians", "Injured Civilian. "));
+                        $("#removeInput").click(removeInputField("#InvolvedMembers", "Platoon + Platoon Rank + Full Name nr. 1"));
+                        $("#removeInput2").click(removeInputField("#DeploymentEventsContainer", "linkDeployment"));
+                        $("#removeInput3").click(removeInputField("#InjuredMembers", "Platoon + Platoon Rank + Full Name nr. 1"));
+                        $("#removeInput4").click(removeInputField("#InjuredSuspects", "linkDeployment"));
+                        $("#removeInput5").click(removeInputField("#InjuredCivilians", "linkDeployment"));
+
+                        function addInputField(containerId, placeholderText) {
+                            return function () {
+                                const inputFieldsContainer = $(containerId);
+                                const newEventNumber = inputFieldsContainer.children().length + 1; // Calculate the new event number
+                                const newInputField = $("<div>").addClass("field").html('<input type="text" placeholder="' + placeholderText + newEventNumber + '">');
+                                inputFieldsContainer.append(newInputField);
+                            };
+                        }
+
+                        function removeInputField(containerId) {
+                            return function () {
+                                const inputFieldsContainer = $(containerId);
+                                const inputFields = inputFieldsContainer.children();
+
+                                // Check if there are more than one input fields before removing
+                                if (inputFields.length > 1) {
+                                    inputFields.last().remove(); // Remove the last input field
+                                } else {
+                                    // If there's only one input field, prevent removal
+                                    alert("Cannot remove the last input field.");
+                                }
+                            }
+                        }
+                    });
+
+                    // Initialize Date and Time Picker
+                    const startTime = document.getElementById('startTime');
+                    const datePicker = document.getElementById('datePicker');
+                    const endTime = document.getElementById('endTime');
+                    const todayButton = document.getElementById('todayButton');
+                    const oneDayAgoButton = document.getElementById('oneDayAgoButton');
+                    const nowButton = document.getElementById('nowButton');
+
+                    oneHourAgo.addEventListener('click', function () {
+                        const startTime = document.getElementById('startTime');
+                        const currentUTCDate = new Date();
+                        var hour = (currentUTCDate.getUTCHours() - 1);
+                        if (hour < 0) {
+                            hour = (24 + hour).toString().padStart(2, "0");
+                        }
+                        const minutes = currentUTCDate.getUTCMinutes().toString().padStart(2, "0");
+                        startTime.value = `${hour}:${minutes}`;
+                    });
+
+                    twoHoursAgo.addEventListener('click', function () {
+                        const startTime = document.getElementById('startTime');
+                        const currentUTCDate = new Date();
+                        var hour = (currentUTCDate.getUTCHours() - 2);
+                        if (hour < 0) {
+                            hour = (24 + hour).toString().padStart(2, "0");
+                        }
+                        const minutes = currentUTCDate.getUTCMinutes().toString().padStart(2, "0");
+                        startTime.value = `${hour}:${minutes}`;
+                    });
+
+                    todayButton.addEventListener('click', function () {
+                        const currentUTCDate = new Date();
+                        const day = currentUTCDate.getUTCDate().toString().padStart(2, "0");
+                        const month = currentUTCDate
+                            .toLocaleString("default", { month: "short", timeZone: "UTC" })
+                            .toUpperCase();
+                        const year = currentUTCDate.getUTCFullYear();
+                        datePicker.value = `${day}/${month}/${year}`;
+                    });
+
+                    oneDayAgoButton.addEventListener('click', function () {
+                        const currentUTCDate = new Date();
+                        const day = (currentUTCDate.getUTCDate() - 1).toString().padStart(2, "0");
+                        const month = currentUTCDate
+                            .toLocaleString("default", { month: "short", timeZone: "UTC" })
+                            .toUpperCase();
+                        const year = currentUTCDate.getUTCFullYear();
+                        datePicker.value = `${day}/${month}/${year}`;
+                    });
+
+                    nowButton.addEventListener('click', function () {
+                        const endTime = document.getElementById('endTime');
+                        const currentUTCDate = new Date();
+                        const hour = currentUTCDate.getUTCHours().toString().padStart(2, "0");
+                        const minutes = currentUTCDate.getUTCMinutes().toString().padStart(2, "0");
+                        endTime.value = `${hour}:${minutes}`;
+                    });
+
+
+                    document.addEventListener('DOMContentLoaded', function () {
+                        const datetimePicker = document.getElementById('datetimePicker');
+                        const todayButton = document.getElementById('todayButton');
+
+                        datetimePicker.addEventListener('change', function () {
+                            const inputDate = new Date(datetimePicker.value);
+                            const year = inputDate.getUTCFullYear();
+                            const month = String(inputDate.getUTCMonth() + 1).padStart(2, '0');
+                            const day = String(inputDate.getUTCDate()).padStart(2, '0');
+                            const hours = String(inputDate.getUTCHours()).padStart(2, '0');
+                            const minutes = String(inputDate.getUTCMinutes()).padStart(2, '0');
+                            const formattedDate = `${year}-${month}-${day} ${hours}:${minutes}`;
+                            datetimePicker.value = formattedDate;
+                        });
+                    });
+
+
+
+                    function saveDataToLocalStorage() {
+                        // Get the values of input fields by their IDs
+                        const data = {
+
+                            K9PLT: $('#K9PLT').is(':checked'),
+                            GED: $('#GED').is(':checked'),
+                            OS: $('#OS').val(),
+                            AS: $('#AS').val(),
+                            FOS: $('#FOS').val(),
+                            TCname: $('#TCname').val(),
+                            MMMname: $('#MMMname').val(),
+                            deploymentType: $('.ui.selection.search.dropdown input[name="deploymentType"]').val(),
+                            datetimePicker: $('#datetimePicker').val(),
+                            loc: $('#loc').val(),
+                            startTime: $('#startTime').val(),
+                            endTime: $('#endTime').val(),
+                            event1: $('#event1').val(),
+                            member1: $('#member1').val(),
+                            suspect1: $('#suspect1').val(),
+                            civilian1: $('#civilian1').val(),
+                            signature: $('#signature').val()
+                        };
+
+                        // Store the data in local storage
+                        localStorage.setItem('metroDeploymentData', JSON.stringify(data));
+                    }
+
+                    // Function to load data from local storage
+                    function loadDataFromLocalStorage() {
+                        // Retrieve data from local storage
+                        const data = localStorage.getItem('metroDeploymentData');
+                        if (data) {
+                            const parsedData = JSON.parse(data);
+
+                            // Set the values of input fields from the retrieved data
+                            $('#DPLT').prop('checked', parsedData.DPLT);
+                            $('#K9PLT').prop('checked', parsedData.K9PLT);
+                            $('#GED').prop('checked', parsedData.GED);
+                            $('#OS').val(parsedData.OS);
+                            $('#FOS').val(parsedData.FOS);
+                            $('#AS').val(parsedData.AS);
+                            $('#TCname').val(parsedData.TCname);
+                            $('#MMMname').val(parsedData.MMMname);
+                            $('.ui.selection.search.dropdown input[name="deploymentType"]').val(parsedData.deploymentType);
+                            $('#datetimePicker').val(parsedData.datetimePicker);
+                            $('#loc').val(parsedData.loc);
+                            $('#startTime').val(parsedData.startTime);
+                            $('#endTime').val(parsedData.endTime);
+                            $('#event1').val(parsedData.event1);
+                            $('#member1').val(parsedData.member1);
+                            $('#suspect1').val(parsedData.suspect1);
+                            $('#civilian1').val(parsedData.civilian1);
+                            $('#signature').val(parsedData.signature);
+                        }
+                    }
+
+                    // Add event listeners to the input fields for automatic saving
+                    const inputFields = document.querySelectorAll('input, textarea, select');
+                    inputFields.forEach(function (inputField) {
+                        inputField.addEventListener('change', saveDataToLocalStorage);
+                    });
+
+                    // Load data from local storage when the page loads
+                    loadDataFromLocalStorage();
+
+                    // Function to clear all data from local storage with confirmation
+                    function clearLocalStorage() {
+                        const confirmation = confirm(
+                            "Are you sure you want to clear all local data?\n\n" +
+                            "This action will delete all stored data in your browser's local storage, including any unsaved work or settings. " +
+                            "If you're not sure, it's recommended to cancel this action."
+                        );
+
+                        if (confirmation) {
+                            // Backup the data
+                            const dataToBackup = localStorage.getItem('metroDeploymentData');
+                            localStorage.setItem('metroDeploymentDataBackup', dataToBackup);
+
+                            // Clear the original data
+                            localStorage.removeItem('metroDeploymentData');
+                            alert("Local storage has been cleared.");
+                        }
+                    }
+
+                    // Function to undo the clear action
+                    function undoClearLocalStorage() {
+                        const savedData = localStorage.getItem('metroDeploymentDataBackup');
+                        if (savedData) {
+                            localStorage.setItem('metroDeploymentData', savedData);
+                            alert("Clear action has been undone. Your data is restored.");
+                            // Reload the page to reflect the restored data
+                            location.reload();
+                        } else {
+                            alert("There is no data to restore.");
+                        }
+                    }
+
+                    // Add event listeners to the buttons
+                    const clearButton = document.getElementById('clearLocalStorageButton');
+                    if (clearButton) {
+                        clearButton.addEventListener('click', clearLocalStorage);
+                    }
+
+                    const undoButton = document.getElementById('undoLocalStorageButton');
+                    if (undoButton) {
+                        undoButton.addEventListener('click', undoClearLocalStorage);
+                    }
+                </script>
+</body>
+
+</html>
