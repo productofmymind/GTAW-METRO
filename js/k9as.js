@@ -63,7 +63,7 @@ function generateAssessment() {
     { name: "Gianfranco Perez — CANINE HANDLER", patrol: $('input[name="PatrolsPerez"]:checked').val(), deployment: $('input[name="DeploymentsPerez"]:checked').val(), training: $('input[name="TrainingsPerez"]:checked').val() },
     { name: "Leon Beckett — CANINE HANDLER", patrol: $('input[name="PatrolsBeckett"]:checked').val(), deployment: $('input[name="DeploymentsBeckett"]:checked').val(), training: $('input[name="TrainingsBeckett"]:checked').val() },
     { name: "Cole Sanders — CANINE HANDLER", patrol: $('input[name="PatrolsSanders"]:checked').val(), deployment: $('input[name="DeploymentsSanders"]:checked').val(), training: $('input[name="TrainingsSanders"]:checked').val() },
-    { name: "Jada Griffin — CANINE HANDLER", patrol: $('input[name="PatrolsGriffin"]:checked').val(), deployment: $('input[name="DeploymentsGriffin"]:checked').val(), training: $('input[name="TrainingsGriffin"]:checked').val() },
+    // { name: "Jada Griffin — CANINE HANDLER", patrol: $('input[name="PatrolsGriffin"]:checked').val(), deployment: $('input[name="DeploymentsGriffin"]:checked').val(), training: $('input[name="TrainingsGriffin"]:checked').val() },
     { name: "Marlene Renaud — CANINE HANDLER", patrol: $('input[name="PatrolsRenaud"]:checked').val(), deployment: $('input[name="DeploymentsRenaud"]:checked').val(), training: $('input[name="TrainingsRenaud"]:checked').val() },
     { name: "Addison Porter — CANINE HANDLER", patrol: $('input[name="PatrolsPorter"]:checked').val(), deployment: $('input[name="DeploymentsPorter"]:checked').val(), training: $('input[name="TrainingsPorter"]:checked').val() },
    // { name: "Austin Ortega — CANINE HANDLER", patrol: $('input[name="PatrolsOrtega"]:checked').val(), deployment: $('input[name="DeploymentsOrtega"]:checked').val(), training: $('input[name="TrainingsOrtega"]:checked').val() },
@@ -73,6 +73,11 @@ function generateAssessment() {
     { name: "Katarina Orozco — CANINE HANDLER", patrol: $('input[name="PatrolsOrozco"]:checked').val(), deployment: $('input[name="DeploymentsOrozco"]:checked').val(), training: $('input[name="TrainingsOrozco"]:checked').val() },
     { name: "Tobias Maldonado — CANINE HANDLER", patrol: $('input[name="PatrolsMaldonado"]:checked').val(), deployment: $('input[name="DeploymentsMaldonado"]:checked').val(), training: $('input[name="TrainingsMaldonado"]:checked').val() },
     { name: "Marisa Groomay — CANINE HANDLER", patrol: $('input[name="PatrolsGroomay"]:checked').val(), deployment: $('input[name="DeploymentsGroomay"]:checked').val(), training: $('input[name="TrainingsGroomay"]:checked').val() },
+    { name: "Sergio Romero — CANINE HANDLER", patrol: $('input[name="PatrolsRomero"]:checked').val(), deployment: $('input[name="DeploymentsRomero"]:checked').val(), training: $('input[name="TrainingsRomero"]:checked').val() },
+    { name: "Deniz Arcian — CANINE HANDLER", patrol: $('input[name="PatrolsArcian"]:checked').val(), deployment: $('input[name="DeploymentsArcian"]:checked').val(), training: $('input[name="TrainingsArcian"]:checked').val() },
+    { name: "Jalen Bouknight — CANINE HANDLER", patrol: $('input[name="PatrolsBouknight"]:checked').val(), deployment: $('input[name="DeploymentsBouknight"]:checked').val(), training: $('input[name="TrainingsBouknight"]:checked').val() },
+    { name: "Marisa Groomay — CANINE HANDLER", patrol: $('input[name="PatrolsGroomay"]:checked').val(), deployment: $('input[name="DeploymentsGroomay"]:checked').val(), training: $('input[name="TrainingsGroomay"]:checked').val() },
+    { name: "Vincent Glass — CANINE HANDLER", patrol: $('input[name="PatrolsGlass"]:checked').val(), deployment: $('input[name="DeploymentsGlass"]:checked').val(), training: $('input[name="TrainingsGlass"]:checked').val() },
     { name: "Mac Baxter — CANINE HANDLER", patrol: $('input[name="PatrolsBaxter"]:checked').val(), deployment: $('input[name="DeploymentsBaxter"]:checked').val(), training: $('input[name="TrainingsBaxter"]:checked').val() }
 
   ];

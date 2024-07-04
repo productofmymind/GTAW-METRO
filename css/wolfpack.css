@@ -212,3 +212,6 @@ body {
   }
   
   
+  input[type="text"] {
+    margin-bottom: 10px; /* Add margin bottom to create space */
+}
