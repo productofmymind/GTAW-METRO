@@ -122,7 +122,8 @@ button#addInput,
 button#addInput2,
 button#addInput3,
 button#addInput4,
-button#addInput5 {
+button#addInput5,
+button#addInput6 {
   background-color: #0074cc;
   color: #fff;
   padding: 10px 20px;
@@ -154,7 +155,8 @@ button#removeInput,
 button#removeInput2,
 button#removeInput3,
 button#removeInput4,
-button#removeInput5 {
+button#removeInput5,
+button#removeInput6 {
   background-color: #FF0000;
   color: #fff;
   padding: 10px 20px;
