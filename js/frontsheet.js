@@ -75,6 +75,23 @@
       return finalTask.trimEnd();
     }
 
+    const mmChronos = $('#Chrono input')
+    .map(function () {
+      const mmChrono = $(this).val();
+      return mmChrono;
+    })
+    .get();
+
+    function CreateChrono(input) {
+      var finalChrono = '';
+      for (let i = 0; i < input.length; i+=2) {
+        var chronoDate = input[i];
+        var chronoEntry = input[i+1];
+        finalChrono += '[*][u]' + chronoDate + ':' + chronoEntry + '[/u]' + '\n';
+      }
+      return finalChrono.trimEnd();
+    }
+
     let output = `[center][size=150][b]INTERNAL AFFAIRS FILE
 LOS SANTOS POLICE DEPARTMENT[/b][/size][/center]
 
@@ -118,7 +135,7 @@ ${CreateTask(mmTasks)}
 [divbox=black][color=#FFFFFF][b]CHRONOLOGICAL RECORD[/b][/color][/divbox]
 [divbox=transparent]
 [list]
-[*][u]DD/MMM/YYYY: Entry[/u][/list]
+${CreateChrono(mmChronos)}[/list]
 [/divbox]`;
 
     $('#output').val(output);

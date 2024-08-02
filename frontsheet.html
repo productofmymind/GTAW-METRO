@@ -160,7 +160,7 @@
         </div>
     </div>
     <div class="ui container">
-        <h2>Evidence Submissions</h2>
+        <h2>Evidence Submissions & Task List</h2>
         <div class="ui form">
             <div class="ui segment">
                 <!-- EVIDENCE SUBMISSIONS -->
@@ -176,13 +176,6 @@
                     <button type="button" id="addInput5">+</button>
                     <button type="button" id="removeInput5">-</button>
                 </div>   
-            </div>
-        </div>
-    </div>
-    <div class="ui container">
-        <h2>Task List</h2>
-        <div class="ui form">
-            <div class="ui segment">
                 <!-- TASKS -->
                 <div class="field">
                     <label>Tasks</label>
@@ -197,6 +190,26 @@
                     <button type="button" id="addInput6">+</button>
                     <button type="button" id="removeInput6">-</button>
                 </div>   
+            </div>
+        </div>
+    </div>
+    <div class="ui container">
+        <h2>Chronological Record</h2>
+        <div class="ui form">
+            <div class="ui segment">
+                <!-- CHRONO -->
+                <div class="field">
+                    <label>Chronological Record</label>
+                    <div id="Chrono">
+                        <div class="field" style="display:flex; flex-direction: row;">
+                            <input title="Date" type="text" id="chronoDatePicker" placeholder="DD/MMM/YYYY" style="display:block;">
+                            <input type="text" value="Complaint recieved by Complaint Classification Unit. Classified as CLASSIFICATION." id="MMMchronoentry" style="display:block;">
+                        </div>
+                    </div>  
+
+                    <button type="button" id="addInput7">+</button>
+                    <button type="button" id="removeInput7">-</button>
+                </div> 
             </div>
         </div>
     </div>
@@ -241,6 +254,8 @@
             $("#removeInput5").click(removeInputField("#Submissions"));
             $("#addInput6").click(addInputFieldTasks("#Tasks"));
             $("#removeInput6").click(removeInputField("#Tasks"));
+            $("#addInput7").click(addInputFieldChrono("#Chrono"));
+            $("#removeInput7").click(removeInputField("#Chrono"));
 
             function addInputField(containerId, placeholderText) {
                 return function () {
@@ -266,6 +281,15 @@
                     const newEventNumber = inputFieldsContainer.children().length + 1; // Calculate the new event number
                     const finalAppend = $("<div style='display:flex; flex-direction: row;'>").addClass("field").html('<input type="text" placeholder="Description - Task '+ newEventNumber + '" style="display:block;">' + '<input type="text" placeholder="Assigned To - Task '+ newEventNumber + '" style="display:block;">' + 
                         '<input type="text" placeholder="Completed / In Progress / Pending - Task '+ newEventNumber + '" style="display:block;">');
+                    inputFieldsContainer.append(finalAppend);
+                };
+            }
+
+            function addInputFieldChrono(containerId) {
+                return function () {
+                    const inputFieldsContainer = $(containerId);
+                    const newEventNumber = inputFieldsContainer.children().length + 1; // Calculate the new event number
+                    const finalAppend = $("<div style='display:flex; flex-direction: row;'>").addClass("field").html('<input title="Date" type="text" id="chronoDatePicker" placeholder="DD/MMM/YYYY" style="display:block;">' + '<input type="text" placeholder="Entry '+ newEventNumber + '" style="display:block;">');
                     inputFieldsContainer.append(finalAppend);
                 };
             }
@@ -338,6 +362,8 @@
                 MMMTaskDesc: $('#MMMtaskdesc').val(),
                 MMMTaskAssigned: $('#MMMtaskassigned').val(),
                 MMMTaskStatus: $('#MMMtaskstatus').val(),
+                ChronoDatePicker: $('#chronoDatePicker').val(),
+                ChronoEntry: $('#MMMchronoentry').val(),
             };
     
             // Store the data in local storage
@@ -370,6 +396,8 @@
                 $('#MMMtaskdesc').val(parsedData.MMMTaskDesc);
                 $('#MMMtaskassigned').val(parsedData.MMMTaskAssigned);
                 $('#MMMtaskstatus').val(parsedData.MMMTaskStatus);
+                $('#chronoDatePicker').val(parsedData.ChronoDatePicker);
+                $('#MMMchronoentry').val(parsedData.ChronoEntry);
             }
         }
     
