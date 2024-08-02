@@ -1,50 +1,109 @@
   $('.ui.radio.checkbox').checkbox();
   
   $('#submit').click(function () {
-    const HandlerName = $('#HandlerName').val() || '';
-    const K9Name = $('#K9Name').val() || '';
-    const K9Specialization = $('#K9SpecializationInput').val() || '';
-    const DivisionalRank = $('#DivisionalRankInput').val() || '';
-    const SerialNumber = $('#SerialNumber').val() || '';
-    const StreetName = $('#StreetNameInput').val() || '';
-    const DistrictName = $('#DistrictNameInput').val() || '';
-    const DeploymentType = $('#DeploymentTypeInput').val() || '';
-    const PositiveAlert = $('#PositiveAlertInput').val() || '';
-    const ItemsLocated = $('#ItemsLocated').val() || '';
-    const Narrative = $('#Narrative').val() || '';
-    const Signature = $('#Signature').val() || '';
+    const CFNo = $('#CFNo').val() || '';
+    const Supervisor = $('#Supervisor').val() || '';
+    const Investigators = $('#Investigators').val() || '';
+    const Classification = $('#ClassificationInput').val() || '';
+    const Summary = $('#Summary').val() || '';
+    const DatePicker = $('#datePicker').val() || '';
+    const TimePicker = $('#Time').val() || '';
+    const Location = $('#Location').val() || '';
+    const mmAllegations = $('#Allegations input')
+    .map(function () {
+      const allegation = $(this).val();
+      return allegation ? `[*] ${allegation}` : '';
+    })
+    .get()
+    .join('\n');
+    const mmReportedEmployees = $('#ReportedEmployees input')
+    .map(function () {
+      const reportedEmployee = $(this).val();
+      return reportedEmployee ? `[*] ${reportedEmployee}` : '';
+    })
+    .get()
+    .join('\n');
+    const mmComplainants = $('#Complainants input')
+    .map(function () {
+      const complainaint = $(this).val();
+      return complainaint ? `[*] ${complainaint}` : '';
+    })
+    .get()
+    .join('\n');
+    const deptComplainant = $('#DEPT:checked').val() ? '[cbc]' : '[cb]';
+    const mmWitnesses = $('#Witnesses input')
+    .map(function () {
+      const witness = $(this).val();
+      return witness ? `[*] ${witness}` : '';
+    })
+    .get()
+    .join('\n');
 
-    let output = `[divbox2=transparent]
-    [aligntable=right,250,0,0,0,0,0][center][metrologo=150][k9platlogo=150][/center][/aligntable]
+    const mmSubmissions = $('#Submissions input')
+    .map(function () {
+      const mmSubmission = $(this).val();
+      return mmSubmission;
+    })
+    .get();
+
+    function CreateSubmission(input) {
+      var finalSubmission = '';
+      for (let i = 0; i < input.length; i+=2) {
+        var submissionLink = input[i];
+        var submissionDesc = input[i+1];
+        finalSubmission += '[url='+submissionLink+']'+submissionDesc+'[/url]' + '\n';
+      }
+      return finalSubmission.trimEnd();
+    }
     
-    [br][/br]
-    [indent=10][size=150][b]METROPOLITAN DIVISION[/b][/size]
-    [size=130]CANINE DEPLOYMENT REPORT[/size][/indent]
-    [br][/br]
-    
-    [divbox=black][b][size=150][color=#FFFFFF]1. GENERAL INFORMATION[/color][/size][/b]
-    [/divbox]
-    [indent=10][b]1.1 | HANDLER NAME:[/b] ${HandlerName}
-    [b]1.2 | K-9 NAME:[/b] ${K9Name}
-    [b]1.3 | K-9 SPECIALIZATION:[/b] ${K9Specialization}
-    [b]1.4 | DIVISIONAL RANK:[/b] ${DivisionalRank}
-    [b]1.5 | SERIAL NUMBER:[/b] ${SerialNumber} [/indent]
-    
-    [divbox=black][b][size=150][color=#FFFFFF]2. INCIDENT SUMMARY[/color][/size][/b]
-    [/divbox]
-    [indent=10][b]2.1 | DATE & TIME:[/b] 
-    [b]2.2 | LOCATION OF DEPLOYMENT:[/b] ${StreetName}, ${DistrictName}
-    [b]2.3 | TYPE OF SEARCH:[/b] ${DeploymentType}
-    [b]2.4 | POSITIVE ALERT:[/b] ${PositiveAlert}
-    [b]2.5 | ITEMS LOCATED:[/b] ${ItemsLocated} [/indent]
-    
-    [divbox=black][b][size=150][color=#FFFFFF]3. INCIDENT NARRATIVE[/color][/size][/b]
-    [/divbox]
-    [indent=10][b]3.1 | NARRATIVE:[/b] ${Narrative}
-    
-    [b]3.2 | SIGNATURE:[/b] ${Signature}
-    [/indent]
-    [/divbox2]`;
+
+    let output = `[center][size=150][b]INTERNAL AFFAIRS FILE
+LOS SANTOS POLICE DEPARTMENT[/b][/size][/center]
+
+[divbox=black][color=#FFFFFF][b]CASE FILE INFORMATION[/b][/color][/divbox]
+[divbox=transparent]
+[indent=10][b]CF No.:[/b] ${CFNo}
+[b]Assigned Supervisor:[/b] ${Supervisor}
+[b]Assigned Investigators:[/b] ${Investigators}
+[b]Classification:[/b] ${Classification}
+[b]Brief Summary:[/b] ${Summary}[/indent]
+[/divbox]
+[divbox=black][color=#FFFFFF][b]INCIDENT DETAILS[/b][/color][/divbox]
+[divbox=transparent]
+[indent=10][b]Date:[/b] ${DatePicker}
+[b]Time:[/b] ${TimePicker} Hours
+[b]Location:[/b] ${Location}
+[b]Allegations:[/b]
+[list]${mmAllegations}[/list][/indent]
+[/divbox]
+[divbox=black][color=#FFFFFF][b]INVOLVED PARTIES[/b][/color][/divbox]
+[divbox=transparent]
+[indent=10][b]Reported Employees:[/b]
+[list]${mmReportedEmployees}[/list]
+[b]Complainant(s):[/b] [cb][/cb] Department
+[list]${mmComplainants}[/list]
+[b]Witnesses:[/b]
+[list]${mmWitnesses}[/list][/indent]
+[/divbox]
+[divbox=black][color=#FFFFFF][b]EVIDENCE SUBMISSIONS[/b][/color][/divbox]
+[divbox=transparent]
+[indent=10]
+${CreateSubmission(mmSubmissions)}
+[/indent]
+[/divbox]
+[divbox=black][color=#FFFFFF][b]TASK LIST[/b][/color][/divbox]
+[divbox=transparent]
+[indent=10]
+[b]Task Description:[/b]
+[list=none][b]Assigned:[/b] Sergeant Firstname Lastname
+[b]Status:[/b] Completed/In Progress/Pending[/list]
+[/indent]
+[/divbox]
+[divbox=black][color=#FFFFFF][b]CHRONOLOGICAL RECORD[/b][/color][/divbox]
+[divbox=transparent]
+[list]
+[*][u]DD/MMM/YYYY: Entry[/u][/list]
+[/divbox]`;
 
     $('#output').val(output);
   });
