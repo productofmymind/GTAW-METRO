@@ -55,7 +55,25 @@
       }
       return finalSubmission.trimEnd();
     }
-    
+
+    const mmTasks = $('#Tasks input')
+    .map(function () {
+      const mmTask = $(this).val();
+      return mmTask;
+    })
+    .get();
+
+    function CreateTask(input) {
+      var finalTask = '';
+      for (let i = 0; i < input.length; i+=3) {
+        var taskDesc = input[i];
+        var taskAssigned = input[i+1];
+        var taskStatus = input[i+2];
+        finalTask += '[b]Task Description:[/b] ' + taskDesc + '\n' + '[list=none][b]Assigned:[/b] '+ taskAssigned + '\n'+ '\
+[b]Status:[/b] ' + taskStatus + '[/list]' + '\n';
+      }
+      return finalTask.trimEnd();
+    }
 
     let output = `[center][size=150][b]INTERNAL AFFAIRS FILE
 LOS SANTOS POLICE DEPARTMENT[/b][/size][/center]
@@ -94,9 +112,7 @@ ${CreateSubmission(mmSubmissions)}
 [divbox=black][color=#FFFFFF][b]TASK LIST[/b][/color][/divbox]
 [divbox=transparent]
 [indent=10]
-[b]Task Description:[/b]
-[list=none][b]Assigned:[/b] Sergeant Firstname Lastname
-[b]Status:[/b] Completed/In Progress/Pending[/list]
+${CreateTask(mmTasks)}
 [/indent]
 [/divbox]
 [divbox=black][color=#FFFFFF][b]CHRONOLOGICAL RECORD[/b][/color][/divbox]
