@@ -334,6 +334,9 @@
                 MMMWitness: $('#MMMwitness').val(),
                 MMMSubLink: $('#MMMsubmissionlink').val(),
                 MMMSub: $('#MMMsubmission').val(),
+                MMMTaskDesc: $('#MMMtaskdesc').val(),
+                MMMTaskAssigned: $('#MMMtaskassigned').val(),
+                MMMTaskStatus: $('#MMMtaskstatus').val(),
             };
     
             // Store the data in local storage
@@ -363,6 +366,9 @@
                 $('#MMMwitness').val(parsedData.MMMWitness);
                 $('#MMMsubmissionlink').val(parsedData.MMMSubLink);
                 $('#MMMsubmission').val(parsedData.MMMSub);
+                $('#MMMtaskdesc').val(parsedData.MMMTaskDesc);
+                $('#MMMtaskassigned').val(parsedData.MMMTaskAssigned);
+                $('#MMMtaskstatus').val(parsedData.MMMTaskStatus);
             }
         }
     
