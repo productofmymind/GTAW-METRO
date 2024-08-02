@@ -326,19 +326,7 @@
         });
 
         document.addEventListener('DOMContentLoaded', function () {
-            const datetimePicker = document.getElementById('datetimePicker');
             const todayButton = document.getElementById('todayButton');
-
-            datetimePicker.addEventListener('change', function () {
-                const inputDate = new Date(datetimePicker.value);
-                const year = inputDate.getUTCFullYear();
-                const month = String(inputDate.getUTCMonth() + 1).padStart(2, '0');
-                const day = String(inputDate.getUTCDate()).padStart(2, '0');
-                const hours = String(inputDate.getUTCHours()).padStart(2, '0');
-                const minutes = String(inputDate.getUTCMinutes()).padStart(2, '0');
-                const formattedDate = `${year}-${month}-${day} ${hours}:${minutes}`;
-                datetimePicker.value = formattedDate;
-            });
         });
     
         function saveDataToLocalStorage() {
