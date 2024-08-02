@@ -202,6 +202,7 @@
                     <label>Chronological Record</label>
                     <div id="Chrono">
                         <div class="field" style="display:flex; flex-direction: row;">
+                            <button id="todayButtonChrono">Today</button>
                             <input title="Date" type="text" id="chronoDatePicker" placeholder="DD/MMM/YYYY" style="display:block;">
                             <input type="text" value="Complaint recieved by Complaint Classification Unit. Classified as CLASSIFICATION." id="MMMchronoentry" style="display:block;">
                         </div>
@@ -314,19 +315,29 @@
         const startTime = document.getElementById('startTime');
         const datePicker = document.getElementById('datePicker');
         const todayButton = document.getElementById('todayButton');
+        const todayButtonChrono = document.getElementById('todayButtonChrono');
 
-        todayButton.addEventListener('click', function () {
+        function CurrentDateAsServerTime() {
             const currentUTCDate = new Date();
             const day = currentUTCDate.getUTCDate().toString().padStart(2, "0");
             const month = currentUTCDate
                 .toLocaleString("default", { month: "short", timeZone: "UTC" })
                 .toUpperCase();
             const year = currentUTCDate.getUTCFullYear();
-            datePicker.value = `${day}/${month}/${year}`;
+            return `${day}/${month}/${year}`;
+        }
+
+        todayButton.addEventListener('click', function () {
+            datePicker.value = CurrentDateAsServerTime();
+        });
+
+        todayButtonChrono.addEventListener('click', function () {
+            chronoDatePicker.value = CurrentDateAsServerTime();
         });
 
         document.addEventListener('DOMContentLoaded', function () {
             const todayButton = document.getElementById('todayButton');
+            const todayButtonChrono = document.getElementById('todayButtonChrono');
         });
     
         function saveDataToLocalStorage() {
