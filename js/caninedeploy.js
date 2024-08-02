@@ -9,7 +9,7 @@
     const DatePicker = $('#datePicker').val() || '';
     const TimePicker = $('#Time').val() || '';
     const Location = $('#Location').val() || '';
-    const mmAllegations = $('#Allegation input')
+    const mmAllegations = $('#Allegations input')
     .map(function () {
       const allegation = $(this).val();
       return allegation ? `[*] ${allegation}` : '';
@@ -23,7 +23,7 @@
     })
     .get()
     .join('\n');
-    const mmComplainants = $('#Complainant input')
+    const mmComplainants = $('#Complainants input')
     .map(function () {
       const complainaint = $(this).val();
       return complainaint ? `[*] ${complainaint}` : '';
