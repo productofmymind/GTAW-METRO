@@ -9,7 +9,7 @@
     const DatePicker = $('#datePicker').val() || '';
     const TimePicker = $('#Time').val() || '';
     const Location = $('#Location').val() || '';
-    const mmAllegations = $('#Allegations input')
+    const mmAllegations = $('#Allegation input')
     .map(function () {
       const allegation = $(this).val();
       return allegation ? `[*] ${allegation}` : '';
@@ -23,7 +23,7 @@
     })
     .get()
     .join('\n');
-    const mmComplainants = $('#Complainants input')
+    const mmComplainants = $('#Complainant input')
     .map(function () {
       const complainaint = $(this).val();
       return complainaint ? `[*] ${complainaint}` : '';
@@ -80,7 +80,7 @@ LOS SANTOS POLICE DEPARTMENT[/b][/size][/center]
 [divbox=transparent]
 [indent=10][b]Reported Employees:[/b]
 [list]${mmReportedEmployees}[/list]
-[b]Complainant(s):[/b] [cb][/cb] Department
+[b]Complainant(s):[/b] ${deptComplainant} Department
 [list]${mmComplainants}[/list]
 [b]Witnesses:[/b]
 [list]${mmWitnesses}[/list][/indent]
