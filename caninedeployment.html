@@ -11,6 +11,7 @@
     <title>Casefile Front Sheet</title>
 </head>
 <body>
+    <button id="clearLocalStorageButton">Clear Format</button>
     <div class="ui container">
         <h2>Casefile Information</h2>
         <div class="ui form">
@@ -340,13 +341,13 @@
             };
     
             // Store the data in local storage
-            localStorage.setItem('canineDeploymentData', JSON.stringify(data));
+            localStorage.setItem('IADData', JSON.stringify(data));
         }
     
         // Function to load data from local storage
         function loadDataFromLocalStorage() {
             // Retrieve data from local storage
-            const data = localStorage.getItem('canineDeploymentData');
+            const data = localStorage.getItem('IADData');
             if (data) {
                 const parsedData = JSON.parse(data);
     
@@ -380,6 +381,30 @@
     
         // Load data from local storage when the page loads
         loadDataFromLocalStorage();
+
+        // Function to clear all data from local storage with confirmation
+        function clearLocalStorage() {
+            const confirmation = confirm(
+                "Are you sure you want to clear all local data?\n\n" +
+                "This action will delete all stored data in your browser's local storage, including any unsaved work. This can NOT be undone. " +
+                "If you're not sure, it's recommended to cancel this action."
+            );
+
+            if (confirmation) {
+
+                // Clear the original data
+                localStorage.removeItem('IADData');
+                alert("Local storage has been cleared.");
+                // Refresh page
+                location.reload();
+            }
+        }
+
+        // Adds event listener for clear button!
+        const clearButton = document.getElementById('clearLocalStorageButton');
+        if (clearButton) {
+            clearButton.addEventListener('click', clearLocalStorage);
+        }
     </script>
 </body>
 </html>
