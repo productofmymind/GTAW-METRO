@@ -87,7 +87,7 @@
       for (let i = 0; i < input.length; i+=2) {
         var chronoDate = input[i];
         var chronoEntry = input[i+1];
-        finalChrono += '[*][u]' + chronoDate + ':' + chronoEntry + '[/u]' + '\n';
+        finalChrono += '[*][u]' + chronoDate + ': ' + chronoEntry + '[/u]' + '\n';
       }
       return finalChrono.trimEnd();
     }
