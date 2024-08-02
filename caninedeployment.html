@@ -16,23 +16,23 @@
         <div class="ui form">
             <div class="ui segment">
                 <div class="field">
-                    <label for="HandlerName">CF No.</label>
+                    <label for="CFNo">CF No.</label>
                     <div class="three fields">
                         <div class="field">
-                            <input type="text" placeholder="YY-0XXXXX" id="HandlerName">
+                            <input type="text" placeholder="YY-0XXXXX" id="CFNo">
                         </div>
                     </div>
                 </div>
                 <div class="field">
-                    <label for="K9Name">Assigned Supervisor</label>
+                    <label for="Supervisor">Assigned Supervisor</label>
                     <div class="three fields">
                         <div class="field">
-                            <input type="text" placeholder="Sergeant John Doe" id="K9Name">
+                            <input type="text" placeholder="Sergeant John Doe" id="Supervisor">
                         </div>
                     </div>
                 </div>
                 <div class="field">
-                    <label for="K9Specialization">Assigned Investigators</label>
+                    <label for="Investigators">Assigned Investigators</label>
                     <div class="three fields">
                         <div class="field">
                             <input type="text" placeholder="Sergeant Jack Doe, Sergeant Jane Doe" id="Investigators">
@@ -40,11 +40,11 @@
                     </div>
                 </div>
                 <div class="field">
-                    <label for="DivisionalRank">Classification</label>
+                    <label for="Classification">Classification</label>
                     <div class="three fields">
                         <div class="field">
-                            <div class="ui selection search dropdown" id="DivisionalRank">
-                                <input type="hidden" name="DivisionalRank" id="DivisionalRankInput">
+                            <div class="ui selection search dropdown" id="Classification">
+                                <input type="hidden" name="Classification" id="ClassificationInput">
                                 <i class="dropdown icon"></i>
                                 <div class="default text">Select Classification</div>
                                 <div class="menu">
@@ -56,10 +56,10 @@
                     </div>
                 </div>
                 <div class="field">
-                    <label for="SerialNumber">Brief Summary</label>
+                    <label for="Summary">Brief Summary</label>
                     <div class="three fields">
                         <div class="field">
-                            <input type="text" placeholder="Summary" id="SerialNumber">
+                            <input type="text" placeholder="Summary" id="Summary">
                         </div>
                     </div>
                 </div>
@@ -319,19 +319,21 @@
         function saveDataToLocalStorage() {
             // Get the values of input fields by their IDs
             const data = {
-                HandlerName: $('#HandlerName').val(),
-                K9Name: $('#K9Name').val(),
-                K9Specialization: $('.ui.selection.search.dropdown input[name="K9Specialization"]').val(),
-                DivisionalRank: $('.ui.selection.search.dropdown input[name="DivisionalRank"]').val(),
-                SerialNumber: $('#SerialNumber').val(),
-                datetimePicker: $('#datetimePicker').val(),
-                DistrictName: $('.ui.selection.search.dropdown input[name="DistrictName"]').val(),
-                StreetName: $('.ui.selection.search.dropdown input[name="StreetName"]').val(),
-                DeploymentType: $('.ui.selection.search.dropdown input[name="DeploymentType"]').val(),
-                PositiveAlert: $('.ui.selection.search.dropdown input[name="PositiveAlert"]').val(),
-                ItemsLocated: $('#ItemsLocated').val(),
-                Narrative: $('#Narrative').val(),
-                Signature: $('#Signature').val(),
+                CFNo: $('#CFNo').val(),
+                Supervisor: $('#Supervisor').val(),
+                Investigators: $('#Investigators').val(),
+                Classification: $('.ui.selection.search.dropdown input[name="Classification"]').val(),
+                Summary: $('#Summary').val(),
+                DatePicker: $('#datePicker').val(),
+                TimePicker: $('#Time').val(),
+                Location: $('#Location').val(),
+                MMMAllegation: $('#MMMallegation').val(),
+                MMMRepEmply: $('#MMMrepemply').val(),
+                MMMComplainant: $('#MMMcomplainant').val(),
+                CmpDept: $('#DEPT').val(),
+                MMMWitness: $('#MMMwitness').val(),
+                MMMSubLink: $('#MMMsubmissionlink').val(),
+                MMMSub: $('#MMMsubmission').val(),
             };
     
             // Store the data in local storage
@@ -346,21 +348,23 @@
                 const parsedData = JSON.parse(data);
     
                 // Set the values of input fields from the retrieved data
-                $('#HandlerName').val(parsedData.HandlerName);
-                $('#K9Name').val(parsedData.K9Name);
-                $('.ui.selection.search.dropdown input[name="K9Specialization"]').val(parsedData.K9Specialization);
-                $('.ui.selection.search.dropdown input[name="PositiveAlert"]').val(parsedData.PositiveAlert);
-                $('.ui.selection.search.dropdown input[name="DivisionalRank"]').val(parsedData.DivisionalRank);
-                $('#SerialNumber').val(parsedData.SerialNumber);
-                $('#datetimePicker').val(parsedData.datetimePicker);
-                $('#StreetName').val(parsedData.StreetName);
-                $('#DistrictName').val(parsedData.DistrictName);
-                $('.ui.selection.search.dropdown input[name="StreetName"]').val(parsedData.StreetName);
-                $('.ui.selection.search.dropdown input[name="DistrictName"]').val(parsedData.DistrictName);
-                $('.ui.selection.search.dropdown input[name="DeploymentType"]').val(parsedData.DeploymentType);
-                $('#ItemsLocated').val(parsedData.ItemsLocated);
-                $('#Narrative').val(parsedData.Narrative);
-                $('#Signature').val(parsedData.Signature);
+                //$('#DPLT').prop('checked', parsedData.DPLT);
+                //$('#MMMname').val(parsedData.MMMname);
+                $('#CFNo').val(parsedData.CFNo);
+                $('#Supervisor').val(parsedData.Supervisor);
+                $('#Investigators').val(parsedData.Investigators);
+                $('.ui.selection.search.dropdown input[name="Classification"]').val(parsedData.Classification);
+                $('#Summary').val(parsedData.Summary);
+                $('#datePicker').val(parsedData.DatePicker);
+                $('#Time').val(parsedData.TimePicker);
+                $('#Location').val(parsedData.Location);
+                $('#MMMAllegation').val(parsedData.MMMAllegation);
+                $('#MMMrepemply').val(parsedData.MMMRepEmply);
+                $('#MMMcomplainant').val(parsedData.MMMComplainant);
+                $('#DEPT').prop('checked', parsedData.CmpDept);
+                $('#MMMwitness').val(parsedData.MMMWitness);
+                $('#MMMsubmissionlink').val(parsedData.MMMSubLink);
+                $('#MMMsubmission').val(parsedData.MMMSub);
             }
         }
     
