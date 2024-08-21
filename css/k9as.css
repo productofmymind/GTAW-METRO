@@ -1,22 +1,26 @@
-
 body {
   font-family: "Inter", sans-serif;
   background-color: #2F384E;
+  margin: 0;
+  padding: 0;
 }
 
 h2, h4 {
   font-family: "Inter", sans-serif;
   color: white;
+  margin-top: 0;
 }
 
 .ui.container {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .ui.segment {
   color: white;
   background-color: #2F384E;
+  border-radius: 12px; /* Rounded edges */
+  padding: 20px;
 }
 
 .ui.form {
@@ -28,13 +32,16 @@ h2, h4 {
   color: white !important;
 }
 
-.ui.form .inline.field>label, .ui.form .inline.field>p, .ui.form .inline.fields .field>label, .ui.form .inline.fields .field>p, .ui.form .inline.fields>label {
+.ui.form .inline.field>label,
+.ui.form .inline.field>p,
+.ui.form .inline.fields .field>label,
+.ui.form .inline.fields .field>p,
+.ui.form .inline.fields>label {
   display: inline-block;
   width: auto;
-  margin-top: 0;
-  margin-bottom: 0;
+  margin: 0;
   vertical-align: baseline;
-  font-size: .92857143em;
+  font-size: 0.92857143em;
   font-weight: 700;
   color: white;
   text-transform: none;
@@ -42,9 +49,6 @@ h2, h4 {
 
 .ui.checkbox input.hidden+label {
   cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
   color: white;
 }
@@ -52,13 +56,13 @@ h2, h4 {
 .ui.form .two.fields>.field,
 .ui.form .two.fields>.fields {
   padding-top: 10px !important;
-  width: 50%; /* Adjust the width as needed */
+  width: 48%; /* Adjusted width for spacing */
+  margin-bottom: 10px; /* Spacing between fields */
 }
 
-/* To remove the margin-right for the last box, you can use the :last-child pseudo-class */
 .ui.form .two.fields>.field:last-child,
 .ui.form .two.fields>.fields:last-child {
-  margin-right: 10; /* Remove margin-right for the last box */
+  margin-right: 0; /* Remove margin-right for the last box */
 }
 
 .inline.fields .header {
@@ -67,8 +71,37 @@ h2, h4 {
 
 .ui.button#submit {
   background-color: #21ba45;
+  color: white;
+  border-radius: 8px; /* Rounded edges */
+  padding: 10px 20px;
+  font-size: 1em;
+  font-weight: bold;
 }
 
 .ui.button#submit:hover {
   background-color: #16ab3b;
+}
+
+.ui.button#copy {
+  background-color: #2185d0;
+  color: white;
+  border-radius: 8px; /* Rounded edges */
+  padding: 10px 20px;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.ui.button#copy:hover {
+  background-color: #1678c2;
+}
+
+textarea#output {
+  width: 100%;
+  height: 150px;
+  border-radius: 8px; /* Rounded edges */
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  color: #333;
+  resize: vertical;
 }

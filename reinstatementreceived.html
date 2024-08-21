@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="css/img/k9.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <link rel="stylesheet" href="css/metrodeploy.css">
+    <title>Reinstatement Received</title>
+</head>
+<body>    
+    <button id="clearLocalStorageButton">Clear Format</button>
+    <button id="undoLocalStorageButton">Undo Clear</button>
+    <div class="ui container">
+        <div class="ui form">
+            <!-- Add any additional form elements here -->
+        </div>
+    </div>
+    <div class="ui container">
+        <div class="ui form">
+            <div class="ui segment">
+                <h2>Reinstating Member Information</h2>
+                <div class="field">
+                    <div class="field">
+                        <label>Month</label>
+                        <div class="three fields">
+                            <div class="field">
+                                <input type="text" placeholder="Month" id="Month">
+                            </div>
+                            <div class="field">
+                                <button id="todayButton">Today</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label>Date</label>
+                        <div class="three fields">
+                            <div class="field">
+                                <input type="text" placeholder="Date" id="Date">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label>Year</label>
+                        <div class="three fields">
+                            <div class="field">
+                                <input type="text" placeholder="Year" id="Year">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label>Firstname Lastname</label>
+                    <div class="three fields">
+                        <div class="field">
+                            <input type="text" placeholder="Firstname Lastname" id="FirstnameLastname">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div class="ui segment">
+                <h2>Supervisor Information</h2>
+                <div class="field">
+                    <label>Rank + Full Name</label>
+                    <div class="three fields">
+                        <div class="field">
+                            <input type="text" placeholder="Rank Fullname, Assignment, Division" id="ContactPerson">
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label>Contact Badge Number</label>
+                    <div class="three fields">
+                        <div class="field">
+                            <input type="text" placeholder="Type in here just your badge number" id="BadgeNumber">
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label>Signature Image - leave empty if no image</label>
+                    <div class="three fields">
+                        <div class="field">
+                            <input type="text" placeholder="The link must end in .png or whatever format" id="SignatureImage">
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label>Signature Name + Rank</label>
+                    <div class="three fields">
+                        <div class="field">
+                            <input type="text" placeholder="FIRSTNAME LASTNAME, Departmental Rank" id="SignatureNameRank">
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label>Assignment</label>
+                    <div class="three fields">
+                        <div class="field">
+                            <input type="text" placeholder="Assignment" id="Assignment">
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label>Division</label>
+                    <div class="three fields">
+                        <div class="field">
+                            <input type="text" placeholder="Division" id="Division">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="ui container">
+        <div class="ui form">
+            <div class="ui segment">
+                <h2>Generator</h2>
+                <div class="field">
+                    <label>Output</label>
+                    <textarea id="Narrative" readonly></textarea>
+                </div>
+                <div class="ui secondary button" id="submit">Submit</div>
+                <div class="ui primary button" id="copy">Copy to Clipboard</div> 
+            </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+    <script src="js/reinstatementreceived.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.ui.search.dropdown').dropdown({
+                fullTextSearch: true
+            });
+    
+            $("#addInput").click(addInputField("#InvolvedMembersContainer", "Firstname Lastname"));
+            $("#removeInput").click(removeInputField("#InvolvedMembersContainer"));
+    
+            function addInputField(containerId, placeholderText) {
+                return function () {
+                    const inputFieldsContainer = $(containerId);
+                    const newInputField = $("<div>").addClass("field").html('<input type="text" placeholder="' + placeholderText + '" id="newInputField">');
+                    inputFieldsContainer.append(newInputField);
+                };
+            }
+    
+            function removeInputField(containerId) {
+                return function () {
+                    const inputFieldsContainer = $(containerId);
+                    const inputFields = inputFieldsContainer.children();
+                    if (inputFields.length > 1) {
+                        inputFields.last().remove();
+                    } else {
+                        alert("Cannot remove the last input field.");
+                    }
+                }
+            }
+    
+            // Helper function to format dates
+            function formatDate(dateStr) {
+                const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                const [year, month, day] = dateStr.split("-");
+                return `${months[parseInt(month) - 1]} ${parseInt(day)}, ${year}`;
+            }
+    
+            const todayButton = document.getElementById('todayButton');
+            const monthInput = document.getElementById('Month');
+            const dateInput = document.getElementById('Date');
+            const yearInput = document.getElementById('Year');
+    
+            todayButton.addEventListener('click', function () {
+                const currentDate = new Date();
+                const year = currentDate.getFullYear();
+                const month = currentDate.toLocaleString('default', { month: 'long' });
+                const day = currentDate.getDate();
+    
+                monthInput.value = month;
+                dateInput.value = day;
+                yearInput.value = year;
+            });
+    
+            function saveDataToLocalStorage() {
+                const data = {
+                    FirstnameLastname: $('#FirstnameLastname').val(),
+                    ContactPerson: $('#ContactPerson').val(),
+                    Assignment: $('#Assignment').val(),
+                    Division: $('#Division').val(),
+                    SignatureNameRank: $('#SignatureNameRank').val(),
+                    Narrative: $('#Narrative').val(),
+                    SignatureImage: $('#SignatureImage').val(),
+                    Month: $('#Month').val(),
+                    Date: $('#Date').val(),
+                    Year: $('#Year').val(),
+                    BadgeNumber: $('#BadgeNumber').val()
+                };
+    
+                localStorage.setItem('metroDeploymentData', JSON.stringify(data));
+            }
+    
+            function loadDataFromLocalStorage() {
+                const data = localStorage.getItem('metroDeploymentData');
+                if (data) {
+                    const parsedData = JSON.parse(data);
+    
+                    $('#ContactPerson').val(parsedData.ContactPerson);
+                    $('#Assignment').val(parsedData.Assignment);
+                    $('#Division').val(parsedData.Division);
+                    $('#SignatureNameRank').val(parsedData.SignatureNameRank);
+                    $('#Narrative').val(parsedData.Narrative);
+                    $('#SignatureImage').val(parsedData.SignatureImage);
+                    $('#Month').val(parsedData.Month);
+                    $('#Date').val(parsedData.Date);
+                    $('#Year').val(parsedData.Year);
+                    $('#BadgeNumber').val(parsedData.BadgeNumber);
+                }
+            }
+    
+            const inputFields = document.querySelectorAll('input, textarea, select');
+            inputFields.forEach(function (inputField) {
+                inputField.addEventListener('change', saveDataToLocalStorage);
+            });
+    
+            loadDataFromLocalStorage();
+    
+            function clearLocalStorage() {
+                const confirmation = confirm(
+                    "Are you sure you want to clear all local data?\n\n" +
+                    "This action will delete all stored data in your browser's local storage, including any unsaved work or settings. " +
+                    "If you're not sure, it's recommended to cancel this action."
+                );
+    
+                if (confirmation) {
+                    const dataToBackup = localStorage.getItem('metroDeploymentData');
+                    localStorage.setItem('metroDeploymentDataBackup', dataToBackup);
+                    localStorage.removeItem('metroDeploymentData');
+                    alert("Local storage has been cleared.");
+                }
+            }
+    
+            function undoClearLocalStorage() {
+                const savedData = localStorage.getItem('metroDeploymentDataBackup');
+                if (savedData) {
+                    localStorage.setItem('metroDeploymentData', savedData);
+                    alert("Clear action has been undone. Your data is restored.");
+                    location.reload();
+                } else {
+                    alert("There is no data to restore.");
+                }
+            }
+    
+            const clearButton = document.getElementById('clearLocalStorageButton');
+            if (clearButton) {
+                clearButton.addEventListener('click', clearLocalStorage);
+            }
+    
+            const undoButton = document.getElementById('undoLocalStorageButton');
+            if (undoButton) {
+                undoButton.addEventListener('click', undoClearLocalStorage);
+            }
+        });
+    </script>
+    
+</body>
+</html>

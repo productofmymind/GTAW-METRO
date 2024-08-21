@@ -5,6 +5,7 @@ $('#submit').click(function () {
   const dPlatoonChecked = $('#DPLT:checked').val() ? '[*] D Platoon' : '';
   const k9PlatoonChecked = $('#K9PLT:checked').val() ? '[*] K9 Platoon' : '';
   const hPlatoonChecked = $('#HPLT:checked').val() ? '[*] H Platoon' : '';
+  const bsChecked = $('#BS:checked').val() ? '[*] Bomb Squad' : '';
   const icFullName = $('#ICname').val() || '';
   const cnFullName = $('#CNname').val() || '';
   const tcFullName = $('#TCname').val() || '';
@@ -51,7 +52,7 @@ $('#submit').click(function () {
   const filingOfficerSignature = $('#signature').val() || '';
 
   // Combine the checked platoons into a single list
-  const platoonsList = [dPlatoonChecked, k9PlatoonChecked, hPlatoonChecked].filter(Boolean).join('\n');
+  const platoonsList = [dPlatoonChecked, k9PlatoonChecked, hPlatoonChecked, bsChecked].filter(Boolean).join('\n');
 
   // Create the report template with the user input values
   let output = `[divbox2=transparent]
