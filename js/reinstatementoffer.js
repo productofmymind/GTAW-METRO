@@ -38,6 +38,7 @@ ${FirstnameLastname}
 
 [b]Request for Reinstatement — Official Job Offer[/b]
 
+
 [justify]Thank you for your interest in a rewarding career with the Los Santos Police Department. 
 
 After careful consideration of your application and qualifications throughout the selection process, we are delighted to inform you that you have been selected for the position of [b]${Rank}[/b], [b]${AssignmentOffer}[/b] with the Los Santos Police Department. This position includes the base annual gross salary, notwithstanding hazard pay.
@@ -89,7 +90,7 @@ Chief of Police`;
     // Add Assignment and Division details
     output += `
 
-${SignatureNameRank},
+${SignatureNameRank}
 ${Assignment}
 ${Division}
 

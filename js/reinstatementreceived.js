@@ -34,6 +34,7 @@ ${FirstnameLastname}
 
 [b]Request for Reinstatement — Received[/b]
 
+
 [justify]Thank you for submitting an application to reinstate to the Los Santos Police Department. Your application has been received by the Department and will be reviewed in detail by a Background Investigator.
 
 The selection process of the City of Los Santos is contingent upon a comprehensive background investigation, which includes a review of your personal, educational, and work history. This is a critical process in validating your qualifications and ensuring the safety and security of the Department, its employees, and the citizens of Los Santos.
