@@ -7,7 +7,7 @@
     <link rel="icon" type="image/x-icon" href="../IA/css/img/iad.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
     <link rel="stylesheet" href="../IA/css/correspondence.css">
-    <title>General Correspondence Employee </title>
+    <title>Witness Department Employee </title>
 </head>
 <body>
     <div class="ui buttons">
@@ -50,16 +50,16 @@
                     <div class="ui grid">
                         <div class="row">
                             <div class="five wide column">
-                                <label>Rank Name</label>
-                                <input type="text" placeholder="Rank Name" id="ToRankName">
+                                <label>Rank + Name</label>
+                                <input type="text" placeholder="Police Officer II John Doe" id="ToRankName">
                             </div>
                             <div class="five wide column">
                                 <label>Serial Number</label>
-                                <input type="text" placeholder="Serial No. number" id="ToSerialNo">
+                                <input type="text" placeholder="12345" id="ToSerialNo">
                             </div>
                             <div class="five wide column">
                                 <label>Division</label>
-                                <input type="text" placeholder="Division" id="ToDivision">
+                                <input type="text" placeholder="Mission Row Division" id="ToDivision">
                             </div>
                         </div>
                     </div>
@@ -71,12 +71,12 @@
                     <div class="ui grid">
                         <div class="row">
                             <div class="five wide column">
-                                <label>Rank Name</label>
-                                <input type="text" placeholder="Rank Name" id="FromRankName">
+                                <label>Rank + Name</label>
+                                <input type="text" placeholder="Sergeant I John Doe" id="FromRankName">
                             </div>
                             <div class="five wide column">
                                 <label>Serial Number</label>
-                                <input type="text" placeholder="Serial No." id="FromSerialNo">
+                                <input type="text" placeholder="12345" id="FromSerialNo">
                             </div>
                             <div class="five wide column">
                                 <label>Division</label>
@@ -89,23 +89,16 @@
             <div class="ui segment">
                 <h2>Subject</h2>
                 <div class="field">
-                    <label>E-mail Title</label>
+                    <label>Case Number</label>
                     <div class="three fields">
                         <div class="field">
-                            <input type="text" placeholder=" Title — CF No. [number]" id="Subject">
+                            <input type="text" placeholder="YY-0XXXX" id="Subject">
                         </div>
                     </div>
             </div>
         </div>
         <div class="ui segment">
             <h2>E-mail Content</h2>
-            <div class="field">
-                <label>Information</label>
-                <div class="three fields">
-                    <div class="field">
-                        <input type="text" placeholder="Recipient's Rank and Name (Police Officer II John Doe)" id="RankNameContent">
-                    </div>
-                </div>
                 <div class="field">
                     <label>Email Content</label>
                     <div class="three fields">
@@ -114,11 +107,14 @@
                         </div>
                     </div>
                 </div>
+            </div>
+                <div class="ui segment">
+                    <h2>Investigator Information</h2>
                 <div class="field">
                     <label>Rank + Full Name</label>
                     <div class="three fields">
                         <div class="field">
-                            <input type="text" placeholder="Enter Your Rank and Full Name (e.g., Police Officer II John Doe)" id="RankNameInformation">
+                            <input type="text" placeholder="Sergeant II John Doe" id="RankNameInformation">
                         </div>
                     </div>
                 </div>
@@ -126,7 +122,7 @@
                     <label>Assignment</label>
                     <div class="three fields">
                         <div class="field">
-                            <input type="text" placeholder="Enter Current Assignment (e.g., Internal Affairs Division)" id="AssignmentInformation">
+                            <input type="text" placeholder="Internal Affairs Division" id="AssignmentInformation">
                         </div>
                     </div>
                 </div>
@@ -134,15 +130,13 @@
                     <label>Badge Number</label>
                     <div class="three fields">
                         <div class="field">
-                            <input type="text" placeholder="Enter Badge Number (e.g., 12345)" id="BadgeNumberInformation">
+                            <input type="text" placeholder="12345" id="BadgeNumberInformation">
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        
             <div class="ui segment">
-                <h2>Investigator Information</h2>
+                <h2>Investigator Signature</h2>
                 <div class="field">
                     <label>Signature Image - leave empty if no image</label>
                     <div class="three fields">
@@ -182,7 +176,7 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
-    <script src="../IA/js/gcorrespondence.js"></script>
+    <script src="../IA/js/witnessdeinterview.js"></script>
     <script>
         $(document).ready(function () {
             // Initialize dropdown

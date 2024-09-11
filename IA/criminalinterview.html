@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../IA/css/img/iad.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <link rel="stylesheet" href="../IA/css/correspondence.css">
+    <title>Administrative Interview </title>
+</head>
+<body>
+    <div class="ui buttons">
+        <button id="clearLocalStorageButton" class="ui button">Clear Format</button>
+        <button id="undoLocalStorageButton" class="ui button">Undo Clear</button>
+        <button class="ui button" onclick="window.location.href='https://productofmymind.github.io/GTAW-METRO/index.html';">Home</button>
+    </div>
+
+    <div class="ui container">
+        <div class="ui form">
+            <div class="ui segment">
+                <h2>Date Information</h2>
+                <div class="field">
+                    <div class="ui grid">
+                        <div class="row">
+                            <div class="five wide column">
+                                <label>Month</label>
+                                <input type="text" placeholder="Month" id="Month">
+                            </div>
+                            <div class="five wide column">
+                                <label>Date</label>
+                                <input type="text" placeholder="Date" id="Date">
+                            </div>
+                            <div class="five wide column">
+                                <label>Year</label>
+                                <input type="text" placeholder="Year" id="Year">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="sixteen wide column">
+                                <button id="todayButton">Today</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui segment">
+                <h2>To</h2>
+                <div class="field">
+                    <div class="ui grid">
+                        <div class="row">
+                            <div class="five wide column">
+                                <label>Rank Name</label>
+                                <input type="text" placeholder="Police Officer III John Doe" id="ToRankName">
+                            </div>
+                            <div class="five wide column">
+                                <label>Serial Number</label>
+                                <input type="text" placeholder="123456" id="ToSerialNo">
+                            </div>
+                            <div class="five wide column">
+                                <label>Division</label>
+                                <input type="text" placeholder="Mission Row Division" id="ToDivision">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui segment">
+                <h2>From</h2>
+                <div class="field">
+                    <div class="ui grid">
+                        <div class="row">
+                            <div class="five wide column">
+                                <label>Rank Name</label>
+                                <input type="text" placeholder="Sergeant I John Doe" id="FromRankName">
+                            </div>
+                            <div class="five wide column">
+                                <label>Serial Number</label>
+                                <input type="text" placeholder="123456" id="FromSerialNo">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui segment">
+                <h2>Subject</h2>
+                <div class="field">
+                    <label>Case Number</label>
+                    <div class="three fields">
+                        <div class="field">
+                            <input type="text" placeholder="YY-0XXXX" id="Subject">
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <div class="ui segment">
+            <h2>Investigator Information</h2>
+            <div class="field">
+                <div class="field">
+                    <label>Rank + Full Name</label>
+                    <div class="three fields">
+                        <div class="field">
+                            <input type="text" placeholder="Sergeant I John Doe" id="RankNameInformation">
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label>Assignment</label>
+                    <div class="three fields">
+                        <div class="field">
+                            <input type="text" placeholder="Internal Affairs Division" id="AssignmentInformation">
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label>Badge Number</label>
+                    <div class="three fields">
+                        <div class="field">
+                            <input type="text" placeholder="Enter Badge Number (e.g., 12345)" id="BadgeNumberInformation">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+            <div class="ui segment">
+                <h2>Investigator Signature</h2>
+                <div class="field">
+                    <label>Signature Image - leave empty if no image</label>
+                    <div class="three fields">
+                        <div class="field">
+                            <input type="text" placeholder="The link must end in .png or whatever format" id="SignatureImage">
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label>FIRSTNAME LASTNAME, Rank</label>
+                    <div class="three fields">
+                        <div class="field">
+                            <input type="text" placeholder="FIRSTNAME LASTNAME, Rank" id="SignatureNameRank">
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label>Division Rank</label>
+                    <div class="three fields">
+                        <div class="field">
+                            <input type="text" placeholder="Division Rank" id="DivisionRank">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui segment">
+                <h2>Generator</h2>
+                <div class="field">
+                    <label>Output</label>
+                    <textarea id="Narrative" readonly></textarea>
+                </div>
+                <div class="ui secondary button" id="submit">Submit</div>
+                <div class="ui primary button" id="copy">Copy to Clipboard</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+    <script src="../IA/js/admininterview.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Initialize dropdown
+            $('.ui.search.dropdown').dropdown({
+                fullTextSearch: true
+            });
+    
+            // Handle "Today" button
+            $('#todayButton').on('click', function () {
+                const currentDate = new Date();
+                const year = currentDate.getFullYear();
+                const month = currentDate.toLocaleString('default', { month: 'long' });
+                const day = currentDate.getDate();
+    
+                $('#Month').val(month);
+                $('#Date').val(day);
+                $('#Year').val(year);
+            });
+    
+            // Save data to localStorage
+            function saveDataToLocalStorage() {
+                const data = {
+                    Month: $('#Month').val(),
+                    Date: $('#Date').val(),
+                    Year: $('#Year').val(),
+                    ToRankName: $('#ToRankName').val(),
+                    ToSerialNo: $('#ToSerialNo').val(),
+                    ToDivision: $('#ToDivision').val(),
+                    FromRankName: $('#FromRankName').val(),
+                    FromSerialNo: $('#FromSerialNo').val(),
+                    FromDivision: $('#FromDivision').val(),
+                    Subject: $('#Subject').val(),
+                    RankNameContent: $('#RankNameContent').val(),
+                    Message: $('#Message').val(),
+                    RankNameInformation: $('#RankNameInformation').val(),
+                    AssignmentInformation: $('#AssignmentInformation').val(),
+                    BadgeNumberInformation: $('#BadgeNumberInformation').val(),
+                    SignatureImage: $('#SignatureImage').val(),
+                    SignatureNameRank: $('#SignatureNameRank').val(),
+                    DivisionRank: $('#DivisionRank').val(),
+                    Division: $('#Division').val(),
+                    Narrative: $('#Narrative').val()
+                };
+    
+                localStorage.setItem('metroDeploymentData', JSON.stringify(data));
+            }
+    
+            // Load data from localStorage
+            function loadDataFromLocalStorage() {
+                const data = localStorage.getItem('metroDeploymentData');
+                if (data) {
+                    const parsedData = JSON.parse(data);
+    
+                    $('#Month').val(parsedData.Month);
+                    $('#Date').val(parsedData.Date);
+                    $('#Year').val(parsedData.Year);
+                    $('#ToRankName').val(parsedData.ToRankName);
+                    $('#ToSerialNo').val(parsedData.ToSerialNo);
+                    $('#ToDivision').val(parsedData.ToDivision);
+                    $('#FromRankName').val(parsedData.FromRankName);
+                    $('#FromSerialNo').val(parsedData.FromSerialNo);
+                    $('#FromDivision').val(parsedData.FromDivision);
+                    $('#Subject').val(parsedData.Subject);
+                    $('#RankNameContent').val(parsedData.RankNameContent);
+                    $('#Message').val(parsedData.Message);
+                    $('#RankNameInformation').val(parsedData.RankNameInformation);
+                    $('#AssignmentInformation').val(parsedData.AssignmentInformation);
+                    $('#BadgeNumberInformation').val(parsedData.BadgeNumberInformation);
+                    $('#SignatureImage').val(parsedData.SignatureImage);
+                    $('#SignatureNameRank').val(parsedData.SignatureNameRank);
+                    $('#DivisionRank').val(parsedData.DivisionRank);
+                    $('#Division').val(parsedData.Division);
+                    $('#Narrative').val(parsedData.Narrative);
+                }
+            }
+    
+            // Attach event listener for input changes
+            $('input, textarea, select').on('change', saveDataToLocalStorage);
+    
+            // Load data on page load
+            loadDataFromLocalStorage();
+    
+            // Clear local storage
+            $('#clearLocalStorageButton').on('click', function() {
+                const confirmation = confirm(
+                    "Are you sure you want to clear all local data?\n\n" +
+                    "This action will delete all stored data in your browser's local storage, including any unsaved work or settings. " +
+                    "If you're not sure, it's recommended to cancel this action."
+                );
+    
+                if (confirmation) {
+                    const dataToBackup = localStorage.getItem('metroDeploymentData');
+                    localStorage.setItem('metroDeploymentDataBackup', dataToBackup);
+                    localStorage.removeItem('metroDeploymentData');
+                    alert("Local storage has been cleared.");
+                }
+            });
+    
+            // Undo clear local storage
+            $('#undoLocalStorageButton').on('click', function() {
+                const savedData = localStorage.getItem('metroDeploymentDataBackup');
+                if (savedData) {
+                    localStorage.setItem('metroDeploymentData', savedData);
+                    alert("Clear action has been undone. Your data is restored.");
+                    location.reload();
+                } else {
+                    alert("There is no data to restore.");
+                }
+            });
+        });
+    </script>
+    
+</body>
+</html>
