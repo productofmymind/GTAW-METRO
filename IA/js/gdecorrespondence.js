@@ -40,7 +40,7 @@ ${Month} ${Date}, ${Year}
 
 [b]SUBJECT:[space=59][/b] [ucase]${Subject}[/ucase]
 
-${RankNameContent},
+${ToRankName},
 
 ${Message}
 
