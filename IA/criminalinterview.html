@@ -15,9 +15,10 @@
         <button id="undoLocalStorageButton" class="ui button">Undo Clear</button>
         <button class="ui button" onclick="window.location.href='https://productofmymind.github.io/GTAW-METRO/index.html';">Home</button>
     </div>
-
     <div class="ui container">
         <div class="ui form">
+    
+            <!-- Date Information -->
             <div class="ui segment">
                 <h2>Date Information</h2>
                 <div class="field">
@@ -44,13 +45,15 @@
                     </div>
                 </div>
             </div>
+    
+            <!-- To Section -->
             <div class="ui segment">
                 <h2>To</h2>
                 <div class="field">
                     <div class="ui grid">
                         <div class="row">
                             <div class="five wide column">
-                                <label>Rank Name</label>
+                                <label>Rank + Name</label>
                                 <input type="text" placeholder="Police Officer III John Doe" id="ToRankName">
                             </div>
                             <div class="five wide column">
@@ -65,13 +68,15 @@
                     </div>
                 </div>
             </div>
+    
+            <!-- From Section -->
             <div class="ui segment">
                 <h2>From</h2>
                 <div class="field">
                     <div class="ui grid">
                         <div class="row">
                             <div class="five wide column">
-                                <label>Rank Name</label>
+                                <label>Rank + Name</label>
                                 <input type="text" placeholder="Sergeant I John Doe" id="FromRankName">
                             </div>
                             <div class="five wide column">
@@ -82,6 +87,8 @@
                     </div>
                 </div>
             </div>
+    
+            <!-- Subject Section -->
             <div class="ui segment">
                 <h2>Subject</h2>
                 <div class="field">
@@ -91,11 +98,12 @@
                             <input type="text" placeholder="YY-0XXXX" id="Subject">
                         </div>
                     </div>
+                </div>
             </div>
-        </div>
-        <div class="ui segment">
-            <h2>Investigator Information</h2>
-            <div class="field">
+    
+            <!-- Investigator Information Section -->
+            <div class="ui segment">
+                <h2>Investigator Information</h2>
                 <div class="field">
                     <label>Rank + Full Name</label>
                     <div class="three fields">
@@ -121,8 +129,8 @@
                     </div>
                 </div>
             </div>
-        </div>
-        
+    
+            <!-- Investigator Signature Section -->
             <div class="ui segment">
                 <h2>Investigator Signature</h2>
                 <div class="field">
@@ -150,6 +158,8 @@
                     </div>
                 </div>
             </div>
+    
+            <!-- Generator Section -->
             <div class="ui segment">
                 <h2>Generator</h2>
                 <div class="field">
@@ -159,9 +169,10 @@
                 <div class="ui secondary button" id="submit">Submit</div>
                 <div class="ui primary button" id="copy">Copy to Clipboard</div>
             </div>
+    
         </div>
     </div>
-
+    
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
     <script src="../IA/js/admininterview.js"></script>
