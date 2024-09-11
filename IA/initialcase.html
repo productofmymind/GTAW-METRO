@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags and CSS links -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../IA/css/img/iad.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <link rel="stylesheet" href="../IA/css/main.css">
+    <title>Casefile Front Sheet</title>
+</head>
+<body>
+    <button id="clearLocalStorageButton">Clear Format</button>
+    <div class="ui container">
+        <h2>Casefile Information</h2>
+        <div class="ui form">
+            <div class="ui segment">
+                <div class="field">
+                    <label for="CFNo">CF No.</label>
+                    <div class="three fields">
+                        <div class="field">
+                            <input type="text" placeholder="YY-0XXXXX" id="CFNo">
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="Supervisor">Assigned Supervisor</label>
+                    <div class="three fields">
+                        <div class="field">
+                            <input type="text" placeholder="Sergeant John Doe" id="Supervisor">
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="Investigators">Assigned Investigators</label>
+                    <div class="three fields">
+                        <div class="field">
+                            <input type="text" placeholder="Sergeant Jack Doe, Sergeant Jane Doe" id="Investigators">
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="Classification">Classification</label>
+                    <div class="three fields">
+                        <div class="field">
+                            <div class="ui selection search dropdown" id="Classification">
+                                <input type="hidden" name="Classification" id="ClassificationInput">
+                                <i class="dropdown icon"></i>
+                                <div class="default text">Select Classification</div>
+                                <div class="menu">
+                                    <div class="item" data-value="Criminal">Criminal</div>
+                                    <div class="item" data-value="Administrative">Administrative</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="Summary">Brief Summary</label>
+                    <div class="three fields">
+                        <div class="field">
+                            <input type="text" placeholder="Summary" id="Summary">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ui container">
+        <h2>Incident Details</h2>
+        <div class="ui form">
+            <div class="ui segment">
+                <div class="field">
+                    <p>Date</p>
+                    <div class="four fields">
+                        <div class="field">
+                            <input title="Date" type="text" id="datePicker" placeholder="DD/MMM/YYYY">
+                        </div>
+                        <div class="field">
+                            <button id="todayButton">Today</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label>Time</label>
+                    <div class="three fields">
+                        <div class="field">
+                            <input type="text" id="Time" placeholder="HH:MM">
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label>Location</label>
+                    <div class="three fields">
+                        <div class="field">
+                            <input type="text" placeholder="Area, Street Name, Address, etc" id="Location">
+                        </div>
+                    </div>
+                </div>
+                <!-- ALLEGATIONS -->
+                <div class="field">
+                    <label>Allegations</label>
+                    <div id="Allegations">
+                        <div class="field">
+                            <input type="text" placeholder="Allegation nr. 1" id="MMMallegation">
+                        </div>
+                    </div>
+                
+                    <button type="button" id="addInput">+</button>
+                    <button type="button" id="removeInput">-</button>
+                </div>                
+            </div>
+        </div>
+    </div>
+    <div class="ui container">
+        <h2>Involved Parties</h2>
+        <div class="ui form">
+            <div class="ui segment">
+                <!-- REPORTED EMPLOYEES -->
+                <div class="field">
+                    <label>Reported Employees</label>
+                    <div id="ReportedEmployees">
+                        <div class="field">
+                            <input type="text" value="Rank Name, Serial No. [number]" id="MMMrepemply">
+                        </div>
+                    </div>  
+
+                    <button type="button" id="addInput2">+</button>
+                    <button type="button" id="removeInput2">-</button>
+                </div>
+                <!-- COMPLAINAINTS -->
+                <div class="field">
+                    <label>Complainant(s)</label>
+                    <form>
+                        <label><input type="checkbox" id="DEPT" name="Department" value="DEPT">Department</label><br>
+                    </form>
+                    <div id="Complainants">
+                        <div class="field">
+                            <input type="text" value="Name, Phone No. #[number]" id="MMMcomplainant">
+                        </div>
+                    </div>  
+
+                    <button type="button" id="addInput3">+</button>
+                    <button type="button" id="removeInput3">-</button>
+                </div>
+                <!-- WITNESSES -->
+                <div class="field">
+                    <label>Witnesses</label>
+                    <div id="Witnesses">
+                        <div class="field">
+                            <input type="text" value="Name, Phone No. #[number]" id="MMMwitness">
+                        </div>
+                    </div>  
+
+                    <button type="button" id="addInput4">+</button>
+                    <button type="button" id="removeInput4">-</button>
+                </div>   
+            </div>
+        </div>
+    </div>
+    <div class="ui container">
+        <h2>Evidence Submissions & Task List</h2>
+        <div class="ui form">
+            <div class="ui segment">
+                <!-- EVIDENCE SUBMISSIONS -->
+                <div class="field">
+                    <label>Evidence Submissions</label>
+                    <div id="Submissions">
+                        <div class="field" style="display:flex; flex-direction: row;">
+                            <input type="url" placeholder="Exhibit 1 Link" id="MMMsubmissionlink" style="display:block;">
+                            <input type="text" value="Exhibit 1 — Description" id="MMMsubmission" style="display:block;">
+                        </div>
+                    </div>  
+
+                    <button type="button" id="addInput5">+</button>
+                    <button type="button" id="removeInput5">-</button>
+                </div>   
+                <!-- TASKS -->
+                <div class="field">
+                    <label>Tasks</label>
+                    <div id="Tasks">
+                        <div class="field" style="display:flex; flex-direction: row;">
+                            <input type="text" placeholder="Description - Task 1" id="MMMtaskdesc" style="display:block;">
+                            <input type="text" placeholder="Assigned To - Task 1" id="MMMtaskassigned" style="display:block;">
+                            <input type="text" placeholder="Completed / In Progress / Pending - Task 1" id="MMMtaskstatus" style="display:block;">
+                        </div>
+                    </div>  
+
+                    <button type="button" id="addInput6">+</button>
+                    <button type="button" id="removeInput6">-</button>
+                </div>   
+            </div>
+        </div>
+    </div>
+    <div class="ui container">
+        <h2>Chronological Record</h2>
+        <div class="ui form">
+            <div class="ui segment">
+                <!-- CHRONO -->
+                <div class="field">
+                    <label>Chronological Record</label>
+                    <div id="Chrono">
+                        <div class="field" style="display:flex; flex-direction: row;">
+                            <button id="todayButtonChrono">Today</button>
+                            <input title="Date" type="text" id="chronoDatePicker" placeholder="DD/MMM/YYYY" style="display:block;">
+                            <input type="text" value="Complaint received by Complaint Classification Unit. Classified as CLASSIFICATION." id="MMMchronoentry" style="display:block;">
+                        </div>
+                    </div>  
+
+                    <button type="button" id="addInput7">+</button>
+                    <button type="button" id="removeInput7">-</button>
+                </div> 
+            </div>
+        </div>
+    </div>
+    <div class="ui container">
+        <h2>Generator</h2>
+        <div class="ui form">
+            <div class="ui segment">
+                <div class="field">
+                    <label for="output">Output</label>
+                    <textarea id="output" readonly></textarea>
+                </div>
+                <div class="ui secondary button" id="submit">Submit</div>
+                <div class="ui primary button" id="copy">Copy to Clipboard</div>
+                <a href="https://lspd.gta.world/viewforum.php?f=2431">
+                    <div class="ui third button" id="activeCases">Active Cases Section</div>
+                </a>           
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+    <script src="../IA/js/initialcase.js"></script>
+    <script>
+        // Initialize Semantic UI Dropdown
+        $(document).ready(function () {
+            $('.ui.search.dropdown').dropdown({
+                fullTextSearch: true // Enable full-text search
+            });
+        });
+
+        // Add event listeners for adding input fields
+        $(document).ready(function () {
+            $("#addInput").click(addInputField("#Allegations", "Allegation nr. "));
+            $("#removeInput").click(removeInputField("#Allegations"));
+            $("#addInput2").click(addInputField("#ReportedEmployees", "Rank Name, Serial No. [number]"));
+            $("#removeInput2").click(removeInputField("#ReportedEmployees"));
+            $("#addInput3").click(addInputField("#Complainants", "Name, Phone No. #[number]"));
+            $("#removeInput3").click(removeInputField("#Complainants"));
+            $("#addInput4").click(addInputField("#Witnesses", "Name, Phone No. #[number]"));
+            $("#removeInput4").click(removeInputField("#Witnesses"));
+            $("#addInput5").click(addInputFieldEvidence("#Submissions"));
+            $("#removeInput5").click(removeInputField("#Submissions"));
+            $("#addInput6").click(addInputFieldTasks("#Tasks"));
+            $("#removeInput6").click(removeInputField("#Tasks"));
+            $("#addInput7").click(addInputFieldChrono("#Chrono"));
+            $("#removeInput7").click(removeInputField("#Chrono"));
+
+            function addInputField(containerId, placeholderText) {
+                return function () {
+                    const inputFieldsContainer = $(containerId);
+                    const newEventNumber = inputFieldsContainer.children().length + 1; // Calculate the new event number
+                    const newInputField = $("<div>").addClass("field").html('<input type="text" placeholder="' + placeholderText + newEventNumber + '">');
+                    inputFieldsContainer.append(newInputField);
+                };
+            }
+
+            function addInputFieldEvidence(containerId) {
+                return function () {
+                    const inputFieldsContainer = $(containerId);
+                    const newEventNumber = inputFieldsContainer.children().length + 1; // Calculate the new event number
+                    const finalAppend = $("<div style='display:flex; flex-direction: row;'>").addClass("field").html('<input type="url" placeholder="Exhibit '+ newEventNumber + ' Link" style="display:block;">' + '<input type="text" value="Exhibit '+ newEventNumber + ' — Description" style="display:block;">');
+                    inputFieldsContainer.append(finalAppend);
+                };
+            }
+
+            function addInputFieldTasks(containerId) {
+                return function () {
+                    const inputFieldsContainer = $(containerId);
+                    const newEventNumber = inputFieldsContainer.children().length + 1; // Calculate the new event number
+                    const finalAppend = $("<div style='display:flex; flex-direction: row;'>").addClass("field").html('<input type="text" placeholder="Description - Task '+ newEventNumber + '" style="display:block;">' + '<input type="text" placeholder="Assigned To - Task '+ newEventNumber + '" style="display:block;">' + 
+                        '<input type="text" placeholder="Completed / In Progress / Pending - Task '+ newEventNumber + '" style="display:block;">');
+                    inputFieldsContainer.append(finalAppend);
+                };
+            }
+
+            function addInputFieldChrono(containerId) {
+                return function () {
+                    const inputFieldsContainer = $(containerId);
+                    const newEventNumber = inputFieldsContainer.children().length + 1; // Calculate the new event number
+                    const finalAppend = $("<div style='display:flex; flex-direction: row;'>").addClass("field").html('<input title="Date" type="text" id="chronoDatePicker" placeholder="DD/MMM/YYYY" style="display:block;">' + '<input type="text" placeholder="Entry '+ newEventNumber + '" style="display:block;">');
+                    inputFieldsContainer.append(finalAppend);
+                };
+            }
+
+            function removeInputField(containerId) {
+                return function () {
+                    const inputFieldsContainer = $(containerId);
+                    const inputFields = inputFieldsContainer.children();
+
+                    // Check if there are more than one input fields before removing
+                    if (inputFields.length > 1) {
+                        inputFields.last().remove(); // Remove the last input field
+                    } else {
+                        // If there's only one input field, prevent removal
+                        alert("Cannot remove the last input field.");
+                    }
+                }
+            }
+        });
+
+        // Initialize Date and Time Picker
+        const startTime = document.getElementById('startTime');
+        const datePicker = document.getElementById('datePicker');
+        const todayButton = document.getElementById('todayButton');
+        const todayButtonChrono = document.getElementById('todayButtonChrono');
+
+        function CurrentDateAsServerTime() {
+            const currentUTCDate = new Date();
+            const day = currentUTCDate.getUTCDate().toString().padStart(2, "0");
+            const month = currentUTCDate
+                .toLocaleString("default", { month: "short", timeZone: "UTC" })
+                .toUpperCase();
+            const year = currentUTCDate.getUTCFullYear();
+            return `${day}/${month}/${year}`;
+        }
+
+        todayButton.addEventListener('click', function () {
+            datePicker.value = CurrentDateAsServerTime();
+        });
+
+        todayButtonChrono.addEventListener('click', function () {
+            chronoDatePicker.value = CurrentDateAsServerTime();
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const todayButton = document.getElementById('todayButton');
+            const todayButtonChrono = document.getElementById('todayButtonChrono');
+        });
+    
+        function saveDataToLocalStorage() {
+            // Get the values of input fields by their IDs
+            const data = {
+                CFNo: $('#CFNo').val(),
+                Supervisor: $('#Supervisor').val(),
+                Investigators: $('#Investigators').val(),
+                Classification: $('.ui.selection.search.dropdown input[name="Classification"]').val(),
+                Summary: $('#Summary').val(),
+                DatePicker: $('#datePicker').val(),
+                TimePicker: $('#Time').val(),
+                Location: $('#Location').val(),
+                MMMAllegation: $('#MMMallegation').val(),
+                MMMRepEmply: $('#MMMrepemply').val(),
+                MMMComplainant: $('#MMMcomplainant').val(),
+                CmpDept: $('#DEPT').val(),
+                MMMWitness: $('#MMMwitness').val(),
+                MMMSubLink: $('#MMMsubmissionlink').val(),
+                MMMSub: $('#MMMsubmission').val(),
+                MMMTaskDesc: $('#MMMtaskdesc').val(),
+                MMMTaskAssigned: $('#MMMtaskassigned').val(),
+                MMMTaskStatus: $('#MMMtaskstatus').val(),
+                ChronoDatePicker: $('#chronoDatePicker').val(),
+                ChronoEntry: $('#MMMchronoentry').val(),
+            };
+    
+            // Store the data in local storage
+            localStorage.setItem('IADData', JSON.stringify(data));
+        }
+    
+        // Function to load data from local storage
+        function loadDataFromLocalStorage() {
+            // Retrieve data from local storage
+            const data = localStorage.getItem('IADData');
+            if (data) {
+                const parsedData = JSON.parse(data);
+    
+                // Set the values of input fields from the retrieved data
+                $('#CFNo').val(parsedData.CFNo);
+                $('#Supervisor').val(parsedData.Supervisor);
+                $('#Investigators').val(parsedData.Investigators);
+                $('.ui.selection.search.dropdown input[name="Classification"]').val(parsedData.Classification);
+                $('#Summary').val(parsedData.Summary);
+                $('#datePicker').val(parsedData.DatePicker);
+                $('#Time').val(parsedData.TimePicker);
+                $('#Location').val(parsedData.Location);
+                $('#MMMAllegation').val(parsedData.MMMAllegation);
+                $('#MMMrepemply').val(parsedData.MMMRepEmply);
+                $('#MMMcomplainant').val(parsedData.MMMComplainant);
+                $('#DEPT').prop('checked', parsedData.CmpDept);
+                $('#MMMwitness').val(parsedData.MMMWitness);
+                $('#MMMsubmissionlink').val(parsedData.MMMSubLink);
+                $('#MMMsubmission').val(parsedData.MMMSub);
+                $('#MMMtaskdesc').val(parsedData.MMMTaskDesc);
+                $('#MMMtaskassigned').val(parsedData.MMMTaskAssigned);
+                $('#MMMtaskstatus').val(parsedData.MMMTaskStatus);
+                $('#chronoDatePicker').val(parsedData.ChronoDatePicker);
+                $('#MMMchronoentry').val(parsedData.ChronoEntry);
+            }
+        }
+    
+        // Add event listeners to the input fields for automatic saving
+        const inputFields = document.querySelectorAll('input, textarea, select');
+        inputFields.forEach(function (inputField) {
+            inputField.addEventListener('change', saveDataToLocalStorage);
+        });
+    
+        // Load data from local storage when the page loads
+        loadDataFromLocalStorage();
+
+        // Function to clear all data from local storage with confirmation
+        function clearLocalStorage() {
+            const confirmation = confirm(
+                "Are you sure you want to clear all local data?\n\n" +
+                "This action will delete all stored data in your browser's local storage, including any unsaved work. This can NOT be undone. " +
+                "If you're not sure, it's recommended to cancel this action."
+            );
+
+            if (confirmation) {
+
+                // Clear the original data
+                localStorage.removeItem('IADData');
+                alert("Local storage has been cleared.");
+                // Refresh page
+                location.reload();
+            }
+        }
+
+        // Adds event listener for clear button!
+        const clearButton = document.getElementById('clearLocalStorageButton');
+        if (clearButton) {
+            clearButton.addEventListener('click', clearLocalStorage);
+        }
+    </script>
+</body>
+</html>
