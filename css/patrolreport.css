@@ -94,7 +94,7 @@ button {
 }
 
 button#addInput,
-button#addInput2 {
+button#addInput1 {
   background-color: #0074cc;
   color: #fff;
   padding: 10px 20px;
@@ -105,27 +105,7 @@ button#addInput2 {
 }
 
 button#removeInput,
-button#RemoveInput2 {
-  background-color: #ff0000;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  margin-top: 15px;
-}
-button#addGunInput,
-button#addGunInput {
-  background-color: #0074cc;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  margin-top: 15px;
-}
-button#removeGunInput,
-button#removeDrugInput {
+button#RemoveInput1 {
   background-color: #ff0000;
   color: #fff;
   padding: 10px 20px;

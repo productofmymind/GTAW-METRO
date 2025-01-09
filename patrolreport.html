@@ -15,6 +15,7 @@
     <button id="clearLocalStorageButton">Clear Format</button>
     <button id="undoLocalStorageButton">Undo Clear</button>
     <button onclick="window.location.href='https://productofmymind.github.io/GTAW-METRO/index.html';">Home</button>
+    
     <div class="ui container">
         <div class="ui form">
             <div class="ui segment">
@@ -23,7 +24,7 @@
                     <p>Metropolitan Officers</p>
                     <div id="MetroOfficers">
                         <div class="field">
-                            <input type="text" placeholder="Platoon + Rank + Full Name nr. " class="officer">
+                            <input type="text" placeholder="Platoon + Rank + Full Name nr." class="officer">
                         </div>
                     </div>
                     <button type="button" id="addInput">+</button>
@@ -34,14 +35,14 @@
                     <div class="three fields" id="PatrolType">
                         <div class="field">
                             <div class="ui selection search dropdown">
-                                <input type="hidden" name="deploymentType">
+                                <input type="hidden" name="patrolType">
                                 <i class="dropdown icon"></i>
-                                <div class="default text">Select Deployment Type</div>
+                                <div class="default text">Select Patrol Type</div>
                                 <div class="menu">
-                                    <div class="item" data-value="PatrolType1">CRIME SUPPRESSION PATROL</div>
-                                    <div class="item" data-value="PatrolType2">GANG CRIME SUPPRESSION PATROL</div>
-                                    <div class="item" data-value="PatrolType3">COUNTER ASSAULT TEAM</div>
-                                    <div class="item" data-value="PatrolType4">CANINE PATROL</div>
+                                    <div class="item" data-value="PatrolType1">Canine Patrol</div>
+                                    <div class="item" data-value="PatrolType2">SWAT Crime Suppression Patrol</div>
+                                    <div class="item" data-value="PatrolType3">Joint Crime Suppression Patrol</div>
+                                    <div class="item" data-value="PatrolType4">Gang Crime Suppression Patrol</div>
                                 </div>
                             </div>
                         </div>
@@ -62,32 +63,35 @@
             </div>
         </div>
     </div>
+
     <div class="ui container">
         <div class="ui form">
             <div class="ui segment">
                 <h2>Patrol Summary</h2>
                 <div class="field">
-                    <p>Other</p>
-                    <div class="three fields">
-                        <div class="field">
-                            <input type="text" placeholder="Other" id="other">
-                        </div>
-                    </div>
+                    <p>Deployments</p>
+                    <div id="Deployments">
+                        <div class="three fields">
+                            <div class="field">
+                                <input type="text" placeholder="Deployment Type" id="other">
+                            </div>
                 </div>
+            </div>
+            <button type="button" id="addInput1">+</button>
+            <button type="button" id="removeInput1">-</button>
+        </div>
                 <div class="field">
-                    <p>Linked Deployments</p>
+                    <p>Additional Information</p>
                     <div class="one field" id="linkDeploymentContainer">
                         <div class="field">
-                            <input type="text" id="linkDeployment" placeholder="Link to Deployment">
-                        </div>
-                        <div class="field" id="typeDeploymentContainer">
-                            <input type="text" id="typeDeployment" placeholder="Type of Deployment">
+                            <input type="text" id="linkDeployment" placeholder="Detail arrests, pursuits, investigations, etc.">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
     <div class="ui container">
         <div class="ui form">
             <div class="ui segment">
@@ -100,10 +104,11 @@
                 <div class="ui primary button" id="copy">Copy to Clipboard</div>
                 <a href="https://lspd.gta.world/viewforum.php?f=2146">
                     <div class="ui third button" id="fieldrecords">Field Records Link</div>
-                  </a>           
+                </a>
             </div>
         </div>
     </div>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
     <script src="js/patrolreport.js"></script>
@@ -113,158 +118,115 @@
             $('.ui.search.dropdown').dropdown({
                 fullTextSearch: true // Enable full-text search
             });
-
+    
             // Add event listeners for adding and removing input fields
             $("#addInput").click(addInputField("#MetroOfficers", "Platoon + Rank + Full Name nr. "));
             $("#removeInput").click(removeInputField("#MetroOfficers"));
-
+            $("#addInput1").click(addInputField("#Deployments", "Deployment Type"));
+            $("#removeInput1").click(removeInputField("#Deployments"));
+    
             function addInputField(containerId, placeholderText) {
                 return function () {
                     const inputFieldsContainer = $(containerId);
-                    const newEventNumber = inputFieldsContainer.children().length + 1; // Calculate the new event number
-                    const newInputField = $("<div>").addClass("field").html('<input type="text" placeholder="' + placeholderText + newEventNumber + '">');
+                    const newInputField = $("<div>").addClass("field").html('<input type="text" placeholder="' + placeholderText + '">');
                     inputFieldsContainer.append(newInputField);
                 };
             }
-
+    
             function removeInputField(containerId) {
                 return function () {
                     const inputFieldsContainer = $(containerId);
-                    inputFieldsContainer.find('input[type="text"]').last().parent().remove(); // Remove the last input field and its parent container
+                    if (inputFieldsContainer.children().length > 1) {
+                        inputFieldsContainer.children().last().remove(); // Remove the last input field
+                    } else {
+                        alert("At least one field is required.");
+                    }
                 };
             }
-        });
-
-
-        const datePicker = document.getElementById('datePicker');
-        const todayButton = document.getElementById('todayButton');
-        const oneDayAgoButton = document.getElementById('oneDayAgoButton');
-
-        todayButton.addEventListener('click', function () {
-            const currentUTCDate = new Date();
-            const day = currentUTCDate.getUTCDate().toString().padStart(2, "0");
-            const month = currentUTCDate
-                .toLocaleString("default", { month: "short", timeZone: "UTC" })
-                .toUpperCase();
-            const year = currentUTCDate.getUTCFullYear();
-            datePicker.value = `${day}/${month}/${year}`;
-        });
-
-        oneDayAgoButton.addEventListener('click', function () {
-            const currentUTCDate = new Date();
-            const day = (currentUTCDate.getUTCDate() - 1).toString().padStart(2, "0");
-            const month = currentUTCDate
-                .toLocaleString("default", { month: "short", timeZone: "UTC" })
-                .toUpperCase();
-            const year = currentUTCDate.getUTCFullYear();
-            datePicker.value = `${day}/${month}/${year}`;
-        });
-
-        // Function to save data to localStorage
-        function saveDataToLocalStorage() {
-            const data = {
-                MetroOfficers: $('#MetroOfficers input').val(),
-                PatrolType: $('#PatrolType .ui.selection.dropdown').dropdown('get value'),
-                linkDeployment: $('#linkDeployment').val(),
-                subjectsArrested: $('#subjectsArrested').val(),
-                other: $('#other').val(),
-                lop: $('#lop').val(),
-                typeDeployment: $('#typeDeployment').val()
-            };
-
-            // Store the data in local storage
-            localStorage.setItem('patrolReportData', JSON.stringify(data));
-        }
-
-        // Function to load data from local storage
-        function loadDataFromLocalStorage() {
-            const data = localStorage.getItem('patrolReportData');
-            if (data) {
-                const parsedData = JSON.parse(data);
-
-                // Set the values of input fields, dropdowns, and containers from the retrieved data
-                $('#MetroOfficers input').val(parsedData.MetroOfficers);
-                $('#PatrolType .ui.selection.dropdown').dropdown('set selected', parsedData.PatrolType);
-                $('#linkDeployment').val(parsedData.linkDeployment);
-                $('#subjectsArrested').val(parsedData.subjectsArrested);
-                $('#other').val(parsedData.other);
-                $('#lop').val(parsedData.lop);
-                $('#typeDeployment').val(parsedData.typeDeployment);
+    
+            // Initialize date picker buttons
+            const datePicker = document.getElementById('datePicker');
+            const todayButton = document.getElementById('todayButton');
+            const oneDayAgoButton = document.getElementById('oneDayAgoButton');
+    
+            todayButton.addEventListener('click', function () {
+                const currentUTCDate = new Date();
+                datePicker.value = formatDate(currentUTCDate);
+            });
+    
+            oneDayAgoButton.addEventListener('click', function () {
+                const currentUTCDate = new Date();
+                currentUTCDate.setUTCDate(currentUTCDate.getUTCDate() - 1);
+                datePicker.value = formatDate(currentUTCDate);
+            });
+    
+            function formatDate(date) {
+                const day = date.getUTCDate().toString().padStart(2, "0");
+                const month = date.toLocaleString("default", { month: "short", timeZone: "UTC" }).toUpperCase();
+                const year = date.getUTCFullYear();
+                return `${day}/${month}/${year}`;
             }
-        }
-
-        // Add event listeners to the input fields for automatic saving
-        $('input, textarea, select').on('change', saveDataToLocalStorage);
-
-        // Load data from local storage when the page loads
-        loadDataFromLocalStorage();
-
-        // Function to clear all data from local storage with confirmation
-        function clearLocalStorage() {
-            const confirmation = confirm(
-                "Are you sure you want to clear all local data?\n\n" +
-                "This action will delete all stored data in your browser's local storage, including any unsaved work or settings. " +
-                "If you're not sure, it's recommended to cancel this action."
-            );
-
-            if (confirmation) {
-                // Backup the data
-                const dataToBackup = localStorage.getItem('patrolReportData');
-                localStorage.setItem('patrolReportData', dataToBackup);
-
-                // Clear the original data
-                localStorage.removeItem('patrolReportData');
-                alert("Local storage has been cleared.");
+    
+            // Local Storage Functions
+            function saveDataToLocalStorage() {
+                const data = {
+                    MetroOfficers: $('#MetroOfficers input').map(function () { return $(this).val(); }).get(),
+                    PatrolType: $('#PatrolType .ui.selection.dropdown').dropdown('get value'),
+                    linkDeployment: $('#linkDeployment').val(),
+                    other: $('#other').val(),
+                };
+    
+                localStorage.setItem('patrolReportData', JSON.stringify(data));
             }
-        }
-
-        // Function to undo the clear action
-        function undoClearLocalStorage() {
-            const savedData = localStorage.getItem('patrolReportDataBackup');
-            if (savedData) {
-                localStorage.setItem('patrolReportData', savedData);
-                alert("Clear action has been undone. Your data is restored.");
-                // Reload the page to reflect the restored data
-                location.reload();
-            } else {
-                alert("There is no data to restore.");
+    
+            function loadDataFromLocalStorage() {
+                const data = JSON.parse(localStorage.getItem('patrolReportData') || "{}");
+                if (data.MetroOfficers) {
+                    const container = $('#MetroOfficers');
+                    container.empty();
+                    data.MetroOfficers.forEach(officer => {
+                        container.append($('<div>').addClass('field').html(`<input type="text" value="${officer}" placeholder="Platoon + Rank + Full Name nr. ">`));
+                    });
+                }
+    
+                if (data.PatrolType) $('#PatrolType .ui.selection.dropdown').dropdown('set selected', data.PatrolType);
+                if (data.linkDeployment) $('#linkDeployment').val(data.linkDeployment);
+                if (data.other) $('#other').val(data.other);
             }
-        }
-
-        // Add event listeners to the buttons
-        const clearButton = document.getElementById('clearLocalStorageButton');
-        if (clearButton) {
-            clearButton.addEventListener('click', clearLocalStorage);
-        }
-
-        const undoButton = document.getElementById('undoLocalStorageButton');
-        if (undoButton) {
-            undoButton.addEventListener('click', undoClearLocalStorage);
-        }
-
-        const timeSelect = document.getElementById('timeSelect');
-        const selectedTimeDisplay = document.getElementById('selectedTime');
-
-        timeSelect.addEventListener('change', function () {
-            const selectedTimeValue = parseInt(timeSelect.value);
-            const selectedTime = formatTime(selectedTimeValue);
-            selectedTimeDisplay.textContent = selectedTime;
+    
+            // Clear and Restore Local Storage
+            function clearLocalStorage() {
+                if (confirm("Are you sure you want to clear all saved data?")) {
+                    const backupData = localStorage.getItem('patrolReportData');
+                    localStorage.setItem('patrolReportDataBackup', backupData); // Save backup
+                    localStorage.removeItem('patrolReportData'); // Clear main data
+                    alert("Local storage has been cleared.");
+                }
+            }
+    
+            function undoClearLocalStorage() {
+                const backupData = localStorage.getItem('patrolReportDataBackup');
+                if (backupData) {
+                    localStorage.setItem('patrolReportData', backupData);
+                    alert("Data has been restored.");
+                    location.reload(); // Reload page to reflect restored data
+                } else {
+                    alert("No backup data available.");
+                }
+            }
+    
+            // Attach clear and restore functions to buttons
+            $('#clearLocalStorageButton').click(clearLocalStorage);
+            $('#undoLocalStorageButton').click(undoClearLocalStorage);
+    
+            // Automatically save data on change
+            $('input, textarea, select').on('input change', saveDataToLocalStorage);
+    
+            // Load data on page load
+            loadDataFromLocalStorage();
         });
-
-        function formatTime(hours) {
-            if (hours === 0) {
-                return '12:00 AM';
-            } else if (hours < 12) {
-                return hours + ':00 AM';
-            } else if (hours === 12) {
-                return '12:00 PM';
-            } else {
-                return (hours - 12) + ':00 PM';
-            }
-        }
-
-
     </script>
+    
 </body>
 
 </html>
