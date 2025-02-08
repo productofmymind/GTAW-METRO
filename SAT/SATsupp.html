@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <link rel="stylesheet" href="/SAT/css/main.css">
+    <link rel="icon" type="image/x-icon" href="/SAT/css/img/sat.png" />
+    <title>Business Contact Report</title>
+    <style>
+        /* Add your styles here */
+    </style>
+</head>
+
+<body>
+    <div class="ui container">
+        <div class="ui form">
+            <div class="ui segment">
+                <h2>Business Contact Report</h2>
+                <div class="field">
+                    <label>Date & Time of Contact</label>
+                    <input type="text" id="dateTimeContact" placeholder="DD/MM/YYYY HH:MM">
+                </div>
+                <div class="field">
+                    <label>Deputy Name / Callsign</label>
+                    <input type="text" id="deputyName" placeholder="Your Name / Callsign">
+                </div>
+                <div class="field">
+                    <label>Contact Person</label>
+                    <input type="text" id="contactPerson" placeholder="Who did you speak with">
+                </div>
+                
+                <!-- Business Information -->
+                <div class="field">
+                    <label>Business Name</label>
+                    <input type="text" id="businessName" placeholder="Business Name">
+                </div>
+
+                <!-- Purpose of Contact -->
+                <div class="field">
+                    <label>Reason for Contact</label>
+                    <input type="text" id="reasonForContact" placeholder="Why you initiated contact">
+                </div>
+                <div class="field">
+                    <label>Summary of Interaction</label>
+                    <textarea id="interactionSummary" placeholder="Details about the interaction"></textarea>
+                </div>
+
+                <!-- Actions Taken / Notes -->
+                <div class="field">
+                    <label>Changes Needed to Master Sheet</label>
+                    <textarea id="changesNeeded" placeholder="Changes to the master sheet"></textarea>
+                </div>
+                <div class="field">
+                    <label>Follow-Up Steps</label>
+                    <input type="text" id="followUpSteps" placeholder="Next steps or actions needed">
+                </div>
+                <div class="field">
+                    <label>Additional Remarks</label>
+                    <textarea id="additionalRemarks" placeholder="Any other remarks or notes"></textarea>
+                </div>
+
+                <!-- Incident Section -->
+                <div class="field">
+                    <label>Incidents</label>
+                    <div id="incidents">
+                        <!-- Incident fields will be dynamically added here -->
+                    </div>
+                    <button type="button" id="addIncident">Add Incident</button>
+                </div>
+
+                <div class="field">
+                    <button class="ui primary button" id="generateBBCode">Generate BBCode</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- BBCode Output -->
+        <div class="ui segment">
+            <h2>BBCode Output</h2>
+            <textarea id="bbcodeOutput" readonly></textarea>
+            <button class="ui secondary button" id="copyBBCode">Copy BBCode</button>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Load saved data from localStorage when the page loads
+            function loadSavedData() {
+                // Load form data
+                $("#dateTimeContact").val(localStorage.getItem("dateTimeContact"));
+                $("#deputyName").val(localStorage.getItem("deputyName"));
+                $("#contactPerson").val(localStorage.getItem("contactPerson"));
+                $("#businessName").val(localStorage.getItem("businessName"));
+                $("#reasonForContact").val(localStorage.getItem("reasonForContact"));
+                $("#interactionSummary").val(localStorage.getItem("interactionSummary"));
+                $("#changesNeeded").val(localStorage.getItem("changesNeeded"));
+                $("#followUpSteps").val(localStorage.getItem("followUpSteps"));
+                $("#additionalRemarks").val(localStorage.getItem("additionalRemarks"));
+
+                // Load incidents
+                let incidents = JSON.parse(localStorage.getItem("incidents") || "[]");
+                incidents.forEach(function (incident) {
+                    const newIncident = `
+                        <div class="field incident-field">
+                            <input type="text" placeholder="Incident Type" class="incidentType" value="${incident.type}">
+                            <input type="text" placeholder="Location" class="incidentLocation" value="${incident.location}">
+                            <input type="text" placeholder="Reason for LEO Contact" class="justification" value="${incident.justification}">
+                            <input type="text" placeholder="Incident Result" class="incidentResult" value="${incident.result}">
+                            <input type="text" placeholder="Reports Related" class="reportsRelated" value="${incident.reportsRelated}">
+                            <button type="button" class="remove-incident">Remove Incident</button>
+                        </div>`;
+                    $("#incidents").append(newIncident);
+                });
+            }
+
+            // Save form data to localStorage when any input changes
+            function saveFormData() {
+                // Save form data
+                localStorage.setItem("dateTimeContact", $("#dateTimeContact").val());
+                localStorage.setItem("deputyName", $("#deputyName").val());
+                localStorage.setItem("contactPerson", $("#contactPerson").val());
+                localStorage.setItem("businessName", $("#businessName").val());
+                localStorage.setItem("reasonForContact", $("#reasonForContact").val());
+                localStorage.setItem("interactionSummary", $("#interactionSummary").val());
+                localStorage.setItem("changesNeeded", $("#changesNeeded").val());
+                localStorage.setItem("followUpSteps", $("#followUpSteps").val());
+                localStorage.setItem("additionalRemarks", $("#additionalRemarks").val());
+
+                // Save incidents to localStorage
+                let incidents = [];
+                $(".incident-field").each(function () {
+                    const incident = {
+                        type: $(this).find(".incidentType").val(),
+                        location: $(this).find(".incidentLocation").val(),
+                        justification: $(this).find(".justification").val(),
+                        result: $(this).find(".incidentResult").val(),
+                        reportsRelated: $(this).find(".reportsRelated").val()
+                    };
+                    incidents.push(incident);
+                });
+                localStorage.setItem("incidents", JSON.stringify(incidents));
+            }
+
+            // Event listener to save data when any field changes
+            $("input, textarea").on("input", saveFormData);
+
+            // Add Incident
+            $("#addIncident").click(function () {
+                const newIncident = `
+                    <div class="field incident-field">
+                        <input type="text" placeholder="Incident Type" class="incidentType">
+                        <input type="text" placeholder="Location" class="incidentLocation">
+                        <input type="text" placeholder="Reason for LEO Contact" class="justification">
+                        <input type="text" placeholder="Incident Result" class="incidentResult">
+                        <input type="text" placeholder="Reports Related" class="reportsRelated">
+                        <button type="button" class="remove-incident">Remove Incident</button>
+                    </div>`;
+                $("#incidents").append(newIncident);
+                saveFormData();  // Save the form data after adding a new incident
+            });
+
+            // Remove Incident
+            $(document).on("click", ".remove-incident", function () {
+                $(this).closest(".incident-field").remove(); // Remove the specific incident field
+                saveFormData(); // Save after removing an incident
+            });
+
+            // Generate BBCode
+            $("#generateBBCode").click(function () {
+                const dateTimeContact = $("#dateTimeContact").val();
+                const deputyName = $("#deputyName").val();
+                const contactPerson = $("#contactPerson").val();
+                const businessName = $("#businessName").val();
+                const reasonForContact = $("#reasonForContact").val();
+                const interactionSummary = $("#interactionSummary").val();
+                const changesNeeded = $("#changesNeeded").val();
+                const followUpSteps = $("#followUpSteps").val();
+                const additionalRemarks = $("#additionalRemarks").val();
+
+                let incidentsBBCode = "";
+                $(".field .incidentType").each(function (index) {
+                    const incidentType = $(this).val();
+                    const location = $(this).siblings(".incidentLocation").val();
+                    const justification = $(this).siblings(".justification").val();
+                    const result = $(this).siblings(".incidentResult").val();
+                    const reportsRelated = $(this).siblings(".reportsRelated").val();
+
+                    incidentsBBCode += `
+[b]Incident Type:[/b] ${incidentType}
+[b]Location:[/b] ${location}
+[b]Reason for Law Enforcement Contact:[/b] ${justification}
+[b]Incident Result:[/b] ${result}
+[b]Reports Related:[/b] [url=${reportsRelated}]ACCESS[/url]\n\n`;
+                });
+
+                const bbcode = `
+[font=Arial][color=black]
+
+[float=left][img]https://i.imgur.com/blUoH3d.png[/img][/float][float=right][img]https://i.imgur.com/64oitVU.png[/img][/float]
+
+[center][size=125][b]CENTRAL PATROL DIVISION[/b][/size]
+[size=100][b]DAVIS SHERIFFS STATION[/b][/center][/size]
+
+[size=75]SPECIAL ASSIGNMENT TEAM, BUSINESS CONTACT REPORT[float=right]FILED: [u]${dateTimeContact}[/u][/float][/size]
+[hr][/hr]
+
+[divbox=#2e411a][color=white][b]CONTACT INFORMATION[/b][/color][/divbox]
+[indent]
+[b]Business Name:[/b] ${businessName}
+[b]Date & Time of Contact:[/b] ${dateTimeContact}
+[b]Deputy Name / Callsign:[/b] ${deputyName}
+[b]Contact Person:[/b] ${contactPerson}
+[/indent]
+
+[divbox=#2e411a][color=white][b]PURPOSE OF CONTACT[/b][/color][/divbox]
+[indent]
+[b]Reason for Contact:[/b] ${reasonForContact}
+[b]Summary of Interaction:[/b]
+[indent]${interactionSummary}[/indent]
+[/indent]
+
+[divbox=#2e411a][color=white][b]ACTIONS TAKEN / NOTES[/b][/color][/divbox]
+[indent]
+[b]Changes Needed to Master Sheet:[/b] ${changesNeeded}
+[b]Follow-Up Steps:[/b] ${followUpSteps}
+[b]Additional Remarks:[/b] ${additionalRemarks}
+[/indent]
+
+[divbox=#2e411a][color=white][b]INCIDENTS[/b][/color][/divbox]
+[indent]
+[b]Business Incidents:[/b]
+[indent]
+${incidentsBBCode}
+[/indent]
+[/indent]
+`;
+
+                $("#bbcodeOutput").val(bbcode);
+            });
+
+            // Copy BBCode to Clipboard without alert
+            $("#copyBBCode").click(function () {
+                const bbcodeOutput = $("#bbcodeOutput");
+                bbcodeOutput.select();
+                document.execCommand("copy");
+            });
+
+            // Load saved data on page load
+            loadSavedData();
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <link rel="stylesheet" href="/SAT/css/main.css">
+    <link rel="icon" type="image/x-icon" href="/SAT/css/img/sat.png" />
+    <title>SAT Patrol Report</title>
+    <style>
+        /* Add your styles here */
+    </style>
+</head>
+
+<body>
+    <div class="ui container">
+        <div class="ui form">
+            <div class="ui segment">
+                <h2>SAT Patrol Report</h2>
+                <div class="field">
+                    <label>Date of Deployment</label>
+                    <input type="text" id="date" placeholder="DD/MMM/YYYY">
+                </div>
+                <div class="field">
+                    <label>Area of Patrol</label>
+                    <input type="text" id="areaOfPatrol" placeholder="Area of Patrol">
+                </div>
+                <div class="field">
+                    <label>Shift Time</label>
+                    <input type="text" id="shiftTime" placeholder="HH:MM - HH:MM">
+                </div>
+                <div class="field">
+                    <label>Deputy Name</label>
+                    <input type="text" id="deputyName" placeholder="Deputy Name">
+                </div>
+                <div class="field">
+                    <label>Unit Number</label>
+                    <input type="text" id="unitNumber" placeholder="Unit Number">
+                </div>
+                <div class="field">
+                    <label>Patrol Timeline</label>
+                    <textarea id="patrolTimeline" placeholder="Example: 2302 911 call, tag 203, armed robbery in Forum - arrest made"></textarea>
+                </div>
+                <div class="field">
+                    <label>Incident Description</label>
+                    <textarea id="incidentDescription" placeholder="Describe incidents in detail"></textarea>
+                </div>
+                <div class="field">
+                    <label>Incidents</label>
+                    <div id="incidents">
+                        <!-- Dynamically added incidents will appear here -->
+                    </div>
+                    <button type="button" id="addIncident">Add Incident</button>
+                </div>
+                <div class="field">
+                    <button class="ui primary button" id="generateBBCode">Generate BBCode</button>
+                </div>
+            </div>
+        </div>
+        <div class="ui segment">
+            <h2>BBCode Output</h2>
+            <textarea id="bbcodeOutput" readonly></textarea>
+            <button class="ui secondary button" id="copyBBCode">Copy BBCode</button>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Load saved data from localStorage when the page loads
+            function loadSavedData() {
+                // Load form data
+                $("#date").val(localStorage.getItem("date"));
+                $("#areaOfPatrol").val(localStorage.getItem("areaOfPatrol"));
+                $("#shiftTime").val(localStorage.getItem("shiftTime"));
+                $("#deputyName").val(localStorage.getItem("deputyName"));
+                $("#unitNumber").val(localStorage.getItem("unitNumber"));
+                $("#patrolTimeline").val(localStorage.getItem("patrolTimeline"));
+                $("#incidentDescription").val(localStorage.getItem("incidentDescription"));
+
+                // Load incidents
+                let incidents = JSON.parse(localStorage.getItem("incidents") || "[]");
+                incidents.forEach(function (incident) {
+                    const newIncident = `
+                        <div class="field incident-field">
+                            <input type="text" placeholder="Incident Type" class="incidentType" value="${incident.type}">
+                            <input type="text" placeholder="Location" class="incidentLocation" value="${incident.location}">
+                            <input type="text" placeholder="Justification for Consensual Encounter" class="justification" value="${incident.justification}">
+                            <input type="text" placeholder="Incident Result" class="incidentResult" value="${incident.result}">
+                            <input type="text" placeholder="Reports Related URL" class="reportsRelated" value="${incident.reportsRelated}">
+                            <button type="button" class="remove-incident">Remove Incident</button>
+                        </div>`;
+                    $("#incidents").append(newIncident);
+                });
+            }
+
+            // Save form data to localStorage when any input changes
+            function saveFormData() {
+                // Save form data
+                localStorage.setItem("date", $("#date").val());
+                localStorage.setItem("areaOfPatrol", $("#areaOfPatrol").val());
+                localStorage.setItem("shiftTime", $("#shiftTime").val());
+                localStorage.setItem("deputyName", $("#deputyName").val());
+                localStorage.setItem("unitNumber", $("#unitNumber").val());
+                localStorage.setItem("patrolTimeline", $("#patrolTimeline").val());
+                localStorage.setItem("incidentDescription", $("#incidentDescription").val());
+
+                // Save incidents to localStorage
+                let incidents = [];
+                $(".incident-field").each(function () {
+                    const incident = {
+                        type: $(this).find(".incidentType").val(),
+                        location: $(this).find(".incidentLocation").val(),
+                        justification: $(this).find(".justification").val(),
+                        result: $(this).find(".incidentResult").val(),
+                        reportsRelated: $(this).find(".reportsRelated").val()
+                    };
+                    incidents.push(incident);
+                });
+                localStorage.setItem("incidents", JSON.stringify(incidents));
+            }
+
+            // Event listener to save data when any field changes
+            $("input, textarea").on("input", saveFormData);
+
+            // Add Incident
+            $("#addIncident").click(function () {
+                const newIncident = `
+                    <div class="field incident-field">
+                        <input type="text" placeholder="Incident Type" class="incidentType">
+                        <input type="text" placeholder="Location" class="incidentLocation">
+                        <input type="text" placeholder="Justification for Consensual Encounter" class="justification">
+                        <input type="text" placeholder="Incident Result" class="incidentResult">
+                        <input type="text" placeholder="Reports Related URL" class="reportsRelated">
+                        <button type="button" class="remove-incident">Remove Incident</button>
+                    </div>`;
+                $("#incidents").append(newIncident);
+                saveFormData();  // Save the form data after adding a new incident
+            });
+
+            // Remove Incident
+            $(document).on("click", ".remove-incident", function () {
+                $(this).closest(".incident-field").remove(); // Remove the specific incident field
+                saveFormData(); // Save after removing an incident
+            });
+
+            // Generate BBCode
+            $("#generateBBCode").click(function () {
+                const date = $("#date").val();
+                const areaOfPatrol = $("#areaOfPatrol").val();
+                const shiftTime = $("#shiftTime").val();
+                const deputyName = $("#deputyName").val();
+                const unitNumber = $("#unitNumber").val();
+                const patrolTimeline = $("#patrolTimeline").val();
+                const incidentDescription = $("#incidentDescription").val();
+
+                let incidentsBBCode = "";
+                $(".field .incidentType").each(function (index) {
+                    const incidentType = $(this).val();
+                    const location = $(this).siblings(".incidentLocation").val();
+                    const justification = $(this).siblings(".justification").val();
+                    const result = $(this).siblings(".incidentResult").val();
+                    const reportsRelated = $(this).siblings(".reportsRelated").val();
+
+                    incidentsBBCode += `
+[b]Incident Type:[/b] ${incidentType}
+[b]Location:[/b] ${location}
+[b]Justification for Consensual Encounter:[/b] ${justification}
+[b]Incident Result:[/b] ${result}
+[b]Reports Related:[/b] [url=${reportsRelated}]ACCESS[/url]\n\n`;
+                });
+
+                const bbcode = `
+[font=Arial][color=black]
+
+[float=left][img]https://i.imgur.com/blUoH3d.png[/img][/float][float=right][img]https://i.imgur.com/64oitVU.png[/img][/float]
+
+[center][size=125][b]CENTRAL PATROL DIVISION[/b][/size]
+[size=100][b]DAVIS SHERIFFS STATION[/b][/center][/size]
+
+[size=75]SPECIAL ASSIGNMENT TEAM, PATROL REPORT[float=right]FILED: [u]${date}[/u][/float][/size]
+[hr][/hr]
+
+[divbox=#2e411a][color=white][b]PATROL INFORMATION[/b][/color][/divbox]
+[indent]
+[b]Area of Patrol:[/b] ${areaOfPatrol}
+[b]Start and End Date of Patrol:[/b] ${date} - ${date}
+[b]Shift Time:[/b] ${shiftTime}
+[b]Deputy Name:[/b] ${deputyName}
+[b]Unit Number:[/b] ${unitNumber}
+[/indent]
+
+[divbox=#2e411a][color=white][b]PATROL ACTIVITIES[/b][/color][/divbox]
+[indent][b]Patrol Timeline:[/b][indent]
+[size=85]${patrolTimeline}[/size]
+[/indent]
+
+[b]Incident Description:[/b]
+[indent]${incidentDescription}[/indent]
+
+[b]Your Incidents:[/b]
+[indent]
+${incidentsBBCode}
+[/indent]
+[/indent]
+`;
+
+                $("#bbcodeOutput").val(bbcode);
+            });
+
+            // Copy BBCode to Clipboard without alert
+            $("#copyBBCode").click(function () {
+                const bbcodeOutput = $("#bbcodeOutput");
+                bbcodeOutput.select();
+                document.execCommand("copy");
+            });
+
+            // Load saved data on page load
+            loadSavedData();
+        });
+    </script>
+</body>
+
+</html>

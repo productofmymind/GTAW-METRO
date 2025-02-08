@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <link rel="stylesheet" href="/SAT/css/main.css">
+    <link rel="icon" type="image/x-icon" href="/SAT/css/img/sat.png" />
+    <title>Business Master Sheet</title>
+    <style>
+        /* Add your styles here */
+    </style>
+</head>
+
+<body>
+    <div class="ui container">
+        <div class="ui form">
+            <div class="ui segment">
+                <h2>Business Master Sheet</h2>
+                <div class="field">
+                    <label>Date Filed</label>
+                    <input type="text" id="dateFiled" placeholder="DD/MMM/YYYY">
+                </div>
+                <div class="field">
+                    <label>Business Name</label>
+                    <input type="text" id="businessName" placeholder="Business Name">
+                </div>
+                <div class="field">
+                    <label>Type of Business</label>
+                    <input type="text" id="typeOfBusiness" placeholder="Type of Business">
+                </div>
+                <div class="field">
+                    <label>Location</label>
+                    <input type="text" id="location" placeholder="Location">
+                </div>
+                <div class="field">
+                    <label>Hours of Operation</label>
+                    <input type="text" id="hoursOfOperation" placeholder="Hours of Operation">
+                </div>
+                <div class="field">
+                    <label>Licenses/Permits</label>
+                    <input type="text" id="licensesPermits" placeholder="Licenses/Permits">
+                </div>
+                <div class="field">
+                    <label>Owner/Manager Name</label>
+                    <input type="text" id="ownerManager" placeholder="Owner/Manager Name">
+                </div>
+                <div class="field">
+                    <label>Contact Number</label>
+                    <input type="text" id="contactNumber" placeholder="Contact Number">
+                </div>
+                <div class="field">
+                    <label>Email Address</label>
+                    <input type="text" id="emailAddress" placeholder="Email Address">
+                </div>
+                <div class="field">
+                    <label>Physical Address</label>
+                    <input type="text" id="physicalAddress" placeholder="Physical Address">
+                </div>
+                <div class="field">
+                    <label># of Entrances</label>
+                    <input type="text" id="entrances" placeholder="Number of Entrances">
+                </div>
+                <div class="field">
+                    <label># of Exits</label>
+                    <input type="text" id="exits" placeholder="Number of Exits">
+                </div>
+                <div class="field">
+                    <label>Is there roof access?</label>
+                    <input type="text" id="roofAccess" placeholder="Yes/No">
+                </div>
+                <div class="field">
+                    <label>Are there security cameras?</label>
+                    <input type="text" id="securityCameras" placeholder="Yes/No">
+                </div>
+                <div class="field">
+                    <label>If yes, how many cameras?</label>
+                    <input type="text" id="cameras" placeholder="Number of Cameras">
+                </div>
+                <div class="field">
+                    <label>Entrance/Exit Images</label>
+                    <input type="text" id="entranceExitImages" placeholder="Link to Images">
+                </div>
+                
+                <!-- Incident Section -->
+                <div class="field">
+                    <label>Incidents</label>
+                    <div id="incidents">
+                        <!-- Incident fields will be dynamically added here -->
+                    </div>
+                    <button type="button" id="addIncident">Add Incident</button>
+                </div>
+
+                <div class="field">
+                    <button class="ui primary button" id="generateBBCode">Generate BBCode</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- BBCode Output -->
+        <div class="ui segment">
+            <h2>BBCode Output</h2>
+            <textarea id="bbcodeOutput" readonly></textarea>
+            <button class="ui secondary button" id="copyBBCode">Copy BBCode</button>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Load saved data from localStorage when the page loads
+            function loadSavedData() {
+                // Load form data
+                $("#dateFiled").val(localStorage.getItem("dateFiled"));
+                $("#businessName").val(localStorage.getItem("businessName"));
+                $("#typeOfBusiness").val(localStorage.getItem("typeOfBusiness"));
+                $("#location").val(localStorage.getItem("location"));
+                $("#hoursOfOperation").val(localStorage.getItem("hoursOfOperation"));
+                $("#licensesPermits").val(localStorage.getItem("licensesPermits"));
+                $("#ownerManager").val(localStorage.getItem("ownerManager"));
+                $("#contactNumber").val(localStorage.getItem("contactNumber"));
+                $("#emailAddress").val(localStorage.getItem("emailAddress"));
+                $("#physicalAddress").val(localStorage.getItem("physicalAddress"));
+                $("#entrances").val(localStorage.getItem("entrances"));
+                $("#exits").val(localStorage.getItem("exits"));
+                $("#roofAccess").val(localStorage.getItem("roofAccess"));
+                $("#securityCameras").val(localStorage.getItem("securityCameras"));
+                $("#cameras").val(localStorage.getItem("cameras"));
+                $("#entranceExitImages").val(localStorage.getItem("entranceExitImages"));
+
+                // Load incidents
+                let incidents = JSON.parse(localStorage.getItem("incidents") || "[]");
+                incidents.forEach(function (incident) {
+                    const newIncident = `
+                        <div class="field incident-field">
+                            <input type="text" placeholder="Incident Type" class="incidentType" value="${incident.type}">
+                            <input type="text" placeholder="Location" class="incidentLocation" value="${incident.location}">
+                            <input type="text" placeholder="Reason for LEO Contact" class="justification" value="${incident.justification}">
+                            <input type="text" placeholder="Incident Result" class="incidentResult" value="${incident.result}">
+                            <input type="text" placeholder="Reports Related" class="reportsRelated" value="${incident.reportsRelated}">
+                            <button type="button" class="remove-incident">Remove Incident</button>
+                        </div>`;
+                    $("#incidents").append(newIncident);
+                });
+            }
+
+            // Save form data to localStorage when any input changes
+            function saveFormData() {
+                // Save form data
+                localStorage.setItem("dateFiled", $("#dateFiled").val());
+                localStorage.setItem("businessName", $("#businessName").val());
+                localStorage.setItem("typeOfBusiness", $("#typeOfBusiness").val());
+                localStorage.setItem("location", $("#location").val());
+                localStorage.setItem("hoursOfOperation", $("#hoursOfOperation").val());
+                localStorage.setItem("licensesPermits", $("#licensesPermits").val());
+                localStorage.setItem("ownerManager", $("#ownerManager").val());
+                localStorage.setItem("contactNumber", $("#contactNumber").val());
+                localStorage.setItem("emailAddress", $("#emailAddress").val());
+                localStorage.setItem("physicalAddress", $("#physicalAddress").val());
+                localStorage.setItem("entrances", $("#entrances").val());
+                localStorage.setItem("exits", $("#exits").val());
+                localStorage.setItem("roofAccess", $("#roofAccess").val());
+                localStorage.setItem("securityCameras", $("#securityCameras").val());
+                localStorage.setItem("cameras", $("#cameras").val());
+                localStorage.setItem("entranceExitImages", $("#entranceExitImages").val());
+
+                // Save incidents to localStorage
+                let incidents = [];
+                $(".incident-field").each(function () {
+                    const incident = {
+                        type: $(this).find(".incidentType").val(),
+                        location: $(this).find(".incidentLocation").val(),
+                        justification: $(this).find(".justification").val(),
+                        result: $(this).find(".incidentResult").val(),
+                        reportsRelated: $(this).find(".reportsRelated").val()
+                    };
+                    incidents.push(incident);
+                });
+                localStorage.setItem("incidents", JSON.stringify(incidents));
+            }
+
+            // Event listener to save data when any field changes
+            $("input, textarea").on("input", saveFormData);
+
+            // Add Incident
+            $("#addIncident").click(function () {
+                const newIncident = `
+                    <div class="field incident-field">
+                        <input type="text" placeholder="Incident Type" class="incidentType">
+                        <input type="text" placeholder="Location" class="incidentLocation">
+                        <input type="text" placeholder="Reason for LEO Contact" class="justification">
+                        <input type="text" placeholder="Incident Result" class="incidentResult">
+                        <input type="text" placeholder="Reports Related" class="reportsRelated">
+                        <button type="button" class="remove-incident">Remove Incident</button>
+                    </div>`;
+                $("#incidents").append(newIncident);
+                saveFormData();  // Save the form data after adding a new incident
+            });
+
+            // Remove Incident
+            $(document).on("click", ".remove-incident", function () {
+                $(this).closest(".incident-field").remove(); // Remove the specific incident field
+                saveFormData(); // Save after removing an incident
+            });
+
+            // Generate BBCode
+            $("#generateBBCode").click(function () {
+                const dateFiled = $("#dateFiled").val();
+                const businessName = $("#businessName").val();
+                const typeOfBusiness = $("#typeOfBusiness").val();
+                const location = $("#location").val();
+                const hoursOfOperation = $("#hoursOfOperation").val();
+                const licensesPermits = $("#licensesPermits").val();
+                const ownerManager = $("#ownerManager").val();
+                const contactNumber = $("#contactNumber").val();
+                const emailAddress = $("#emailAddress").val();
+                const physicalAddress = $("#physicalAddress").val();
+                const entrances = $("#entrances").val();
+                const exits = $("#exits").val();
+                const roofAccess = $("#roofAccess").val();
+                const securityCameras = $("#securityCameras").val();
+                const cameras = $("#cameras").val();
+                const entranceExitImages = $("#entranceExitImages").val();
+
+                let incidentsBBCode = "";
+                $(".field .incidentType").each(function (index) {
+                    const incidentType = $(this).val();
+                    const location = $(this).siblings(".incidentLocation").val();
+                    const justification = $(this).siblings(".justification").val();
+                    const result = $(this).siblings(".incidentResult").val();
+                    const reportsRelated = $(this).siblings(".reportsRelated").val();
+
+                    incidentsBBCode += `
+[b]Incident Type:[/b] ${incidentType}
+[b]Location:[/b] ${location}
+[b]Reason for Law Enforcement Contact:[/b] ${justification}
+[b]Incident Result:[/b] ${result}
+[b]Reports Related:[/b] [url=${reportsRelated}]ACCESS[/url]\n\n`;
+                });
+
+                const bbcode = `
+[font=Arial][color=black]
+[float=left][img]https://i.imgur.com/blUoH3d.png[/img][/float][float=right][img]https://i.imgur.com/64oitVU.png[/img][/float]
+[center][size=125][b]CENTRAL PATROL DIVISION[/b][/size]
+[size=100][b]DAVIS SHERIFFS STATION[/b][/center][/size]
+[size=75]SPECIAL ASSIGNMENT TEAM, BUSINESS MASTER SHEET[float=right]FILED: [u]${dateFiled}[/u][/float][/size]
+[hr][/hr]
+
+[divbox=#2e411a][color=white][b]BUSINESS INFORMATION[/b][/color][/divbox]
+[indent]
+[b]Business Name:[/b] ${businessName}
+[b]Type of Business:[/b] ${typeOfBusiness}
+[b]Location:[/b] ${location}
+[b]Hours of Operation:[/b] ${hoursOfOperation}
+[b]Licenses/Permits:[/b] ${licensesPermits}
+[b]Owner/Manager Name:[/b] ${ownerManager}
+[b]Contact Number:[/b] ${contactNumber}
+[b]Email Address:[/b] ${emailAddress}
+[/indent]
+
+[divbox=#2e411a][color=white][b]PHYSICAL BUILDING INFORMATION[/b][/color][/divbox]
+[indent]
+[b]Physical Address:[/b] ${physicalAddress}
+[b]# of Entrances:[/b] ${entrances}
+[b]# of Exits:[/b] ${exits}
+[b]Is there roof access?:[/b] ${roofAccess}
+[b]Are there security cameras?:[/b] ${securityCameras}
+[b]If yes, how many?:[/b] ${cameras}
+[b]Entrance/Exit Images:[/b] [URL=${entranceExitImages}]ACCESS[/URL]
+[/indent]
+
+[divbox=#2e411a][color=white][b]INCIDENTS[/b][/color][/divbox]
+[indent]
+[b]Business Incidents:[/b]
+[indent]
+${incidentsBBCode}
+[/indent]
+[/indent]
+`;
+
+                $("#bbcodeOutput").val(bbcode);
+            });
+
+            // Copy BBCode to Clipboard without alert
+            $("#copyBBCode").click(function () {
+                const bbcodeOutput = $("#bbcodeOutput");
+                bbcodeOutput.select();
+                document.execCommand("copy");
+            });
+
+            // Load saved data on page load
+            loadSavedData();
+        });
+    </script>
+</body>
+
+</html>
