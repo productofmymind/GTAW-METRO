@@ -8,6 +8,26 @@ body {
 h2, h4.ui.dividing.header {
   color: #FFFFFF !important;
   font-family: "Inter", sans-serif;
+  font-size: 24px; /* Adjust the size of the h2 for readability */
+  margin-bottom: 20px; /* Space below the heading */
+  font-weight: 600; /* Slightly bold for emphasis */
+  text-align: left; /* Align text to the left */
+}
+
+/* Modernize h2 */
+h2 {
+  font-size: 24px;
+  color: #2c3e50;
+  font-weight: 600;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #ecf0f1;
+  padding-bottom: 10px;
+  transition: all 0.3s ease;
+}
+
+h2:hover {
+  color: #2980b9;
+  border-bottom: 2px solid #2980b9;
 }
 
 button, #todayButton {
@@ -80,63 +100,57 @@ textarea {
   resize: none;
 }
 
-        /* General Dark Mode Button Styling */
-        button {
-          background-color: #1A73E8; /* Blue background */
-          color: #fff;
-          padding: 10px 20px;
-          border: none;
-          border-radius: 10px;
-          cursor: pointer;
-          transition: background-color 0.3s ease;
-          font-size: 16px;
-      }
+/* General Dark Mode Button Styling */
+button {
+  background-color: #1A73E8; /* Blue background */
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 16px;
+}
 
-      button:hover {
-          background-color: #1558A3; /* Darker blue on hover */
-      }
+button:hover {
+  background-color: #1558A3; /* Darker blue on hover */
+}
 
-      button.remove-incident {
-          background-color: #FF4C4C; /* Red background for remove button */
-      }
+button.remove-incident {
+  background-color: #FF4C4C; /* Red background for remove button */
+}
 
-      button.remove-incident:hover {
-          background-color: #CC3939; /* Darker red on hover */
-      }
+button.remove-incident:hover {
+  background-color: #CC3939; /* Darker red on hover */
+}
 
-      /* Styling for input fields in the form */
-      input[type="text"],
-      textarea {
-          width: 100%;
-          padding: 12px;
-          border: 1px solid #555;
-          border-radius: 8px;
-          background-color: #2A2F40; /* Darker gray background */
-          color: #DDD; /* Light gray text */
-          font-size: 16px;
-          margin-bottom: 10px; /* Space between inputs */
-      }
+/* Styling for input fields in the form */
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #555;
+  border-radius: 8px;
+  background-color: #2A2F40; /* Darker gray background */
+  color: #DDD; /* Light gray text */
+  font-size: 16px;
+  margin-bottom: 10px; /* Space between inputs */
+}
 
-      /* Specific input fields in the incidents section */
-      .incident-field {
-          margin-bottom: 20px;
-      }
 
-      #incidents .field {
-          margin-bottom: 10px;
-      }
 
-      /* Ensure consistent appearance for all buttons */
-      button#addIncident {
-          background-color: #1A73E8; /* Blue for Add Incident button */
-      }
+/* Ensure consistent appearance for all buttons */
+button#addIncident {
+  background-color: #1A73E8; /* Blue for Add Incident button */
+}
 
-      button#addIncident:hover {
-          background-color: #1558A3;
-      }
+button#addIncident:hover {
+  background-color: #1558A3;
+}
 
-      /* Style for input and text areas in the incidents section */
-      textarea {
-          min-height: 120px;
-          resize: none;
-      }
+/* Style for input and text areas in the incidents section */
+textarea {
+  min-height: 120px;
+  resize: none;
+}
+
