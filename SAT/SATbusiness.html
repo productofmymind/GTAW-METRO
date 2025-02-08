@@ -9,9 +9,6 @@
     <link rel="stylesheet" href="../SAT/css/main.css">
     <link rel="icon" type="image/x-icon" href="../SAT/css/img/sat.png" />
     <title>Business Master Sheet</title>
-    <style>
-        /* Add your styles here */
-    </style>
 </head>
 
 <body>
@@ -55,6 +52,12 @@
                     <label>Email Address</label>
                     <input type="text" id="emailAddress" placeholder="Email Address">
                 </div>
+            </div>
+        </div>
+
+                <div class="ui container">
+                    <div class="ui form">
+                        <div class="ui segment">
 
                 <h2>Physical Building Information</h2>
                 <div class="field">
@@ -85,15 +88,21 @@
                     <label>Entrance/Exit Images</label>
                     <input type="text" id="entranceExitImages" placeholder="Link to Images">
                 </div>
+            </div>
+        </div>
+
+                <div class="ui container">
+                    <div class="ui form">
+                        <div class="ui segment">
                 <h2>Incidents</h2>
-                <!-- Incident Section -->
+                <button type="button" id="addIncident">Add Incident</button>
+
+
                 <div class="field">
-                    <label>Incidents</label>
                     <div id="incidents">
                         <!-- Incident fields will be dynamically added here -->
                     </div>
                 <div class="field">
-                    <button class="ui primary button" id="generateBBCode">Generate BBCode</button>
                 </div>
             </div>
         </div>
@@ -102,7 +111,12 @@
         <div class="ui segment">
             <h2>BBCode Output</h2>
             <textarea id="bbcodeOutput" readonly></textarea>
+            <br></br>
+            <button class="ui primary button" id="generateBBCode">Generate BBCode</button>
             <button class="ui secondary button" id="copyBBCode">Copy BBCode</button>
+            <button class="button" id="SATRecords" onclick="window.location.href='https://lssd.gta.world/viewforum.php?f=1352'">SAT Records</button>
+
+            
         </div>
     </div>
 

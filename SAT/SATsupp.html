@@ -1,91 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
-    <link rel="stylesheet" href="../SAT/css/main.css">
-    <link rel="icon" type="image/x-icon" href="../SAT/css/img/sat.png" />
-    <title>Business Contact Report</title>
-    <style>
-        /* Add your styles here */
-    </style>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+        <link rel="stylesheet" href="../SAT/css/main.css">
+        <link rel="icon" type="image/x-icon" href="../SAT/css/img/sat.png" />
+        <title>Business Contact Report</title>
+    </head>
 
-<body>
-    <div class="ui container">
-        <div class="ui form">
-            <div class="ui segment">
-                <h2>Contact Information</h2>
-                <div class="field">
-                    <label>Business Name</label>
-                    <input type="text" id="businessName" placeholder="Business Name">
-                </div>
-                <div class="field">
-                    <label>Date & Time of Contact</label>
-                    <input type="text" id="dateTimeContact" placeholder="DD/MM/YYYY HH:MM">
-                </div>
-                <div class="field">
-                    <label>Deputy Name / Callsign</label>
-                    <input type="text" id="deputyName" placeholder="Your Name / Callsign">
-                </div>
-                <div class="field">
-                    <label>Contact Person</label>
-                    <input type="text" id="contactPerson" placeholder="Who did you speak with">
-                </div>
-                <h2>Purpose of Contact</h2>
-                
-                <!-- Purpose of Contact -->
-                <div class="field">
-                    <label>Reason for Contact</label>
-                    <input type="text" id="reasonForContact" placeholder="Why you initiated contact">
-                </div>
-                <div class="field">
-                    <label>Summary of Interaction</label>
-                    <textarea id="interactionSummary" placeholder="Details about the interaction"></textarea>
-                </div>
-                <h2>Actions Taken / Notes</h2>
-                <!-- Actions Taken / Notes -->
-                <div class="field">
-                    <label>Changes Needed to Master Sheet</label>
-                    <textarea id="changesNeeded" placeholder="Changes to the master sheet"></textarea>
-                </div>
-                <div class="field">
-                    <label>Follow-Up Steps</label>
-                    <input type="text" id="followUpSteps" placeholder="Next steps or actions needed">
-                </div>
-                <div class="field">
-                    <label>Additional Remarks</label>
-                    <textarea id="additionalRemarks" placeholder="Any other remarks or notes"></textarea>
-                </div>
-
-                <!-- Incident Section -->
-                <div class="field">
-                    <label>Incidents</label>
-                    <div id="incidents">
-                        <!-- Incident fields will be dynamically added here -->
+    <body>
+        <div class="ui container">
+            <div class="ui form">
+                <div class="ui segment">
+                    <h2>Contact Information</h2>
+                    <div class="field">
+                        <label>Business Name</label>
+                        <input type="text" id="businessName"
+                            placeholder="Business Name">
                     </div>
-                    <button type="button" id="addIncident">Add Incident</button>
-                </div>
-
-                <div class="field">
-                    <button class="ui primary button" id="generateBBCode">Generate BBCode</button>
+                    <div class="field">
+                        <label>Date & Time of Contact</label>
+                        <input type="text" id="dateTimeContact"
+                            placeholder="DD/MM/YYYY HH:MM">
+                    </div>
+                    <div class="field">
+                        <label>Deputy Name / Callsign</label>
+                        <input type="text" id="deputyName"
+                            placeholder="Your Name / Callsign">
+                    </div>
+                    <div class="field">
+                        <label>Contact Person</label>
+                        <input type="text" id="contactPerson"
+                            placeholder="Who did you speak with">
+                    </div>
                 </div>
             </div>
-        </div>
+            <div class="ui container">
+                <div class="ui form">
+                    <div class="ui segment">
+                        <h2>Purpose of Contact</h2>
 
-        <!-- BBCode Output -->
-        <div class="ui segment">
-            <h2>BBCode Output</h2>
-            <textarea id="bbcodeOutput" readonly></textarea>
-            <button class="ui secondary button" id="copyBBCode">Copy BBCode</button>
-        </div>
-    </div>
+                        <div class="field">
+                            <label>Reason for Contact</label>
+                            <input type="text" id="reasonForContact"
+                                placeholder="Why you initiated contact">
+                        </div>
+                        <div class="field">
+                            <label>Summary of Interaction</label>
+                            <textarea id="interactionSummary"
+                                placeholder="Details about the interaction"></textarea>
+                        </div>
+                    </div>
+                    <div class="ui container">
+                        <div class="ui form">
+                            <div class="ui segment">
+                                <h2>Actions Taken / Notes</h2>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
+                                <div class="field">
+                                    <label>Changes Needed to Master
+                                        Sheet</label>
+                                    <textarea id="changesNeeded"
+                                        placeholder="Changes to the master sheet"></textarea>
+                                </div>
+                                <div class="field">
+                                    <label>Follow-Up Steps</label>
+                                    <input type="text" id="followUpSteps"
+                                        placeholder="Next steps or actions needed">
+                                </div>
+                                <div class="field">
+                                    <label>Additional Remarks</label>
+                                    <textarea id="additionalRemarks"
+                                        placeholder="Any other remarks or notes"></textarea>
+                                </div>
+                            </div>
+                <div class="ui segment">
+                    <h2>BBCode Output</h2>
+                    <textarea id="bbcodeOutput" readonly></textarea>
+                    <br></br>
+                    <button class="ui secondary button" id="generateBBCode">Generate BBCode</button>
+                    <button class="ui primary button" id="copyBBCode">Copy BBCode</button>
+                    <button class="ui primary button" onclick="window.location.href='https://lssd.gta.world/viewforum.php?f=1352'">SAT Records</button>
+                </div>
+            </div>
+
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+            <script>
         $(document).ready(function () {
             // Load saved data from localStorage when the page loads
             function loadSavedData() {
@@ -252,6 +255,6 @@ ${incidentsBBCode}
             loadSavedData();
         });
     </script>
-</body>
+        </body>
 
-</html>
+    </html>

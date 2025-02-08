@@ -1,80 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
-    <link rel="stylesheet" href="../SAT/css/main.css">
-    <link rel="icon" type="image/x-icon" href="../SAT/css/img/sat.png" />
-    <title>SAT Patrol Report</title>
-    <style>
-        /* Add your styles here */
-    </style>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+        <link rel="stylesheet" href="../SAT/css/main.css">
+        <link rel="icon" type="image/x-icon" href="../SAT/css/img/sat.png" />
+        <title>SAT Patrol Report</title>
+    </head>
 
-<body>
-    <div class="ui container">
-        <div class="ui form">
-            <div class="ui segment">
-                <h2>Patrol Information</h2>
-                <div class="field">
-                    <label>Area of Patrol</label>
-                    <input type="text" id="areaOfPatrol" placeholder="Area of Patrol">
-                </div>
-                <div class="field">
-                    <label>Start and End Date of Patrol</label>
-                    <input type="text" id="date" placeholder="Insert Date - Insert Date">
-                </div>
-                <div class="field">
-                    <label>Shift Time</label>
-                    <input type="text" id="shiftTime" placeholder="HH:MM - HH:MM">
-                </div>
-                <div class="field">
-                    <label>Deputy Name</label>
-                    <input type="text" id="deputyName" placeholder="Deputy Name">
-                </div>
-                <div class="field">
-                    <label>Unit Number</label>
-                    <input type="text" id="unitNumber" placeholder="Your Callsign">
-                </div>
-                <h2>Patrol Activities</h2>
-                <div class="field">
-                    <label>Patrol Timeline</label>
-                    <textarea id="patrolTimeline" placeholder="EXAMPLES: 2302 911 call, tag 203, armed robbery in Forum - arrest made| 0102 backup request, unit 283, tee stop - firearm seized and arrest made
-
-TIME ACTION, REFERENCE, INCIDENT - RESULT
-TIME ACTION, REFERENCE, INCIDENT - RESULT
-TIME ACTION, REFERENCE, INCIDENT - RESULT
-                    "></textarea>
-                </div>
-                <div class="field">
-                    <label>Incident Description</label>
-                    <textarea id="incidentDescription" placeholder="Use this area to reference and describe in greater detail, any incident from your patrol timeline. You are not required to do this for every thing on your timeline, and this may be left blank if no incidents requiring further details are listed on your patrol timeline.
-                    "></textarea>
-                </div>
-                <div class="field">
-                    <label>Incidents</label>
-                    <div id="incidents">
-                        <!-- Dynamically added incidents will appear here -->
+    <body>
+        <div class="ui container">
+            <div class="ui form">
+                <div class="ui segment">
+                    <h2>Patrol Information</h2>
+                    <div class="field">
+                        <label>Area of Patrol</label>
+                        <input type="text" id="areaOfPatrol"
+                            placeholder="Area of Patrol">
                     </div>
-                    <button type="button" id="addIncident">Add Incident</button>
-                </div>
-                <div class="field">
-                    <button class="ui primary button" id="generateBBCode">Generate BBCode</button>
+                    <div class="field">
+                        <label>Start and End Date of Patrol</label>
+                        <input type="text" id="date"
+                            placeholder="Insert Date - Insert Date">
+                    </div>
+                    <div class="field">
+                        <label>Shift Time</label>
+                        <input type="text" id="shiftTime"
+                            placeholder="HH:MM - HH:MM">
+                    </div>
+                    <div class="field">
+                        <label>Deputy Name</label>
+                        <input type="text" id="deputyName"
+                            placeholder="Deputy Name">
+                    </div>
+                    <div class="field">
+                        <label>Unit Number</label>
+                        <input type="text" id="unitNumber"
+                            placeholder="Your Callsign">
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="ui segment">
-            <h2>BBCode Output</h2>
-            <textarea id="bbcodeOutput" readonly></textarea>
-            <button class="ui secondary button" id="copyBBCode">Copy BBCode</button>
-        </div>
-    </div>
+            <div class="ui container">
+                <div class="ui form">
+                    <div class="ui segment">
+                        <h2>Patrol Activities</h2>
+                        <div class="field">
+                            <label>Patrol Timeline</label>
+                            <textarea id="patrolTimeline"
+                                placeholder="EXAMPLES: 2302 911 call, tag 203, armed robbery in Forum - arrest made| 0102 backup request, unit 283, tee stop - firearm seized and arrest made
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
+TIME ACTION, REFERENCE, INCIDENT - RESULT
+TIME ACTION, REFERENCE, INCIDENT - RESULT
+TIME ACTION, REFERENCE, INCIDENT - RESULT
+                    "></textarea>
+                        </div>
+                        <div class="field">
+                            <label>Incident Description</label>
+                            <textarea id="incidentDescription"
+                                placeholder="Use this area to reference and describe in greater detail, any incident from your patrol timeline. You are not required to do this for every thing on your timeline, and this may be left blank if no incidents requiring further details are listed on your patrol timeline.
+                    "></textarea>
+                        </div>
+                    </div> <div class="ui container">
+                        <div class="ui form">
+                            <div class="ui segment">
+                                <div class="field">
+                                    <h2>Incidents</h2>
+                                    <button type="button" id="addIncident">Add
+                                        Incident</button>
+                                    <div id="incidents">
+                                        <!-- Dynamically added incidents will appear here -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ui segment">
+                            <h2>BBCode Output</h2>
+                            <textarea id="bbcodeOutput" readonly></textarea>
+                            <br></br>
+                                <button class="ui primary button" id="generateBBCode">Generate BBCode</button>
+                                <button class="ui secondary button" id="copyBBCode">Copy BBCode</button>
+                                <button class="ui secondary button" onclick="window.location.href='https://lssd.gta.world/viewforum.php?f=1352'">SAT Records</button>
+                        </div>
+                    </div>
+
+                    <script
+                        src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                    <script>
         $(document).ready(function () {
             // Load saved data from localStorage when the page loads
             function loadSavedData() {
@@ -228,6 +243,6 @@ ${incidentsBBCode}
             loadSavedData();
         });
     </script>
-</body>
+                </body>
 
-</html>
+            </html>
