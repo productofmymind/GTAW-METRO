@@ -1,20 +1,19 @@
-/* General Dark Mode Styles */
 body {
   font-family: "Inter", sans-serif;
-  background: #181A23; /* Darker background */
-  color: #E0E0E0; /* Light gray text for better readability */
+  background: #181A23; 
+  color: #E0E0E0; 
 }
 
 h2, h4.ui.dividing.header {
   color: #FFFFFF !important;
   font-family: "Inter", sans-serif;
-  font-size: 24px; /* Adjust the size of the h2 for readability */
-  margin-bottom: 20px; /* Space below the heading */
-  font-weight: 600; /* Slightly bold for emphasis */
-  text-align: left; /* Align text to the left */
+  font-size: 24px; 
+  margin-bottom: 20px; 
+  font-weight: 600; 
+  text-align: left; 
 }
 
-/* Modernize h2 */
+
 h2 {
   font-size: 24px;
   color: #2c3e50;
@@ -31,7 +30,7 @@ h2:hover {
 }
 
 button, #todayButton {
-  background-color: #1A73E8; /* Bright blue for buttons */
+  background-color: #1A73E8; 
   color: #fff;
   padding: 10px 20px;
   border: none;
@@ -44,7 +43,7 @@ button:hover, #todayButton:hover {
   background-color: #1558A3;
 }
 
-/* Dark Containers */
+
 .ui.container {
   margin-top: 20px;
 }
@@ -64,7 +63,7 @@ button:hover, #todayButton:hover {
   color: #FFFFFF !important;
 }
 
-/* Input Fields Styling */
+
 input[type="text"], 
 input[type="url"], 
 input[type="date"], 
@@ -72,27 +71,26 @@ input[type="time"],
 textarea {
   width: 100%;
   padding: 12px;
-  border: 1px solid #555; /* Dark border */
+  border: 1px solid #555; 
   border-radius: 8px;
-  background-color: #2A2F40; /* Darker gray background */
-  color: #DDD; /* Light gray text */
+  background-color: #2A2F40; 
+  color: #DDD; 
   font-size: 16px;
 }
 
 textarea::placeholder, 
 input::placeholder {
-  color: #B0B0B0; /* Subtle placeholder color */
+  color: #B0B0B0; 
 }
 
-/* Specifically targeting form fields with 'field' class for input boxes */
 .ui.form .field input[type="text"], 
 .ui.form .field input[type="url"], 
 .ui.form .field input[type="date"], 
 .ui.form .field input[type="time"], 
 .ui.form .field textarea {
-  background-color: #2A2F40 !important; /* Ensure these fields are dark */
-  border-color: #555 !important; /* Ensure dark borders */
-  color: #DDD !important; /* Text color inside inputs */
+  background-color: #2A2F40 !important; 
+  border-color: #555 !important; 
+  color: #DDD !important; 
 }
 
 textarea {
@@ -100,9 +98,8 @@ textarea {
   resize: none;
 }
 
-/* General Dark Mode Button Styling */
 button {
-  background-color: #1A73E8; /* Blue background */
+  background-color: #1A73E8; 
   color: #fff;
   padding: 10px 20px;
   border: none;
@@ -113,42 +110,37 @@ button {
 }
 
 button:hover {
-  background-color: #1558A3; /* Darker blue on hover */
+  background-color: #1558A3; 
 }
 
 button.remove-incident {
-  background-color: #FF4C4C; /* Red background for remove button */
+  background-color: #FF4C4C; 
 }
 
 button.remove-incident:hover {
-  background-color: #CC3939; /* Darker red on hover */
+  background-color: #CC3939; 
 }
 
-/* Styling for input fields in the form */
 input[type="text"],
 textarea {
   width: 100%;
   padding: 12px;
   border: 1px solid #555;
   border-radius: 8px;
-  background-color: #2A2F40; /* Darker gray background */
-  color: #DDD; /* Light gray text */
+  background-color: #2A2F40; 
+  color: #DDD; 
   font-size: 16px;
-  margin-bottom: 10px; /* Space between inputs */
+  margin-bottom: 10px;
 }
 
-
-
-/* Ensure consistent appearance for all buttons */
 button#addIncident {
-  background-color: #1A73E8; /* Blue for Add Incident button */
+  background-color: #1A73E8;
 }
 
 button#addIncident:hover {
   background-color: #1558A3;
 }
 
-/* Style for input and text areas in the incidents section */
 textarea {
   min-height: 120px;
   resize: none;
