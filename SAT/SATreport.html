@@ -13,6 +13,8 @@
     </head>
 
     <body>
+        <button type="button" id="clearAllFields" class="ui red button">Clear All Fields</button>
+
         <div class="ui container">
             <div class="ui form">
                 <div class="ui segment">
@@ -84,12 +86,12 @@ TIME ACTION, REFERENCE, INCIDENT - RESULT
                             <button class="ui secondary button" id="generateBBCode">Generate BBCode</button>
                             <button class="ui primary button" id="copyBBCode">Copy BBCode</button>
                             <button class="ui primary button" onclick="window.location.href='https://lssd.gta.world/viewforum.php?f=1352'">SAT Records</button>
-                        </div>
                     </div>
+                </div>
 
-                    <script
-                        src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-                    <script>
+                <script
+                    src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                <script>
         $(document).ready(function () {
             // Load saved data from localStorage when the page loads
             function loadSavedData() {
@@ -243,6 +245,6 @@ ${incidentsBBCode}
             loadSavedData();
         });
     </script>
-                </body>
+            </body>
 
-            </html>
+        </html>

@@ -13,7 +13,6 @@ h2, h4.ui.dividing.header {
   text-align: left; 
 }
 
-
 h2 {
   font-size: 24px;
   color: #2c3e50;
@@ -43,7 +42,6 @@ button:hover, #todayButton:hover {
   background-color: #1558A3;
 }
 
-
 .ui.container {
   margin-top: 20px;
 }
@@ -63,6 +61,10 @@ button:hover, #todayButton:hover {
   color: #FFFFFF !important;
 }
 
+/* Added margin-bottom to the fields for spacing */
+.ui.form .field {
+  margin-bottom: 20px; /* Space between fields */
+}
 
 input[type="text"], 
 input[type="url"], 
@@ -98,6 +100,7 @@ textarea {
   resize: none;
 }
 
+/* Button styling */
 button {
   background-color: #1A73E8; 
   color: #fff;
@@ -121,6 +124,7 @@ button.remove-incident:hover {
   background-color: #CC3939; 
 }
 
+/* More space between text input fields */
 input[type="text"],
 textarea {
   width: 100%;
@@ -130,7 +134,7 @@ textarea {
   background-color: #2A2F40; 
   color: #DDD; 
   font-size: 16px;
-  margin-bottom: 10px;
+  margin-bottom: 20px; /* Increased bottom margin */
 }
 
 button#addIncident {
@@ -145,4 +149,3 @@ textarea {
   min-height: 120px;
   resize: none;
 }
-

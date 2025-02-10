@@ -1,127 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
-    <link rel="stylesheet" href="../SAT/css/main.css">
-    <link rel="icon" type="image/x-icon" href="../SAT/css/img/sat.png" />
-    <title>Business Master Sheet</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+        <link rel="stylesheet" href="../SAT/css/main.css">
+        <link rel="icon" type="image/x-icon" href="../SAT/css/img/sat.png" />
+        <title>Business Master Sheet</title>
+    </head>
 
-<body>
-    <div class="ui container">
-        <div class="ui form">
-            <div class="ui segment">
-                <h2>Business Info</h2>
-                <div class="field">
-                    <label>Date Filed</label>
-                    <input type="text" id="dateFiled" placeholder="DD/MMM/YYYY">
-                </div>
-                <div class="field">
-                    <label>Business Name</label>
-                    <input type="text" id="businessName" placeholder="Business Name">
-                </div>
-                <div class="field">
-                    <label>Type of Business</label>
-                    <input type="text" id="typeOfBusiness" placeholder="Type of Business">
-                </div>
-                <div class="field">
-                    <label>Location</label>
-                    <input type="text" id="location" placeholder="Location">
-                </div>
-                <div class="field">
-                    <label>Hours of Operation</label>
-                    <input type="text" id="hoursOfOperation" placeholder="Hours of Operation">
-                </div>
-                <div class="field">
-                    <label>Licenses/Permits</label>
-                    <input type="text" id="licensesPermits" placeholder="Licenses/Permits">
-                </div>
-                <div class="field">
-                    <label>Owner/Manager Name</label>
-                    <input type="text" id="ownerManager" placeholder="Owner/Manager Name">
-                </div>
-                <div class="field">
-                    <label>Contact Number</label>
-                    <input type="text" id="contactNumber" placeholder="Contact Number">
-                </div>
-                <div class="field">
-                    <label>Email Address</label>
-                    <input type="text" id="emailAddress" placeholder="Email Address">
-                </div>
-            </div>
-        </div>
-
-                <div class="ui container">
-                    <div class="ui form">
-                        <div class="ui segment">
-
-                <h2>Physical Building Information</h2>
-                <div class="field">
-                    <label>Physical Address</label>
-                    <input type="text" id="physicalAddress" placeholder="Physical Address">
-                </div>
-                <div class="field">
-                    <label># of Entrances</label>
-                    <input type="text" id="entrances" placeholder="Number of Entrances">
-                </div>
-                <div class="field">
-                    <label># of Exits</label>
-                    <input type="text" id="exits" placeholder="Number of Exits">
-                </div>
-                <div class="field">
-                    <label>Is there roof access?</label>
-                    <input type="text" id="roofAccess" placeholder="Yes/No">
-                </div>
-                <div class="field">
-                    <label>Are there security cameras?</label>
-                    <input type="text" id="securityCameras" placeholder="Yes/No">
-                </div>
-                <div class="field">
-                    <label>If yes, how many cameras?</label>
-                    <input type="text" id="cameras" placeholder="Number of Cameras">
-                </div>
-                <div class="field">
-                    <label>Entrance/Exit Images</label>
-                    <input type="text" id="entranceExitImages" placeholder="Link to Images">
-                </div>
-            </div>
-        </div>
-
-                <div class="ui container">
-                    <div class="ui form">
-                        <div class="ui segment">
-                <h2>Incidents</h2>
-                <button type="button" id="addIncident">Add Incident</button>
-
-
-                <div class="field">
-                    <div id="incidents">
-                        <!-- Incident fields will be dynamically added here -->
+    <body>
+        <div class="ui container">
+            <div class="ui form">
+                <div class="ui segment">
+                    <h2>Business Info</h2>
+                    <div class="field">
+                        <label>Date Filed</label>
+                        <input type="text" id="dateFiled"
+                            placeholder="DD/MMM/YYYY">
                     </div>
-                <div class="field">
+                    <div class="field">
+                        <label>Business Name</label>
+                        <input type="text" id="businessName"
+                            placeholder="Business Name">
+                    </div>
+                    <div class="field">
+                        <label>Type of Business</label>
+                        <input type="text" id="typeOfBusiness"
+                            placeholder="Type of Business">
+                    </div>
+                    <div class="field">
+                        <label>Location</label>
+                        <input type="text" id="location" placeholder="Location">
+                    </div>
+                    <div class="field">
+                        <label>Hours of Operation</label>
+                        <input type="text" id="hoursOfOperation"
+                            placeholder="Hours of Operation">
+                    </div>
+                    <div class="field">
+                        <label>Licenses/Permits</label>
+                        <input type="text" id="licensesPermits"
+                            placeholder="Licenses/Permits">
+                    </div>
+                    <div class="field">
+                        <label>Owner/Manager Name</label>
+                        <input type="text" id="ownerManager"
+                            placeholder="Owner/Manager Name">
+                    </div>
+                    <div class="field">
+                        <label>Contact Number</label>
+                        <input type="text" id="contactNumber"
+                            placeholder="Contact Number">
+                    </div>
+                    <div class="field">
+                        <label>Email Address</label>
+                        <input type="text" id="emailAddress"
+                            placeholder="Email Address">
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!-- BBCode Output -->
-        <div class="ui segment">
-            <h2>BBCode Output</h2>
-            <textarea id="bbcodeOutput" readonly></textarea>
-            <br></br>
-            <button class="ui secondary button" id="generateBBCode">Generate BBCode</button>
-            <button class="ui primary button" id="copyBBCode">Copy BBCode</button>
-            <button class="ui primary button" onclick="window.location.href='https://lssd.gta.world/viewforum.php?f=1352'">SAT Records</button>
+            <div class="ui container">
+                <div class="ui form">
+                    <div class="ui segment">
 
-            
-        </div>
-    </div>
+                        <h2>Physical Building Information</h2>
+                        <div class="field">
+                            <label>Physical Address</label>
+                            <input type="text" id="physicalAddress"
+                                placeholder="Physical Address">
+                        </div>
+                        <div class="field">
+                            <label># of Entrances</label>
+                            <input type="text" id="entrances"
+                                placeholder="Number of Entrances">
+                        </div>
+                        <div class="field">
+                            <label># of Exits</label>
+                            <input type="text" id="exits"
+                                placeholder="Number of Exits">
+                        </div>
+                        <div class="field">
+                            <label>Is there roof access?</label>
+                            <input type="text" id="roofAccess"
+                                placeholder="Yes/No">
+                        </div>
+                        <div class="field">
+                            <label>Are there security cameras?</label>
+                            <input type="text" id="securityCameras"
+                                placeholder="Yes/No">
+                        </div>
+                        <div class="field">
+                            <label>If yes, how many cameras?</label>
+                            <input type="text" id="cameras"
+                                placeholder="Number of Cameras">
+                        </div>
+                        <div class="field">
+                            <label>Entrance/Exit Images</label>
+                            <input type="text" id="entranceExitImages"
+                                placeholder="Link to Images">
+                        </div>
+                    </div>
+                </div>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
+                <div class="ui container">
+                    <div class="ui form">
+                        <div class="ui segment">
+                            <h2>Incidents</h2>
+                            <button type="button" id="addIncident">Add Incident</button>
+
+                            <div class="field">
+                                <div id="incidents">
+                                    <!-- Incident fields will be dynamically added here -->
+                                </div>
+                                <div class="field">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- BBCode Output -->
+                        <div class="ui segment">
+                            <h2>BBCode Output</h2>
+                            <textarea id="bbcodeOutput" readonly></textarea>
+                            <br></br>
+                            <button class="ui secondary button" id="generateBBCode">Generate BBCode</button>
+                            <button class="ui primary button" id="copyBBCode">Copy BBCode</button>
+                            <button class="ui primary button" onclick="window.location.href='https://lssd.gta.world/viewforum.php?f=1352'">SAT Records</button>
+                    </div>
+                </div>
+
+                <script
+                    src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                <script>
         $(document).ready(function () {
             // Load saved data from localStorage when the page loads
             function loadSavedData() {
@@ -307,6 +321,6 @@ ${incidentsBBCode}
             loadSavedData();
         });
     </script>
-</body>
+            </body>
 
-</html>
+        </html>
