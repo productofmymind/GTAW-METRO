@@ -12,7 +12,7 @@ $(document).ready(function () {
 
   // Fetch the vehicle data (assuming JSON format)
   function loadFleetData() {
-    $.getJSON("/MRD/js/fleet.json", function (data) {
+    $.getJSON("../MRD/js/fleet.json", function (data) {
       fleetData = data;
       console.log("Fleet data loaded successfully:", fleetData); // Debugging
       populateDivisionDropdown();
