@@ -107,6 +107,11 @@ $(document).ready(function () {
     displayAllVehicles();
   });
 
+  // The missing piece of the puzzle, listener for the detail filter too.
+  $('#detailFilter').on("change", function () {
+    displayAllVehicles();
+  });
+
   // Display vehicle details in the table
   function displayVehicleDetails(vehicles) {
     let tableBody = $("#tableBody");
