@@ -2,10 +2,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12009864",
+    "vin": "9864",
     "make": "Vapid",
     "model": "Stanier Police Cruiser",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -13,10 +14,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12009865",
+    "vin": "9865",
     "make": "Vapid",
     "model": "Stanier Police Cruiser",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -24,10 +26,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12009866",
+    "vin": "9866",
     "make": "Vapid",
     "model": "Torrence Police Interceptor",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -35,10 +38,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12009870",
+    "vin": "9870",
     "make": "Vapid",
     "model": "Scout Police 2020",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -46,10 +50,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12009876",
+    "vin": "9876",
     "make": "MTL",
     "model": "Flatbed (Utility)",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -57,10 +62,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12016179",
+    "vin": "16179",
     "make": "Vapid",
     "model": "Torrence Police Interceptor",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -68,10 +74,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12016180",
+    "vin": "16180",
     "make": "Vapid",
     "model": "Stanier Police Cruiser",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -79,10 +86,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12016181",
+    "vin": "16181",
     "make": "Vapid",
     "model": "Stanier Police Cruiser",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -90,10 +98,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12016182",
+    "vin": "16182",
     "make": "Vapid",
     "model": "Stanier Police Cruiser",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -101,10 +110,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12016183",
+    "vin": "16183",
     "make": "Vapid",
     "model": "Stanier Police Cruiser",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -112,10 +122,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12016239",
+    "vin": "16239",
     "make": "Vapid",
     "model": "Stanier Police Cruiser",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -123,10 +134,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12016240",
+    "vin": "16240",
     "make": "Vapid",
     "model": "Stanier Police Cruiser",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -134,10 +146,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12009085",
+    "vin": "29085",
     "make": "Vapid",
     "model": "Scout Police",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -145,10 +158,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12029729",
+    "vin": "29729",
     "make": "Vapid",
     "model": "Torrence Police Interceptor",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -156,10 +170,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12029730",
+    "vin": "29730",
     "make": "Vapid",
     "model": "Torrence Police Interceptor",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -167,10 +182,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12031556",
+    "vin": "31556",
     "make": "Vapid",
     "model": "Scout Police 2020",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -178,10 +194,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12036809",
+    "vin": "36809",
     "make": "Declasse",
     "model": "Alamo Pursuit Police",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -189,10 +206,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12036810",
+    "vin": "36810",
     "make": "Declasse",
     "model": "Alamo Pursuit Police",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -200,10 +218,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12040256",
+    "vin": "40256",
     "make": "Vapid",
     "model": "Speedo Express Police Transporter",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -211,10 +230,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12040257",
+    "vin": "40257",
     "make": "Vapid",
     "model": "Speedo Express Police Transporter",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -222,10 +242,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12043081",
+    "vin": "43081",
     "make": "Vapid",
     "model": "Sandstorm Police",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -233,10 +254,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12046910",
+    "vin": "46910",
     "make": "Vapid",
     "model": "Scout Police 2020",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -244,10 +266,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12046911",
+    "vin": "46911",
     "make": "Vapid",
     "model": "Scout Police",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -255,10 +278,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12047961",
+    "vin": "47961",
     "make": "Vapid",
     "model": "Scout Police",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -266,10 +290,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12047962",
+    "vin": "47962",
     "make": "Vapid",
     "model": "Scout Police",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -277,10 +302,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12047963",
+    "vin": "47963",
     "make": "Vapid",
     "model": "Scout Police",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -288,10 +314,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12047964",
+    "vin": "47964",
     "make": "Vapid",
     "model": "Scout Police",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -299,10 +326,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12047970",
+    "vin": "47970",
     "make": "Vapid",
     "model": "Scout Police 2020",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -310,10 +338,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12047971",
+    "vin": "47971",
     "make": "Vapid",
     "model": "Scout Police 2020",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -321,10 +350,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12047972",
+    "vin": "47972",
     "make": "Vapid",
     "model": "Scout Police 2020",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -332,10 +362,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12047973",
+    "vin": "47973",
     "make": "Vapid",
     "model": "Scout Slicktop 2020",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Senior Lead Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -343,10 +374,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12047974",
+    "vin": "47974",
     "make": "Vapid",
     "model": "Scout Police 2020",
     "alpr": 1,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -354,10 +386,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12047975",
+    "vin": "47975",
     "make": "Vapid",
     "model": "Stanier Police Cruiser Slicktop ",
     "alpr": 1,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Senior Lead Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -365,10 +398,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12047976",
+    "vin": "47976",
     "make": "Vapid",
     "model": "Scout Police 2020",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -376,10 +410,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12047977",
+    "vin": "47977",
     "make": "Vapid",
     "model": "Scout Police",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -387,10 +422,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12047978",
+    "vin": "47978",
     "make": "Vapid",
     "model": "Scout Police 2020",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -398,10 +434,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12075509",
+    "vin": "75509",
     "make": "Declasse",
     "model": "Alamo Pursuit Unmarked",
     "alpr": 1,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "FAD Only",
     "assignedPurpose": "Fugitive Apprehension Detail",
     "notes": ""
@@ -409,10 +446,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12091853",
+    "vin": "91853",
     "make": "Vapid",
     "model": "Scout Unmarked 2020",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "(A)W/C",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -420,10 +458,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12011775",
+    "vin": "117741",
     "make": "Vapid",
     "model": "Scout Police 2020",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -431,10 +470,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12011774",
+    "vin": "117742",
     "make": "Declasse",
     "model": "Alamo Pursuit Unmarked",
     "alpr": 1,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "FAD Only",
     "assignedPurpose": "Fugitive Apprehension Detail",
     "notes": ""
@@ -442,10 +482,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12012199",
+    "vin": "121988",
     "make": "Vapid",
     "model": "Scout Police 2020",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -453,10 +494,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12012198",
+    "vin": "121989",
     "make": "Vapid",
     "model": "Scout Police 2020",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -464,10 +506,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12012501",
+    "vin": "125011",
     "make": "Vapid",
     "model": "Scout Police 2020",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -475,10 +518,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12012503",
+    "vin": "125013",
     "make": "Vapid",
     "model": "Scout Police 2020",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -486,10 +530,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12012504",
+    "vin": "125014",
     "make": "Vapid",
     "model": "Scout Police 2020",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -497,10 +542,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12012505",
+    "vin": "125015",
     "make": "Declasse",
     "model": "Alamo Pursuit Police",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -508,10 +554,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12012506",
+    "vin": "125016",
     "make": "Vapid",
     "model": "Scout Police",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -519,10 +566,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12012507",
+    "vin": "125017",
     "make": "Vapid",
     "model": "Scout Police",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -530,10 +578,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12012508",
+    "vin": "125018",
     "make": "Vapid",
     "model": "Scout Police",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -541,10 +590,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12012509",
+    "vin": "125019",
     "make": "Vapid",
     "model": "Scout Police",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -552,10 +602,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12030782",
+    "vin": "130782",
     "make": "Declasse",
     "model": "Alamo Pursuit Police",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -563,10 +614,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12030787",
+    "vin": "130787",
     "make": "Dinka",
     "model": "Verus ATV",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -574,10 +626,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12030788",
+    "vin": "130788",
     "make": "Dinka",
     "model": "Verus ATV",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -585,10 +638,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12030790",
+    "vin": "130790",
     "make": "Vapid",
     "model": "Scout Police 2020",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -596,10 +650,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12030791",
+    "vin": "130791",
     "make": "Vapid",
     "model": "Scout Unmarked 2020",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "(A)W/C",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -607,10 +662,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12030799",
+    "vin": "130799",
     "make": "Vapid",
     "model": "Scout Police 2020",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -618,10 +674,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12031622",
+    "vin": "131622",
     "make": "Vapid",
     "model": "Scout Police 2020",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -629,10 +686,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12031623",
+    "vin": "131623",
     "make": "Vapid",
     "model": "Scout Police 2020",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -640,10 +698,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12031624",
+    "vin": "131624",
     "make": "Vapid",
     "model": "Scout Police 2020",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -651,10 +710,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12031625",
+    "vin": "131625",
     "make": "Vapid",
     "model": "Scout Police 2020",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -662,10 +722,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12031626",
+    "vin": "131626",
     "make": "Bravado",
     "model": "Police Cruiser SX Unmarked",
     "alpr": 1,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Lieutenant Collins",
     "assignedPurpose": "Take-home",
     "notes": ""
@@ -673,10 +734,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12031628",
+    "vin": "131628",
     "make": "Bravado",
     "model": "Police Cruiser SX Unmarked",
     "alpr": 1,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "FAD Only",
     "assignedPurpose": "Fugitive Apprehension Detail",
     "notes": ""
@@ -684,10 +746,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12031632",
+    "vin": "131632",
     "make": "Vapid",
     "model": "Scout Police 2020",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -695,10 +758,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12031633",
+    "vin": "131633",
     "make": "Vapid",
     "model": "Scout Police",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -706,10 +770,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12031634",
+    "vin": "131634",
     "make": "Vapid",
     "model": "Scout Police 2020",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -717,10 +782,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12031635",
+    "vin": "131635",
     "make": "Vapid",
     "model": "Scout Police 2020",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -728,10 +794,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12014351",
+    "vin": "143514",
     "make": "Vapid",
     "model": "Stanier Police Cruiser",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -739,10 +806,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12099842",
+    "vin": "520637",
     "make": "Vapid",
     "model": "Scout Slicktop 2020",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Senior Lead Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -750,10 +818,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12094895",
+    "vin": "520638",
     "make": "Vapid",
     "model": "Scout Police 2020",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -761,10 +830,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12099843",
+    "vin": "520639",
     "make": "Vapid",
     "model": "Scout Slicktop 2020",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Senior Lead Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -772,10 +842,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12094896",
+    "vin": "520640",
     "make": "Vapid",
     "model": "Scout Police 2020",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -783,10 +854,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12098453",
+    "vin": "520647",
     "make": "Vapid",
     "model": "Scout Police 2020",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -794,10 +866,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12098452",
+    "vin": "520648",
     "make": "Declasse",
     "model": "Alamo Pursuit Slicktop",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Senior Lead Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -805,10 +878,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12002952",
+    "vin": "602952",
     "make": "Nagasaki",
     "model": "Outlaw Police Off-Road",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -816,10 +890,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12002628",
+    "vin": "602953",
     "make": "Nagasaki",
     "model": "Outlaw Police Off-Road",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -827,10 +902,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12014030",
+    "vin": "614030",
     "make": "Bravado",
     "model": "Buffalo S Police",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -838,10 +914,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12020370",
+    "vin": "620370",
     "make": "Declasse",
     "model": "Alamo Pursuit Police",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -849,10 +926,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12020371",
+    "vin": "620371",
     "make": "Declasse",
     "model": "Alamo Pursuit Police",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -860,10 +938,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12020372",
+    "vin": "620372",
     "make": "Declasse",
     "model": "Alamo Pursuit Slicktop",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Senior Lead Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -871,10 +950,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12020373",
+    "vin": "620373",
     "make": "Declasse",
     "model": "Alamo Pursuit Slicktop",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Senior Lead Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -882,10 +962,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12020377",
+    "vin": "620377",
     "make": "Vapid",
     "model": "Scout Police 2020",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -893,10 +974,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12020378",
+    "vin": "620378",
     "make": "Vapid",
     "model": "Scout Police 2020",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -904,10 +986,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12020379",
+    "vin": "620379",
     "make": "Vapid",
     "model": "Scout Police 2020",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -915,10 +998,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12020380",
+    "vin": "620380",
     "make": "Vapid",
     "model": "Scout Police 2020",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -926,10 +1010,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12020381",
+    "vin": "620381",
     "make": "Vapid",
     "model": "Scout Police 2020",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Patrol Officers",
     "assignedPurpose": "Patrol",
     "notes": ""
@@ -937,10 +1022,11 @@
   {
     "division": "Mission Row Division",
     "plate": "12020382",
+    "vin": "620382",
     "make": "Vapid",
     "model": "Scout Slicktop 2020",
     "alpr": 0,
-    "ol": 0,
+    "ol": "Yes",
     "authorizedPersonnel": "Senior Lead Officers",
     "assignedPurpose": "Patrol",
     "notes": ""

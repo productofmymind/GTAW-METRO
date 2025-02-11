@@ -119,7 +119,7 @@ $(document).ready(function () {
     vehicles.forEach(vehicle => {
       let row = `
         <tr>
-          <td>${vehicle.index || "N/A"}</td>
+          <td>${vehicle.vin || "N/A"}</td>
           <td>${vehicle.plate}</td>
           <td>${vehicle.make} ${vehicle.model}</td>
           <td>${vehicle.alpr === 1 ? "Yes" : "No"}</td>
