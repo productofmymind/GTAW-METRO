@@ -1,70 +1,249 @@
+/* Global Styles */
 body {
-  background-color: #2F384E;
-  color: white;
-  font-family: "Inter", sans-serif;
-  margin: 0;
-  padding: 0;
+  background: linear-gradient(45deg, #0a0a0a, #141414); /* Darker gradient with more black */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
+  animation: gradientShift 15s ease infinite;
+  background-size: 400% 400%;
+  color: #d1d1d1; /* Light gray text color for dark mode */
 }
 
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Container */
 .container {
   padding: 20px;
   margin-top: 30px;
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
 }
 
+/* Columns */
 .col-md-4 {
-  background-color: #2F384E;
-  color: white;
+  background-color: rgba(30, 30, 30, 0.95); /* Dark semi-transparent background */
+  color: #d1d1d1; /* Light gray text */
   padding: 20px;
-  margin: 10px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
 }
 
+.col-md-4:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* Heading */
 .col-md-4 h3 {
   text-align: center;
-}
-
-h3 {
-  color: white;
   font-size: 24px;
+  margin-bottom: 15px;
 }
 
+/* General Heading */
+h3 {
+  color: #d1d1d1;
+}
+
+/* Buttons */
 .btn {
   display: block;
-  margin-top: 10px;
+  margin-top: 15px;
   text-align: center;
   text-decoration: none;
-  background-color: #007bff;
+  background-color: #555; /* Medium gray background */
   color: #fff;
-  padding: 10px 20px;
-  border-radius: 5px;
+  padding: 12px 25px;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .btn:hover {
-  background-color: #0056b3;
+  background-color: #666; /* Slightly lighter gray on hover */
+  transform: scale(1.05);
 }
 
 p {
-  color: #666;
+  color: #b0b0b0; /* Light gray text for better contrast */
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 1.7;
 }
 
+/* Scroll-to-top Button */
 .scroll-top {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #007bff;
+  bottom: 25px;
+  right: 25px;
+  background-color: #555; /* Medium gray background for scroll button */
   color: #fff;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   text-align: center;
   text-decoration: none;
-  line-height: 40px;
-  font-size: 20px;
+  line-height: 50px;
+  font-size: 24px;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .scroll-top:hover {
-  background-color: #0056b3;
+  background-color: #666;
+  transform: scale(1.1);
+}
+
+/* Selection Container */
+.selection-container {
+  background: rgba(30, 30, 30, 0.95); /* Dark background */
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  max-width: 1000px;
+  width: 90%;
+  margin: 20px auto;
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+}
+
+/* Table Container */
+.table-container {
+  background: rgba(30, 30, 30, 0.95); /* Dark background for table */
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  margin-top: 2rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 800px; /* Ensure the table has a minimum width */
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+th {
+  background: #333; /* Darker header background */
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 15px 12px;
+}
+
+td {
+  background: rgba(40, 40, 40, 0.8); /* Dark background for table cells */
+  color: #d1d1d1; /* Lighter text */
+  font-size: 14px;
+}
+
+tr:hover td {
+  background-color: rgba(231, 230, 230, 0.1); /* Slightly lighter on hover */
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Styles for Small Screens */
+@media (max-width: 768px) {
+  .dropdown-row {
+    flex-direction: column;
+  }
+
+  .selection-container {
+    width: 95%;
+    padding: 1.5rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .table-container {
+    padding: 10px;
+  }
+
+  th, td {
+    padding: 8px; /* Reduce padding for smaller screens */
+    font-size: 12px; /* Reduce font size for smaller screens */
+  }
+
+  th {
+    font-size: 12px; /* Smaller font size for headers on small screens */
+    padding: 10px 8px; /* Reduce padding for headers on small screens */
+  }
+}
+
+/* Copy Badge */
+.copy-badge {
+  cursor: pointer;
+  margin-left: 8px;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  background: linear-gradient(45deg, #555, #666);
+  padding: 4px 8px;
+  border-radius: 20px;
+  color: white;
+  gap: 5px;
+  font-size: 0.9em;
+  vertical-align: middle;
+}
+
+.copy-badge:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+.copy-badge:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* Footer for Credits */
+.credits {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  z-index: 1000; /* Ensure it stays above other content */
+  background: rgba(0, 0, 0, 0.5);
+  padding: 5px 10px;
+  border-radius: 5px;
+  backdrop-filter: blur(5px);
+}
+
+.credits a {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.credits a:hover {
+  color: #764ba2;
+  text-decoration: underline;
 }
