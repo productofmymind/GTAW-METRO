@@ -1,10 +1,7 @@
 $(document).ready(function () {
   let fleetData = []; // Stores the loaded fleet data
   let missionRowDetails = [
-    "Patrol",
-    "Special Unit",
-    "Investigation Team",
-    "Fugitive Apprehension Detail" // Add Fugitive Apprehension Detail here
+    "Fugitive Apprehension Detail" 
   ];
 
   // Initialize Select2 for dropdowns
