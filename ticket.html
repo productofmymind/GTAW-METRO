@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Image Text Overlay</title>
-<style>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Image Text Overlay</title>
+        <style>
     .container {
         position: relative;
         display: inline-block;
@@ -39,34 +39,34 @@
         margin: 10px auto;
     }
 </style>
-</head>
-<body>
-    <div class="container">
-        <img id="image" src="css/img/citation.png" alt="Image">
-        <div id="text-overlay"></div>
-    </div>
-    
-    <div class="form-input">
-        <label for="violation-date">Date of Violation:</label>
-        <input type="text" id="violation-date" placeholder="Enter date...">
-    </div>
-    
-    <div class="form-input">
-        <label for="violation-time">Time of Violation:</label>
-        <input type="text" id="violation-time" placeholder="Enter time...">
-    </div>
-    
-    <div class="form-input">
-        <label for="violation-day">Day of Week:</label>
-        <input type="text" id="violation-day" placeholder="Enter day...">
-    </div>
+    </head>
+    <body>
+        <div class="container">
+            <img id="image" src="css/img/citation.png" alt="Image">
+            <div id="text-overlay"></div>
+        </div>
 
-    <!-- Add more input lines for other categories as needed -->
+        <div class="form-input">
+            <label for="violation-date">Date of Violation:</label>
+            <input type="text" id="violation-date" placeholder="Enter date...">
+        </div>
 
-    <button id="submit-button">Submit</button>
-    
-    <script src="/js/ticket.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@2"></script>
+        <div class="form-input">
+            <label for="violation-time">Time of Violation:</label>
+            <input type="text" id="violation-time" placeholder="Enter time...">
+        </div>
 
-</body>
+        <div class="form-input">
+            <label for="violation-day">Day of Week:</label>
+            <input type="text" id="violation-day" placeholder="Enter day...">
+        </div>
+
+        <!-- Add more input lines for other categories as needed -->
+
+        <button id="submit-button">Submit</button>
+
+        <script src="/js/ticket.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/tesseract.js@2"></script>
+
+    </body>
 </html>

@@ -1,280 +1,472 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="css/img/k9.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
-    <link rel="stylesheet" href="css/metrodeploy.css">
-    <title>EMT Report</title>
-</head>
-<body>
-    <button id="clearLocalStorageButton">Clear Format</button>
-    <button id="undoLocalStorageButton">Undo Clear</button>
-    <button onclick="window.location.href='https://productofmymind.github.io/GTAW-METRO/index.html';">Home</button>
-    <div class="ui container">
-        <div class="ui form">
-            <div class="ui segment">
-                <h2>General Information</h2>
-                <div class="field">
-                    <label for="ICname">Primary EMT's Name</label>
-                    <div class="three fields">
-                        <div class="field">
-                            <input type="text" placeholder="Full Name" id="ICname">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="css/img/k9.png">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+        <link rel="stylesheet" href="css/metrodeploy.css">
+        <title>EMT Report</title>
+    </head>
+    <body>
+        <button id="clearLocalStorageButton">Clear Format</button>
+        <button id="undoLocalStorageButton">Undo Clear</button>
+        <button
+            onclick="window.location.href='https://productofmymind.github.io/GTAW-METRO/index.html';">Home</button>
+        <div class="ui container">
+            <div class="ui form">
+                <div class="ui segment">
+                    <h2>General Information</h2>
+                    <div class="field">
+                        <label for="ICname">Primary EMT's Name</label>
+                        <div class="three fields">
+                            <div class="field">
+                                <input type="text" placeholder="Full Name"
+                                    id="ICname">
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="field">
-                    <label for="DivisionalRankInput">Primary EMT's DEPT. Rank</label>
-                    <div class="three fields">
-                        <div class="field">
-                            <input type="text" placeholder="Department Rank" id="DivisionalRankInput">
+                    <div class="field">
+                        <label for="DivisionalRankInput">Primary EMT's DEPT.
+                            Rank</label>
+                        <div class="three fields">
+                            <div class="field">
+                                <input type="text" placeholder="Department Rank"
+                                    id="DivisionalRankInput">
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="field">
-                    <label for="OtherOfficersName">Other Officers on Scene</label>
-                    <div id="InvolvedMembersContainer">
-                        <div class="field">
-                            <input type="text" placeholder="Firstname Lastname" id="OtherOfficersName">
+                    <div class="field">
+                        <label for="OtherOfficersName">Other Officers on
+                            Scene</label>
+                        <div id="InvolvedMembersContainer">
+                            <div class="field">
+                                <input type="text"
+                                    placeholder="Firstname Lastname"
+                                    id="OtherOfficersName">
+                            </div>
                         </div>
+                        <button type="button" id="addInput">+</button>
+                        <button type="button" id="removeInput">-</button>
                     </div>
-                    <button type="button" id="addInput">+</button>
-                    <button type="button" id="removeInput">-</button>
-                </div>
-                <div class="field">
-                    <label for="DeploymentTypeInput">Deployment Type</label>
-                    <div class="three fields">
-                        <div class="field">
-                            <div class="ui selection search dropdown" id="DeploymentTypeDropdown">
-                                <input type="hidden" name="DeploymentType" id="DeploymentTypeInput">
-                                <i class="dropdown icon"></i>
-                                <div class="default text">Select Deployment Type</div>
-                                <div class="menu">
-                                    <div class="item" data-value="Canine EMT Request">Canine EMT Request</div>
+                    <div class="field">
+                        <label for="DeploymentTypeInput">Deployment Type</label>
+                        <div class="three fields">
+                            <div class="field">
+                                <div class="ui selection search dropdown"
+                                    id="DeploymentTypeDropdown">
+                                    <input type="hidden" name="DeploymentType"
+                                        id="DeploymentTypeInput">
+                                    <i class="dropdown icon"></i>
+                                    <div class="default text">Select Deployment
+                                        Type</div>
+                                    <div class="menu">
+                                        <div class="item"
+                                            data-value="Canine EMT Request">Canine
+                                            EMT Request</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="field">
-                    <label for="LinkedDeployment">Linked Deployment</label>
-                    <div id="LinkeyDeploymentContainer">
-                        <div class="field">
-                            <input type="text" placeholder="Linked Deployment(s)" id="LinkedDeployment">
+                    <div class="field">
+                        <label for="LinkedDeployment">Linked Deployment</label>
+                        <div id="LinkeyDeploymentContainer">
+                            <div class="field">
+                                <input type="text"
+                                    placeholder="Linked Deployment(s)"
+                                    id="LinkedDeployment">
+                            </div>
                         </div>
+                        <button type="button" id="addInput2">+</button>
+                        <button type="button" id="removeInput2">-</button>
                     </div>
-                    <button type="button" id="addInput2">+</button>
-                    <button type="button" id="removeInput2">-</button>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="ui container">
-        <div class="ui form">
-            <div class="ui segment">
-                <h2>Deployment Information</h2>
-                <div class="field">
-                    <p>Date</p>
-                    <div class="four fields">
-                        <div class="field">
-                            <input type="date" id="datePicker">
-                        </div>
-                        <div class="field">
-                            <button id="todayButton">Today</button>
-                        </div>
-                        <div class="field">
-                            <button id="oneDayAgoButton">1 Day Ago</button>
+        <div class="ui container">
+            <div class="ui form">
+                <div class="ui segment">
+                    <h2>Deployment Information</h2>
+                    <div class="field">
+                        <p>Date</p>
+                        <div class="four fields">
+                            <div class="field">
+                                <input type="date" id="datePicker">
+                            </div>
+                            <div class="field">
+                                <button id="todayButton">Today</button>
+                            </div>
+                            <div class="field">
+                                <button id="oneDayAgoButton">1 Day Ago</button>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="field">
-                    <label for="DistrictNameInput">District Name</label>
-                    <div class="three fields" id="DistrictName">
-                        <div class="field">
-                            <div class="ui selection search dropdown">
-                                <input type="hidden" name="DistrictName" id="DistrictNameInput">
-                                <i class="dropdown icon"></i>
-                                <div class="default text">District Name</div>
-                                <div class="menu">
-                                    <div class="item" data-value="Alamo Sea">Alamo Sea</div>
-                                    <div class="item" data-value="Alta">Alta</div>
-                                    <div class="item" data-value="Banham Canyon">Banham Canyon</div>
-                                    <div class="item" data-value="Banning">Banning</div>
-                                    <div class="item" data-value="Bolingbroke Penitentiary">Bolingbroke Penitentiary</div>
-                                    <div class="item" data-value="Braddock Pass">Braddock Pass</div>
-                                    <div class="item" data-value="Burton">Burton</div>
-                                    <div class="item" data-value="Calafia Bridge">Calafia Bridge</div>
-                                    <div class="item" data-value="Cassidy Creek">Cassidy Creek</div>
-                                    <div class="item" data-value="Chamberlain Hills">Chamberlain Hills</div>
-                                    <div class="item" data-value="Chiliad Mountain State Wilderness">Chiliad Mountain State Wilderness</div>
-                                    <div class="item" data-value="Chumash">Chumash</div>
-                                    <div class="item" data-value="Cypress Flats">Cypress Flats</div>
-                                    <div class="item" data-value="Davis">Davis</div>
-                                    <div class="item" data-value="Davis Quarry">Davis Quarry</div>
-                                    <div class="item" data-value="Del Perro">Del Perro</div>
-                                    <div class="item" data-value="Del Perro Beach">Del Perro Beach</div>
-                                    <div class="item" data-value="Downtown">Downtown</div>
-                                    <div class="item" data-value="Downtown Vinewood">Downtown Vinewood</div>
-                                    <div class="item" data-value="East Vinewood">East Vinewood</div>
-                                    <div class="item" data-value="El Burro Heights">El Burro Heights</div>
-                                    <div class="item" data-value="El Gondo Lighthouse">El Gondo Lighthouse</div>
-                                    <div class="item" data-value="Elysian Island">Elysian Island</div>
-                                    <div class="item" data-value="Fort Zancudo">Fort Zancudo</div>
-                                    <div class="item" data-value="GWC and Golfing Society">GWC and Golfing Society</div>
-                                    <div class="item" data-value="Galilee">Galilee</div>
-                                    <div class="item" data-value="Grand Senora Desert">Grand Senora Desert</div>
-                                    <div class="item" data-value="Grapeseed">Grapeseed</div>
-                                    <div class="item" data-value="Great Chaparral">Great Chaparral</div>
-                                    <div class="item" data-value="Harmony">Harmony</div>
-                                    <div class="item" data-value="Hawick">Hawick</div>
-                                    <div class="item" data-value="Humane Labs and Research">Humane Labs and Research</div>
-                                    <div class="item" data-value="La Mesa">La Mesa</div>
-                                    <div class="item" data-value="La Puerta">La Puerta</div>
-                                    <div class="item" data-value="Lago Zancudo">Lago Zancudo</div>
-                                    <div class="item" data-value="Land Act Dam">Land Act Dam</div>
-                                    <div class="item" data-value="Land Act Reservoir">Land Act Reservoir</div>
-                                    <div class="item" data-value="Legion Square">Legion Square</div>
-                                    <div class="item" data-value="Little Seoul">Little Seoul</div>
-                                    <div class="item" data-value="Los Santos International Airport (LSIA)">Los Santos International Airport (LSIA)</div>
-                                    <div class="item" data-value="Maze Bank Arena">Maze Bank Arena</div>
-                                    <div class="item" data-value="Mirror Park">Mirror Park</div>
-                                    <div class="item" data-value="Mission Row">Mission Row</div>
-                                    <div class="item" data-value="Morningwood">Morningwood</div>
-                                    <div class="item" data-value="Mount Chiliad">Mount Chiliad</div>
-                                    <div class="item" data-value="Mount Gordo">Mount Gordo</div>
-                                    <div class="item" data-value="Mount Josiah">Mount Josiah</div>
-                                    <div class="item" data-value="Murrieta Heights">Murrieta Heights</div>
-                                    <div class="item" data-value="N.O.O.S.E">N.O.O.S.E</div>
-                                    <div class="item" data-value="North Chumash">North Chumash</div>
-                                    <div class="item" data-value="Pacific Bluffs">Pacific Bluffs</div>
-                                    <div class="item" data-value="Palomino Highlands">Palomino Highlands</div>
-                                    <div class="item" data-value="Paleto Bay">Paleto Bay</div>
-                                    <div class="item" data-value="Paleto Cove">Paleto Cove</div>
-                                    <div class="item" data-value="Paleto Forest">Paleto Forest</div>
-                                    <div class="item" data-value="Palmer-Taylor Power Station">Palmer-Taylor Power Station</div>
-                                    <div class="item" data-value="Pillbox Hill">Pillbox Hill</div>
-                                    <div class="item" data-value="Port of South Los Santos">Port of South Los Santos</div>
-                                    <div class="item" data-value="Procopio Beach">Procopio Beach</div>
-                                    <div class="item" data-value="Rancho">Rancho</div>
-                                    <div class="item" data-value="Raton Canyon">Raton Canyon</div>
-                                    <div class="item" data-value="Redwood Lights Track">Redwood Lights Track</div>
-                                    <div class="item" data-value="Richards Majestic">Richards Majestic</div>
-                                    <div class="item" data-value="Richman">Richman</div>
-                                    <div class="item" data-value="Richman Glen">Richman Glen</div>
-                                    <div class="item" data-value="Rockford Hills">Rockford Hills</div>
-                                    <div class="item" data-value="Ron Alternatives Wind Farm">Ron Alternatives Wind Farm</div>
-                                    <div class="item" data-value="San Chanski Mountain Range">San Chanski Mountain Range</div>
-                                    <div class="item" data-value="Sandy Shores">Sandy Shores</div>
-                                    <div class="item" data-value="Stab City">Stab City</div>
-                                    <div class="item" data-value="Strawberry">Strawberry</div>
-                                    <div class="item" data-value="Tataviam Mountains">Tataviam Mountains</div>
-                                    <div class="item" data-value="Terminal">Terminal</div>
-                                    <div class="item" data-value="Textile City">Textile City</div>
-                                    <div class="item" data-value="Tongva Hills">Tongva Hills</div>
-                                    <div class="item" data-value="Vespucci">Vespucci</div>
-                                    <div class="item" data-value="Vespucci Beach">Vespucci Beach</div>
-                                    <div class="item" data-value="Vespucci Canals">Vespucci Canals</div>
-                                    <div class="item" data-value="Vinewood">Vinewood</div>
-                                    <div class="item" data-value="Vinewood Hills">Vinewood Hills</div>
-                                    <div class="item" data-value="Vinewood Racetrack">Vinewood Racetrack</div>
-                                    <div class="item" data-value="West Vinewood">West Vinewood</div>
-                                    <div class="item" data-value="Zancudo River">Zancudo River</div>
+                    <div class="field">
+                        <label for="DistrictNameInput">District Name</label>
+                        <div class="three fields" id="DistrictName">
+                            <div class="field">
+                                <div class="ui selection search dropdown">
+                                    <input type="hidden" name="DistrictName"
+                                        id="DistrictNameInput">
+                                    <i class="dropdown icon"></i>
+                                    <div class="default text">District
+                                        Name</div>
+                                    <div class="menu">
+                                        <div class="item"
+                                            data-value="Alamo Sea">Alamo
+                                            Sea</div>
+                                        <div class="item"
+                                            data-value="Alta">Alta</div>
+                                        <div class="item"
+                                            data-value="Banham Canyon">Banham
+                                            Canyon</div>
+                                        <div class="item"
+                                            data-value="Banning">Banning</div>
+                                        <div class="item"
+                                            data-value="Bolingbroke Penitentiary">Bolingbroke
+                                            Penitentiary</div>
+                                        <div class="item"
+                                            data-value="Braddock Pass">Braddock
+                                            Pass</div>
+                                        <div class="item"
+                                            data-value="Burton">Burton</div>
+                                        <div class="item"
+                                            data-value="Calafia Bridge">Calafia
+                                            Bridge</div>
+                                        <div class="item"
+                                            data-value="Cassidy Creek">Cassidy
+                                            Creek</div>
+                                        <div class="item"
+                                            data-value="Chamberlain Hills">Chamberlain
+                                            Hills</div>
+                                        <div class="item"
+                                            data-value="Chiliad Mountain State Wilderness">Chiliad
+                                            Mountain State Wilderness</div>
+                                        <div class="item"
+                                            data-value="Chumash">Chumash</div>
+                                        <div class="item"
+                                            data-value="Cypress Flats">Cypress
+                                            Flats</div>
+                                        <div class="item"
+                                            data-value="Davis">Davis</div>
+                                        <div class="item"
+                                            data-value="Davis Quarry">Davis
+                                            Quarry</div>
+                                        <div class="item"
+                                            data-value="Del Perro">Del
+                                            Perro</div>
+                                        <div class="item"
+                                            data-value="Del Perro Beach">Del
+                                            Perro Beach</div>
+                                        <div class="item"
+                                            data-value="Downtown">Downtown</div>
+                                        <div class="item"
+                                            data-value="Downtown Vinewood">Downtown
+                                            Vinewood</div>
+                                        <div class="item"
+                                            data-value="East Vinewood">East
+                                            Vinewood</div>
+                                        <div class="item"
+                                            data-value="El Burro Heights">El
+                                            Burro Heights</div>
+                                        <div class="item"
+                                            data-value="El Gondo Lighthouse">El
+                                            Gondo Lighthouse</div>
+                                        <div class="item"
+                                            data-value="Elysian Island">Elysian
+                                            Island</div>
+                                        <div class="item"
+                                            data-value="Fort Zancudo">Fort
+                                            Zancudo</div>
+                                        <div class="item"
+                                            data-value="GWC and Golfing Society">GWC
+                                            and Golfing Society</div>
+                                        <div class="item"
+                                            data-value="Galilee">Galilee</div>
+                                        <div class="item"
+                                            data-value="Grand Senora Desert">Grand
+                                            Senora Desert</div>
+                                        <div class="item"
+                                            data-value="Grapeseed">Grapeseed</div>
+                                        <div class="item"
+                                            data-value="Great Chaparral">Great
+                                            Chaparral</div>
+                                        <div class="item"
+                                            data-value="Harmony">Harmony</div>
+                                        <div class="item"
+                                            data-value="Hawick">Hawick</div>
+                                        <div class="item"
+                                            data-value="Humane Labs and Research">Humane
+                                            Labs and Research</div>
+                                        <div class="item"
+                                            data-value="La Mesa">La Mesa</div>
+                                        <div class="item"
+                                            data-value="La Puerta">La
+                                            Puerta</div>
+                                        <div class="item"
+                                            data-value="Lago Zancudo">Lago
+                                            Zancudo</div>
+                                        <div class="item"
+                                            data-value="Land Act Dam">Land Act
+                                            Dam</div>
+                                        <div class="item"
+                                            data-value="Land Act Reservoir">Land
+                                            Act Reservoir</div>
+                                        <div class="item"
+                                            data-value="Legion Square">Legion
+                                            Square</div>
+                                        <div class="item"
+                                            data-value="Little Seoul">Little
+                                            Seoul</div>
+                                        <div class="item"
+                                            data-value="Los Santos International Airport (LSIA)">Los
+                                            Santos International Airport
+                                            (LSIA)</div>
+                                        <div class="item"
+                                            data-value="Maze Bank Arena">Maze
+                                            Bank Arena</div>
+                                        <div class="item"
+                                            data-value="Mirror Park">Mirror
+                                            Park</div>
+                                        <div class="item"
+                                            data-value="Mission Row">Mission
+                                            Row</div>
+                                        <div class="item"
+                                            data-value="Morningwood">Morningwood</div>
+                                        <div class="item"
+                                            data-value="Mount Chiliad">Mount
+                                            Chiliad</div>
+                                        <div class="item"
+                                            data-value="Mount Gordo">Mount
+                                            Gordo</div>
+                                        <div class="item"
+                                            data-value="Mount Josiah">Mount
+                                            Josiah</div>
+                                        <div class="item"
+                                            data-value="Murrieta Heights">Murrieta
+                                            Heights</div>
+                                        <div class="item"
+                                            data-value="N.O.O.S.E">N.O.O.S.E</div>
+                                        <div class="item"
+                                            data-value="North Chumash">North
+                                            Chumash</div>
+                                        <div class="item"
+                                            data-value="Pacific Bluffs">Pacific
+                                            Bluffs</div>
+                                        <div class="item"
+                                            data-value="Palomino Highlands">Palomino
+                                            Highlands</div>
+                                        <div class="item"
+                                            data-value="Paleto Bay">Paleto
+                                            Bay</div>
+                                        <div class="item"
+                                            data-value="Paleto Cove">Paleto
+                                            Cove</div>
+                                        <div class="item"
+                                            data-value="Paleto Forest">Paleto
+                                            Forest</div>
+                                        <div class="item"
+                                            data-value="Palmer-Taylor Power Station">Palmer-Taylor
+                                            Power Station</div>
+                                        <div class="item"
+                                            data-value="Pillbox Hill">Pillbox
+                                            Hill</div>
+                                        <div class="item"
+                                            data-value="Port of South Los Santos">Port
+                                            of South Los Santos</div>
+                                        <div class="item"
+                                            data-value="Procopio Beach">Procopio
+                                            Beach</div>
+                                        <div class="item"
+                                            data-value="Rancho">Rancho</div>
+                                        <div class="item"
+                                            data-value="Raton Canyon">Raton
+                                            Canyon</div>
+                                        <div class="item"
+                                            data-value="Redwood Lights Track">Redwood
+                                            Lights Track</div>
+                                        <div class="item"
+                                            data-value="Richards Majestic">Richards
+                                            Majestic</div>
+                                        <div class="item"
+                                            data-value="Richman">Richman</div>
+                                        <div class="item"
+                                            data-value="Richman Glen">Richman
+                                            Glen</div>
+                                        <div class="item"
+                                            data-value="Rockford Hills">Rockford
+                                            Hills</div>
+                                        <div class="item"
+                                            data-value="Ron Alternatives Wind Farm">Ron
+                                            Alternatives Wind Farm</div>
+                                        <div class="item"
+                                            data-value="San Chanski Mountain Range">San
+                                            Chanski Mountain Range</div>
+                                        <div class="item"
+                                            data-value="Sandy Shores">Sandy
+                                            Shores</div>
+                                        <div class="item"
+                                            data-value="Stab City">Stab
+                                            City</div>
+                                        <div class="item"
+                                            data-value="Strawberry">Strawberry</div>
+                                        <div class="item"
+                                            data-value="Tataviam Mountains">Tataviam
+                                            Mountains</div>
+                                        <div class="item"
+                                            data-value="Terminal">Terminal</div>
+                                        <div class="item"
+                                            data-value="Textile City">Textile
+                                            City</div>
+                                        <div class="item"
+                                            data-value="Tongva Hills">Tongva
+                                            Hills</div>
+                                        <div class="item"
+                                            data-value="Vespucci">Vespucci</div>
+                                        <div class="item"
+                                            data-value="Vespucci Beach">Vespucci
+                                            Beach</div>
+                                        <div class="item"
+                                            data-value="Vespucci Canals">Vespucci
+                                            Canals</div>
+                                        <div class="item"
+                                            data-value="Vinewood">Vinewood</div>
+                                        <div class="item"
+                                            data-value="Vinewood Hills">Vinewood
+                                            Hills</div>
+                                        <div class="item"
+                                            data-value="Vinewood Racetrack">Vinewood
+                                            Racetrack</div>
+                                        <div class="item"
+                                            data-value="West Vinewood">West
+                                            Vinewood</div>
+                                        <div class="item"
+                                            data-value="Zancudo River">Zancudo
+                                            River</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="field">
-                    <label for="startTime">Start of Deployment</label>
-                    <div class="three fields">
-                        <div class="field">
-                            <input type="time" id="startTime" placeholder="HH:MM">
+                    <div class="field">
+                        <label for="startTime">Start of Deployment</label>
+                        <div class="three fields">
+                            <div class="field">
+                                <input type="time" id="startTime"
+                                    placeholder="HH:MM">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="ui container">
-        <div class="ui form">
-            <div class="ui segment">
-                <h2>Patient Information</h2>
-                <div class="field">
-                    <label for="BittenName">Patient Name</label>
-                    <div class="three fields">
-                        <div class="field">
-                            <input type="text" placeholder="LSPD Rank Firstname Lastname" id="BittenName">
+        <div class="ui container">
+            <div class="ui form">
+                <div class="ui segment">
+                    <h2>Patient Information</h2>
+                    <div class="field">
+                        <label for="BittenName">Patient Name</label>
+                        <div class="three fields">
+                            <div class="field">
+                                <input type="text"
+                                    placeholder="LSPD Rank Firstname Lastname"
+                                    id="BittenName">
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="field">
-                    <label for="AssignedHandler">Assigned Handler</label>
-                    <div class="three fields">
-                        <div class="field">
-                            <input type="text" placeholder="LSPD Rank Firstname Lastname" id="AssignedHandler">
+                    <div class="field">
+                        <label for="AssignedHandler">Assigned Handler</label>
+                        <div class="three fields">
+                            <div class="field">
+                                <input type="text"
+                                    placeholder="LSPD Rank Firstname Lastname"
+                                    id="AssignedHandler">
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="field">
-                    <label>Involved Platoons</label>
-                    <form>
-                        <label><input type="checkbox" id="LSPDK9" name="LSPD K-9 Platoon" value="LSPD K-9 Platoon"> LSPD K-9 Platoon</label>
-                        <label><input type="checkbox" id="LSSDK9" name="LSSD Canine Services Detail" value="LSSDK9"> LSSD Canine Services Detail</label>
-                        <label><input type="checkbox" id="LSFDK9" name="LSFD USAR" value="LSFDK9"> LSFD USAR</label>
-                        <label><input type="checkbox" id="SFMK9" name="SFM ADC" value="SFMK9"> SFM ADC</label>
-                        <label><input type="checkbox" id="SAPRK9" name="SAPR Canine" value="SAPRK9"> SAPR Canine</label>
-                    </form>
-                </div>
-                <div class="field">
-                    <label for="InjuryExtent">Patient Injuries</label>
-                    <div class="three fields">
-                        <div class="field">
-                            <input type="text" placeholder="Patient Injuries" id="InjuryExtent">
+                    <div class="field">
+                        <label>Involved Platoons</label>
+                        <form>
+                            <label><input type="checkbox" id="LSPDK9"
+                                    name="LSPD K-9 Platoon"
+                                    value="LSPD K-9 Platoon"> LSPD K-9
+                                Platoon</label>
+                            <label><input type="checkbox" id="LSSDK9"
+                                    name="LSSD Canine Services Detail"
+                                    value="LSSDK9"> LSSD Canine Services
+                                Detail</label>
+                            <label><input type="checkbox" id="LSFDK9"
+                                    name="LSFD USAR" value="LSFDK9"> LSFD
+                                USAR</label>
+                            <label><input type="checkbox" id="SFMK9"
+                                    name="SFM ADC" value="SFMK9"> SFM
+                                ADC</label>
+                            <label><input type="checkbox" id="SAPRK9"
+                                    name="SAPR Canine" value="SAPRK9"> SAPR
+                                Canine</label>
+                        </form>
+                    </div>
+                    <div class="field">
+                        <label for="InjuryExtent">Patient Injuries</label>
+                        <div class="three fields">
+                            <div class="field">
+                                <input type="text"
+                                    placeholder="Patient Injuries"
+                                    id="InjuryExtent">
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="field">
-                    <label for="TreatmentProvided">Treatment Provided</label>
-                    <div class="three fields">
-                        <div class="field">
-                            <input type="text" placeholder="Treatment Provided" id="TreatmentProvided">
+                    <div class="field">
+                        <label for="TreatmentProvided">Treatment
+                            Provided</label>
+                        <div class="three fields">
+                            <div class="field">
+                                <input type="text"
+                                    placeholder="Treatment Provided"
+                                    id="TreatmentProvided">
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="field">
-                    <label for="K9EMTSignature">K-9 EMT Signature</label>
-                    <div class="three fields">
-                        <div class="field">
-                            <input type="text" placeholder="K-9 EMT Signature" id="K9EMTSignature">
+                    <div class="field">
+                        <label for="K9EMTSignature">K-9 EMT Signature</label>
+                        <div class="three fields">
+                            <div class="field">
+                                <input type="text"
+                                    placeholder="K-9 EMT Signature"
+                                    id="K9EMTSignature">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="ui container">
-        <div class="ui form">
-            <div class="ui segment">
-                <h2>Generator</h2>
-                <div class="field">
-                    <label for="output">Output</label>
-                    <textarea id="output" readonly></textarea>
+        <div class="ui container">
+            <div class="ui form">
+                <div class="ui segment">
+                    <h2>Generator</h2>
+                    <div class="field">
+                        <label for="output">Output</label>
+                        <textarea id="output" readonly></textarea>
+                    </div>
+                    <div class="ui secondary button" id="submit">Submit</div>
+                    <div class="ui primary button" id="copy">Copy to
+                        Clipboard</div>
+                    <a href="https://lspd.gta.world/viewforum.php?f=2146">
+                        <div class="ui third button" id="fieldrecords">Field
+                            Records Link</div>
+                    </a>
                 </div>
-                <div class="ui secondary button" id="submit">Submit</div>
-                <div class="ui primary button" id="copy">Copy to Clipboard</div>
-                <a href="https://lspd.gta.world/viewforum.php?f=2146">
-                    <div class="ui third button" id="fieldrecords">Field Records Link</div>
-                  </a>           
             </div>
         </div>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
-    <script src="js/emtreport.js"></script>
-    <script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+        <script src="js/emtreport.js"></script>
+        <script>
         $(document).ready(function () {
             $('.ui.search.dropdown').dropdown({
                 fullTextSearch: true
@@ -442,5 +634,5 @@ function loadDataFromLocalStorage() {
         }
 
     </script>
-</body>
+    </body>
 </html>

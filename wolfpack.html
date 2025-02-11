@@ -1,163 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <!-- Meta tags and CSS links -->
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="css/img/metro.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
-    <link rel="stylesheet" href="css/wolfpack.css">
-    <title>Metro Deployment Report</title>
-</head>
+    <head>
+        <!-- Meta tags and CSS links -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="css/img/metro.png">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+        <link rel="stylesheet" href="css/wolfpack.css">
+        <title>Metro Deployment Report</title>
+    </head>
 
-<body>
-    <button id="clearLocalStorageButton">Clear Format</button>
-    <button id="undoLocalStorageButton">Undo Clear</button>
-    <button onclick="window.location.href='https://productofmymind.github.io/GTAW-METRO/index.html';">Home</button>
-    <div class="ui container">
-        <div class="ui form">
-            <div class="ui segment">
-                <h2>General Information</h2>
-                <div class="field">
-                    <label>Involved Platoons</label>
-                    <form>
-                        <label><input type="checkbox" id="K9PLT" name="K9 Platoon" value="K9 Platoon"> K9 Platoon</label>
+    <body>
+        <button id="clearLocalStorageButton">Clear Format</button>
+        <button id="undoLocalStorageButton">Undo Clear</button>
+        <button
+            onclick="window.location.href='https://productofmymind.github.io/GTAW-METRO/index.html';">Home</button>
+        <div class="ui container">
+            <div class="ui form">
+                <div class="ui segment">
+                    <h2>General Information</h2>
+                    <div class="field">
+                        <label>Involved Platoons</label>
+                        <form>
+                            <label><input type="checkbox" id="K9PLT"
+                                    name="K9 Platoon" value="K9 Platoon"> K9
+                                Platoon</label>
                             <br>
-                        <label><input type="checkbox" id="GED" name="Gang Enforcement Detail" value="Gang Enforcement Detail">Gang Enforcement Detail</label>
-                    </form>
-                    <h4 class="ui dividing header">Supervisor</h4>
-                    <div class="field">
-                        <label>Operational Supervisor</label>
-                        <div class="three fields">
+                            <label><input type="checkbox" id="GED"
+                                    name="Gang Enforcement Detail"
+                                    value="Gang Enforcement Detail">Gang
+                                Enforcement Detail</label>
+                        </form>
+                        <h4 class="ui dividing header">Supervisor</h4>
+                        <div class="field">
+                            <label>Operational Supervisor</label>
+                            <div class="three fields">
+                                <div class="field">
+                                    <input type="text"
+                                        placeholder="LSPD Rank Firstname Lastname"
+                                        id="OS">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label>Additional Supervisor</label>
+                            <div class="three fields">
+                                <div class="field">
+                                    <input type="text"
+                                        placeholder="LSPD Rank Firstname Lastname"
+                                        id="AS">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- INVOLVED METROPOLITAN MEMBERS -->
+                        <div class="field">
+                            <label>Personnel Present</label>
+                            <div id="InvolvedMembers">
+                                <div class="field">
+                                    <input type="text"
+                                        placeholder="Platoon + Platoon Rank + Full Name nr. 1"
+                                        id="MMMname">
+                                </div>
+                            </div>
+
+                            <button type="button" id="addInput">+</button>
+                            <button type="button" id="removeInput">-</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui container">
+                    <div class="ui form">
+                        <div class="ui segment">
+                            <h2>Deployment Timeline</h2>
                             <div class="field">
-                                <input type="text" placeholder="LSPD Rank Firstname Lastname" id="OS">
+                                <p>Date</p>
+                                <div class="four fields">
+                                    <div class="field">
+                                        <input title="Date" type="text"
+                                            id="datePicker"
+                                            placeholder="DD/MMM/YYYY">
+                                    </div>
+                                    <div class="field">
+                                        <button id="todayButton">Today</button>
+                                        <button id="oneDayAgoButton">One Day
+                                            Ago</button>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="field">
-                        <label>Additional Supervisor</label>
-                        <div class="three fields">
                             <div class="field">
-                                <input type="text" placeholder="LSPD Rank Firstname Lastname" id="AS">
+                                <label>Location</label>
+                                <div class="three fields">
+                                    <div class="field">
+                                        <input type="text"
+                                            placeholder="Streetname, nr, area"
+                                            id="loc">
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-
-                    <!-- INVOLVED METROPOLITAN MEMBERS -->
-                    <div class="field">
-                        <label>Personnel Present</label>
-                        <div id="InvolvedMembers">
                             <div class="field">
-                                <input type="text" placeholder="Platoon + Platoon Rank + Full Name nr. 1" id="MMMname">
+                                <label>Start of Deployment</label>
+                                <div class="three fields">
+                                    <div class="field">
+                                        <input type="text" id="startTime"
+                                            placeholder="HH:MM">
+                                    </div>
+                                    <div class="field">
+                                        <button id="oneHourAgo">One Hour
+                                            Ago</button>
+                                        <button id="twoHoursAgo">Two Hours
+                                            Ago</button>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                            <div class="field">
+                                <label>End of Deployment</label>
+                                <div class="three fields">
+                                    <div class="field">
+                                        <input type="text" id="endTime"
+                                            placeholder="HH:MM">
+                                    </div>
+                                    <div class="field">
+                                        <button id="nowButton">Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label>Deployment Events</label>
+                                <div id="DeploymentEventsContainer">
+                                    <div class="field">
+                                        <input type="text"
+                                            placeholder="Number of contacts (traffic stops, pedestrian contacts, total people contacted essentially)"
+                                            id="event1"><br>
+                                        <input type="text"
+                                            placeholder="Number of citations"
+                                            id="event2"><br>
+                                        <input type="text"
+                                            placeholder="Number of warnings"
+                                            id="event3"><br>
+                                        <input type="text"
+                                            placeholder="Number of pursuits"
+                                            id="event4"><br>
+                                        <input type="text"
+                                            placeholder="Number of arrests"
+                                            id="event5"><br>
+                                        <input type="text"
+                                            placeholder="Number of guns recovered"
+                                            id="event6"><br>
+                                        <input type="text"
+                                            placeholder="Number of drugs seized"
+                                            id="event7"><br>
+                                        <input type="text"
+                                            placeholder="Add more if required"
+                                            id="event8">
+                                    </div>
+                                </div>
+                                <button type="button" id="addInput2">+</button>
+                                <button type="button"
+                                    id="removeInput2">-</button>
+                            </div>
+                            <h4 class="ui dividing header">Filing Officer
+                                Signature</h4>
+                            <div class="field">
+                                <label>Filing Officer Signature</label>
+                                <div class="three fields">
+                                    <div class="field">
+                                        <input type="text"
+                                            placeholder="Firstname Lastname"
+                                            id="FOS">
 
-                        <button type="button" id="addInput">+</button>
-                        <button type="button" id="removeInput">-</button>
-                    </div>
-                </div>
-            </div>
-            <div class="ui container">
-                <div class="ui form">
-                    <div class="ui segment">
-                        <h2>Deployment Timeline</h2>
-                        <div class="field">
-                            <p>Date</p>
-                            <div class="four fields">
-                                <div class="field">
-                                    <input title="Date" type="text" id="datePicker" placeholder="DD/MMM/YYYY">
-                                </div>
-                                <div class="field">
-                                    <button id="todayButton">Today</button>
-                                    <button id="oneDayAgoButton">One Day Ago</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="field">
-                            <label>Location</label>
-                            <div class="three fields">
-                                <div class="field">
-                                    <input type="text" placeholder="Streetname, nr, area" id="loc">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="field">
-                            <label>Start of Deployment</label>
-                            <div class="three fields">
-                                <div class="field">
-                                    <input type="text" id="startTime" placeholder="HH:MM">
-                                </div>
-                                <div class="field">
-                                    <button id="oneHourAgo">One Hour Ago</button>
-                                    <button id="twoHoursAgo">Two Hours Ago</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="field">
-                            <label>End of Deployment</label>
-                            <div class="three fields">
-                                <div class="field">
-                                    <input type="text" id="endTime" placeholder="HH:MM">
-                                </div>
-                                <div class="field">
-                                    <button id="nowButton">Now</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="field">
-                            <label>Deployment Events</label>
-                            <div id="DeploymentEventsContainer">
-                                <div class="field">
-                                    <input type="text" placeholder="Number of contacts (traffic stops, pedestrian contacts, total people contacted essentially)" id="event1"><br>
-                                    <input type="text" placeholder="Number of citations" id="event2"><br>
-                                    <input type="text" placeholder="Number of warnings" id="event3"><br>
-                                    <input type="text" placeholder="Number of pursuits" id="event4"><br>
-                                    <input type="text" placeholder="Number of arrests" id="event5"><br>
-                                    <input type="text" placeholder="Number of guns recovered" id="event6"><br>
-                                    <input type="text" placeholder="Number of drugs seized" id="event7"><br>
-                                    <input type="text" placeholder="Add more if required" id="event8">                                                                    
-                                </div>
-                            </div>
-                            <button type="button" id="addInput2">+</button>
-                            <button type="button" id="removeInput2">-</button>
-                        </div>
-                        <h4 class="ui dividing header">Filing Officer Signature</h4>
-                        <div class="field">
-                            <label>Filing Officer Signature</label>
-                            <div class="three fields">
-                                <div class="field">
-                                    <input type="text" placeholder="Firstname Lastname" id="FOS">
-    
-                                </div>
-                                
-                    </div>
-                </div>
+                                    </div>
 
-                </div>
-                    <div class="ui container">
-                        <div class="ui form">
-                            <div class="ui segment">
-                                <h2>Generator</h2>
-                                <div class="field">
-                                    <label>Output</label>
-                                    <textarea id="output" readonly title="Output"></textarea>
                                 </div>
-                                <div class="ui secondary button" id="submit">Submit</div>
-                                <div class="ui primary button" id="copy">Copy to Clipboard</div>
-                                <a href="https://lspd.gta.world/viewforum.php?f=2146">
-                                    <div class="ui third button" id="fieldrecords">Field Records Link</div>
-                                </a>
+                            </div>
+
+                        </div>
+                        <div class="ui container">
+                            <div class="ui form">
+                                <div class="ui segment">
+                                    <h2>Generator</h2>
+                                    <div class="field">
+                                        <label>Output</label>
+                                        <textarea id="output" readonly
+                                            title="Output"></textarea>
+                                    </div>
+                                    <div class="ui secondary button"
+                                        id="submit">Submit</div>
+                                    <div class="ui primary button"
+                                        id="copy">Copy to Clipboard</div>
+                                    <a
+                                        href="https://lspd.gta.world/viewforum.php?f=2146">
+                                        <div class="ui third button"
+                                            id="fieldrecords">Field Records
+                                            Link</div>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
-                <script src="js/wolfpack.js"></script>
-                <script>
+                    <script
+                        src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                    <script
+                        src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+                    <script src="js/wolfpack.js"></script>
+                    <script>
                     // Initialize Semantic UI Dropdown
                     $(document).ready(function () {
                         $('.ui.search.dropdown').dropdown({
@@ -388,6 +438,6 @@
                         undoButton.addEventListener('click', undoClearLocalStorage);
                     }
                 </script>
-</body>
+                </body>
 
-</html>
+            </html>

@@ -1,118 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="css/img/metro.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
-    <link rel="stylesheet" href="css/patrolreport.css">
-    <title>Metro - Patrol Format</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="css/img/metro.png">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+        <link rel="stylesheet" href="css/patrolreport.css">
+        <title>Metro - Patrol Format</title>
+    </head>
 
-<body>
-    <button id="clearLocalStorageButton">Clear Format</button>
-    <button id="undoLocalStorageButton">Undo Clear</button>
-    <button onclick="window.location.href='https://productofmymind.github.io/GTAW-METRO/index.html';">Home</button>
-    
-    <div class="ui container">
-        <div class="ui form">
-            <div class="ui segment">
-                <h2>General Information</h2>
-                <div class="field">
-                    <p>Metropolitan Officers</p>
-                    <div id="MetroOfficers">
-                        <div class="field">
-                            <input type="text" placeholder="Platoon + Rank + Full Name nr." class="officer">
+    <body>
+        <button id="clearLocalStorageButton">Clear Format</button>
+        <button id="undoLocalStorageButton">Undo Clear</button>
+        <button
+            onclick="window.location.href='https://productofmymind.github.io/GTAW-METRO/index.html';">Home</button>
+
+        <div class="ui container">
+            <div class="ui form">
+                <div class="ui segment">
+                    <h2>General Information</h2>
+                    <div class="field">
+                        <p>Metropolitan Officers</p>
+                        <div id="MetroOfficers">
+                            <div class="field">
+                                <input type="text"
+                                    placeholder="Platoon + Rank + Full Name nr."
+                                    class="officer">
+                            </div>
                         </div>
+                        <button type="button" id="addInput">+</button>
+                        <button type="button" id="removeInput">-</button>
                     </div>
-                    <button type="button" id="addInput">+</button>
-                    <button type="button" id="removeInput">-</button>
-                </div>
-                <div class="field">
-                    <p>Type of Patrol</p>
-                    <div class="three fields" id="PatrolType">
-                        <div class="field">
-                            <div class="ui selection search dropdown">
-                                <input type="hidden" name="patrolType">
-                                <i class="dropdown icon"></i>
-                                <div class="default text">Select Patrol Type</div>
-                                <div class="menu">
-                                    <div class="item" data-value="PatrolType1">Canine Patrol</div>
-                                    <div class="item" data-value="PatrolType2">SWAT Crime Suppression Patrol</div>
-                                    <div class="item" data-value="PatrolType3">Joint Crime Suppression Patrol</div>
-                                    <div class="item" data-value="PatrolType4">Gang Crime Suppression Patrol</div>
+                    <div class="field">
+                        <p>Type of Patrol</p>
+                        <div class="three fields" id="PatrolType">
+                            <div class="field">
+                                <div class="ui selection search dropdown">
+                                    <input type="hidden" name="patrolType">
+                                    <i class="dropdown icon"></i>
+                                    <div class="default text">Select Patrol
+                                        Type</div>
+                                    <div class="menu">
+                                        <div class="item"
+                                            data-value="PatrolType1">Canine
+                                            Patrol</div>
+                                        <div class="item"
+                                            data-value="PatrolType2">SWAT Crime
+                                            Suppression Patrol</div>
+                                        <div class="item"
+                                            data-value="PatrolType3">Joint Crime
+                                            Suppression Patrol</div>
+                                        <div class="item"
+                                            data-value="PatrolType4">Gang Crime
+                                            Suppression Patrol</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="field">
-                    <p>Date</p>
-                    <div class="four fields">
-                        <div class="field">
-                            <input title="Date" type="text" id="datePicker" placeholder="DD/MMM/YYYY">
-                        </div>
-                        <div class="field">
-                            <button id="todayButton">Today</button>
-                            <button id="oneDayAgoButton">One Day Ago</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="ui container">
-        <div class="ui form">
-            <div class="ui segment">
-                <h2>Patrol Summary</h2>
-                <div class="field">
-                    <p>Deployments</p>
-                    <div id="Deployments">
-                        <div class="three fields">
+                    <div class="field">
+                        <p>Date</p>
+                        <div class="four fields">
                             <div class="field">
-                                <input type="text" placeholder="Deployment Type" id="other">
+                                <input title="Date" type="text" id="datePicker"
+                                    placeholder="DD/MMM/YYYY">
                             </div>
-                </div>
-            </div>
-            <button type="button" id="addInput1">+</button>
-            <button type="button" id="removeInput1">-</button>
-        </div>
-                <div class="field">
-                    <p>Additional Information</p>
-                    <div class="one field" id="linkDeploymentContainer">
-                        <div class="field">
-                            <input type="text" id="linkDeployment" placeholder="Detail arrests, pursuits, investigations, etc.">
+                            <div class="field">
+                                <button id="todayButton">Today</button>
+                                <button id="oneDayAgoButton">One Day
+                                    Ago</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="ui container">
-        <div class="ui form">
-            <div class="ui segment">
-                <h2>Generator</h2>
-                <div class="field">
-                    <p>Output</p>
-                    <textarea id="output" title="output" readonly></textarea>
+        <div class="ui container">
+            <div class="ui form">
+                <div class="ui segment">
+                    <h2>Patrol Summary</h2>
+                    <div class="field">
+                        <p>Deployments</p>
+                        <div id="Deployments">
+                            <div class="three fields">
+                                <div class="field">
+                                    <input type="text"
+                                        placeholder="Deployment Type"
+                                        id="other">
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" id="addInput1">+</button>
+                        <button type="button" id="removeInput1">-</button>
+                    </div>
+                    <div class="field">
+                        <p>Additional Information</p>
+                        <div class="one field" id="linkDeploymentContainer">
+                            <div class="field">
+                                <input type="text" id="linkDeployment"
+                                    placeholder="Detail arrests, pursuits, investigations, etc.">
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="ui secondary button" id="submit">Submit</div>
-                <div class="ui primary button" id="copy">Copy to Clipboard</div>
-                <a href="https://lspd.gta.world/viewforum.php?f=2146">
-                    <div class="ui third button" id="fieldrecords">Field Records Link</div>
-                </a>
             </div>
         </div>
-    </div>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
-    <script src="js/patrolreport.js"></script>
-    <script>
+        <div class="ui container">
+            <div class="ui form">
+                <div class="ui segment">
+                    <h2>Generator</h2>
+                    <div class="field">
+                        <p>Output</p>
+                        <textarea id="output" title="output"
+                            readonly></textarea>
+                    </div>
+                    <div class="ui secondary button" id="submit">Submit</div>
+                    <div class="ui primary button" id="copy">Copy to
+                        Clipboard</div>
+                    <a href="https://lspd.gta.world/viewforum.php?f=2146">
+                        <div class="ui third button" id="fieldrecords">Field
+                            Records Link</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+        <script src="js/patrolreport.js"></script>
+        <script>
         // Initialize Semantic UI Dropdown
         $(document).ready(function () {
             $('.ui.search.dropdown').dropdown({
@@ -226,7 +248,7 @@
             loadDataFromLocalStorage();
         });
     </script>
-    
-</body>
+
+    </body>
 
 </html>

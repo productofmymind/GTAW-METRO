@@ -1,176 +1,234 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="css/img/lspd.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
-    <link rel="stylesheet" href="css/metrodeploy.css">
-    <title>Reinstatement Offer</title>
-</head>
-<body>    
-    <button id="clearLocalStorageButton">Clear Format</button>
-    <button id="undoLocalStorageButton">Undo Clear</button>
-    <button onclick="window.location.href='https://productofmymind.github.io/GTAW-METRO/index.html';">Home</button>
-    <div class="ui container">
-        <div class="ui form">
-            <!-- Add any additional form elements here -->
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="css/img/lspd.png">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+        <link rel="stylesheet" href="css/metrodeploy.css">
+        <title>Reinstatement Offer</title>
+    </head>
+    <body>
+        <button id="clearLocalStorageButton">Clear Format</button>
+        <button id="undoLocalStorageButton">Undo Clear</button>
+        <button
+            onclick="window.location.href='https://productofmymind.github.io/GTAW-METRO/index.html';">Home</button>
+        <div class="ui container">
+            <div class="ui form">
+                <!-- Add any additional form elements here -->
+            </div>
         </div>
-    </div>
-    <div class="ui container">
-        <div class="ui form">
-            <div class="ui segment">
-                <h2>Reinstating Member Information</h2>
-                <div class="field">
+        <div class="ui container">
+            <div class="ui form">
+                <div class="ui segment">
+                    <h2>Reinstating Member Information</h2>
                     <div class="field">
-                        <label>Month</label>
-                        <div class="three fields">
-                            <div class="field">
-                                <input type="text" placeholder="Month" id="Month">
-                            </div>
-                            <div class="field">
-                                <button id="todayButton">Today</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="field">
-                        <label>Date</label>
-                        <div class="three fields">
-                            <div class="field">
-                                <input type="text" placeholder="Date" id="Date">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="field">
-                        <label>Year</label>
-                        <div class="three fields">
-                            <div class="field">
-                                <input type="text" placeholder="Year" id="Year">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="field">
-                    <label>Firstname Lastname</label>
-                    <div class="three fields">
                         <div class="field">
-                            <input type="text" placeholder="Firstname Lastname" id="FirstnameLastname">
-                        </div>
-                    </div>
-                </div>
-                <div class="field">
-                    <label>Rank Offer</label>
-                    <div class="three fields" id="Rank">
-                        <div class="field">
-                            <div class="ui selection search dropdown">
-                                <input type="hidden" name="Rank">
-                                <i class="dropdown icon"></i>
-                                <div class="default text">Select Deployment Type</div>
-                                <div class="menu">
-                                    <div class="item" data-value="Rank1">Police Officer I</div>
-                                    <div class="item" data-value="Rank2">Police Officer II</div>    
-                                    <div class="item" data-value="Rank3">Police Officer III</div>    
-                                    <div class="item" data-value="Rank4">Police Officer III+1</div>    
-                                    <div class="item" data-value="Rank5">Police Detective I</div>    
-                                    <div class="item" data-value="Rank6">Police Detective II</div>    
-                                    <div class="item" data-value="Rank7">Police Detective III</div>    
-                                    <div class="item" data-value="Rank8">Police Sergeant I</div>    
-                                    <div class="item" data-value="Rank9">Police Sergeant II</div>    
-                                    <div class="item" data-value="Rank10">Police Lieutenant I</div>    
-                                    <div class="item" data-value="Rank11">Police Lieutenant II</div>    
-                                    <div class="item" data-value="Rank12">Police Captain I</div>    
-                                    <div class="item" data-value="Rank13">Police Captain II</div>  
-                                    <div class="item" data-value="Rank14">Police Captain III</div>  
-                                    <div class="item" data-value="Rank15">Police Commander</div>  
-                                    <div class="item" data-value="Rank16">Deputy Chief of Police</div>  
-                                    <div class="item" data-value="Rank17">Assistant Chief of Police</div>  
-                                    <div class="item" data-value="Rank18">Chief of Police</div>  
+                            <label>Month</label>
+                            <div class="three fields">
+                                <div class="field">
+                                    <input type="text" placeholder="Month"
+                                        id="Month">
                                 </div>
+                                <div class="field">
+                                    <button id="todayButton">Today</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label>Date</label>
+                            <div class="three fields">
+                                <div class="field">
+                                    <input type="text" placeholder="Date"
+                                        id="Date">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label>Year</label>
+                            <div class="three fields">
+                                <div class="field">
+                                    <input type="text" placeholder="Year"
+                                        id="Year">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label>Firstname Lastname</label>
+                        <div class="three fields">
+                            <div class="field">
+                                <input type="text"
+                                    placeholder="Firstname Lastname"
+                                    id="FirstnameLastname">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label>Rank Offer</label>
+                        <div class="three fields" id="Rank">
+                            <div class="field">
+                                <div class="ui selection search dropdown">
+                                    <input type="hidden" name="Rank">
+                                    <i class="dropdown icon"></i>
+                                    <div class="default text">Select Deployment
+                                        Type</div>
+                                    <div class="menu">
+                                        <div class="item"
+                                            data-value="Rank1">Police Officer
+                                            I</div>
+                                        <div class="item"
+                                            data-value="Rank2">Police Officer
+                                            II</div>
+                                        <div class="item"
+                                            data-value="Rank3">Police Officer
+                                            III</div>
+                                        <div class="item"
+                                            data-value="Rank4">Police Officer
+                                            III+1</div>
+                                        <div class="item"
+                                            data-value="Rank5">Police Detective
+                                            I</div>
+                                        <div class="item"
+                                            data-value="Rank6">Police Detective
+                                            II</div>
+                                        <div class="item"
+                                            data-value="Rank7">Police Detective
+                                            III</div>
+                                        <div class="item"
+                                            data-value="Rank8">Police Sergeant
+                                            I</div>
+                                        <div class="item"
+                                            data-value="Rank9">Police Sergeant
+                                            II</div>
+                                        <div class="item"
+                                            data-value="Rank10">Police
+                                            Lieutenant I</div>
+                                        <div class="item"
+                                            data-value="Rank11">Police
+                                            Lieutenant II</div>
+                                        <div class="item"
+                                            data-value="Rank12">Police Captain
+                                            I</div>
+                                        <div class="item"
+                                            data-value="Rank13">Police Captain
+                                            II</div>
+                                        <div class="item"
+                                            data-value="Rank14">Police Captain
+                                            III</div>
+                                        <div class="item"
+                                            data-value="Rank15">Police
+                                            Commander</div>
+                                        <div class="item"
+                                            data-value="Rank16">Deputy Chief of
+                                            Police</div>
+                                        <div class="item"
+                                            data-value="Rank17">Assistant Chief
+                                            of Police</div>
+                                        <div class="item"
+                                            data-value="Rank18">Chief of
+                                            Police</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label>Assignment Offer</label>
+                            <div class="three fields">
+                                <div class="field">
+                                    <input type="text"
+                                        placeholder="Firstname Lastname"
+                                        id="AssignmentOffer">
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-        <div class="field">
-            <label>Assignment Offer</label>
-            <div class="three fields">
-                <div class="field">
-                    <input type="text" placeholder="Firstname Lastname" id="AssignmentOffer">
+                <div class="ui segment">
+                    <h2>Supervisor Information</h2>
+                    <div class="field">
+                        <label>Rank + Full Name</label>
+                        <div class="three fields">
+                            <div class="field">
+                                <input type="text"
+                                    placeholder="Rank, Fullname, Assignment, Division"
+                                    id="ContactPerson">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label>Contact Badge Number</label>
+                        <div class="three fields">
+                            <div class="field">
+                                <input type="text"
+                                    placeholder="Type your badge number here"
+                                    id="BadgeNumber">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label>Signature Image - leave empty if no image</label>
+                        <div class="three fields">
+                            <div class="field">
+                                <input type="text"
+                                    placeholder="The link must end in .png or whatever format"
+                                    id="SignatureImage">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label>Signature Name + Rank</label>
+                        <div class="three fields">
+                            <div class="field">
+                                <input type="text"
+                                    placeholder="FIRSTNAME LASTNAME, Departmental Rank"
+                                    id="SignatureNameRank">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label>Assignment</label>
+                        <div class="three fields">
+                            <div class="field">
+                                <input type="text" placeholder="Assignment"
+                                    id="Assignment">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label>Division</label>
+                        <div class="three fields">
+                            <div class="field">
+                                <input type="text" placeholder="Division"
+                                    id="Division">
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
-    </div>
-</div>
-        <div class="ui segment">
-                <h2>Supervisor Information</h2>
-                <div class="field">
-                    <label>Rank + Full Name</label>
-                    <div class="three fields">
-                        <div class="field">
-                            <input type="text" placeholder="Rank, Fullname, Assignment, Division" id="ContactPerson">
-                        </div>
-                    </div>
-                </div>
-                <div class="field">
-                    <label>Contact Badge Number</label>
-                    <div class="three fields">
-                        <div class="field">
-                            <input type="text" placeholder="Type your badge number here" id="BadgeNumber">
-                        </div>
-                    </div>
-                </div>
-                <div class="field">
-                    <label>Signature Image - leave empty if no image</label>
-                    <div class="three fields">
-                        <div class="field">
-                            <input type="text" placeholder="The link must end in .png or whatever format" id="SignatureImage">
-                        </div>
-                    </div>
-                </div>
-                <div class="field">
-                    <label>Signature Name + Rank</label>
-                    <div class="three fields">
-                        <div class="field">
-                            <input type="text" placeholder="FIRSTNAME LASTNAME, Departmental Rank" id="SignatureNameRank">
-                        </div>
-                    </div>
-                </div>
-                <div class="field">
-                    <label>Assignment</label>
-                    <div class="three fields">
-                        <div class="field">
-                            <input type="text" placeholder="Assignment" id="Assignment">
-                        </div>
-                    </div>
-                </div>
-                <div class="field">
-                    <label>Division</label>
-                    <div class="three fields">
-                        <div class="field">
-                            <input type="text" placeholder="Division" id="Division">
-                        </div>
-                    </div>
-                </div>
 
-            </div>
-        </div>
-    </div>
-
-    <div class="ui container">
-        <div class="ui form">
-            <div class="ui segment">
-                <h2>Generator</h2>
-                <div class="field">
-                    <label>Output</label>
-                    <textarea id="Narrative" readonly></textarea>
+        <div class="ui container">
+            <div class="ui form">
+                <div class="ui segment">
+                    <h2>Generator</h2>
+                    <div class="field">
+                        <label>Output</label>
+                        <textarea id="Narrative" readonly></textarea>
+                    </div>
+                    <div class="ui secondary button" id="submit">Submit</div>
+                    <div class="ui primary button" id="copy">Copy to
+                        Clipboard</div>
                 </div>
-                <div class="ui secondary button" id="submit">Submit</div>
-                <div class="ui primary button" id="copy">Copy to Clipboard</div> 
             </div>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
-    <script src="js/reinstatementoffer.js"></script>
-    <script>
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+            <script
+                src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+            <script src="js/reinstatementoffer.js"></script>
+            <script>
         $(document).ready(function () {
             $('.ui.search.dropdown').dropdown({
                 fullTextSearch: true
@@ -303,6 +361,6 @@
             }
         });
     </script>
-    
-</body>
-</html>
+
+        </body>
+    </html>
