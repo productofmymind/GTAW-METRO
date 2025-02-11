@@ -257,27 +257,32 @@ textarea {
   transform: scale(1.02);
 }
 
+/* Styling for datetime-local input */
 input[type="datetime-local"] {
   width: 100%;
   padding: 12px;
-  border: 1px solid #444;
+  border: 1px solid #444; /* Light border */
   border-radius: 8px;
-  background-color: #2A2F40;
-  color: #DDD;
+  background-color: #2A2F40; /* Dark background */
+  color: #DDD; /* Light text */
   font-size: 16px;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+  appearance: none; /* Remove default styles */
 }
 
 input[type="datetime-local"]:focus {
-  background-color: #333;
-  border: 1px solid #1A73E8;
+  background-color: #333; /* Slightly lighter grey on focus */
+  border: 1px solid #1A73E8; /* Accent border on focus */
   outline: none;
-  box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.2);
+  box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.2); /* Subtle glow */
 }
 
+/* Change color of the calendar icon */
 input[type="datetime-local"]::-webkit-calendar-picker-indicator {
-  filter: invert(1); /* Makes the calendar picker icon light to fit dark theme */
+  filter: invert(1); /* Invert the icon color for dark mode */
+}
+
+/* Ensure labels are light */
+.ui.form .field > label {
+  color: #E0E0E0 !important; /* Light text for labels */
 }
