@@ -1,153 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="css/img/k9.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
-    <link rel="stylesheet" href="css/metrodeploy.css">
-    <title>Bite Report</title>
-</head>
-<body>    
-    <button id="clearLocalStorageButton">Clear Format</button>
-    <button id="undoLocalStorageButton">Undo Clear</button>
-    <button onclick="window.location.href='https://productofmymind.github.io/GTAW-METRO/index.html';">Home</button>
-    <div class="ui container">
-        <div class="ui form">
-            <div class="ui segment">
-                <h2>General Information</h2>
-                <div class="field">
-                    <label>Name & Assigned K9</label>
-                    <div class="three fields">
-                        <div class="field">
-                            <input type="text" placeholder="LSPD Rank Firstname Lastname" id="ICname">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="css/img/k9.png">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+        <link rel="stylesheet" href="css/metrodeploy.css">
+        <title>Bite Report</title>
+    </head>
+    <body>
+        <button id="clearLocalStorageButton">Clear Format</button>
+        <button id="undoLocalStorageButton">Undo Clear</button>
+        <button
+            onclick="window.location.href='https://productofmymind.github.io/GTAW-METRO/index.html';">Home</button>
+        <div class="ui container">
+            <div class="ui form">
+                <div class="ui segment">
+                    <h2>General Information</h2>
+                    <div class="field">
+                        <label>Name & Assigned K9</label>
+                        <div class="three fields">
+                            <div class="field">
+                                <input type="text"
+                                    placeholder="LSPD Rank Firstname Lastname"
+                                    id="ICname">
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="field">
-                    <label for="DivisionalRank">Divisional Rank</label>
-                    <div class="three fields">
-                        <div class="field">
-                            <div class="ui selection search dropdown" id="DivisionalRankDropdown">
-                                <input type="hidden" name="DivisionalRank" id="DivisionalRankInput">
-                                <i class="dropdown icon"></i>
-                                <div class="default text">Select Divisional Rank</div>
-                                <div class="menu">
-                                    <div class="item" data-value="Officer in Charge">Officer in Charge</div>
-                                    <div class="item" data-value="Assistant Officer in Charge">Assistant Officer in Charge</div>
-                                    <div class="item" data-value="Chief Supervisor">Chief Supervisor</div>
-                                    <div class="item" data-value="Canine Supervisor">Canine Supervisor</div>
-                                    <div class="item" data-value="Canine Handler">Canine Handler</div>
-                                    <div class="item" data-value="Probationary Canine Handler">Probationary Canine Handler</div>
+                    <div class="field">
+                        <label for="DivisionalRank">Divisional Rank</label>
+                        <div class="three fields">
+                            <div class="field">
+                                <div class="ui selection search dropdown"
+                                    id="DivisionalRankDropdown">
+                                    <input type="hidden" name="DivisionalRank"
+                                        id="DivisionalRankInput">
+                                    <i class="dropdown icon"></i>
+                                    <div class="default text">Select Divisional
+                                        Rank</div>
+                                    <div class="menu">
+                                        <div class="item"
+                                            data-value="Officer in Charge">Officer
+                                            in Charge</div>
+                                        <div class="item"
+                                            data-value="Assistant Officer in Charge">Assistant
+                                            Officer in Charge</div>
+                                        <div class="item"
+                                            data-value="Chief Supervisor">Chief
+                                            Supervisor</div>
+                                        <div class="item"
+                                            data-value="Canine Supervisor">Canine
+                                            Supervisor</div>
+                                        <div class="item"
+                                            data-value="Canine Handler">Canine
+                                            Handler</div>
+                                        <div class="item"
+                                            data-value="Probationary Canine Handler">Probationary
+                                            Canine Handler</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="field">
-                    <label>Serial Number</label>
-                    <div class="three fields">
-                        <div class="field">
-                            <input type="text" placeholder="Badge Number" id="SerialNumber">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="ui container">
-        <div class="ui form">
-            <div class="ui segment">
-                <h2>Incident Summary</h2>
-                <div class="field">
-                    <label for="datetimePicker">Date and Time</label>
-                    <div class="four fields">
-                        <div class="field">
-                            <input type="datetime-local" id="datetimePicker">
-                        </div>
-                        <div class="field">
-                            <button id="todayButton">Set to Today</button>
-                        </div>
-                    </div>
-                </div>    
-                <div class="field">
-                    <label>Name of Bitten</label>
-                    <div class="three fields">
-                        <div class="field">
-                            <input type="text" placeholder="Name of Bitten" id="BittenName">
-                        </div>
-                    </div>
-                </div>
-                <div class="field">
-                    <label>Extent of Injuries</label>
-                    <div class="three fields">
-                        <div class="field">
-                            <input type="text" placeholder="Extent of Injuries" id="InjuryExtent">
-                        </div>
-                    </div>
-                </div>
-                <div class="field">
-                    <label for="FDAttendance">FD Attendance</label>
-                    <div class="three fields" id="FDAttendanceDropdown">
-                        <div class="field">
-                            <div class="ui selection search dropdown">
-                                <input type="hidden" name="FDAttendance" id="FDAttendanceInput">
-                                <i class="dropdown icon"></i>
-                                <div class="default text">FD Attendance</div>
-                                <div class="menu">
-                                    <div class="item" data-value="Yes">Yes</div>
-                                    <div class="item" data-value="No">No</div>
-                                </div>
+                    <div class="field">
+                        <label>Serial Number</label>
+                        <div class="three fields">
+                            <div class="field">
+                                <input type="text" placeholder="Badge Number"
+                                    id="SerialNumber">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="ui container">
-        <div class="ui form">
-            <div class="ui segment">
-                <h2>Incident Narrative</h2>
-                <div class="field">
-                    <label>Other Officers on Scene</label>
-                    <div id="InvolvedMembersContainer">
-                        <div class="field">
-                            <input type="text" placeholder="Firstname Lastname" id="OtherOfficersName">
+        <div class="ui container">
+            <div class="ui form">
+                <div class="ui segment">
+                    <h2>Incident Summary</h2>
+                    <div class="field">
+                        <label for="datetimePicker">Date and Time</label>
+                        <div class="four fields">
+                            <div class="field">
+                                <input type="datetime-local"
+                                    id="datetimePicker">
+                            </div>
+                            <div class="field">
+                                <button id="todayButton">Set to Today</button>
+                            </div>
                         </div>
                     </div>
-                    <button type="button" id="addInput">+</button>
-                    <button type="button" id="removeInput">-</button>
+                    <div class="field">
+                        <label>Name of Bitten</label>
+                        <div class="three fields">
+                            <div class="field">
+                                <input type="text" placeholder="Name of Bitten"
+                                    id="BittenName">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label>Extent of Injuries</label>
+                        <div class="three fields">
+                            <div class="field">
+                                <input type="text"
+                                    placeholder="Extent of Injuries"
+                                    id="InjuryExtent">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="FDAttendance">FD Attendance</label>
+                        <div class="three fields" id="FDAttendanceDropdown">
+                            <div class="field">
+                                <div class="ui selection search dropdown">
+                                    <input type="hidden" name="FDAttendance"
+                                        id="FDAttendanceInput">
+                                    <i class="dropdown icon"></i>
+                                    <div class="default text">FD
+                                        Attendance</div>
+                                    <div class="menu">
+                                        <div class="item"
+                                            data-value="Yes">Yes</div>
+                                        <div class="item"
+                                            data-value="No">No</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="field">
-                    <label for="Narrative">Narrative</label>
-                    <textarea id="Narrative"></textarea>
-                </div>              
-                <label for="Signature">Signature</label>
-                <input type="text" placeholder="Officer Signature" id="Signature">
             </div>
         </div>
-    </div>
-    <div class="ui container">
-        <div class="ui form">
-            <div class="ui segment">
-                <h2>Generator</h2>
-                <div class="field">
-                    <label>Output</label>
-                    <textarea id="output" readonly></textarea>
+        <div class="ui container">
+            <div class="ui form">
+                <div class="ui segment">
+                    <h2>Incident Narrative</h2>
+                    <div class="field">
+                        <label>Other Officers on Scene</label>
+                        <div id="InvolvedMembersContainer">
+                            <div class="field">
+                                <input type="text"
+                                    placeholder="Firstname Lastname"
+                                    id="OtherOfficersName">
+                            </div>
+                        </div>
+                        <button type="button" id="addInput">+</button>
+                        <button type="button" id="removeInput">-</button>
+                    </div>
+                    <div class="field">
+                        <label for="Narrative">Narrative</label>
+                        <textarea id="Narrative"></textarea>
+                    </div>
+                    <div class="field">
+                        <label>Signature</label>
+                        <div class="three fields">
+                            <div class="field">
+                                <input type="text" placeholder="Signature"
+                                    id="Signature">
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="ui secondary button" id="submit">Submit</div>
-                <div class="ui primary button" id="copy">Copy to Clipboard</div>
-                <a href="https://lspd.gta.world/viewforum.php?f=2146">
-                    <div class="ui third button" id="fieldrecords">Field Records Link</div>
-                  </a>                  
-            </div>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
-    <script src="js/bitereport.js"></script>
-    <script>
+                <div class="ui container">
+                    <div class="ui form">
+                        <div class="ui segment">
+                            <h2>Generator</h2>
+                            <div class="field">
+                                <label>Output</label>
+                                <textarea id="output" readonly></textarea>
+                            </div>
+                            <div class="ui secondary button"
+                                id="submit">Submit</div>
+                            <div class="ui primary button" id="copy">Copy to
+                                Clipboard</div>
+                            <a
+                                href="https://lspd.gta.world/viewforum.php?f=2146">
+                                <div class="ui third button"
+                                    id="fieldrecords">Field Records Link</div>
+                            </a>
+                        </div>
+                    </div>
+                    <script
+                        src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                    <script
+                        src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+                    <script src="js/bitereport.js"></script>
+                    <script>
         $(document).ready(function () {
             $('.ui.search.dropdown').dropdown({
                 fullTextSearch: true
@@ -285,5 +326,5 @@ function loadDataFromLocalStorage() {
             undoButton.addEventListener('click', undoClearLocalStorage);
         }
     </script>
-</body>
-</html>
+                </body>
+            </html>

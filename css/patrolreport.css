@@ -1,128 +1,235 @@
+/* Base styling */
 body {
-  font-family: "Inter", sans-serif;
-  color: white;
-  background-color: #2f384e;
+  background: linear-gradient(45deg, #0a0a0a, #1a1a1a);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
+  animation: gradientShift 15s ease infinite;
+  background-size: 400% 400%;
+  color: #e0e0e0; /* Light text color for dark mode */
 }
 
-h2,
-h4 {
-  font-family: "Inter", sans-serif;
-  color: white;
-}
-
-label {
-  color: white;
-}
-
-#todayButton {
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-}
-
-#oneDayAgoButton {
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-}
-
-.bigger-input {
-  width: 200px;
-  height: 40px;
+input {
   font-size: 16px;
-  padding: 8px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(40, 40, 40, 0.8); /* Dark background */
+  color: #e0e0e0; /* Light text color */
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  border-color: #667eea; /* Focus border color */
+  outline: none;
+}
+
+/* Dropdown styling (if present) */
+.ui.selection.search.dropdown {
+  width: 100%;
+  background: rgba(40, 40, 40, 0.8); /* Dark background for dropdown */
+  border-radius: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  color: #e0e0e0; /* Light text color */
+  transition: all 0.3s ease;
+}
+
+.ui.selection.search.dropdown:hover {
+  border-color: #667eea;
+}
+
+.ui.selection.search.dropdown .menu {
+  background-color: #2c3e50;
+}
+
+.ui.selection.search.dropdown .item {
+  color: #ecf0f1;
+}
+
+.ui.selection.search.dropdown .item:hover {
+  background-color: #34495e;
+}
+
+/* Dark mode prompt text */
+.prompt-text {
+  font-size: 1.4rem;
+  color: #b0b0b0; /* Light gray text for dark mode */
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* Field and container */
+.field {
+  margin-bottom: 25px;
+}
+
+/* Styling for the segment (field container) */
+.ui.segment {
+  background-color: #2f384e;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Heading styles with fade-in effect */
+h2, h4.ui.dividing.header {
+  color: #ecf0f1 !important;
+  font-family: "Inter", sans-serif;
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  text-align: left;
+}
+
+h2 {
+  font-size: 26px;
+  color: #ecf0f1;
+  font-weight: 600;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #34495e;
+  padding-bottom: 10px;
+  transition: all 0.3s ease;
+}
+
+h2:hover {
+  color: #2980b9;
+  border-bottom: 2px solid #2980b9;
+}
+
+/* Adding smooth hover transitions on buttons */
+button {
+  background-color: #0074cc;
+  color: #fff;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-right: 10px;
+  font-size: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  background-color: #005ea6;
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+/* Add button and input adjustments */
+#todayButton, #oneDayAgoButton, button#addInput, button#removeInput, button#addInput1, button#RemoveInput1 {
+  padding: 12px 25px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+#todayButton:hover, #oneDayAgoButton:hover {
+  background-color: #005ea6;
+}
+
+/* Adding border and focus states for input elements */
+input, textarea {
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 2px solid #34495e;
+  background-color: #3a4557;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus {
+  border-color: #21ba45;
+  outline: none;
+}
+
+/* Inputs size and alignment */
+.bigger-input {
+  width: 250px;
+  height: 45px;
+  font-size: 18px;
+  padding: 10px;
 }
 
 .bigger-button {
-  width: 40px;
-  height: 40px;
-  font-size: 20px;
-  padding: 4px 10px;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  padding: 8px 12px;
+  transition: transform 0.3s ease;
 }
 
+.bigger-button:hover {
+  transform: scale(1.1);
+}
+
+/* Modernized container and segment */
 .ui.container {
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 .ui.segment {
   background-color: #2f384e;
-  padding: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-div.field {
-  color: white;
-}
-
-h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
-  color: white;
-}
-
+/* New style for text fields */
 h4.ui.dividing.header {
-  font-size: 18px;
+  font-size: 20px;
   margin-top: 20px;
   margin-bottom: 10px;
   color: white;
 }
 
-.field {
-  margin-bottom: 20px;
-}
-
-.ui.selection.search.dropdown {
-  width: 100%;
-}
-
-button {
-  background-color: #0074cc;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  margin-right: 5px;
-}
-
-button#addInput,
-button#addInput1 {
-  background-color: #0074cc;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  margin-top: 15px;
-}
-
-button#removeInput,
-button#RemoveInput1 {
-  background-color: #ff0000;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  margin-top: 15px;
-}
-
+/* Text area adjustments */
 textarea {
   width: 100%;
-  min-height: 100px;
-  padding: 10px;
-  border: 1px solid #182238;
+  min-height: 120px;
+  padding: 12px;
+  border: 2px solid #34495e;
+  background-color: #3a4557;
   resize: none;
+  transition: all 0.3s ease;
 }
 
+/* Submit button style */
 .ui.button#submit {
   background-color: #21ba45;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: transform 0.3s ease;
+}
+
+.ui.button#submit:hover {
+  background-color: #189c38;
+  transform: translateY(-3px);
+}
+
+.ui.button#submit:active {
+  transform: translateY(1px);
+}
+
+/* Fade-in animation for headers */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

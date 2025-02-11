@@ -1,247 +1,362 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <!-- Meta tags and CSS links -->
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="css/img/metro.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
-    <link rel="stylesheet" href="css/metrodeploy.css">
-    <title>Metro Deployment Report</title>
-</head>
+    <head>
+        <!-- Meta tags and CSS links -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="css/img/metro.png">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+        <link rel="stylesheet" href="css/metrodeploy.css">
+        <title>Metro Deployment Report</title>
+    </head>
 
-<body>
-    <button id="clearLocalStorageButton">Clear Format</button>
-    <button id="undoLocalStorageButton">Undo Clear</button>
-    <button onclick="window.location.href='https://productofmymind.github.io/GTAW-METRO/index.html';">Home</button>
-    <div class="ui container">
-        <div class="ui form">
-            <div class="ui segment">
-                <h2>General Information</h2>
-                <div class="field">
-                    <label>Involved Platoons</label>
-                    <form>
-                        <label><input type="checkbox" id="DPLT" name="D Platoon" value="D Platoon"> D Platoon</label><br>
-                        <label><input type="checkbox" id="K9PLT" name="K9 Platoon" value="K9 Platoon"> K9 Platoon</label><br>
-                        <label><input type="checkbox" id="HPLT" name="H Platoon" value="H Platoon"> H Platoon</label><br>
-                        <label><input type="checkbox" id="BS" name="Bomb Squad" value="Bomb Squad"> Bomb Squad</label>
-                    </form>
-                    <h4 class="ui dividing header">Incident Command</h4>
+    <body>
+        <button id="clearLocalStorageButton">Clear Format</button>
+        <button id="undoLocalStorageButton">Undo Clear</button>
+        <button
+            onclick="window.location.href='https://productofmymind.github.io/GTAW-METRO/index.html';">Home</button>
+        <div class="ui container">
+            <div class="ui form">
+                <div class="ui segment">
+                    <h2>General Information</h2>
                     <div class="field">
-                        <label>Incident Commander (if applicable)</label>
-                        <div class="three fields">
-                            <div class="field">
-                                <input type="text" placeholder="LSPD Rank Firstname Lastname" id="ICname">
+                        <label>Involved Platoons</label>
+                        <form>
+                            <label><input type="checkbox" id="DPLT"
+                                    name="D Platoon" value="D Platoon"> D
+                                Platoon</label><br>
+                            <label><input type="checkbox" id="K9PLT"
+                                    name="K9 Platoon" value="K9 Platoon"> K9
+                                Platoon</label><br>
+                            <label><input type="checkbox" id="HPLT"
+                                    name="H Platoon" value="H Platoon"> H
+                                Platoon</label><br>
+                            <label><input type="checkbox" id="BS"
+                                    name="Bomb Squad" value="Bomb Squad"> Bomb
+                                Squad</label>
+                        </form>
+                        <h4 class="ui dividing header">Incident Command</h4>
+                        <div class="field">
+                            <label>Incident Commander (if applicable)</label>
+                            <div class="three fields">
+                                <div class="field">
+                                    <input type="text"
+                                        placeholder="LSPD Rank Firstname Lastname"
+                                        id="ICname">
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="field">
-                        <label>Crisis Negotiator (if applicable)</label>
-                        <div class="three fields">
-                            <div class="field">
-                                <input type="text" placeholder="LSPD Rank Firstname Lastname" id="CNname">
+                        <div class="field">
+                            <label>Crisis Negotiator (if applicable)</label>
+                            <div class="three fields">
+                                <div class="field">
+                                    <input type="text"
+                                        placeholder="LSPD Rank Firstname Lastname"
+                                        id="CNname">
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="field">
-                        <label>Tactical Commander</label>
-                        <div class="three fields">
-                            <div class="field">
-                                <input type="text"
-                                    placeholder="Platoon Rank Firstname Lastname (i.e. K9 Team Leader John Doe)"
-                                    id="TCname">
+                        <div class="field">
+                            <label>Tactical Commander</label>
+                            <div class="three fields">
+                                <div class="field">
+                                    <input type="text"
+                                        placeholder="Platoon Rank Firstname Lastname (i.e. K9 Team Leader John Doe)"
+                                        id="TCname">
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- INVOLVED METROPOLITAN MEMBERS -->
-                    <div class="field">
-                        <label>Involved Metropolitan Members</label>
-                        <div id="InvolvedMembers">
-                            <div class="field">
-                                <input type="text" placeholder="Platoon + Platoon Rank + Full Name nr. 1" id="MMMname">
+                        <!-- INVOLVED METROPOLITAN MEMBERS -->
+                        <div class="field">
+                            <label>Involved Metropolitan Members</label>
+                            <div id="InvolvedMembers">
+                                <div class="field">
+                                    <input type="text"
+                                        placeholder="Platoon + Platoon Rank + Full Name nr. 1"
+                                        id="MMMname">
+                                </div>
                             </div>
+                            <button type="button" id="addInput">+</button>
+                            <button type="button" id="removeInput">-</button>
                         </div>
-
-                        <button type="button" id="addInput">+</button>
-                        <button type="button" id="removeInput">-</button>
-                    </div>
-                    <!-- DEPLOYMENT TYPE -->
-                    <div class="field">
-                        <label>Deployment Type</label>
-                        <div class="three fields" id="DeploymentType">
-                            <div class="field">
-                                <div class="ui selection search dropdown">
-                                    <input type="hidden" name="deploymentType">
-                                    <i class="dropdown icon"></i>
-                                    <div class="default text">Select Deployment Type</div>
-                                    <div class="menu">
-                                        <div class="item" data-value="deploymentType1">Search Warrant Execution</div>
-                                        <div class="item" data-value="deploymentType2">High Risk Arrest Warrant Execution</div>
-                                        <div class="item" data-value="deploymentType2">High Risk Crime Suppression Patrol</div>
-                                        <div class="item" data-value="deploymentType3">Property Search</div>
-                                        <div class="item" data-value="deploymentType4">Vehicle Search</div>
-                                        <div class="item" data-value="deploymentType5">Area Search</div>
-                                        <div class="item" data-value="deploymentType6">Property Alarm</div>
-                                        <div class="item" data-value="deploymentType7">Civil Disturbance Deployment </div>
-                                        <div class="item" data-value="deploymentType8">Riot Control Deployment</div>
-                                        <div class="item" data-value="deploymentType9">Protest Demonstration</div>
-                                        <div class="item" data-value="deploymentType10">Event Deployment</div>
-                                        <div class="item" data-value="deploymentType11">Active Drive-by Deployment</div>
-                                        <div class="item" data-value="deploymentType12">Active Shooter Deployment</div>
-                                        <div class="item" data-value="deploymentType13">Barricaded Suspect</div>
-                                        <div class="item" data-value="deploymentType14">Protection Detail</div>
-                                        <div class="item" data-value="deploymentType15">Manhunt</div>
-                                        <div class="item" data-value="deploymentType16">Panic Alarm</div>
-                                        <div class="item" data-value="deploymentType17">Officer Needs Help Response </div>
-                                        <div class="item" data-value="deploymentType18">TAC-ALERT</div>
-                                        <div class="item" data-value="deploymentType19">Scene Security</div>
-                                        <div class="item" data-value="deploymentType20">Mobile Kidnapping</div>
-                                        <div class="item" data-value="deploymentType21">Hostage Situation</div>
-                                        <div class="item" data-value="deploymentType22">Covert Operation</div>
-                                        <div class="item" data-value="deploymentType23">Bomb Threat</div>
-                                        <div class="item" data-value="deploymentType24">Suspicious Package</div>
-                                        <div class="item" data-value="deploymentType25">Bomb Disposal</div>
-                                        <div class="item" data-value="deploymentType26">Explosive Device Investigation</div>
-                                        <div class="item" data-value="deploymentType27">Explosive Ordinance Disposal</div>
-                                        <div class="item" data-value="deploymentType28">IED Incident</div>
-                                        <div class="item" data-value="deploymentType29">Explosive Materials Incident</div>
-                                        <div class="item" data-value="deploymentType30">Detonation of Explosives</div>
-                                        <div class="item" data-value="deploymentType31">Explosive Device Safety Assessment</div>                                        
+                        <!-- DEPLOYMENT TYPE -->
+                        <div class="field">
+                            <label>Deployment Type</label>
+                            <div class="three fields" id="DeploymentType">
+                                <div class="field">
+                                    <div class="ui selection search dropdown">
+                                        <input type="hidden"
+                                            name="deploymentType">
+                                        <i class="dropdown icon"></i>
+                                        <div class="default text">Select
+                                            Deployment Type</div>
+                                        <div class="menu">
+                                            <div class="item"
+                                                data-value="deploymentType1">Search
+                                                Warrant Execution</div>
+                                            <div class="item"
+                                                data-value="deploymentType2">High
+                                                Risk Arrest Warrant
+                                                Execution</div>
+                                            <div class="item"
+                                                data-value="deploymentType2">High
+                                                Risk Crime Suppression
+                                                Patrol</div>
+                                            <div class="item"
+                                                data-value="deploymentType3">Property
+                                                Search</div>
+                                            <div class="item"
+                                                data-value="deploymentType4">Vehicle
+                                                Search</div>
+                                            <div class="item"
+                                                data-value="deploymentType5">Area
+                                                Search</div>
+                                            <div class="item"
+                                                data-value="deploymentType6">Property
+                                                Alarm</div>
+                                            <div class="item"
+                                                data-value="deploymentType7">Civil
+                                                Disturbance Deployment </div>
+                                            <div class="item"
+                                                data-value="deploymentType8">Riot
+                                                Control Deployment</div>
+                                            <div class="item"
+                                                data-value="deploymentType9">Protest
+                                                Demonstration</div>
+                                            <div class="item"
+                                                data-value="deploymentType10">Event
+                                                Deployment</div>
+                                            <div class="item"
+                                                data-value="deploymentType11">Active
+                                                Drive-by Deployment</div>
+                                            <div class="item"
+                                                data-value="deploymentType12">Active
+                                                Shooter Deployment</div>
+                                            <div class="item"
+                                                data-value="deploymentType13">Barricaded
+                                                Suspect</div>
+                                            <div class="item"
+                                                data-value="deploymentType14">Protection
+                                                Detail</div>
+                                            <div class="item"
+                                                data-value="deploymentType15">Manhunt</div>
+                                            <div class="item"
+                                                data-value="deploymentType16">Panic
+                                                Alarm</div>
+                                            <div class="item"
+                                                data-value="deploymentType17">Officer
+                                                Needs Help Response </div>
+                                            <div class="item"
+                                                data-value="deploymentType18">TAC-ALERT</div>
+                                            <div class="item"
+                                                data-value="deploymentType19">Scene
+                                                Security</div>
+                                            <div class="item"
+                                                data-value="deploymentType20">Mobile
+                                                Kidnapping</div>
+                                            <div class="item"
+                                                data-value="deploymentType21">Hostage
+                                                Situation</div>
+                                            <div class="item"
+                                                data-value="deploymentType22">Covert
+                                                Operation</div>
+                                            <div class="item"
+                                                data-value="deploymentType23">Bomb
+                                                Threat</div>
+                                            <div class="item"
+                                                data-value="deploymentType24">Suspicious
+                                                Package</div>
+                                            <div class="item"
+                                                data-value="deploymentType25">Bomb
+                                                Disposal</div>
+                                            <div class="item"
+                                                data-value="deploymentType26">Explosive
+                                                Device Investigation</div>
+                                            <div class="item"
+                                                data-value="deploymentType27">Explosive
+                                                Ordinance Disposal</div>
+                                            <div class="item"
+                                                data-value="deploymentType28">IED
+                                                Incident</div>
+                                            <div class="item"
+                                                data-value="deploymentType29">Explosive
+                                                Materials Incident</div>
+                                            <div class="item"
+                                                data-value="deploymentType30">Detonation
+                                                of Explosives</div>
+                                            <div class="item"
+                                                data-value="deploymentType31">Explosive
+                                                Device Safety Assessment</div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="ui container">
-                <div class="ui form">
-                    <div class="ui segment">
-                        <h2>Deployment Timeline</h2>
-                        <div class="field">
-                            <p>Date</p>
-                            <div class="four fields">
-                                <div class="field">
-                                    <input title="Date" type="text" id="datePicker" placeholder="DD/MMM/YYYY">
-                                </div>
-                                <div class="field">
-                                    <button id="todayButton">Today</button>
-                                    <button id="oneDayAgoButton">One Day Ago</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="field">
-                            <label>Location</label>
-                            <div class="three fields">
-                                <div class="field">
-                                    <input type="text" placeholder="Streetname, nr, area" id="loc">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="field">
-                            <label>Start of Deployment</label>
-                            <div class="three fields">
-                                <div class="field">
-                                    <input type="text" id="startTime" placeholder="HH:MM">
-                                </div>
-                                <div class="field">
-                                    <button id="oneHourAgo">One Hour Ago</button>
-                                    <button id="twoHoursAgo">Two Hours Ago</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="field">
-                            <label>End of Deployment</label>
-                            <div class="three fields">
-                                <div class="field">
-                                    <input type="text" id="endTime" placeholder="HH:MM">
-                                </div>
-                                <div class="field">
-                                    <button id="nowButton">Now</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="field">
-                            <label>Deployment Events</label>
-                            <div id="DeploymentEventsContainer">
-                                <div class="field">
-                                    <input type="text" placeholder="Event nr. 1" id="event1">
-                                </div>
-                            </div>
-                            <button type="button" id="addInput2">+</button>
-                            <button type="button" id="removeInput2">-</button>
                         </div>
                     </div>
                 </div>
                 <div class="ui container">
                     <div class="ui form">
                         <div class="ui segment">
-                            <h2>Casualty & Injury Information</h2>
+                            <h2>Deployment Timeline</h2>
                             <div class="field">
-                                <label>Injured Team Members</label>
-                                <div id="InjuredMembers">
+                                <p>Date</p>
+                                <div class="four fields">
                                     <div class="field">
-                                        <input type="text" placeholder="Injured Member. 1" id="member1">
+                                        <input title="Date" type="text"
+                                            id="datePicker"
+                                            placeholder="DD/MMM/YYYY">
+                                    </div>
+                                    <div class="field">
+                                        <button id="todayButton">Today</button>
+                                        <button id="oneDayAgoButton">One Day
+                                            Ago</button>
                                     </div>
                                 </div>
-                                <button type="button" id="addInput3">+</button>
-                                <button type="button" id="removeInput3">-</button>
                             </div>
                             <div class="field">
-                                <label>Suspect Casualties</label>
-                                <div id="InjuredSuspects">
-                                    <div class="field">
-                                        <input type="text" placeholder="Injured Suspect. 1" id="suspect1">
-                                    </div>
-                                </div>
-                                <button type="button" id="addInput4">+</button>
-                                <button type="button" id="removeInput4">-</button>
-                            </div>
-                            <div class="field">
-                                <label>Civilian Casualties</label>
-                                <div id="InjuredCivilians">
-                                    <div class="field">
-                                        <input type="text" placeholder="Injured Civilian. 1" id="civilian1">
-                                    </div>
-                                </div>
-                                <button type="button" id="addInput5">+</button>
-                                <button type="button" id="removeInput5">-</button>
-                            </div>
-                            <div class="field">
-                                <label>Filing Officer Signature</label>
+                                <label>Location</label>
                                 <div class="three fields">
                                     <div class="field">
-                                        <input type="text" placeholder="Name" id="signature">
+                                        <input type="text"
+                                            placeholder="Streetname, nr, area"
+                                            id="loc">
                                     </div>
                                 </div>
+                            </div>
+                            <div class="field">
+                                <label>Start of Deployment</label>
+                                <div class="three fields">
+                                    <div class="field">
+                                        <input type="text" id="startTime"
+                                            placeholder="HH:MM">
+                                    </div>
+                                    <div class="field">
+                                        <button id="oneHourAgo">One Hour
+                                            Ago</button>
+                                        <button id="twoHoursAgo">Two Hours
+                                            Ago</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label>End of Deployment</label>
+                                <div class="three fields">
+                                    <div class="field">
+                                        <input type="text" id="endTime"
+                                            placeholder="HH:MM">
+                                    </div>
+                                    <div class="field">
+                                        <button id="nowButton">Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label>Deployment Events</label>
+                                <div id="DeploymentEventsContainer">
+                                    <div class="field">
+                                        <input type="text"
+                                            placeholder="Event nr. 1"
+                                            id="event1">
+                                    </div>
+                                </div>
+                                <button type="button" id="addInput2">+</button>
+                                <button type="button"
+                                    id="removeInput2">-</button>
                             </div>
                         </div>
                     </div>
                     <div class="ui container">
                         <div class="ui form">
                             <div class="ui segment">
-                                <h2>Generator</h2>
+                                <h2>Casualty & Injury Information</h2>
                                 <div class="field">
-                                    <label>Output</label>
-                                    <textarea id="output" readonly title="Output"></textarea>
+                                    <label>Injured Team Members</label>
+                                    <div id="InjuredMembers">
+                                        <div class="field">
+                                            <input type="text"
+                                                placeholder="Injured Member. 1"
+                                                id="member1">
+                                        </div>
+                                    </div>
+                                    <button type="button"
+                                        id="addInput3">+</button>
+                                    <button type="button"
+                                        id="removeInput3">-</button>
                                 </div>
-                                <div class="ui secondary button" id="submit">Submit</div>
-                                <div class="ui primary button" id="copy">Copy to Clipboard</div>
-                                <a href="https://lspd.gta.world/viewforum.php?f=2146">
-                                    <div class="ui third button" id="fieldrecords">Field Records Link</div>
-                                  </a>           
+                                <div class="field">
+                                    <label>Suspect Casualties</label>
+                                    <div id="InjuredSuspects">
+                                        <div class="field">
+                                            <input type="text"
+                                                placeholder="Injured Suspect. 1"
+                                                id="suspect1">
+                                        </div>
+                                    </div>
+                                    <button type="button"
+                                        id="addInput4">+</button>
+                                    <button type="button"
+                                        id="removeInput4">-</button>
+                                </div>
+                                <div class="field">
+                                    <label>Civilian Casualties</label>
+                                    <div id="InjuredCivilians">
+                                        <div class="field">
+                                            <input type="text"
+                                                placeholder="Injured Civilian. 1"
+                                                id="civilian1">
+                                        </div>
+                                    </div>
+                                    <button type="button"
+                                        id="addInput5">+</button>
+                                    <button type="button"
+                                        id="removeInput5">-</button>
+                                </div>
+                                <div class="field">
+                                    <label>Filing Officer Signature</label>
+                                    <div class="three fields">
+                                        <div class="field">
+                                            <input type="text"
+                                                placeholder="Name"
+                                                id="signature">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ui container">
+                            <div class="ui form">
+                                <div class="ui segment">
+                                    <h2>Generator</h2>
+                                    <div class="field">
+                                        <label>Output</label>
+                                        <textarea id="output" readonly
+                                            title="Output"></textarea>
+                                    </div>
+                                    <div class="ui secondary button"
+                                        id="submit">Submit</div>
+                                    <div class="ui primary button"
+                                        id="copy">Copy to Clipboard</div>
+                                    <a
+                                        href="https://lspd.gta.world/viewforum.php?f=2146">
+                                        <div class="ui third button"
+                                            id="fieldrecords">Field Records
+                                            Link</div>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
-                <script src="js/metrodeploy.js"></script>
-                <script>
+                    <script
+                        src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                    <script
+                        src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+                    <script src="js/metrodeploy.js"></script>
+                    <script>
                     // Initialize Semantic UI Dropdown
                     $(document).ready(function () {
                         $('.ui.search.dropdown').dropdown({
@@ -472,6 +587,6 @@
                         undoButton.addEventListener('click', undoClearLocalStorage);
                     }
                 </script>
-</body>
+                </body>
 
-</html>
+            </html>
