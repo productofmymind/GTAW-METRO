@@ -436,7 +436,7 @@
     "alpr": 1,
     "ol": 0,
     "authorizedPersonnel": "FAD Only",
-    "assignedPurpose": "Patrol",
+    "assignedPurpose": "Fugitive Apprehension Detail",
     "notes": ""
   },
   {
@@ -678,7 +678,7 @@
     "alpr": 1,
     "ol": 0,
     "authorizedPersonnel": "FAD Only",
-    "assignedPurpose": "Only",
+    "assignedPurpose": "Fugitive Apprehension Detail",
     "notes": ""
   },
   {
