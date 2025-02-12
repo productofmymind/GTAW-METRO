@@ -1,0 +1,220 @@
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+
+
+.bold {
+    font-weight: bold;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.blur {
+    filter: blur(0.2px); /* Adjust the blur value as needed */
+}
+
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Heading Style */
+h1 {
+    color: #ffffff;
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* Main Content Section */
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Left Side: Input Section */
+.input-section {
+    background-color: #1f1f1f;
+    padding: 25px;
+    border-radius: 12px;
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+label {
+    font-size: 14px;
+    color: #b0b0b0;
+}
+
+input, select {
+    padding: 12px;
+    background-color: #333;
+    border: 1px solid #444;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+input:focus, select:focus {
+    border-color: #3b3a3d;
+}
+
+button {
+    background-color: #3b3a3d;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+#downloadBtn {
+    background-color: #0c3470;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+#downloadBtn:hover {
+    background-color: #0056b3;
+}
+
+button:hover {
+    background-color: #2a292b;
+}
+
+/* Right Side: Preview Section */
+.preview-section {
+    background-color: #1f1f1f;
+    padding: 25px;
+    border-radius: 12px;
+    width: 50%;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.font-preview-container {
+    margin-bottom: 20px;
+}
+
+.font-preview {
+    font-size: 24px;
+    color: #ffffff;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #333;
+    border-radius: 6px;
+}
+
+.business-card {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    width: 90%;
+    height: 300px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+#cardImage {
+    max-width: 100%;
+    height: auto;
+
+}
+
+.overlay-text {
+    position: absolute;
+    color: #ffffff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.name-text {
+    font-size: 24px;
+    top: 20%;
+}
+
+.phone-text {
+    font-size: 20px;
+    top: 50%;
+}
+
+.email-text {
+    font-size: 16px;
+    top: 70%;
+}
+
+/* Styling for Text Styling Options */
+.styling-options {
+    display: flex;
+    gap: 15px;
+    font-size: 14px;
+    flex-wrap: wrap;
+}
+
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+    }
+
+    .input-section, .preview-section {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+ 
+    
+}

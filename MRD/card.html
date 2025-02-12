@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Business Card Generator</title>
+    <link rel="stylesheet" href="../MRD/css/card.css">
+
+    <!-- Add Google Fonts for handwritten and calligraphy fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Pacifico&family=Dancing+Script&family=Indie+Flower&family=Shadows+Into+Light&family=Cedarville+Cursive&family=Kalam&family=Patrick+Hand&family=Homemade+Apple&family=La+Belle+Aurore&family=Mr+Bedfort&family=Mrs+Saint+Delafield&family=Qwigley&family=Rouge+Script&family=Tangerine&family=Sacramento&family=Poppins&family=Satisfy&family=Great+Vibes&family=Courgette&family=Gloria+Hallelujah&family=Rock+Salt&family=Rochester&family=Yellowtail&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h2>MRD Business Card Generator</h2>
+
+        <div class="main-content">
+            <!-- Left side: Input section -->
+            <div class="input-section">
+                <div class="input-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" placeholder="Ofcr/Sgt/Lt/Cpt. Lastname">
+                </div>
+                <div class="input-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="text" id="phone" placeholder="XXX-XXX-XXX">
+                </div>
+                <div class="input-group">
+                    <label for="email">Email:</label>
+                    <input type="text" id="email" placeholder="badgenumber@lspd.online">
+                </div>
+                <div class="input-group">
+                    <label for="fontSelect">Choose Font:</label>
+                    <select id="fontSelect">
+                        <option value="Gochi Hand">Gochi Hand</option>
+                        <option value="Pacifico">Pacifico</option>
+                        <option value="Dancing Script">Dancing Script</option>
+                        <option value="Indie Flower">Indie Flower</option>
+                        <option value="Shadows Into Light">Shadows Into Light</option>
+                        <option value="Cedarville Cursive">Cedarville Cursive</option>
+                        <option value="Kalam">Kalam</option>
+                        <option value="Patrick Hand">Patrick Hand</option>
+                        <option value="Homemade Apple">Homemade Apple</option>
+                        <option value="La Belle Aurore">La Belle Aurore</option>
+                        <option value="Mr Bedfort">Mr Bedfort</option>
+                        <option value="Mrs Saint Delafield">Mrs Saint Delafield</option>
+                        <option value="Qwigley">Qwigley</option>
+                        <option value="Rouge Script">Rouge Script</option>
+                        <option value="Tangerine">Tangerine</option>
+                        <option value="Sacramento">Sacramento</option>
+                        <option value="Poppins">Poppins</option>
+                        <option value="Satisfy">Satisfy</option>
+                        <option value="Great Vibes">Great Vibes</option>
+                        <option value="Courgette">Courgette</option>
+                        <option value="Gloria Hallelujah">Gloria Hallelujah</option>
+                        <option value="Rock Salt">Rock Salt</option>
+                        <option value="Rochester">Rochester</option>
+                        <option value="Yellowtail">Yellowtail</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="nameFontSize">Name Font Size:</label>
+                    <input type="range" id="nameFontSize" min="10" max="50" value="18">
+                </div>
+                <div class="input-group">
+                    <label for="phoneFontSize">Phone Font Size:</label>
+                    <input type="range" id="phoneFontSize" min="10" max="50" value="18">
+                </div>
+                <div class="input-group">
+                    <label for="emailFontSize">Email Font Size:</label>
+                    <input type="range" id="emailFontSize" min="10" max="60" value="24">
+                </div>
+                <div class="input-group">
+                    <label for="fontColor">Font Color:</label>
+                    <input type="color" id="fontColor" value="#0101010"> 
+                </div>
+                <div class="input-group">
+                    <label>Text Styling:</label>
+                    <div class="styling-options">
+                        <label><input type="checkbox" id="boldCheckbox"> Bold</label>
+                        <label><input type="checkbox" id="italicCheckbox"> Italic</label>
+                        <label><input type="checkbox" id="underlineCheckbox"> Underline</label>
+                        <label><input type="checkbox" id="blurCheckbox"> Blur</label>                
+                    </div>
+                </div>
+                
+                <button id="generateBtn">Generate Card</button>
+                <button id="downloadBtn">Download Card</button>
+
+            </div>
+
+            
+
+            <!-- Right side: Preview & Business Card -->
+            <div class="preview-section">
+                <div class="font-preview-container">
+                    <h3>Font Preview</h3>
+                    <div class="font-preview" style="font-size: 24px; padding: 10px;"></div>
+                </div>
+                <div class="business-card" id="card-container"> <!-- Add the id="card-container" here -->
+                    <img src="../MRD/css/MRDCard.png" alt="Business Card" id="cardImage">
+                    <div id="nameDisplay" class="overlay-text name-text"></div>
+                    <div id="phoneDisplay" class="overlay-text phone-text"></div>
+                    <div id="emailDisplay" class="overlay-text email-text"></div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <script src="../MRD/js/card.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</body>
+</html>
