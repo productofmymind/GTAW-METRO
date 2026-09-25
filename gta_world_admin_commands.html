@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GTA:World Administrator Commands</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #11151b;
+    color: #e8edf3;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.45;
+  }
+  .page {
+    width: 1200px;
+    margin: 0 auto;
+    padding: 42px 48px 60px;
+  }
+  header {
+    padding: 28px 32px;
+    margin-bottom: 28px;
+    background: #191f28;
+    border: 1px solid #303945;
+    border-radius: 14px;
+  }
+  h1 {
+    margin: 0 0 7px;
+    font-size: 34px;
+    letter-spacing: .2px;
+  }
+  .subtitle {
+    color: #9ca8b6;
+    font-size: 15px;
+  }
+  .section {
+    margin: 26px 0;
+    background: #191f28;
+    border: 1px solid #303945;
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  .section h2 {
+    margin: 0;
+    padding: 16px 20px;
+    background: #202733;
+    font-size: 21px;
+    border-bottom: 1px solid #303945;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  th, td {
+    text-align: left;
+    padding: 11px 16px;
+    border-bottom: 1px solid #2a323e;
+    vertical-align: top;
+  }
+  th {
+    color: #aeb9c7;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: .7px;
+  }
+  tr:last-child td { border-bottom: 0; }
+  td:first-child {
+    width: 38%;
+    white-space: nowrap;
+  }
+  code {
+    color: #f2f5f8;
+    background: #0f1318;
+    border: 1px solid #303945;
+    border-radius: 6px;
+    padding: 4px 7px;
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 13px;
+  }
+  .level2 h2 { background: #25212d; }
+  .note {
+    margin-top: 26px;
+    padding: 16px 20px;
+    color: #aeb9c7;
+    background: #191f28;
+    border: 1px solid #303945;
+    border-radius: 12px;
+    font-size: 13px;
+  }
+  @media print {
+    body { background: white; color: #111; }
+    .page { width: auto; padding: 20px; }
+    .section, header, .note { break-inside: avoid; background: white; border-color: #bbb; }
+    .section h2 { background: #eee; }
+    code { background: #f4f4f4; color: #111; border-color: #ccc; }
+    .subtitle, th, .note { color: #555; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+<header>
+  <h1>GTA:World Administrator Commands</h1>
+  <div class="subtitle">Quick reference • Commands and documented functions from the Administrator Commands Guide</div>
+</header>
+
+<div id="content"></div>
+
+<div class="note">
+  <strong>Note:</strong> This reference is based on the forum guide provided. The guide is old, so commands, syntax, and permissions may have changed.
+</div>
+</div>
+
+<script>
+const sections = [
+["2.1 General Administrator Commands", [
+["/admins", "Shows online administrators and their characters. Grey = off-duty, green = on-duty."],
+["/aduty", "Toggles administrator duty on/off."],
+["/a &lt;text&gt;", "Sends a message in administrator chat."],
+["/st &lt;text&gt;", "Sends a message in staff chat."],
+["/tempname", "Sets a temporary name for your character. Go off and back on admin duty to revert it."],
+["/nametag", "Removes your name tag from other players' view."],
+["/invis", "Makes the administrator invisible."],
+["/spec (ID)", "Spectates a player."],
+["/specoff", "Stops spectating and returns you to your previous position."],
+["/sco(ffset)", "Changes the spectate camera angle."],
+["/scd(istance) (number)", "Changes the distance between the camera and the spectated player."],
+["/sch(eight) (number)", "Raises the spectate camera."],
+["/scflip", "Points the spectate camera in the opposite direction."],
+["/rcsettings", "Resets spectate camera settings to default."],
+["/weaponlist", "Shows a list of available weapon names."],
+["/startfire (type) (size) (propertyID)", "Creates a fire at your location or a chosen location. Size and property ID are optional."],
+["/viewfires", "Shows active fires and their IDs."],
+["/stopfire (Fire ID)", "Stops the specified fire."],
+["/resetfire", "Stops all ongoing fires and sends an admin alert."]
+]],
+["2.2 Teleportation / Movement", [
+["/tp (ID)", "Teleports yourself to a player."],
+["/tplocs", "Shows predefined teleport locations."],
+["/coords", "Shows your X, Y and Z coordinates."],
+["/tpcoord (x,y,z)", "Teleports you to specified coordinates."],
+["/gethere (ID)", "Brings a player to you."],
+["/tphere (ID)", "Same as /gethere."],
+["/tpto (ID) (Target ID)", "Teleports one player to another player."],
+["/goback", "Attempts to return you to your original position before teleporting."],
+["/tpgarbage", "Teleports you to the Garbage Depot in La Puerta."],
+["/sendto (ID) (tplocs)", "Sends a player to a predefined /tplocs location."],
+["/goto", "Teleports you to a predefined /tplocs location."],
+["/tpprop (Address)", "Teleports you to a property by address."],
+["/pprops (ID)", "Lists properties belonging to a player for teleport selection."],
+["/ptp (Property unique ID)", "Teleports you to a property using its unique ID."],
+["/gtp", "Teleports you to your waypoint on the map."],
+["/move (ID) (direction) (number)", "Moves a player in a specified direction by a specified amount."],
+["/gotoweed (WeedID)", "Teleports you to a specific weed plant."],
+["/sendtoprop (ID) (Propname)", "Teleports a player to a property, with a selection menu for partial names."],
+["/gotoprop (Address)", "Teleports yourself to a property by name or address."]
+]],
+["2.3 Player Management", [
+["/id (name/number)", "Searches for a player's full name or matching players."],
+["/check (ID/name)", "Shows the target player's stats."],
+["/gah / /getadminhistory (ID/name)", "Shows the player's administrator history."],
+["/aah / /addadminhistory (ID)", "Adds a note to a player's administrator history."],
+["/kick (ID) (1/0) (reason)", "Kicks a player. 1 adds a permanent server-record note; 0 does not."],
+["/warn (ID) (reason)", "Warns a player and records the warning in their admin history."],
+["/ajail (ID) (minutes) (reason)", "Places a player in admin jail for the specified time."],
+["/ban (ID) (days) (mins) (reason)", "Temporarily bans a player for the specified duration. 0 ignores that time unit."],
+["/permban (ID) (reason)", "Permanently bans a player by blocking their Rockstar ID."],
+["/freeze (ID)", "Freezes a player's character."],
+["/unfreeze (ID)", "Unfreezes a player."],
+["/mute (ID)", "Prevents a player from opening the chat bar."],
+["/unmute (ID)", "Removes the chat restriction."],
+["/allowrobbery (ID)", "Listed in the guide, but its function is undocumented (marked ?)."],
+["/sethealth (ID) (value)", "Sets a player's health. The guide recommends 0–100 for normal use."],
+["/setarmour (ID) (value)", "Sets a player's armour. The guide recommends 0–100."],
+["/arevive (ID)", "Revives a player who has died."],
+["/slap (ID)", "Moves the target upward by approximately 5 and temporarily immobilizes them."]
+]],
+["2.4 Reports / Break-ins", [
+["/reports", "Shows unanswered reports and break-in requests."],
+["/ar (ID)", "Accepts a report and notifies the player that an admin is handling it."],
+["/tr (ID) (reason)", "Removes/trashes a report and gives the player the reason."],
+["/ctot (report ID)", "Converts a report into a ticket."],
+["/requests", "Shows active break-in requests."],
+["/acceptrequest (ID) / /areq (ID)", "Accepts a break-in request and provides property inventory/stash information."],
+["/trashrequest (ID) (reason) / /treq (ID) (reason)", "Removes a break-in request and gives the player the reason."],
+["/approverequest (ID) / /appreq (ID)", "Approves a break-in request and unlocks the property's entrance."],
+["/clearrequests", "Clears all outstanding break-in requests. Confirmation is required."]
+]],
+["2.5 Player Items", [
+["/seeitems (ID)", "Shows a player's inventory."],
+["/whohasphone (number)", "Shows the current owner of a phone number who has the phone in their possession."],
+["/getweapons (ID)", "Shows the weapons a player has equipped."],
+["/spikeowner", "Near spike strips, shows who placed them."],
+["/resetboombox", "Removes a player's ability to change boombox channels. Does not remove the boombox."],
+["/resetallboombox", "Resets the relevant boombox channel restrictions."],
+["/viewboombox", "Near a boombox, shows who placed it and its channel."],
+["/authorizeboombox (ID)", "Authorizes a player's boombox."],
+["/playerweedstats (ID)", "Shows weed growth and harvest multipliers."],
+["/weedinfo", "Shows information about nearby weed plants."]
+]],
+["2.6 Vehicle Commands", [
+["/veh / /acar (model name)", "Spawns a temporary vehicle using the specified model."],
+["/playervehicles / /pveh (ID)", "Shows a menu of vehicles owned by a character."],
+["/fveh (ID)", "Shows vehicles owned by a character's faction."],
+["/alock", "Admin version of /lock for vehicles."],
+["/aengine", "Admin version of /engine for vehicles."],
+["/aflip", "Flips the closest vehicle by 180 degrees."],
+["/atow", "Despawns a vehicle. The guide says not to use it for vehicles that have been in water."],
+["/lastincar", "Shows who was recently in which vehicle and in which seat."],
+["/vinfo", "Shows information about the vehicle you are currently inside, including its owner."],
+["/avmod", "Allows free vehicle upgrades normally requiring a mechanic. Works on owned vehicles."],
+["/vnearby (range)", "Shows nearby vehicles within the specified range and allows selection."]
+]],
+["2.7 Property / Business", [
+["/aplock", "Opens or closes property doors using an admin override."],
+["/pinfo", "At a property entrance, shows property information and owner."],
+["/gotointerior (Interior ID)", "Teleports you to an empty default interior. The guide lists IDs 0–256."],
+["/binfo", "At a business purchase point, shows business/property information and owner."]
+]],
+["2.8 Administrator Level 2+", [
+["/setbuildperm (ID)", "Gives a player permission to build in a property."],
+["/adminobjectmenu", "Opens the object menu for moving/modifying outside-world objects in dimension 0."],
+["/atrace (ID)", "Places a functional admin trace/blip at a player's location."],
+["/createvehicle (ID) (vehicle model)", "Creates a permanent vehicle that can be given to a player."],
+["/giveplayeritem (ID) (Quantity) (Item name)", "Gives a player a specified quantity of an item. Exact script item name required."],
+["/deleteplayeritem (ID) (ItemID) (Quantity)", "Deletes a specified quantity of an item from a player's inventory."],
+["/giveweapon (ID) (Weaponname)", "Equips a player with a weapon. Does not give ammunition."],
+["/giveammo (ID) (Weaponname) (Amount)", "Gives a player ammunition for a weapon."],
+["/livery (number)", "Changes the livery of the vehicle you are inside."],
+["/enable (ooc)", "Toggles server-wide OOC chat."],
+["/ooc (text)", "Sends a message in server-wide OOC chat."],
+["/setname (ID) (Firstname) (Lastname)", "Permanently changes a character's name. Game restart required."],
+["/skin (Skinname)", "Temporarily changes your own skin/ped."],
+["/setskin (ID) (Skinname)", "Temporarily changes another player's skin/ped."],
+["/setfaction (Player ID) (Faction ID)", "Places a player into a faction at its lowest rank."],
+["/setfactionrank (Player ID) (Rank 1–15)", "Changes a player's faction rank. Player must already be in the faction."],
+["/firemanager", "Opens the newer fire-management system for creating fires."]
+]]
+];
+
+const content = document.getElementById("content");
+for (const [title, rows] of sections) {
+  const section = document.createElement("section");
+  section.className = "section" + (title.includes("Level 2") ? " level2" : "");
+  section.innerHTML = `<h2>${title}</h2>
+    <table><thead><tr><th>Command</th><th>Function</th></tr></thead><tbody>
+    ${rows.map(r => `<tr><td><code>${r[0]}</code></td><td>${r[1]}</td></tr>`).join("")}
+    </tbody></table>`;
+  content.appendChild(section);
+}
+</script>
+</body>
+</html>
